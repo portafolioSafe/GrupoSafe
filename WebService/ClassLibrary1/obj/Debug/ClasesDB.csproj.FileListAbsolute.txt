@@ -15,3 +15,6 @@ C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\ClassLibrary1\obj\Debu
 C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
 C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\ClassLibrary1\obj\Debug\ClasesDB.csprojResolveAssemblyReference.cache
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\WebService\ClassLibrary1\obj\Debug\ClasesDB.csprojResolveAssemblyReference.cache
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\WebService\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\WebService\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

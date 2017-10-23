@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatosCapacitaciones.cs" />
     <Compile Include="DatosCategoria.cs" />
     <Compile Include="DatosConexion.cs" />
     <Compile Include="DatosDetalle_evaluacion.cs" />

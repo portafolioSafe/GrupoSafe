@@ -30,3 +30,14 @@ C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\WebService\obj\Debug\W
 C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\WebService\bin\Datos.dll
 C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\WebService\bin\Datos.pdb
 C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\WebService\WebService\bin\Datos.dll.config
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\WebService\WebService\bin\WebService.dll.config
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\WebService\WebService\bin\WebService.dll
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\WebService\WebService\bin\WebService.pdb
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\WebService\WebService\bin\ClassLibrary1.dll
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\WebService\WebService\bin\Datos.dll
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\WebService\WebService\bin\Oracle.ManagedDataAccess.dll
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\WebService\WebService\bin\ClassLibrary1.pdb
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\WebService\WebService\bin\Datos.pdb
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\WebService\WebService\obj\Debug\WebService.csprojResolveAssemblyReference.cache
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\WebService\WebService\obj\Debug\WebService.dll
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\WebService\WebService\obj\Debug\WebService.pdb
