@@ -33,9 +33,20 @@ namespace Datos
                    OracleDataReader dr = oracmd.ExecuteReader();
                    while (dr.Read())
                    {
-                       capacitacion ev = new capacitacion();
-                     
-                       listado.Add(ev);
+                       capacitacion cap = new capacitacion();
+                       cap.Id = int.Parse(dr["ID_CAP"].ToString());
+                       cap.Area = dr["AREA_CAPACITACION"].ToString();
+
+
+                       cap.Fecha = dr["FECHA"].ToString().Substring(0, 11);
+                       cap.Tema = dr["TEMA"].ToString();
+                       cap.Expositor = dr["EXPOSITOR"].ToString();
+                       cap.Asistencia = int.Parse(dr["ASISTENCIA_MIN"].ToString());
+                       cap.Rut_empresa = dr["NOMBRE"].ToString();
+                       cap.Tipo_cap = dr["TIPO"].ToString();
+
+
+                       listado.Add(cap);
                    }
                    conn.Close();
                    return listado;
@@ -44,7 +55,7 @@ namespace Datos
                catch (Exception ex)
                {
 
-                   throw ex;
+                   return "ay";
                }
            }
        }
