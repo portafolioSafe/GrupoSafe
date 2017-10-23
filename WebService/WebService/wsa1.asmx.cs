@@ -381,8 +381,14 @@ namespace WebService
             return Datos.DatosEmpresa.ListadoEmpresas();
         }
         //Tipo Evaluaciones
+        //[WebMethod]
+        //public  List<TipoEvaluaciones> E_listarTipoEvaluacione()
+        //{
+        //    return Datos.DatosTipoEvaluacion.ListarTipo();
+        //}
+
         [WebMethod]
-        public List<TipoEvaluacion> E_listarTipoEvaluacione()
+        public List<ClassLibrary1.TipoEvaluaciones> listadodeevaluaciones()
         {
             return Datos.DatosTipoEvaluacion.ListarTipo();
         }

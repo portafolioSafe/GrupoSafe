@@ -34,13 +34,11 @@ namespace BLL
         public string Estado { get => estado; set => estado = value; }
 
         ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
-        public List<ServiceReference1.TipoEvaluacion> listadodealgo()
+     
+        public List<ServiceReference1.TipoEvaluacion> listadoasd()
         {
-
-
-            return ws.E_listarTipoEvaluacione().ToList();
+            return ws.E_listarTipoEvaluacione();
         }
-
       
 
 

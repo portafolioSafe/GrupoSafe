@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    public class TipoEvaluacion
+    public class TipoEvaluaciones
     {
         private int id;
         private string nombre;
@@ -31,12 +31,12 @@ namespace ClassLibrary1
 
 
 
-        public TipoEvaluacion()
+        public TipoEvaluaciones()
         {
 
         }
 
-        public TipoEvaluacion(int id, string nombre, string estado)
+        public TipoEvaluaciones(int id, string nombre, string estado)
         {
             this.Id = id;
             this.Nombre = nombre;

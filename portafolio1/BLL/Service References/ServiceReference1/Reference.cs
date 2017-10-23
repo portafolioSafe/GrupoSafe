@@ -409,15 +409,15 @@ namespace BLL.ServiceReference1 {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NombreField;
+        private int IdTipoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EstadoField;
         
-        private int IdTipoField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreField;
+        
+        private int IdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -430,32 +430,19 @@ namespace BLL.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Id {
+        public int IdTipo {
             get {
-                return this.IdField;
+                return this.IdTipoField;
             }
             set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
+                if ((this.IdTipoField.Equals(value) != true)) {
+                    this.IdTipoField = value;
+                    this.RaisePropertyChanged("IdTipo");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Nombre {
-            get {
-                return this.NombreField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
-                    this.NombreField = value;
-                    this.RaisePropertyChanged("Nombre");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
         public string Estado {
             get {
                 return this.EstadoField;
@@ -468,15 +455,28 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int IdTipo {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Nombre {
             get {
-                return this.IdTipoField;
+                return this.NombreField;
             }
             set {
-                if ((this.IdTipoField.Equals(value) != true)) {
-                    this.IdTipoField = value;
-                    this.RaisePropertyChanged("IdTipo");
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
@@ -500,15 +500,15 @@ namespace BLL.ServiceReference1 {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Pregunta1Field;
+        private int Cat_idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EstadoField;
         
-        private int Cat_idField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Pregunta1Field;
+        
+        private int IdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -521,14 +521,27 @@ namespace BLL.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Id {
+        public int Cat_id {
             get {
-                return this.IdField;
+                return this.Cat_idField;
             }
             set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
+                if ((this.Cat_idField.Equals(value) != true)) {
+                    this.Cat_idField = value;
+                    this.RaisePropertyChanged("Cat_id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
                 }
             }
         }
@@ -546,28 +559,15 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string Estado {
-            get {
-                return this.EstadoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
-                    this.EstadoField = value;
-                    this.RaisePropertyChanged("Estado");
-                }
-            }
-        }
-        
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int Cat_id {
+        public int Id {
             get {
-                return this.Cat_idField;
+                return this.IdField;
             }
             set {
-                if ((this.Cat_idField.Equals(value) != true)) {
-                    this.Cat_idField = value;
-                    this.RaisePropertyChanged("Cat_id");
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
@@ -591,13 +591,13 @@ namespace BLL.ServiceReference1 {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        private int IdField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NombreField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EstadoField;
+        private int IdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -609,15 +609,15 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Id {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Estado {
             get {
-                return this.IdField;
+                return this.EstadoField;
             }
             set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
                 }
             }
         }
@@ -635,15 +635,15 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string Estado {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int Id {
             get {
-                return this.EstadoField;
+                return this.IdField;
             }
             set {
-                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
-                    this.EstadoField = value;
-                    this.RaisePropertyChanged("Estado");
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
