@@ -44,6 +44,7 @@
     <Compile Include="capacitacionDTO.cs" />
     <Compile Include="CategoriaDTO.cs" />
     <Compile Include="loginController.cs" />
+    <Compile Include="PreguntasDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>

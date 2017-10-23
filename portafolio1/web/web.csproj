@@ -168,6 +168,7 @@
     <Content Include="IngenieroListEv.aspx" />
     <Content Include="IngenieroInfoAdd.aspx" />
     <Content Include="TecnicoCrearCategorias.aspx" />
+    <Content Include="TecnicoCrearSecciones.aspx" />
     <Content Include="TrabajadorHistA.aspx" />
     <Content Include="TrabajadorHistV.aspx" />
     <Content Include="TrabajadorHistC.aspx" />
@@ -368,6 +369,13 @@
     </Compile>
     <Compile Include="TecnicoCrearCategorias.aspx.designer.cs">
       <DependentUpon>TecnicoCrearCategorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TecnicoCrearSecciones.aspx.cs">
+      <DependentUpon>TecnicoCrearSecciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TecnicoCrearSecciones.aspx.designer.cs">
+      <DependentUpon>TecnicoCrearSecciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="TrabajadorHistA.aspx.cs">
       <DependentUpon>TrabajadorHistA.aspx</DependentUpon>
