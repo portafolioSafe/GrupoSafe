@@ -13,6 +13,29 @@ namespace ClassLibrary1
         private string estado;
         private int cat_id;
 
+        public int Cat_id
+        {
+            get { return cat_id; }
+            set { cat_id = value; }
+        }
+        public string Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
+        public string Pregunta1
+        {
+            get { return pregunta1; }
+            set { pregunta1 = value; }
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+
         public Pregunta()
         {
 
@@ -25,9 +48,6 @@ namespace ClassLibrary1
             this.Cat_id = cat_id;
         }
 
-        public int Id { get => id; set => id = value; }
-        public string Pregunta1 { get => pregunta1; set => pregunta1 = value; }
-        public string Estado { get => estado; set => estado = value; }
-        public int Cat_id { get => cat_id; set => cat_id = value; }
+
     }
 }

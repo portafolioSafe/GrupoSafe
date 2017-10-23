@@ -9,8 +9,26 @@ namespace ClassLibrary1
     public class Detalle_evaluacion
     {
         private string pregunta;
-        private int Id_evaluacion;
-        private int Id_pregunta;
+        private int id_evaluacion;
+        private int id_pregunta;
+
+        public int Id_pregunta
+        {
+            get { return id_pregunta; }
+            set { id_pregunta = value; }
+        }
+        public int Id_evaluacion
+        {
+            get { return id_evaluacion; }
+            set { id_evaluacion = value; }
+        }
+        public string Pregunta
+        {
+            get { return pregunta; }
+            set { pregunta = value; }
+        }
+
+
 
         public Detalle_evaluacion()
         {
@@ -23,8 +41,6 @@ namespace ClassLibrary1
             Id_pregunta = id_pregunta;
         }
 
-        public string Pregunta { get => pregunta; set => pregunta = value; }
-        public int Id_evaluacion1 { get => Id_evaluacion; set => Id_evaluacion = value; }
-        public int Id_pregunta1 { get => Id_pregunta; set => Id_pregunta = value; }
+
     }
 }

@@ -13,10 +13,30 @@ namespace ClassLibrary1
         private string estado;
         private int idTipo;
 
-        public int Id { get => id; set => id = value; }
-        public string Nombre { get => nombre; set => nombre = value; }
-        public string Estado { get => estado; set => estado = value; }
-        public int IdTipo { get => idTipo; set => idTipo = value; }
+        public int IdTipo
+        {
+            get { return idTipo; }
+            set { idTipo = value; }
+        }
+        public string Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value; }
+        }
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+
+
+
 
         public categoria()
         {

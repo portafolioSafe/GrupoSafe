@@ -12,6 +12,24 @@ namespace ClassLibrary1
         private string nombre;
         private string estado;
 
+        public string Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value; }
+        }
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+
+
 
         public TipoEvaluacion()
         {
@@ -25,11 +43,6 @@ namespace ClassLibrary1
             this.Estado = estado;
         }
 
-        public int Id { get => id; set => id = value; }
-        public string Nombre { get => nombre; set => nombre = value; }
-        public string Estado { get => estado; set => estado = value; }
 
-
-       
     }
 }
