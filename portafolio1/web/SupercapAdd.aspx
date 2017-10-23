@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div class="panel panel-default" style="margin-right: 10%; margin-left: 10%;">
-  <div class="panel-heading"><asp:Label ID="Label3" runat="server" Text="Crear plan capacitación" Font-Bold="True" Font-Size="Larger"></asp:Label>
+  <div class="panel-heading"><asp:Label ID="Label3" runat="server" Text="Crear capacitación" Font-Bold="True" Font-Size="Larger"></asp:Label>
       <style>
              #mensajeSI,#mensajeNO {
   display: table;

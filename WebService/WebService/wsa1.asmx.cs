@@ -274,7 +274,7 @@ namespace WebService
 
 
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
+                string val = "asd";
                 DateTime fecha1 = DateTime.Now.Date;
 
                 cmd.Parameters.Add("ARECAP", "varchar2").Value = area;
@@ -283,8 +283,10 @@ namespace WebService
                 cmd.Parameters.Add("TEMA", "varchar2").Value = tema;
                 cmd.Parameters.Add("EXPOSITOR", "varchar2").Value = expo;
                 cmd.Parameters.Add("ASISTENCIA", "number").Value = asisten;
+                
                 cmd.Parameters.Add("EMPRESA", "varchar2").Value = empresa;
                 cmd.Parameters.Add("TIPO", "number").Value = tipocap;
+                cmd.Parameters.Add("ESTADO", "varchar2").Value = val;
 
                 //falta estado?
 
@@ -339,6 +341,12 @@ namespace WebService
         {
 
             return Datos.DatosCapacitaciones.ListadoCapacitacion();
+        }
+
+        [WebMethod]
+        public capacitacion ShowCapacitacion(int id_cap_edit)
+        {
+            return Datos.DatosCapacitaciones.ShowCapacitacion(id_cap_edit);
         }
         //**************************************************************************************
         //*****************Ws Modulo evaluaciones
