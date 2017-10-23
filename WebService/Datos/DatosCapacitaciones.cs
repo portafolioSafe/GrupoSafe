@@ -55,11 +55,13 @@ namespace Datos
                catch (Exception ex)
                {
 
-                   return "ay";
+                   throw ex;
                }
            }
        }
 
 
     }
+
+
 }

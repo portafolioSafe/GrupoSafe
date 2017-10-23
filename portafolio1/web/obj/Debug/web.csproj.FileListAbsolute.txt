@@ -36,3 +36,17 @@ C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\web\obj\Debug\web.csp
 C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\web\obj\Debug\web.csproj.CoreCompileInputs.cache
 C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\web\obj\Debug\web.dll
 C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\web\obj\Debug\web.pdb
+C:\GrupoSafe\portafolio1\web\bin\web.dll.config
+C:\GrupoSafe\portafolio1\web\bin\web.dll
+C:\GrupoSafe\portafolio1\web\bin\web.pdb
+C:\GrupoSafe\portafolio1\web\bin\BLL.dll
+C:\GrupoSafe\portafolio1\web\bin\EntityFramework.dll
+C:\GrupoSafe\portafolio1\web\bin\EntityFramework.SqlServer.dll
+C:\GrupoSafe\portafolio1\web\bin\BLL.pdb
+C:\GrupoSafe\portafolio1\web\bin\BLL.dll.config
+C:\GrupoSafe\portafolio1\web\bin\EntityFramework.xml
+C:\GrupoSafe\portafolio1\web\bin\EntityFramework.SqlServer.xml
+C:\GrupoSafe\portafolio1\web\obj\Debug\web.csprojResolveAssemblyReference.cache
+C:\GrupoSafe\portafolio1\web\obj\Debug\web.csproj.CoreCompileInputs.cache
+C:\GrupoSafe\portafolio1\web\obj\Debug\web.dll
+C:\GrupoSafe\portafolio1\web\obj\Debug\web.pdb
