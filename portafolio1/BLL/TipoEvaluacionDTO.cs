@@ -11,26 +11,8 @@ namespace BLL
 
 
         private int id;
-
-public int Id
-{
-  get { return id; }
-  set { id = value; }
-}
-private string nombre;
-
-public string Nombre
-{
-    get { return nombre; }
-    set { nombre = value; }
-}
-private string estado;
-
-public string Estado
-{
-    get { return estado; }
-    set { estado = value; }
-}
+        private string nombre;
+        private string estado;
 
 
         public TipoEvaluacionDTO()
@@ -47,7 +29,9 @@ public string Estado
             this.Estado = estado;
         }
 
- 
+        public int Id { get => id; set => id = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Estado { get => estado; set => estado = value; }
 
         ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
 
