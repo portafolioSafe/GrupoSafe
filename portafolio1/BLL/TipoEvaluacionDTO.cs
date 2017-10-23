@@ -51,7 +51,7 @@ public string Estado
 
         ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
 
-        public List<ServiceReference1.TipoEvaluacion> listadoasd()
+        public List<ServiceReference1.TipoEvaluacion> listadodeEvaluaciones()
         {
             return ws.E_listarTipoEvaluacione();
         }

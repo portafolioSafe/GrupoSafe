@@ -23,7 +23,7 @@ namespace web
                 BLL.TipoEvaluacionDTO t = new BLL.TipoEvaluacionDTO();
 
 
-                foreach (var item in t.listadodealgo())
+                foreach (var item in t.listadodeEvaluaciones())
                 {
                     ListItem item2 = new ListItem(item.Nombre, item.Id.ToString());
                     DropDownList1.Items.Add(item2);
