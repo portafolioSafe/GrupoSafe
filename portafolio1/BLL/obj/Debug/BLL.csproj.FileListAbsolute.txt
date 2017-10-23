@@ -18,3 +18,10 @@ C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\BLL\obj\Debug\BLL.csp
 C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\BLL\obj\Debug\BLL.dll
 C:\Users\oscar\OneDrive\Documentos\GitHub\Safe\portafolio1\BLL\obj\Debug\BLL.pdb
+C:\GrupoSafe\portafolio1\BLL\bin\Debug\BLL.dll.config
+C:\GrupoSafe\portafolio1\BLL\bin\Debug\BLL.dll
+C:\GrupoSafe\portafolio1\BLL\bin\Debug\BLL.pdb
+C:\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.dll
+C:\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.pdb

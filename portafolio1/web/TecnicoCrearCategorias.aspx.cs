@@ -23,7 +23,7 @@ namespace web
                 BLL.TipoEvaluacionDTO t = new BLL.TipoEvaluacionDTO();
 
 
-                foreach (var item in t.ListarTipos())
+                foreach (var item in t.listadodealgo())
                 {
                     ListItem item2 = new ListItem(item.Nombre, item.Id.ToString());
                     DropDownList1.Items.Add(item2);
@@ -47,7 +47,7 @@ namespace web
 
             string categoria = TextBox1.Text;
             int id = int.Parse(DropDownList1.SelectedItem.Value);
-            //BLL.DTOCategoria.AgregarCategoria(categoria, id);
+           
 
             BLL.CategoriaDTO cat = new BLL.CategoriaDTO();
             cat.AgregarCategoria(id,categoria);
