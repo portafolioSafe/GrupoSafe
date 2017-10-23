@@ -338,52 +338,7 @@ namespace WebService
         public List<capacitacion> ListarCapacitaciones()
         {
 
-            List<capacitacion> listado = new List<capacitacion>();
-            if (conexion.validarconexion())
-            {
-                string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
-                OracleConnection oraconn = new OracleConnection(strConnectionString);
-                oraconn.Open();
-                OracleCommand oracmd = new OracleCommand();
-                oracmd.Parameters.Add("listarCAP", OracleDbType.RefCursor, ParameterDirection.Output);
-                oracmd.CommandText = "PROCEDIMIENTO_CAPACITACIONES.LISTAR_CAPACITACIONES";
-                oracmd.CommandType = CommandType.StoredProcedure;
-                oracmd.Connection = oraconn;
-                OracleDataAdapter da = new OracleDataAdapter(oracmd);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-
-
-
-                OracleDataReader dr = oracmd.ExecuteReader();
-
-
-
-                while (dr.Read())
-                {
-                    capacitacion cap = new capacitacion();
-                    cap.Id = int.Parse(dr["ID_CAP"].ToString());
-                    cap.Area = dr["AREA_CAPACITACION"].ToString();
-                    
-
-                    cap.Fecha = dr["FECHA"].ToString().Substring(0, 11);
-                    cap.Tema = dr["TEMA"].ToString();
-                    cap.Expositor = dr["EXPOSITOR"].ToString();
-                    cap.Asistencia = int.Parse(dr["ASISTENCIA_MIN"].ToString());
-                    cap.Rut_empresa = dr["NOMBRE"].ToString();
-                    cap.Tipo_cap = dr["TIPO"].ToString(); 
-
-                    listado.Add(cap);
-                }
-
-
-                return listado;
-            }
-            else
-            {
-                return listado;
-            }
-
+            return Datos.DatosCapacitaciones.ListadoCapacitacion();
         }
         //**************************************************************************************
         //*****************Ws Modulo evaluaciones

@@ -20,8 +20,8 @@ namespace Datos
            {
                List<capacitacion> listado = new List<capacitacion>();
                OracleCommand oracmd = new OracleCommand();
-               oracmd.Parameters.Add("listarE", OracleDbType.RefCursor, ParameterDirection.Output);
-               oracmd.CommandText = "PKG_EVALUACION.ListarEMP";
+               oracmd.Parameters.Add("listarCAP", OracleDbType.RefCursor, ParameterDirection.Output);
+               oracmd.CommandText = "PROCEDIMIENTO_CAPACITACIONES.LISTAR_CAPACITACIONES";
                oracmd.CommandType = CommandType.StoredProcedure;
                oracmd.Connection = conn;
                OracleDataAdapter da = new OracleDataAdapter(oracmd);
@@ -32,30 +32,31 @@ namespace Datos
                    da.Fill(ds);
                    OracleDataReader dr = oracmd.ExecuteReader();
                    while (dr.Read())
-                   {
-                       capacitacion cap = new capacitacion();
-                       cap.Id = int.Parse(dr["ID_CAP"].ToString());
-                       cap.Area = dr["AREA_CAPACITACION"].ToString();
+                       {
+                           capacitacion cap = new capacitacion();
+                           cap.Id = int.Parse(dr["ID_CAP"].ToString());
+                           cap.Area = dr["AREA_CAPACITACION"].ToString();
 
 
-                       cap.Fecha = dr["FECHA"].ToString().Substring(0, 11);
-                       cap.Tema = dr["TEMA"].ToString();
-                       cap.Expositor = dr["EXPOSITOR"].ToString();
-                       cap.Asistencia = int.Parse(dr["ASISTENCIA_MIN"].ToString());
-                       cap.Rut_empresa = dr["NOMBRE"].ToString();
-                       cap.Tipo_cap = dr["TIPO"].ToString();
+                           cap.Fecha = dr["FECHA"].ToString().Substring(0, 11);
+                           cap.Tema = dr["TEMA"].ToString();
+                           cap.Expositor = dr["EXPOSITOR"].ToString();
+                           cap.Asistencia = int.Parse(dr["ASISTENCIA_MIN"].ToString());
+                           cap.Rut_empresa = dr["NOMBRE"].ToString();
+                           cap.Tipo_cap = dr["TIPO"].ToString();
 
+                           listado.Add(cap);
+                       }
 
-                       listado.Add(cap);
-                   }
                    conn.Close();
-                   return listado;
+                       return listado;
+                  
 
                }
                catch (Exception ex)
                {
 
-                   return "ay";
+                   throw ex;
                }
            }
        }
