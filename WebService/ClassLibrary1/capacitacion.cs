@@ -16,6 +16,13 @@ namespace ClassLibrary1
         private int asistencia;
         private string rut_empresa;
         private string tipo_cap;
+        private string estado;
+
+        public string Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
 
         public capacitacion() { 
         
