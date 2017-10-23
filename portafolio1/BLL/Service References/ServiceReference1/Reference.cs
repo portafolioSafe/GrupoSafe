@@ -1590,12 +1590,12 @@ namespace BLL.ServiceReference1 {
     public partial class E_listarPreguntaXcategoriaResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public BLL.ServiceReference1.Pregunta[] E_listarPreguntaXcategoriaResult;
+        public System.Collections.Generic.List<BLL.ServiceReference1.Pregunta> E_listarPreguntaXcategoriaResult;
         
         public E_listarPreguntaXcategoriaResponseBody() {
         }
         
-        public E_listarPreguntaXcategoriaResponseBody(BLL.ServiceReference1.Pregunta[] E_listarPreguntaXcategoriaResult) {
+        public E_listarPreguntaXcategoriaResponseBody(System.Collections.Generic.List<BLL.ServiceReference1.Pregunta> E_listarPreguntaXcategoriaResult) {
             this.E_listarPreguntaXcategoriaResult = E_listarPreguntaXcategoriaResult;
         }
     }
@@ -1712,12 +1712,12 @@ namespace BLL.ServiceReference1 {
     public partial class E_listarTipoEvaluacioneResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public BLL.ServiceReference1.TipoEvaluacion[] E_listarTipoEvaluacioneResult;
+        public System.Collections.Generic.List<BLL.ServiceReference1.TipoEvaluacion> E_listarTipoEvaluacioneResult;
         
         public E_listarTipoEvaluacioneResponseBody() {
         }
         
-        public E_listarTipoEvaluacioneResponseBody(BLL.ServiceReference1.TipoEvaluacion[] E_listarTipoEvaluacioneResult) {
+        public E_listarTipoEvaluacioneResponseBody(System.Collections.Generic.List<BLL.ServiceReference1.TipoEvaluacion> E_listarTipoEvaluacioneResult) {
             this.E_listarTipoEvaluacioneResult = E_listarTipoEvaluacioneResult;
         }
     }
@@ -2205,7 +2205,7 @@ namespace BLL.ServiceReference1 {
             return base.Channel.E_listarPreguntaXcategoria(request);
         }
         
-        public BLL.ServiceReference1.Pregunta[] E_listarPreguntaXcategoria(int id) {
+        public System.Collections.Generic.List<BLL.ServiceReference1.Pregunta> E_listarPreguntaXcategoria(int id) {
             BLL.ServiceReference1.E_listarPreguntaXcategoriaRequest inValue = new BLL.ServiceReference1.E_listarPreguntaXcategoriaRequest();
             inValue.Body = new BLL.ServiceReference1.E_listarPreguntaXcategoriaRequestBody();
             inValue.Body.id = id;
@@ -2253,7 +2253,7 @@ namespace BLL.ServiceReference1 {
             return base.Channel.E_listarTipoEvaluacione(request);
         }
         
-        public BLL.ServiceReference1.TipoEvaluacion[] E_listarTipoEvaluacione() {
+        public System.Collections.Generic.List<BLL.ServiceReference1.TipoEvaluacion> E_listarTipoEvaluacione() {
             BLL.ServiceReference1.E_listarTipoEvaluacioneRequest inValue = new BLL.ServiceReference1.E_listarTipoEvaluacioneRequest();
             inValue.Body = new BLL.ServiceReference1.E_listarTipoEvaluacioneRequestBody();
             BLL.ServiceReference1.E_listarTipoEvaluacioneResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).E_listarTipoEvaluacione(inValue);
