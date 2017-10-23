@@ -134,6 +134,7 @@
       </s:complexType>
       <s:complexType name="capacitacion">
         <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Area" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Fecha" type="s:string" />
@@ -144,6 +145,20 @@
           <s:element minOccurs="0" maxOccurs="1" name="Tipo_cap" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="ShowCapacitacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_cap_edit" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShowCapacitacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ShowCapacitacionResult" type="tns:capacitacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="E_guardarCategoria">
         <s:complexType>
           <s:sequence>
@@ -248,22 +263,22 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="E_listarTipoEvaluacione">
+      <s:element name="listadodeevaluaciones">
         <s:complexType />
       </s:element>
-      <s:element name="E_listarTipoEvaluacioneResponse">
+      <s:element name="listadodeevaluacionesResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="E_listarTipoEvaluacioneResult" type="tns:ArrayOfTipoEvaluacion" />
+            <s:element minOccurs="0" maxOccurs="1" name="listadodeevaluacionesResult" type="tns:ArrayOfTipoEvaluaciones" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ArrayOfTipoEvaluacion">
+      <s:complexType name="ArrayOfTipoEvaluaciones">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="TipoEvaluacion" nillable="true" type="tns:TipoEvaluacion" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TipoEvaluaciones" nillable="true" type="tns:TipoEvaluaciones" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="TipoEvaluacion">
+      <s:complexType name="TipoEvaluaciones">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
@@ -349,6 +364,12 @@
   <wsdl:message name="ListarCapacitacionesSoapOut">
     <wsdl:part name="parameters" element="tns:ListarCapacitacionesResponse" />
   </wsdl:message>
+  <wsdl:message name="ShowCapacitacionSoapIn">
+    <wsdl:part name="parameters" element="tns:ShowCapacitacion" />
+  </wsdl:message>
+  <wsdl:message name="ShowCapacitacionSoapOut">
+    <wsdl:part name="parameters" element="tns:ShowCapacitacionResponse" />
+  </wsdl:message>
   <wsdl:message name="E_guardarCategoriaSoapIn">
     <wsdl:part name="parameters" element="tns:E_guardarCategoria" />
   </wsdl:message>
@@ -385,11 +406,11 @@
   <wsdl:message name="E_listarempresaSoapOut">
     <wsdl:part name="parameters" element="tns:E_listarempresaResponse" />
   </wsdl:message>
-  <wsdl:message name="E_listarTipoEvaluacioneSoapIn">
-    <wsdl:part name="parameters" element="tns:E_listarTipoEvaluacione" />
+  <wsdl:message name="listadodeevaluacionesSoapIn">
+    <wsdl:part name="parameters" element="tns:listadodeevaluaciones" />
   </wsdl:message>
-  <wsdl:message name="E_listarTipoEvaluacioneSoapOut">
-    <wsdl:part name="parameters" element="tns:E_listarTipoEvaluacioneResponse" />
+  <wsdl:message name="listadodeevaluacionesSoapOut">
+    <wsdl:part name="parameters" element="tns:listadodeevaluacionesResponse" />
   </wsdl:message>
   <wsdl:message name="E_agregarEvaluacionSoapIn">
     <wsdl:part name="parameters" element="tns:E_agregarEvaluacion" />
@@ -432,6 +453,10 @@
       <wsdl:input message="tns:ListarCapacitacionesSoapIn" />
       <wsdl:output message="tns:ListarCapacitacionesSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="ShowCapacitacion">
+      <wsdl:input message="tns:ShowCapacitacionSoapIn" />
+      <wsdl:output message="tns:ShowCapacitacionSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="E_guardarCategoria">
       <wsdl:input message="tns:E_guardarCategoriaSoapIn" />
       <wsdl:output message="tns:E_guardarCategoriaSoapOut" />
@@ -456,9 +481,9 @@
       <wsdl:input message="tns:E_listarempresaSoapIn" />
       <wsdl:output message="tns:E_listarempresaSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="E_listarTipoEvaluacione">
-      <wsdl:input message="tns:E_listarTipoEvaluacioneSoapIn" />
-      <wsdl:output message="tns:E_listarTipoEvaluacioneSoapOut" />
+    <wsdl:operation name="listadodeevaluaciones">
+      <wsdl:input message="tns:listadodeevaluacionesSoapIn" />
+      <wsdl:output message="tns:listadodeevaluacionesSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="E_agregarEvaluacion">
       <wsdl:input message="tns:E_agregarEvaluacionSoapIn" />
@@ -534,6 +559,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ShowCapacitacion">
+      <soap:operation soapAction="http://tempuri.org/ShowCapacitacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="E_guardarCategoria">
       <soap:operation soapAction="http://tempuri.org/E_guardarCategoria" style="document" />
       <wsdl:input>
@@ -588,8 +622,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="E_listarTipoEvaluacione">
-      <soap:operation soapAction="http://tempuri.org/E_listarTipoEvaluacione" style="document" />
+    <wsdl:operation name="listadodeevaluaciones">
+      <soap:operation soapAction="http://tempuri.org/listadodeevaluaciones" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -681,6 +715,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ShowCapacitacion">
+      <soap12:operation soapAction="http://tempuri.org/ShowCapacitacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="E_guardarCategoria">
       <soap12:operation soapAction="http://tempuri.org/E_guardarCategoria" style="document" />
       <wsdl:input>
@@ -735,8 +778,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="E_listarTipoEvaluacione">
-      <soap12:operation soapAction="http://tempuri.org/E_listarTipoEvaluacione" style="document" />
+    <wsdl:operation name="listadodeevaluaciones">
+      <soap12:operation soapAction="http://tempuri.org/listadodeevaluaciones" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -35,9 +35,9 @@ namespace BLL
 
         ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
 
-        public List<ServiceReference1.TipoEvaluacion> listadodeEvaluaciones()
+        public List<ServiceReference1.TipoEvaluaciones> listadodeEvaluaciones()
         {
-            return ws.E_listarTipoEvaluacione();
+            return ws.listadodeevaluaciones();
         }
 
 

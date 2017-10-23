@@ -73,6 +73,9 @@
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ArrayOfEmpresa.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.capacitacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.DevuelveTipoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -97,9 +100,6 @@
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.E_listarPreguntaXcategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.E_listarTipoEvaluacioneResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.E_modificarEvaluacionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -112,6 +112,9 @@
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.GuardarCapacitacionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.listadodeevaluacionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.listarAreaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -121,7 +124,10 @@
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.Pregunta.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.TipoEvaluacion.datasource">
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ShowCapacitacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.TipoEvaluaciones.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ValidarResponse.datasource">

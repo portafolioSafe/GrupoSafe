@@ -247,6 +247,9 @@ namespace BLL.ServiceReference1 {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
+        
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -279,6 +282,19 @@ namespace BLL.ServiceReference1 {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public int Id {
             get {
@@ -292,7 +308,7 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
         public string Area {
             get {
                 return this.AreaField;
@@ -305,7 +321,7 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public string Fecha {
             get {
                 return this.FechaField;
@@ -318,7 +334,7 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string Tema {
             get {
                 return this.TemaField;
@@ -331,7 +347,7 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
         public string Expositor {
             get {
                 return this.ExpositorField;
@@ -344,7 +360,7 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
         public int Asistencia {
             get {
                 return this.AsistenciaField;
@@ -357,7 +373,7 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
         public string Rut_empresa {
             get {
                 return this.Rut_empresaField;
@@ -370,7 +386,7 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public string Tipo_cap {
             get {
                 return this.Tipo_capField;
@@ -584,9 +600,9 @@ namespace BLL.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TipoEvaluacion", Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TipoEvaluaciones", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
-    public partial class TipoEvaluacion : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class TipoEvaluaciones : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -711,6 +727,13 @@ namespace BLL.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCapacitaciones", ReplyAction="*")]
         System.Threading.Tasks.Task<BLL.ServiceReference1.ListarCapacitacionesResponse> ListarCapacitacionesAsync(BLL.ServiceReference1.ListarCapacitacionesRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ShowCapacitacionResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ShowCapacitacion", ReplyAction="*")]
+        BLL.ServiceReference1.ShowCapacitacionResponse ShowCapacitacion(BLL.ServiceReference1.ShowCapacitacionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ShowCapacitacion", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ShowCapacitacionResponse> ShowCapacitacionAsync(BLL.ServiceReference1.ShowCapacitacionRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento cat del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_guardarCategoria", ReplyAction="*")]
         BLL.ServiceReference1.E_guardarCategoriaResponse E_guardarCategoria(BLL.ServiceReference1.E_guardarCategoriaRequest request);
@@ -753,12 +776,12 @@ namespace BLL.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listarempresa", ReplyAction="*")]
         System.Threading.Tasks.Task<BLL.ServiceReference1.E_listarempresaResponse> E_listarempresaAsync(BLL.ServiceReference1.E_listarempresaRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento E_listarTipoEvaluacioneResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listarTipoEvaluacione", ReplyAction="*")]
-        BLL.ServiceReference1.E_listarTipoEvaluacioneResponse E_listarTipoEvaluacione(BLL.ServiceReference1.E_listarTipoEvaluacioneRequest request);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento listadodeevaluacionesResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listadodeevaluaciones", ReplyAction="*")]
+        BLL.ServiceReference1.listadodeevaluacionesResponse listadodeevaluaciones(BLL.ServiceReference1.listadodeevaluacionesRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listarTipoEvaluacione", ReplyAction="*")]
-        System.Threading.Tasks.Task<BLL.ServiceReference1.E_listarTipoEvaluacioneResponse> E_listarTipoEvaluacioneAsync(BLL.ServiceReference1.E_listarTipoEvaluacioneRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listadodeevaluaciones", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.listadodeevaluacionesResponse> listadodeevaluacionesAsync(BLL.ServiceReference1.listadodeevaluacionesRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento idE del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_agregarEvaluacion", ReplyAction="*")]
@@ -1263,6 +1286,74 @@ namespace BLL.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ShowCapacitacionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ShowCapacitacion", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ShowCapacitacionRequestBody Body;
+        
+        public ShowCapacitacionRequest() {
+        }
+        
+        public ShowCapacitacionRequest(BLL.ServiceReference1.ShowCapacitacionRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ShowCapacitacionRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id_cap_edit;
+        
+        public ShowCapacitacionRequestBody() {
+        }
+        
+        public ShowCapacitacionRequestBody(int id_cap_edit) {
+            this.id_cap_edit = id_cap_edit;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ShowCapacitacionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ShowCapacitacionResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ShowCapacitacionResponseBody Body;
+        
+        public ShowCapacitacionResponse() {
+        }
+        
+        public ShowCapacitacionResponse(BLL.ServiceReference1.ShowCapacitacionResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ShowCapacitacionResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BLL.ServiceReference1.capacitacion ShowCapacitacionResult;
+        
+        public ShowCapacitacionResponseBody() {
+        }
+        
+        public ShowCapacitacionResponseBody(BLL.ServiceReference1.capacitacion ShowCapacitacionResult) {
+            this.ShowCapacitacionResult = ShowCapacitacionResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class E_guardarCategoriaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="E_guardarCategoria", Namespace="http://tempuri.org/", Order=0)]
@@ -1665,15 +1756,15 @@ namespace BLL.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class E_listarTipoEvaluacioneRequest {
+    public partial class listadodeevaluacionesRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listarTipoEvaluacione", Namespace="http://tempuri.org/", Order=0)]
-        public BLL.ServiceReference1.E_listarTipoEvaluacioneRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listadodeevaluaciones", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.listadodeevaluacionesRequestBody Body;
         
-        public E_listarTipoEvaluacioneRequest() {
+        public listadodeevaluacionesRequest() {
         }
         
-        public E_listarTipoEvaluacioneRequest(BLL.ServiceReference1.E_listarTipoEvaluacioneRequestBody Body) {
+        public listadodeevaluacionesRequest(BLL.ServiceReference1.listadodeevaluacionesRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1682,9 +1773,9 @@ namespace BLL.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class E_listarTipoEvaluacioneRequestBody {
+    public partial class listadodeevaluacionesRequestBody {
         
-        public E_listarTipoEvaluacioneRequestBody() {
+        public listadodeevaluacionesRequestBody() {
         }
     }
     
@@ -1692,15 +1783,15 @@ namespace BLL.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class E_listarTipoEvaluacioneResponse {
+    public partial class listadodeevaluacionesResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listarTipoEvaluacioneResponse", Namespace="http://tempuri.org/", Order=0)]
-        public BLL.ServiceReference1.E_listarTipoEvaluacioneResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listadodeevaluacionesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.listadodeevaluacionesResponseBody Body;
         
-        public E_listarTipoEvaluacioneResponse() {
+        public listadodeevaluacionesResponse() {
         }
         
-        public E_listarTipoEvaluacioneResponse(BLL.ServiceReference1.E_listarTipoEvaluacioneResponseBody Body) {
+        public listadodeevaluacionesResponse(BLL.ServiceReference1.listadodeevaluacionesResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1709,16 +1800,16 @@ namespace BLL.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class E_listarTipoEvaluacioneResponseBody {
+    public partial class listadodeevaluacionesResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public System.Collections.Generic.List<BLL.ServiceReference1.TipoEvaluacion> E_listarTipoEvaluacioneResult;
+        public System.Collections.Generic.List<BLL.ServiceReference1.TipoEvaluaciones> listadodeevaluacionesResult;
         
-        public E_listarTipoEvaluacioneResponseBody() {
+        public listadodeevaluacionesResponseBody() {
         }
         
-        public E_listarTipoEvaluacioneResponseBody(System.Collections.Generic.List<BLL.ServiceReference1.TipoEvaluacion> E_listarTipoEvaluacioneResult) {
-            this.E_listarTipoEvaluacioneResult = E_listarTipoEvaluacioneResult;
+        public listadodeevaluacionesResponseBody(System.Collections.Generic.List<BLL.ServiceReference1.TipoEvaluaciones> listadodeevaluacionesResult) {
+            this.listadodeevaluacionesResult = listadodeevaluacionesResult;
         }
     }
     
@@ -2099,6 +2190,31 @@ namespace BLL.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.ShowCapacitacionResponse BLL.ServiceReference1.wsa1Soap.ShowCapacitacion(BLL.ServiceReference1.ShowCapacitacionRequest request) {
+            return base.Channel.ShowCapacitacion(request);
+        }
+        
+        public BLL.ServiceReference1.capacitacion ShowCapacitacion(int id_cap_edit) {
+            BLL.ServiceReference1.ShowCapacitacionRequest inValue = new BLL.ServiceReference1.ShowCapacitacionRequest();
+            inValue.Body = new BLL.ServiceReference1.ShowCapacitacionRequestBody();
+            inValue.Body.id_cap_edit = id_cap_edit;
+            BLL.ServiceReference1.ShowCapacitacionResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).ShowCapacitacion(inValue);
+            return retVal.Body.ShowCapacitacionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ShowCapacitacionResponse> BLL.ServiceReference1.wsa1Soap.ShowCapacitacionAsync(BLL.ServiceReference1.ShowCapacitacionRequest request) {
+            return base.Channel.ShowCapacitacionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.ShowCapacitacionResponse> ShowCapacitacionAsync(int id_cap_edit) {
+            BLL.ServiceReference1.ShowCapacitacionRequest inValue = new BLL.ServiceReference1.ShowCapacitacionRequest();
+            inValue.Body = new BLL.ServiceReference1.ShowCapacitacionRequestBody();
+            inValue.Body.id_cap_edit = id_cap_edit;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).ShowCapacitacionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         BLL.ServiceReference1.E_guardarCategoriaResponse BLL.ServiceReference1.wsa1Soap.E_guardarCategoria(BLL.ServiceReference1.E_guardarCategoriaRequest request) {
             return base.Channel.E_guardarCategoria(request);
         }
@@ -2249,26 +2365,26 @@ namespace BLL.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        BLL.ServiceReference1.E_listarTipoEvaluacioneResponse BLL.ServiceReference1.wsa1Soap.E_listarTipoEvaluacione(BLL.ServiceReference1.E_listarTipoEvaluacioneRequest request) {
-            return base.Channel.E_listarTipoEvaluacione(request);
+        BLL.ServiceReference1.listadodeevaluacionesResponse BLL.ServiceReference1.wsa1Soap.listadodeevaluaciones(BLL.ServiceReference1.listadodeevaluacionesRequest request) {
+            return base.Channel.listadodeevaluaciones(request);
         }
         
-        public System.Collections.Generic.List<BLL.ServiceReference1.TipoEvaluacion> E_listarTipoEvaluacione() {
-            BLL.ServiceReference1.E_listarTipoEvaluacioneRequest inValue = new BLL.ServiceReference1.E_listarTipoEvaluacioneRequest();
-            inValue.Body = new BLL.ServiceReference1.E_listarTipoEvaluacioneRequestBody();
-            BLL.ServiceReference1.E_listarTipoEvaluacioneResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).E_listarTipoEvaluacione(inValue);
-            return retVal.Body.E_listarTipoEvaluacioneResult;
+        public System.Collections.Generic.List<BLL.ServiceReference1.TipoEvaluaciones> listadodeevaluaciones() {
+            BLL.ServiceReference1.listadodeevaluacionesRequest inValue = new BLL.ServiceReference1.listadodeevaluacionesRequest();
+            inValue.Body = new BLL.ServiceReference1.listadodeevaluacionesRequestBody();
+            BLL.ServiceReference1.listadodeevaluacionesResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).listadodeevaluaciones(inValue);
+            return retVal.Body.listadodeevaluacionesResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<BLL.ServiceReference1.E_listarTipoEvaluacioneResponse> BLL.ServiceReference1.wsa1Soap.E_listarTipoEvaluacioneAsync(BLL.ServiceReference1.E_listarTipoEvaluacioneRequest request) {
-            return base.Channel.E_listarTipoEvaluacioneAsync(request);
+        System.Threading.Tasks.Task<BLL.ServiceReference1.listadodeevaluacionesResponse> BLL.ServiceReference1.wsa1Soap.listadodeevaluacionesAsync(BLL.ServiceReference1.listadodeevaluacionesRequest request) {
+            return base.Channel.listadodeevaluacionesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BLL.ServiceReference1.E_listarTipoEvaluacioneResponse> E_listarTipoEvaluacioneAsync() {
-            BLL.ServiceReference1.E_listarTipoEvaluacioneRequest inValue = new BLL.ServiceReference1.E_listarTipoEvaluacioneRequest();
-            inValue.Body = new BLL.ServiceReference1.E_listarTipoEvaluacioneRequestBody();
-            return ((BLL.ServiceReference1.wsa1Soap)(this)).E_listarTipoEvaluacioneAsync(inValue);
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.listadodeevaluacionesResponse> listadodeevaluacionesAsync() {
+            BLL.ServiceReference1.listadodeevaluacionesRequest inValue = new BLL.ServiceReference1.listadodeevaluacionesRequest();
+            inValue.Body = new BLL.ServiceReference1.listadodeevaluacionesRequestBody();
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).listadodeevaluacionesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
