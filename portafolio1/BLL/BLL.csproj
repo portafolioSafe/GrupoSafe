@@ -45,6 +45,7 @@
     <Compile Include="CategoriaDTO.cs" />
     <Compile Include="DetallePreguntaDTO.cs" />
     <Compile Include="EmpresaDTO.cs" />
+    <Compile Include="EvaluacionDTO.cs" />
     <Compile Include="loginController.cs" />
     <Compile Include="PreguntasDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

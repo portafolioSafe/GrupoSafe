@@ -27,13 +27,13 @@
                 <HeaderStyle BackColor="#337ab7" Font-Bold="True" ForeColor="White" />
                    <Columns>
                 
-                     <asp:BoundField DataField="Id" HeaderText="" ItemStyle-Width="70" />
+                    <asp:BoundField DataField="Id" HeaderText="" ItemStyle-Width="20%"/>
                 
-                      <asp:BoundField DataField="Pregunta"  ItemStyle-Width="250" />
+                      <asp:BoundField DataField="Pregunta"  ItemStyle-Width="40%" />
                 
                  
-                 <asp:TemplateField>
-                  <ItemTemplate>
+                 <asp:TemplateField ItemStyle-Width="40%">
+                  <ItemTemplate >
                 
                          <asp:RadioButton ID="rb_Yes" runat="server" GroupName="GpName" Text="Yes" OnCheckedChanged="rb_Yes_Click" AutoPostBack="true" />
 
