@@ -942,7 +942,7 @@ namespace BLL.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listadodeevaluaciones", ReplyAction="*")]
         System.Threading.Tasks.Task<BLL.ServiceReference1.listadodeevaluacionesResponse> listadodeevaluacionesAsync(BLL.ServiceReference1.listadodeevaluacionesRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento idE del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento obsTec del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_agregarEvaluacion", ReplyAction="*")]
         BLL.ServiceReference1.E_agregarEvaluacionResponse E_agregarEvaluacion(BLL.ServiceReference1.E_agregarEvaluacionRequest request);
         
@@ -2078,38 +2078,38 @@ namespace BLL.ServiceReference1 {
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
     public partial class E_agregarEvaluacionRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string idE;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public int idT;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string rut;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
         public System.DateTime fecha;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
         public string obsTec;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
         public string recIng;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public string estado;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public int idT;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string idE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string rut;
         
         public E_agregarEvaluacionRequestBody() {
         }
         
-        public E_agregarEvaluacionRequestBody(string idE, int idT, string rut, System.DateTime fecha, string obsTec, string recIng, string estado) {
-            this.idE = idE;
-            this.idT = idT;
-            this.rut = rut;
+        public E_agregarEvaluacionRequestBody(System.DateTime fecha, string obsTec, string recIng, string estado, int idT, string idE, string rut) {
             this.fecha = fecha;
             this.obsTec = obsTec;
             this.recIng = recIng;
             this.estado = estado;
+            this.idT = idT;
+            this.idE = idE;
+            this.rut = rut;
         }
     }
     
@@ -2731,16 +2731,16 @@ namespace BLL.ServiceReference1 {
             return base.Channel.E_agregarEvaluacion(request);
         }
         
-        public bool E_agregarEvaluacion(string idE, int idT, string rut, System.DateTime fecha, string obsTec, string recIng, string estado) {
+        public bool E_agregarEvaluacion(System.DateTime fecha, string obsTec, string recIng, string estado, int idT, string idE, string rut) {
             BLL.ServiceReference1.E_agregarEvaluacionRequest inValue = new BLL.ServiceReference1.E_agregarEvaluacionRequest();
             inValue.Body = new BLL.ServiceReference1.E_agregarEvaluacionRequestBody();
-            inValue.Body.idE = idE;
-            inValue.Body.idT = idT;
-            inValue.Body.rut = rut;
             inValue.Body.fecha = fecha;
             inValue.Body.obsTec = obsTec;
             inValue.Body.recIng = recIng;
             inValue.Body.estado = estado;
+            inValue.Body.idT = idT;
+            inValue.Body.idE = idE;
+            inValue.Body.rut = rut;
             BLL.ServiceReference1.E_agregarEvaluacionResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).E_agregarEvaluacion(inValue);
             return retVal.Body.E_agregarEvaluacionResult;
         }
@@ -2750,16 +2750,16 @@ namespace BLL.ServiceReference1 {
             return base.Channel.E_agregarEvaluacionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BLL.ServiceReference1.E_agregarEvaluacionResponse> E_agregarEvaluacionAsync(string idE, int idT, string rut, System.DateTime fecha, string obsTec, string recIng, string estado) {
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.E_agregarEvaluacionResponse> E_agregarEvaluacionAsync(System.DateTime fecha, string obsTec, string recIng, string estado, int idT, string idE, string rut) {
             BLL.ServiceReference1.E_agregarEvaluacionRequest inValue = new BLL.ServiceReference1.E_agregarEvaluacionRequest();
             inValue.Body = new BLL.ServiceReference1.E_agregarEvaluacionRequestBody();
-            inValue.Body.idE = idE;
-            inValue.Body.idT = idT;
-            inValue.Body.rut = rut;
             inValue.Body.fecha = fecha;
             inValue.Body.obsTec = obsTec;
             inValue.Body.recIng = recIng;
             inValue.Body.estado = estado;
+            inValue.Body.idT = idT;
+            inValue.Body.idE = idE;
+            inValue.Body.rut = rut;
             return ((BLL.ServiceReference1.wsa1Soap)(this)).E_agregarEvaluacionAsync(inValue);
         }
         

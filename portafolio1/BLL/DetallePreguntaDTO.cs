@@ -30,7 +30,7 @@ namespace BLL
 
 
 
-        public bool AgregarDetalle(int idE, int idP, string p)
+        public static bool AgregarDetalle(int idE, int idP, string p)
         {
             ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
             return ws.E_agregarDetallePregunta(p,idP,idE);

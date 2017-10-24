@@ -90,6 +90,11 @@ namespace BLL
             return ws.listadoUltimaEvaluacion(rut);
         }
 
+        public static bool AgregarEvaluacion(string empresa, int tipo, string rut, DateTime fecha, string obsT, string recI, string estado)
+        {
+            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
+            return ws.E_agregarEvaluacion(fecha,obsT,recI, estado,tipo,empresa,rut);
+        }
 
     }
 }

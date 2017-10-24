@@ -19,7 +19,10 @@ namespace web
 
              rut = Session["Rut"].ToString();
 
-
+            if (IsPostBack)
+            {
+                Page.SetFocus(TextBox1);
+            }
             if (!IsPostBack)
             {
 
@@ -43,15 +46,12 @@ namespace web
             {
                 BLL.DetallePreguntaDTO de = new BLL.DetallePreguntaDTO();
                 int idPregunta = int.Parse(grid_row.Cells[0].Text);
-                int iDe = 0;
-                foreach (var item in BLL.EvaluacionDTO.ultimaEvaluacionXtecnico(rut))
-                {
-                   iDe = item.Id+1;
-                }
+                
+                
 
                 if (listado.Count == 0)
                 {
-                    de.IdEvaluacion = iDe;
+                    //de.IdEvaluacion = iDe;
                     de.IdPregunta = idPregunta;
                     de.Respuesta = "si";
                     listado.Add(de);
@@ -69,7 +69,7 @@ namespace web
                         {
                             listado.RemoveAt(i);
                             de.IdPregunta = idPregunta;
-                            de.IdEvaluacion = iDe;
+                            //de.IdEvaluacion = iDe;
                             de.Respuesta = "si";
 
 
@@ -78,7 +78,7 @@ namespace web
                         }
                         else
                         {
-                            de.IdEvaluacion = iDe;
+                           // de.IdEvaluacion = iDe;
                             de.IdPregunta = idPregunta;
                             de.Respuesta = "si";
                             listado.Add(de);
@@ -96,6 +96,9 @@ namespace web
 
             }
         }
+
+
+
 
         protected void rb_No_Click(object sender, EventArgs e)
         {
@@ -115,7 +118,7 @@ namespace web
 
                 if (listado.Count == 0)
                 {
-                    de.IdEvaluacion = iDe;
+                    //de.IdEvaluacion = iDe;
                     de.IdPregunta = idPregunta;
                     de.Respuesta = "No";
                     listado.Add(de);
@@ -131,7 +134,7 @@ namespace web
                         {
                             listado.RemoveAt(i);
                             de.IdPregunta = idPregunta;
-                            de.IdEvaluacion = iDe;
+                            //de.IdEvaluacion = iDe;
                             de.Respuesta = "No";
 
                             listado.Add(de);
@@ -140,7 +143,7 @@ namespace web
                         }
                         else
                         {
-                            de.IdEvaluacion = iDe;
+                           // de.IdEvaluacion = iDe;
                             de.IdPregunta = idPregunta;
                             de.Respuesta = "No";
                             listado.Add(de);
@@ -150,6 +153,66 @@ namespace web
 
 
                 }
+
+
+            }
+        }
+
+        protected void rb_Na_Click(object sender, EventArgs e)
+        {
+
+            RadioButton rb_Yes = (RadioButton)sender;
+            GridViewRow grid_row = (GridViewRow)rb_Yes.NamingContainer;
+            if (((RadioButton)grid_row.FindControl("rb_Na")).Checked == true)
+            {
+                BLL.DetallePreguntaDTO de = new BLL.DetallePreguntaDTO();
+                int idPregunta = int.Parse(grid_row.Cells[0].Text);
+
+
+
+                if (listado.Count == 0)
+                {
+                    //de.IdEvaluacion = iDe;
+                    de.IdPregunta = idPregunta;
+                    de.Respuesta = "Na";
+                    listado.Add(de);
+
+                }
+                else
+                {
+
+
+                    for (int i = 0; i < listado.Count; i++)
+                    {
+
+
+                        if (listado.ElementAtOrDefault(i).IdPregunta == idPregunta)
+                        {
+                            listado.RemoveAt(i);
+                            de.IdPregunta = idPregunta;
+                            //de.IdEvaluacion = iDe;
+                            de.Respuesta = "Na";
+
+
+                            listado.Add(de);
+                            break;
+                        }
+                        else
+                        {
+                            // de.IdEvaluacion = iDe;
+                            de.IdPregunta = idPregunta;
+                            de.Respuesta = "Na";
+                            listado.Add(de);
+                            break;
+                        }
+                    }
+
+
+                }
+
+
+
+
 
 
             }
@@ -185,14 +248,37 @@ namespace web
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
-
-
-            foreach (var item in listado)
+            string empresa = DropDownList1.SelectedItem.Value;
+            int tipo_evaluacion = int.Parse(DropDownList2.SelectedItem.Value);
+            DateTime fecha = DateTime.Now;
+            string obst = TextBox1.Text;
+            string obsI = "";
+            string estado = "Enviado";
+            bool res =BLL.EvaluacionDTO.AgregarEvaluacion(empresa,tipo_evaluacion,rut,fecha,obst,obsI,estado);
+            if (res)
             {
-                System.Windows.Forms.MessageBox.Show("Pregunta y respuesta" + item.IdPregunta + "Respuesta : "+ item.Respuesta , "escogio si", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                int ide = 0;
+                foreach (var item in BLL.EvaluacionDTO.ultimaEvaluacionXtecnico(rut))
+                {
+                   ide = item.Id;
+                }
+                BLL.DetallePreguntaDTO det = new BLL.DetallePreguntaDTO();
+                foreach (var item in listado)
+                {
+                    
+                    //det.IdEvaluacion = ide;
+                    //det.IdPregunta = item.IdPregunta;
+                    //det.Respuesta = item.Respuesta;
+                    BLL.DetallePreguntaDTO.AgregarDetalle(ide,item.IdPregunta,item.Respuesta);
+                }
 
+                // se muestra algo 
             }
+            else
+            {
+                // error al agregar 
+            }
+            
 
             listado.Clear();
 

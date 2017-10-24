@@ -405,9 +405,9 @@ namespace WebService
         }
         //evaluacion
         [WebMethod]
-        public bool E_agregarEvaluacion(string idE, int idT, string rut, DateTime fecha, string obsTec, string recIng, string estado)
+        public bool E_agregarEvaluacion(DateTime fecha, string obsTec, string recIng, string estado, int idT, string idE, string rut)
         {
-            return Datos.DatosEvaluaciones.AgregarEvaluaciones(idE,idT,rut,fecha,obsTec,recIng,estado);
+            return Datos.DatosEvaluaciones.AgregarEvaluaciones(fecha,obsTec,recIng,estado,idT,idE,rut);
         }
 
         [WebMethod]
