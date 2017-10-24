@@ -8,13 +8,17 @@
   <div class="panel-body">
        <div class="form-group">
              <label for="em">Empresa</label>
-             <asp:DropDownList ID="DropDownList1" class="form-control" runat="server" DataSourceID="ObjectDataSource1" DataTextField="nombre_empresa" DataValueField="rut_empresa"></asp:DropDownList>
+             <asp:DropDownList ID="DropDownList1" class="form-control" runat="server" DataSourceID="ObjectDataSource1" DataTextField="nombre_empresa" DataValueField="rut_empresa">
+                 <asp:ListItem>Seleccione empresa</asp:ListItem>
+             </asp:DropDownList>
       <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="ListadoEmpresas" TypeName="BLL.EmpresaDTO"></asp:ObjectDataSource>
        
        </div>
        <div class="form-group">
              <label for="em">Tipo evaluación</label>
-             <asp:DropDownList ID="DropDownList2" class="form-control" runat="server" AutoPostBack="True" DataSourceID="ObjectDataSource2" DataTextField="Nombre" DataValueField="Id"></asp:DropDownList>
+             <asp:DropDownList ID="DropDownList2" class="form-control" runat="server" AutoPostBack="True" DataSourceID="ObjectDataSource2" DataTextField="Nombre" DataValueField="Id">
+                 <asp:ListItem>Seleccione una evaluacion</asp:ListItem>
+             </asp:DropDownList>
              <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="listadodeEvaluaciones" TypeName="BLL.TipoEvaluacionDTO"></asp:ObjectDataSource>
            
             
@@ -23,7 +27,7 @@
       <div>
      
        
-            <asp:GridView ID="Grd" runat="server"  CssClass="table table-bordered bs-table"  EmptyDataText="There are no data records to display." AutoGenerateColumns="False" DataSourceID="ObjectDataSource3" > 
+            <asp:GridView ID="Grd" runat="server"  CssClass="table table-bordered bs-table"  EmptyDataText="No hay preguntas asociadas al tipo de evaluacion." AutoGenerateColumns="False" DataSourceID="ObjectDataSource3" > 
                 <HeaderStyle BackColor="#337ab7" Font-Bold="True" ForeColor="White" />
                    <Columns>
                 

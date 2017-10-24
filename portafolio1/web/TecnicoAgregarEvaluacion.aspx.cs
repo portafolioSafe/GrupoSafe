@@ -13,9 +13,12 @@ namespace web
     {
         static List<BLL.DetallePreguntaDTO> listado = new List<BLL.DetallePreguntaDTO>();
         static List<BLL.DetallePreguntaDTO> listado2 = new List<BLL.DetallePreguntaDTO>();
-
+        static string rut = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+
+             rut = Session["Rut"].ToString();
+
 
             if (!IsPostBack)
             {
@@ -28,7 +31,6 @@ namespace web
 
         }
 
-       
 
 
 
@@ -39,18 +41,14 @@ namespace web
             GridViewRow grid_row = (GridViewRow)rb_Yes.NamingContainer;
             if (((RadioButton)grid_row.FindControl("rb_Yes")).Checked == true)
             {
-                //  System.Windows.Forms.MessageBox.Show("Pregunta Guardada con exito" + grid_row.Cells[1].Text, "escogio si", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
                 BLL.DetallePreguntaDTO de = new BLL.DetallePreguntaDTO();
                 int idPregunta = int.Parse(grid_row.Cells[0].Text);
                 int iDe = 0;
-                foreach (var item in BLL.EvaluacionDTO.ultimaEvaluacionXtecnico("18944691"))
+                foreach (var item in BLL.EvaluacionDTO.ultimaEvaluacionXtecnico(rut))
                 {
                    iDe = item.Id+1;
                 }
 
-                System.Windows.Forms.MessageBox.Show("id Pregunta a agregar" + idPregunta, "escogio si", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
-                System.Windows.Forms.MessageBox.Show("Evaluacion a agregar" + iDe, "escogio si", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
-                System.Windows.Forms.MessageBox.Show("respuesta" + "Si", "escogio si", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
                 if (listado.Count == 0)
                 {
                     de.IdEvaluacion = iDe;
@@ -74,7 +72,6 @@ namespace web
                             de.IdEvaluacion = iDe;
                             de.Respuesta = "si";
 
-                            System.Windows.Forms.MessageBox.Show("Id pregunta "+idPregunta + "Respuesta "+ "Si" + listado.Count, "Pregunta con valor ", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
 
                             listado.Add(de);
                             break;
@@ -109,14 +106,12 @@ namespace web
                 BLL.DetallePreguntaDTO de = new BLL.DetallePreguntaDTO();
                 int idPregunta = int.Parse(grid_row.Cells[0].Text);
                 int iDe = 0;
-                foreach (var item in BLL.EvaluacionDTO.ultimaEvaluacionXtecnico("18944691"))
+                foreach (var item in BLL.EvaluacionDTO.ultimaEvaluacionXtecnico(rut))
                 {
                     iDe = item.Id + 1;
                 }
 
-                System.Windows.Forms.MessageBox.Show("id Pregunta a agregar" + idPregunta, "escogio si", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
-                System.Windows.Forms.MessageBox.Show("Evaluacion a agregar" + iDe, "escogio si", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
-                System.Windows.Forms.MessageBox.Show("respuesta" + "No", "escogio si", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+               
 
                 if (listado.Count == 0)
                 {
@@ -128,9 +123,7 @@ namespace web
                 }
                 else
                 {
-                    System.Windows.Forms.MessageBox.Show("Pregunta Guardada con exito" + listado.Count, "escogio si", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
-
-
+                    
                     for (int i = 0; i < listado.Count; i++)
                     {
                         
@@ -140,7 +133,6 @@ namespace web
                             de.IdPregunta = idPregunta;
                             de.IdEvaluacion = iDe;
                             de.Respuesta = "No";
-                            System.Windows.Forms.MessageBox.Show("Id pregunta " + idPregunta + "Respuesta " + "Si" + listado.Count, "Pregunta con valor ", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
 
                             listado.Add(de);
                             break;
