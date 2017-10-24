@@ -15,13 +15,7 @@ namespace web
 
             if (!IsPostBack)
             {
-                //BLL.TipoEvaluacionDTO t = new BLL.TipoEvaluacionDTO();
-
-                //foreach (var item in t.listadodeEvaluaciones())
-                //{
-                //    ListItem item2 = new ListItem(item.Nombre,item.Id.ToString());
-                //    DropDownList2.Items.Add(item2);
-                //}
+                
 
 
              
@@ -38,8 +32,10 @@ namespace web
             GridViewRow grid_row = (GridViewRow)rb_Yes.NamingContainer;
             if (((RadioButton)grid_row.FindControl("rb_Yes")).Checked == true)
             {
-              //  System.Windows.Forms.MessageBox.Show("Pregunta Guardada con exito" + grid_row.Cells[1].Text, "escogio si", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
-                
+                //  System.Windows.Forms.MessageBox.Show("Pregunta Guardada con exito" + grid_row.Cells[1].Text, "escogio si", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                BLL.DetallePreguntaDTO de = new BLL.DetallePreguntaDTO();
+
+
             }
         }
 

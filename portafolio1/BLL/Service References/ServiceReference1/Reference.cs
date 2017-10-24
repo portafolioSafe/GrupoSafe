@@ -674,6 +674,158 @@ namespace BLL.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Evaluacion", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Evaluacion : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        private System.DateTime FechaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ObstecField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ObsingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
+        
+        private int Id_tipoField;
+        
+        private int Id_empresaField;
+        
+        private int Id_usuarioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public System.DateTime Fecha {
+            get {
+                return this.FechaField;
+            }
+            set {
+                if ((this.FechaField.Equals(value) != true)) {
+                    this.FechaField = value;
+                    this.RaisePropertyChanged("Fecha");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Obstec {
+            get {
+                return this.ObstecField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ObstecField, value) != true)) {
+                    this.ObstecField = value;
+                    this.RaisePropertyChanged("Obstec");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Obsing {
+            get {
+                return this.ObsingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ObsingField, value) != true)) {
+                    this.ObsingField = value;
+                    this.RaisePropertyChanged("Obsing");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public int Id_tipo {
+            get {
+                return this.Id_tipoField;
+            }
+            set {
+                if ((this.Id_tipoField.Equals(value) != true)) {
+                    this.Id_tipoField = value;
+                    this.RaisePropertyChanged("Id_tipo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public int Id_empresa {
+            get {
+                return this.Id_empresaField;
+            }
+            set {
+                if ((this.Id_empresaField.Equals(value) != true)) {
+                    this.Id_empresaField = value;
+                    this.RaisePropertyChanged("Id_empresa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public int Id_usuario {
+            get {
+                return this.Id_usuarioField;
+            }
+            set {
+                if ((this.Id_usuarioField.Equals(value) != true)) {
+                    this.Id_usuarioField = value;
+                    this.RaisePropertyChanged("Id_usuario");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.wsa1Soap")]
     public interface wsa1Soap {
@@ -803,6 +955,13 @@ namespace BLL.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_modificarEvaluacion", ReplyAction="*")]
         System.Threading.Tasks.Task<BLL.ServiceReference1.E_modificarEvaluacionResponse> E_modificarEvaluacionAsync(BLL.ServiceReference1.E_modificarEvaluacionRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listadoUltimaEvaluacion", ReplyAction="*")]
+        BLL.ServiceReference1.listadoUltimaEvaluacionResponse listadoUltimaEvaluacion(BLL.ServiceReference1.listadoUltimaEvaluacionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listadoUltimaEvaluacion", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.listadoUltimaEvaluacionResponse> listadoUltimaEvaluacionAsync(BLL.ServiceReference1.listadoUltimaEvaluacionRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2060,6 +2219,74 @@ namespace BLL.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listadoUltimaEvaluacionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listadoUltimaEvaluacion", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.listadoUltimaEvaluacionRequestBody Body;
+        
+        public listadoUltimaEvaluacionRequest() {
+        }
+        
+        public listadoUltimaEvaluacionRequest(BLL.ServiceReference1.listadoUltimaEvaluacionRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class listadoUltimaEvaluacionRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string rut;
+        
+        public listadoUltimaEvaluacionRequestBody() {
+        }
+        
+        public listadoUltimaEvaluacionRequestBody(string rut) {
+            this.rut = rut;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listadoUltimaEvaluacionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listadoUltimaEvaluacionResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.listadoUltimaEvaluacionResponseBody Body;
+        
+        public listadoUltimaEvaluacionResponse() {
+        }
+        
+        public listadoUltimaEvaluacionResponse(BLL.ServiceReference1.listadoUltimaEvaluacionResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class listadoUltimaEvaluacionResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Collections.Generic.List<BLL.ServiceReference1.Evaluacion> listadoUltimaEvaluacionResult;
+        
+        public listadoUltimaEvaluacionResponseBody() {
+        }
+        
+        public listadoUltimaEvaluacionResponseBody(System.Collections.Generic.List<BLL.ServiceReference1.Evaluacion> listadoUltimaEvaluacionResult) {
+            this.listadoUltimaEvaluacionResult = listadoUltimaEvaluacionResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface wsa1SoapChannel : BLL.ServiceReference1.wsa1Soap, System.ServiceModel.IClientChannel {
     }
@@ -2561,6 +2788,31 @@ namespace BLL.ServiceReference1 {
             inValue.Body.id = id;
             inValue.Body.p = p;
             return ((BLL.ServiceReference1.wsa1Soap)(this)).E_modificarEvaluacionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.listadoUltimaEvaluacionResponse BLL.ServiceReference1.wsa1Soap.listadoUltimaEvaluacion(BLL.ServiceReference1.listadoUltimaEvaluacionRequest request) {
+            return base.Channel.listadoUltimaEvaluacion(request);
+        }
+        
+        public System.Collections.Generic.List<BLL.ServiceReference1.Evaluacion> listadoUltimaEvaluacion(string rut) {
+            BLL.ServiceReference1.listadoUltimaEvaluacionRequest inValue = new BLL.ServiceReference1.listadoUltimaEvaluacionRequest();
+            inValue.Body = new BLL.ServiceReference1.listadoUltimaEvaluacionRequestBody();
+            inValue.Body.rut = rut;
+            BLL.ServiceReference1.listadoUltimaEvaluacionResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).listadoUltimaEvaluacion(inValue);
+            return retVal.Body.listadoUltimaEvaluacionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.listadoUltimaEvaluacionResponse> BLL.ServiceReference1.wsa1Soap.listadoUltimaEvaluacionAsync(BLL.ServiceReference1.listadoUltimaEvaluacionRequest request) {
+            return base.Channel.listadoUltimaEvaluacionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.listadoUltimaEvaluacionResponse> listadoUltimaEvaluacionAsync(string rut) {
+            BLL.ServiceReference1.listadoUltimaEvaluacionRequest inValue = new BLL.ServiceReference1.listadoUltimaEvaluacionRequest();
+            inValue.Body = new BLL.ServiceReference1.listadoUltimaEvaluacionRequestBody();
+            inValue.Body.rut = rut;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).listadoUltimaEvaluacionAsync(inValue);
         }
     }
 }

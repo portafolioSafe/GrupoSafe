@@ -336,6 +336,37 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="listadoUltimaEvaluacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rut" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listadoUltimaEvaluacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listadoUltimaEvaluacionResult" type="tns:ArrayOfEvaluacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEvaluacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Evaluacion" nillable="true" type="tns:Evaluacion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Evaluacion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Obstec" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Obsing" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_tipo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_empresa" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_usuario" type="s:int" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="ValidarSoapIn">
@@ -446,6 +477,12 @@
   <wsdl:message name="E_modificarEvaluacionSoapOut">
     <wsdl:part name="parameters" element="tns:E_modificarEvaluacionResponse" />
   </wsdl:message>
+  <wsdl:message name="listadoUltimaEvaluacionSoapIn">
+    <wsdl:part name="parameters" element="tns:listadoUltimaEvaluacion" />
+  </wsdl:message>
+  <wsdl:message name="listadoUltimaEvaluacionSoapOut">
+    <wsdl:part name="parameters" element="tns:listadoUltimaEvaluacionResponse" />
+  </wsdl:message>
   <wsdl:portType name="wsa1Soap">
     <wsdl:operation name="Validar">
       <wsdl:input message="tns:ValidarSoapIn" />
@@ -518,6 +555,10 @@
     <wsdl:operation name="E_modificarEvaluacion">
       <wsdl:input message="tns:E_modificarEvaluacionSoapIn" />
       <wsdl:output message="tns:E_modificarEvaluacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listadoUltimaEvaluacion">
+      <wsdl:input message="tns:listadoUltimaEvaluacionSoapIn" />
+      <wsdl:output message="tns:listadoUltimaEvaluacionSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="wsa1Soap" type="tns:wsa1Soap">
@@ -684,6 +725,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="listadoUltimaEvaluacion">
+      <soap:operation soapAction="http://tempuri.org/listadoUltimaEvaluacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="wsa1Soap12" type="tns:wsa1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -842,6 +892,15 @@
     </wsdl:operation>
     <wsdl:operation name="E_modificarEvaluacion">
       <soap12:operation soapAction="http://tempuri.org/E_modificarEvaluacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listadoUltimaEvaluacion">
+      <soap12:operation soapAction="http://tempuri.org/listadoUltimaEvaluacion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
