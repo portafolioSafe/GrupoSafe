@@ -416,6 +416,12 @@ namespace WebService
             return Datos.DatosEvaluaciones.ModificacionIngeniero(id,p);
         }
 
+        [WebMethod]
+        public List<ClassLibrary1.Evaluacion> listadoUltimaEvaluacion(string rut)
+        {
+            return Datos.DatosEvaluaciones.idultimaEvaluacion(rut);
+        }
+
 
 
     }

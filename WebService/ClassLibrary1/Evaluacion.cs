@@ -65,6 +65,11 @@ namespace ClassLibrary1
             set { id_usuario = value; }
         }
 
+        public Evaluacion()
+        {
+
+        }
+
         public Evaluacion(int id, DateTime fecha, string obstec, string obsing, string estado, int id_tipo, int id_empresa, int id_usuario)
         {
             this.Id = id;

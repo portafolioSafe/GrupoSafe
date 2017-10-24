@@ -75,6 +75,45 @@ namespace Datos
 
         }
 
+        public static List<Evaluacion> idultimaEvaluacion(string rut)
+        {
+            DatosConexion c = new DatosConexion();
+            using (OracleConnection conn = c.Connect())
+            {
+                List<Evaluacion> listado = new List<Evaluacion>();
+                OracleCommand oracmd = new OracleCommand();
+                oracmd.Parameters.Add(new OracleParameter("p_usuario", rut));
+                oracmd.Parameters.Add("listarEV", OracleDbType.RefCursor, ParameterDirection.Output);
+                oracmd.CommandText = "PKG_EVALUACION.Pro_UltimaEvaluacione";
+                oracmd.CommandType = CommandType.StoredProcedure;
+                oracmd.Connection = conn;
+                OracleDataAdapter da = new OracleDataAdapter(oracmd);
+                DataSet ds = new DataSet();
+                try
+                {
+                    conn.Open();
+                    da.Fill(ds);
+                    OracleDataReader dr = oracmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        Evaluacion ev = new Evaluacion();
+                        ev.Id = int.Parse(dr["ID_EVALUACION"].ToString());
+                        
+
+                        listado.Add(ev);
+                    }
+
+                    conn.Close();
+                    return listado;
+                }
+                catch (Exception EX)
+                {
+
+                    throw EX;
+                }
+            }
+
+        }
 
     }
 }
