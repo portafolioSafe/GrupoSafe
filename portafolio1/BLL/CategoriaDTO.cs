@@ -38,15 +38,25 @@ namespace BLL
         public string Estado { get => estado; set => estado = value; }
         public int Id { get => id; set => id = value; }
 
-        public List<ServiceReference1.categoria> listarCategoria()
+
+
+
+
+        public static List<ServiceReference1.categoria> listarCategoria()
         {
-            ServiceReference1.categoria cat = new ServiceReference1.categoria();
+            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
             return ws.E_listadoCategoria();
         }
 
         public bool AgregarCategoria(int id, string nombre)
         {
             return ws.E_guardarCategoria(nombre, id);
+        }
+
+        public static List<ServiceReference1.categoria> ListarXtipo(int idT)
+        {
+            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
+            return ws.E_listarCategoriasXtipo(idT);
         }
 
 

@@ -21,7 +21,10 @@ namespace BLL
             this.Estado = estado;
             this.Id_cat = id_cat;
         }
+        public PreguntasDTO()
+        {
 
+        }
         public int Id { get => id; set => id = value; }
         public string Pregunta { get => pregunta; set => pregunta = value; }
         public string Estado { get => estado; set => estado = value; }
@@ -43,12 +46,19 @@ namespace BLL
             }
         }
 
-        public static List<ServiceReference1.Pregunta> lisatopreguntas(int id)
+        ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
+
+        public  List<ServiceReference1.Pregunta> lisatopreguntas(int id)
         {
-            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
+            
             return ws.E_listarPreguntaXcategoria(id);
         }
 
+        public static List<ServiceReference1.Pregunta> ListarXcategoria(int id)
+        {
+           ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
+            return ws.E_listarPreguntaXcategoria(id);
+        }
 
 
     }

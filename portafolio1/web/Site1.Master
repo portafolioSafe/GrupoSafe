@@ -55,7 +55,7 @@
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Evaluaciones <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
                   <li><a href="TecnicoListEv.aspx">Listar evaluaciones</a></li>
-	            <li><a href="EvaluacionAdd.aspx">Nueva evaluación</a></li>
+	            <li><a href="TecnicoAgregarEvaluacion.aspx">Nueva evaluación</a></li>
 
 	            
 	          </ul>
