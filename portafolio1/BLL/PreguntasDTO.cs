@@ -6,17 +6,13 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    class PreguntasDTO
+    public class PreguntasDTO
     {
+
         private int id;
         private string pregunta;
         private string estado;
         private int id_cat;
-
-        public PreguntasDTO()
-        {
-
-        }
 
         public PreguntasDTO(int id, string pregunta, string estado, int id_cat)
         {
@@ -31,12 +27,27 @@ namespace BLL
         public string Estado { get => estado; set => estado = value; }
         public int Id_cat { get => id_cat; set => id_cat = value; }
 
+      
+        public static bool AgregarPregunta(int id, string pregunta)
+        {
+            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
 
 
-        //public bool AgregarPregunta()
-        //{
+            if (ws.E_agregarPregunta(id,pregunta))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
-        //}
+        public static List<ServiceReference1.Pregunta> lisatopreguntas(int id)
+        {
+            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
+            return ws.E_listarPreguntaXcategoria(id);
+        }
 
 
 

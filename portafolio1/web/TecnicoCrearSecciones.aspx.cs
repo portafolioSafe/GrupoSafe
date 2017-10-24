@@ -13,7 +13,7 @@ namespace web
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            GridView1.DataBind();
+           // GridView1.DataBind();
         }
 
 
@@ -21,8 +21,8 @@ namespace web
         {
             string pregunta = TextBox1.Text;
             int id = int.Parse(DropDownList1.SelectedItem.Value);
-            bool resp = true;
-            GridView1.DataBind();
+            bool resp = BLL.PreguntasDTO.AgregarPregunta(id,pregunta);
+           // GridView1.DataBind();
             if (resp)
             {
 

@@ -17,9 +17,9 @@
   
       
       <h4 style="text-align:center;">Seleccione categoria</h4>
-      &nbsp;<asp:DropDownList ID="DropDownList1" runat="server" CssClass="auto-style1" Height="30px" Width="222px" DataSourceID="ObjectDataSource2" DataTextField="nombre" DataValueField="id" AutoPostBack="True">
+      &nbsp;<asp:DropDownList ID="DropDownList1" runat="server" CssClass="auto-style1" Height="30px" Width="222px" DataSourceID="ObjectDataSource2" DataTextField="Nombre" DataValueField="Id" AutoPostBack="True">
           </asp:DropDownList>
-      <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="ListarCategoria" TypeName="BLL.DTOCategoria"></asp:ObjectDataSource>
+      <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="listarCategoria" TypeName="BLL.CategoriaDTO"></asp:ObjectDataSource>
       <br />
       <h4 style="text-align:center">Agregar pregunta </h4>
 &nbsp;
@@ -27,27 +27,29 @@
         <asp:Button ID="Button1" runat="server" Text="Agregar" Width="86px" OnClick="Button1_Click" />
 
        <h4 style="text-align:center;">Listado de preguntas poractegoria</h4>
-
-      <asp:GridView ID="GridView1" runat="server" CssClass="table table-bordered bs-table" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
-          <HeaderStyle BackColor="#337ab7" Font-Bold="True" ForeColor="White" />
-          <Columns>
-              <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" />
-              <asp:BoundField DataField="pregunta" HeaderText="pregunta" SortExpression="pregunta" />
-              <asp:BoundField DataField="estado" HeaderText="estado" SortExpression="estado" />
-          </Columns>
-      </asp:GridView>
-
-
-     
-      
+      <div>
+          <asp:GridView ID="GridView1" runat="server" CssClass="table table-bordered bs-table" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
+               <HeaderStyle BackColor="#337ab7" Font-Bold="True" ForeColor="White" />
+              <Columns>
+                  <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
+                  <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
+                  <asp:BoundField DataField="Pregunta1" HeaderText="Pregunta" SortExpression="Pregunta1" />
+              </Columns>
+          </asp:GridView>
 
 
-     
-      <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="lisatopreguntas" TypeName="BLL.DTOPreguntas">
-          <SelectParameters>
-              <asp:ControlParameter ControlID="DropDownList1" DefaultValue="" Name="id" PropertyName="SelectedValue" Type="Int32" />
-          </SelectParameters>
-      </asp:ObjectDataSource>
+
+
+          <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="lisatopreguntas" TypeName="BLL.PreguntasDTO">
+              <SelectParameters>
+                  <asp:ControlParameter ControlID="DropDownList1" DefaultValue="1" Name="id" PropertyName="SelectedValue" Type="Int32" />
+              </SelectParameters>
+          </asp:ObjectDataSource>
+
+
+
+
+      </div>
 
 
      
