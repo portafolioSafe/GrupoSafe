@@ -30,10 +30,10 @@ namespace BLL.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string rut_empresaField;
+        private string Rut_empresaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nombre_empresaField;
+        private string Nombre_empresaField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -46,27 +46,27 @@ namespace BLL.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string rut_empresa {
+        public string Rut_empresa {
             get {
-                return this.rut_empresaField;
+                return this.Rut_empresaField;
             }
             set {
-                if ((object.ReferenceEquals(this.rut_empresaField, value) != true)) {
-                    this.rut_empresaField = value;
-                    this.RaisePropertyChanged("rut_empresa");
+                if ((object.ReferenceEquals(this.Rut_empresaField, value) != true)) {
+                    this.Rut_empresaField = value;
+                    this.RaisePropertyChanged("Rut_empresa");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string nombre_empresa {
+        public string Nombre_empresa {
             get {
-                return this.nombre_empresaField;
+                return this.Nombre_empresaField;
             }
             set {
-                if ((object.ReferenceEquals(this.nombre_empresaField, value) != true)) {
-                    this.nombre_empresaField = value;
-                    this.RaisePropertyChanged("nombre_empresa");
+                if ((object.ReferenceEquals(this.Nombre_empresaField, value) != true)) {
+                    this.Nombre_empresaField = value;
+                    this.RaisePropertyChanged("Nombre_empresa");
                 }
             }
         }
@@ -164,13 +164,13 @@ namespace BLL.ServiceReference1 {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        private int idField;
+        private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nombre_areaField;
+        private string Nombre_areaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string estadoField;
+        private string EstadoField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -183,40 +183,40 @@ namespace BLL.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int id {
+        public int Id {
             get {
-                return this.idField;
+                return this.IdField;
             }
             set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string nombre_area {
+        public string Nombre_area {
             get {
-                return this.nombre_areaField;
+                return this.Nombre_areaField;
             }
             set {
-                if ((object.ReferenceEquals(this.nombre_areaField, value) != true)) {
-                    this.nombre_areaField = value;
-                    this.RaisePropertyChanged("nombre_area");
+                if ((object.ReferenceEquals(this.Nombre_areaField, value) != true)) {
+                    this.Nombre_areaField = value;
+                    this.RaisePropertyChanged("Nombre_area");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string estado {
+        public string Estado {
             get {
-                return this.estadoField;
+                return this.EstadoField;
             }
             set {
-                if ((object.ReferenceEquals(this.estadoField, value) != true)) {
-                    this.estadoField = value;
-                    this.RaisePropertyChanged("estado");
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
                 }
             }
         }
@@ -246,6 +246,9 @@ namespace BLL.ServiceReference1 {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
         
         private int IdField;
         
@@ -279,6 +282,19 @@ namespace BLL.ServiceReference1 {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public int Id {
             get {
@@ -292,7 +308,7 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
         public string Area {
             get {
                 return this.AreaField;
@@ -305,7 +321,7 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
         public string Fecha {
             get {
                 return this.FechaField;
@@ -318,7 +334,7 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string Tema {
             get {
                 return this.TemaField;
@@ -331,7 +347,7 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
         public string Expositor {
             get {
                 return this.ExpositorField;
@@ -344,7 +360,7 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
         public int Asistencia {
             get {
                 return this.AsistenciaField;
@@ -357,7 +373,7 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
         public string Rut_empresa {
             get {
                 return this.Rut_empresaField;
@@ -370,7 +386,7 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public string Tipo_cap {
             get {
                 return this.Tipo_capField;
@@ -409,15 +425,15 @@ namespace BLL.ServiceReference1 {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NombreField;
+        private int IdTipoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EstadoField;
         
-        private int IdTipoField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreField;
+        
+        private int IdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -430,32 +446,19 @@ namespace BLL.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Id {
+        public int IdTipo {
             get {
-                return this.IdField;
+                return this.IdTipoField;
             }
             set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
+                if ((this.IdTipoField.Equals(value) != true)) {
+                    this.IdTipoField = value;
+                    this.RaisePropertyChanged("IdTipo");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Nombre {
-            get {
-                return this.NombreField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
-                    this.NombreField = value;
-                    this.RaisePropertyChanged("Nombre");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
         public string Estado {
             get {
                 return this.EstadoField;
@@ -468,15 +471,28 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int IdTipo {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Nombre {
             get {
-                return this.IdTipoField;
+                return this.NombreField;
             }
             set {
-                if ((this.IdTipoField.Equals(value) != true)) {
-                    this.IdTipoField = value;
-                    this.RaisePropertyChanged("IdTipo");
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
@@ -500,15 +516,15 @@ namespace BLL.ServiceReference1 {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Pregunta1Field;
+        private int Cat_idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EstadoField;
         
-        private int Cat_idField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Pregunta1Field;
+        
+        private int IdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -521,14 +537,27 @@ namespace BLL.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Id {
+        public int Cat_id {
             get {
-                return this.IdField;
+                return this.Cat_idField;
             }
             set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
+                if ((this.Cat_idField.Equals(value) != true)) {
+                    this.Cat_idField = value;
+                    this.RaisePropertyChanged("Cat_id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
                 }
             }
         }
@@ -546,28 +575,15 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string Estado {
-            get {
-                return this.EstadoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
-                    this.EstadoField = value;
-                    this.RaisePropertyChanged("Estado");
-                }
-            }
-        }
-        
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int Cat_id {
+        public int Id {
             get {
-                return this.Cat_idField;
+                return this.IdField;
             }
             set {
-                if ((this.Cat_idField.Equals(value) != true)) {
-                    this.Cat_idField = value;
-                    this.RaisePropertyChanged("Cat_id");
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
@@ -591,13 +607,13 @@ namespace BLL.ServiceReference1 {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        private int IdField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NombreField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EstadoField;
+        private int IdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -609,15 +625,15 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Id {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Estado {
             get {
-                return this.IdField;
+                return this.EstadoField;
             }
             set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
                 }
             }
         }
@@ -635,15 +651,15 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string Estado {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int Id {
             get {
-                return this.EstadoField;
+                return this.IdField;
             }
             set {
-                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
-                    this.EstadoField = value;
-                    this.RaisePropertyChanged("Estado");
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
@@ -697,6 +713,13 @@ namespace BLL.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GuardarCapacitacion", ReplyAction="*")]
         System.Threading.Tasks.Task<BLL.ServiceReference1.GuardarCapacitacionResponse> GuardarCapacitacionAsync(BLL.ServiceReference1.GuardarCapacitacionRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento area del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/editarCApacitacion", ReplyAction="*")]
+        BLL.ServiceReference1.editarCApacitacionResponse editarCApacitacion(BLL.ServiceReference1.editarCApacitacionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/editarCApacitacion", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.editarCApacitacionResponse> editarCApacitacionAsync(BLL.ServiceReference1.editarCApacitacionRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento listarAreaResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listarArea", ReplyAction="*")]
         BLL.ServiceReference1.listarAreaResponse listarArea(BLL.ServiceReference1.listarAreaRequest request);
@@ -710,6 +733,13 @@ namespace BLL.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCapacitaciones", ReplyAction="*")]
         System.Threading.Tasks.Task<BLL.ServiceReference1.ListarCapacitacionesResponse> ListarCapacitacionesAsync(BLL.ServiceReference1.ListarCapacitacionesRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ShowCapacitacionResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ShowCapacitacion", ReplyAction="*")]
+        BLL.ServiceReference1.ShowCapacitacionResponse ShowCapacitacion(BLL.ServiceReference1.ShowCapacitacionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ShowCapacitacion", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ShowCapacitacionResponse> ShowCapacitacionAsync(BLL.ServiceReference1.ShowCapacitacionRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento cat del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_guardarCategoria", ReplyAction="*")]
@@ -1141,6 +1171,102 @@ namespace BLL.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class editarCApacitacionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="editarCApacitacion", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.editarCApacitacionRequestBody Body;
+        
+        public editarCApacitacionRequest() {
+        }
+        
+        public editarCApacitacionRequest(BLL.ServiceReference1.editarCApacitacionRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class editarCApacitacionRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id_edit;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string area;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public System.DateTime fecha;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string tema;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string expo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int asisten;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string empresa;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public int tipocap;
+        
+        public editarCApacitacionRequestBody() {
+        }
+        
+        public editarCApacitacionRequestBody(int id_edit, string area, System.DateTime fecha, string tema, string expo, int asisten, string empresa, int tipocap) {
+            this.id_edit = id_edit;
+            this.area = area;
+            this.fecha = fecha;
+            this.tema = tema;
+            this.expo = expo;
+            this.asisten = asisten;
+            this.empresa = empresa;
+            this.tipocap = tipocap;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class editarCApacitacionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="editarCApacitacionResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.editarCApacitacionResponseBody Body;
+        
+        public editarCApacitacionResponse() {
+        }
+        
+        public editarCApacitacionResponse(BLL.ServiceReference1.editarCApacitacionResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class editarCApacitacionResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool editarCApacitacionResult;
+        
+        public editarCApacitacionResponseBody() {
+        }
+        
+        public editarCApacitacionResponseBody(bool editarCApacitacionResult) {
+            this.editarCApacitacionResult = editarCApacitacionResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class listarAreaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="listarArea", Namespace="http://tempuri.org/", Order=0)]
@@ -1256,6 +1382,74 @@ namespace BLL.ServiceReference1 {
         
         public ListarCapacitacionesResponseBody(BLL.ServiceReference1.ArrayOfCapacitacion ListarCapacitacionesResult) {
             this.ListarCapacitacionesResult = ListarCapacitacionesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ShowCapacitacionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ShowCapacitacion", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ShowCapacitacionRequestBody Body;
+        
+        public ShowCapacitacionRequest() {
+        }
+        
+        public ShowCapacitacionRequest(BLL.ServiceReference1.ShowCapacitacionRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ShowCapacitacionRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id_cap_edit;
+        
+        public ShowCapacitacionRequestBody() {
+        }
+        
+        public ShowCapacitacionRequestBody(int id_cap_edit) {
+            this.id_cap_edit = id_cap_edit;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ShowCapacitacionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ShowCapacitacionResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ShowCapacitacionResponseBody Body;
+        
+        public ShowCapacitacionResponse() {
+        }
+        
+        public ShowCapacitacionResponse(BLL.ServiceReference1.ShowCapacitacionResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ShowCapacitacionResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BLL.ServiceReference1.capacitacion ShowCapacitacionResult;
+        
+        public ShowCapacitacionResponseBody() {
+        }
+        
+        public ShowCapacitacionResponseBody(BLL.ServiceReference1.capacitacion ShowCapacitacionResult) {
+            this.ShowCapacitacionResult = ShowCapacitacionResult;
         }
     }
     
@@ -2053,6 +2247,45 @@ namespace BLL.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.editarCApacitacionResponse BLL.ServiceReference1.wsa1Soap.editarCApacitacion(BLL.ServiceReference1.editarCApacitacionRequest request) {
+            return base.Channel.editarCApacitacion(request);
+        }
+        
+        public bool editarCApacitacion(int id_edit, string area, System.DateTime fecha, string tema, string expo, int asisten, string empresa, int tipocap) {
+            BLL.ServiceReference1.editarCApacitacionRequest inValue = new BLL.ServiceReference1.editarCApacitacionRequest();
+            inValue.Body = new BLL.ServiceReference1.editarCApacitacionRequestBody();
+            inValue.Body.id_edit = id_edit;
+            inValue.Body.area = area;
+            inValue.Body.fecha = fecha;
+            inValue.Body.tema = tema;
+            inValue.Body.expo = expo;
+            inValue.Body.asisten = asisten;
+            inValue.Body.empresa = empresa;
+            inValue.Body.tipocap = tipocap;
+            BLL.ServiceReference1.editarCApacitacionResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).editarCApacitacion(inValue);
+            return retVal.Body.editarCApacitacionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.editarCApacitacionResponse> BLL.ServiceReference1.wsa1Soap.editarCApacitacionAsync(BLL.ServiceReference1.editarCApacitacionRequest request) {
+            return base.Channel.editarCApacitacionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.editarCApacitacionResponse> editarCApacitacionAsync(int id_edit, string area, System.DateTime fecha, string tema, string expo, int asisten, string empresa, int tipocap) {
+            BLL.ServiceReference1.editarCApacitacionRequest inValue = new BLL.ServiceReference1.editarCApacitacionRequest();
+            inValue.Body = new BLL.ServiceReference1.editarCApacitacionRequestBody();
+            inValue.Body.id_edit = id_edit;
+            inValue.Body.area = area;
+            inValue.Body.fecha = fecha;
+            inValue.Body.tema = tema;
+            inValue.Body.expo = expo;
+            inValue.Body.asisten = asisten;
+            inValue.Body.empresa = empresa;
+            inValue.Body.tipocap = tipocap;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).editarCApacitacionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         BLL.ServiceReference1.listarAreaResponse BLL.ServiceReference1.wsa1Soap.listarArea(BLL.ServiceReference1.listarAreaRequest request) {
             return base.Channel.listarArea(request);
         }
@@ -2096,6 +2329,31 @@ namespace BLL.ServiceReference1 {
             BLL.ServiceReference1.ListarCapacitacionesRequest inValue = new BLL.ServiceReference1.ListarCapacitacionesRequest();
             inValue.Body = new BLL.ServiceReference1.ListarCapacitacionesRequestBody();
             return ((BLL.ServiceReference1.wsa1Soap)(this)).ListarCapacitacionesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.ShowCapacitacionResponse BLL.ServiceReference1.wsa1Soap.ShowCapacitacion(BLL.ServiceReference1.ShowCapacitacionRequest request) {
+            return base.Channel.ShowCapacitacion(request);
+        }
+        
+        public BLL.ServiceReference1.capacitacion ShowCapacitacion(int id_cap_edit) {
+            BLL.ServiceReference1.ShowCapacitacionRequest inValue = new BLL.ServiceReference1.ShowCapacitacionRequest();
+            inValue.Body = new BLL.ServiceReference1.ShowCapacitacionRequestBody();
+            inValue.Body.id_cap_edit = id_cap_edit;
+            BLL.ServiceReference1.ShowCapacitacionResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).ShowCapacitacion(inValue);
+            return retVal.Body.ShowCapacitacionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ShowCapacitacionResponse> BLL.ServiceReference1.wsa1Soap.ShowCapacitacionAsync(BLL.ServiceReference1.ShowCapacitacionRequest request) {
+            return base.Channel.ShowCapacitacionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.ShowCapacitacionResponse> ShowCapacitacionAsync(int id_cap_edit) {
+            BLL.ServiceReference1.ShowCapacitacionRequest inValue = new BLL.ServiceReference1.ShowCapacitacionRequest();
+            inValue.Body = new BLL.ServiceReference1.ShowCapacitacionRequestBody();
+            inValue.Body.id_cap_edit = id_cap_edit;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).ShowCapacitacionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

@@ -47,7 +47,7 @@ public string Estado
             this.Estado = estado;
         }
 
- 
+
 
         ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
         public List<ServiceReference1.TipoEvaluacion> listadodealgo()

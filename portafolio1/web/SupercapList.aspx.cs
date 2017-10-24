@@ -46,7 +46,7 @@ namespace web
                 // Display the selected author.
                 Session["id_capacitacion"] = contact;
                 MessageBox.Show("You selected " + contact + ".","asdasd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-       
+                Response.Redirect("SupercapEdit.aspx");
             }
         }
 

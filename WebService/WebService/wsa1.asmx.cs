@@ -219,8 +219,8 @@ namespace WebService
               foreach (DataRow row in ds.Tables[0].Rows)
               {
                   empresa nueva = new empresa();
-                  nueva.rut_empresa = row[0].ToString();
-                  nueva.nombre_empresa = row[1].ToString();
+                  nueva.Rut_empresa = row[0].ToString();
+                  nueva.Nombre_empresa = row[1].ToString();
                   milista.Add(nueva);
                   //milista.Add(string.Format("{0}" + " " + "{1}", row["RUT_EMPRESA"], row["NOMBRE"]));
               }
@@ -301,13 +301,21 @@ namespace WebService
             }
         }
 
+        [WebMethod]
+        public bool editarCApacitacion(int id_edit, string area, DateTime fecha, string tema, string expo, int asisten, string empresa, int tipocap) {
+
+            if (Datos.DatosCapacitaciones.editarCapacitacion(id_edit, area, fecha, tema, expo, asisten, empresa, tipocap))
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
 
         [WebMethod]
         public List<area> listarArea()
         {
-
-
-
 
             string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
             OracleConnection oraconn = new OracleConnection(strConnectionString);
@@ -324,8 +332,8 @@ namespace WebService
             foreach (DataRow row in ds.Tables[0].Rows)
             {
                 area nueva = new area();
-                nueva.id = Int32.Parse(row[0].ToString());
-                nueva.nombre_area = row[1].ToString();
+                nueva.Id = Int32.Parse(row[0].ToString());
+                nueva.Nombre_area = row[1].ToString();
                 milista.Add(nueva);
                 //milista.Add(string.Format("{0}" + " " + "{1}", row["RUT_EMPRESA"], row["NOMBRE"]));
             }

@@ -19,7 +19,7 @@ namespace web
             mensajeSI.Visible = false;
             mensajeNO.Visible = false;
 
-            ServiceReference1.wsa1SoapClient ws= new ServiceReference1.wsa1SoapClient();
+            //ServiceReference1.wsa1SoapClient ws= new ServiceReference1.wsa1SoapClient();
             
         
         }
@@ -40,7 +40,8 @@ namespace web
                 mensajeSI.Visible = true;
 
             }
-            else {
+            else
+            {
                 //MessageBox.Show("No logrado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 mensajeNO.Visible = true;
             }

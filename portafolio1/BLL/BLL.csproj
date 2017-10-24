@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Area_usDTO.cs" />
     <Compile Include="capacitacionDTO.cs" />
     <Compile Include="CategoriaDTO.cs" />
+    <Compile Include="EmpresaDTO.cs" />
     <Compile Include="loginController.cs" />
     <Compile Include="PreguntasDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,7 +75,13 @@
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ArrayOfEmpresa.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.capacitacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.DevuelveTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.editarCApacitacionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.E_agregarEvaluacionResponse.datasource">
@@ -119,6 +127,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.Pregunta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ShowCapacitacionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.TipoEvaluacion.datasource">

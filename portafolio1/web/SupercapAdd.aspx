@@ -27,7 +27,7 @@
                         </div>
 
     <label for="em">Empresa</label>
-      <asp:DropDownList ID="Comboemp" class="form-control" runat="server" DataSourceID="ObjectDataSource1" DataTextField="nombre_empresa" DataValueField="rut_empresa" ></asp:DropDownList>
+      <asp:DropDownList ID="Comboemp" class="form-control" runat="server" DataSourceID="ObjectDataSource1" DataTextField="Nombre_empresa" DataValueField="Rut_empresa"  ></asp:DropDownList>
   </div>
  
 
@@ -54,7 +54,7 @@
 
     <label for="tx_especialidad">Area</label>
 
-          <asp:DropDownList ID="Comboarea" class="form-control" runat="server" DataSourceID="ObjectDataSource3" DataTextField="nombre_area" DataValueField="nombre_area" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged"></asp:DropDownList>
+          <asp:DropDownList ID="Comboarea" class="form-control" runat="server" DataSourceID="ObjectDataSource3" DataTextField="Nombre_area" DataValueField="Nombre_area" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged"></asp:DropDownList>
 
                       <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="listarArea" TypeName="web.ServiceReference1.wsa1SoapClient"></asp:ObjectDataSource>
   

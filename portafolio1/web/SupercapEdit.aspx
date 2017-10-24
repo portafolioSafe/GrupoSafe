@@ -27,15 +27,20 @@
                         </div>
 
     <label for="em">Empresa</label>
-      <asp:DropDownList ID="Comboemp" class="form-control" runat="server" DataSourceID="ObjectDataSource1" DataTextField="nombre_empresa" DataValueField="rut_empresa" ></asp:DropDownList>
-  </div>
+      <asp:DropDownList ID="Comboemp" class="form-control" runat="server" DataSourceID="ObjectDataSource1" DataTextField="Nombre_empresa" DataValueField="Rut_empresa" ></asp:DropDownList>
+  
+
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetlistarEmpresaList" TypeName="BLL.EmpresaDTO"></asp:ObjectDataSource>
+     
+
+     </div>
  
 
       <div class="form-group">
 
     <label for="tx_especialidad">Tipo de capacitacion</label>
 
-       <asp:DropDownList ID="Combotipocap" class="form-control" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nombre" DataValueField="id" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged"></asp:DropDownList>
+       <asp:DropDownList ID="Combotipocap" class="form-control" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nombre" DataValueField="id" ></asp:DropDownList>
 
           <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetListarTipoCap" TypeName="web.ServiceReference1.wsa1SoapClient"></asp:ObjectDataSource>
 
@@ -43,7 +48,7 @@
             <div class="form-group">
 
     <label for="tx_especialidad">Tema</label>
-                <asp:TextBox ID="Txttema" CssClass="form-control" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="Txttema" CssClass="form-control" runat="server" ></asp:TextBox>
 
 
                       <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="Txttema" ErrorMessage="El rango es de 5 a 20 caracteres" Font-Bold="False" ForeColor="Red" ValidationExpression="^[\s\S]{5,20}$"></asp:RegularExpressionValidator>
@@ -54,7 +59,7 @@
 
     <label for="tx_especialidad">Area</label>
 
-          <asp:DropDownList ID="Comboarea" class="form-control" runat="server" DataSourceID="ObjectDataSource3" DataTextField="nombre_area" DataValueField="nombre_area" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged"></asp:DropDownList>
+          <asp:DropDownList ID="Comboarea" class="form-control" runat="server" DataSourceID="ObjectDataSource3" DataTextField="Nombre_area" DataValueField="Nombre_area" ></asp:DropDownList>
 
                       <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="listarArea" TypeName="web.ServiceReference1.wsa1SoapClient"></asp:ObjectDataSource>
   
@@ -98,9 +103,6 @@
            
   
                 <asp:Button ID="Button1" runat="server" class="btn btn-primary" Text="Agregar capacitación" ValidationGroup="valivali" OnClick="Button1_Click" />
-     
-
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetlistarEmpresaList" TypeName="web.ServiceReference1.wsa1SoapClient"></asp:ObjectDataSource>
      
 
         </div>
