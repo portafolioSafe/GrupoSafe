@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="capacitacionDTO.cs" />
     <Compile Include="CategoriaDTO.cs" />
+    <Compile Include="DetallePreguntaDTO.cs" />
     <Compile Include="EmpresaDTO.cs" />
     <Compile Include="loginController.cs" />
     <Compile Include="PreguntasDTO.cs" />
@@ -78,6 +79,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.DevuelveTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.E_agregarDetallePreguntaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.E_agregarEvaluacionResponse.datasource">

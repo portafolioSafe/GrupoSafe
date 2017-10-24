@@ -762,6 +762,13 @@ namespace BLL.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_agregarPregunta", ReplyAction="*")]
         System.Threading.Tasks.Task<BLL.ServiceReference1.E_agregarPreguntaResponse> E_agregarPreguntaAsync(BLL.ServiceReference1.E_agregarPreguntaRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento p del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_agregarDetallePregunta", ReplyAction="*")]
+        BLL.ServiceReference1.E_agregarDetallePreguntaResponse E_agregarDetallePregunta(BLL.ServiceReference1.E_agregarDetallePreguntaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_agregarDetallePregunta", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.E_agregarDetallePreguntaResponse> E_agregarDetallePreguntaAsync(BLL.ServiceReference1.E_agregarDetallePreguntaRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento E_listarPreguntaXcategoriaResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listarPreguntaXcategoria", ReplyAction="*")]
         BLL.ServiceReference1.E_listarPreguntaXcategoriaResponse E_listarPreguntaXcategoria(BLL.ServiceReference1.E_listarPreguntaXcategoriaRequest request);
@@ -1627,6 +1634,82 @@ namespace BLL.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_agregarDetallePreguntaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_agregarDetallePregunta", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.E_agregarDetallePreguntaRequestBody Body;
+        
+        public E_agregarDetallePreguntaRequest() {
+        }
+        
+        public E_agregarDetallePreguntaRequest(BLL.ServiceReference1.E_agregarDetallePreguntaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_agregarDetallePreguntaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string p;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int idP;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int idE;
+        
+        public E_agregarDetallePreguntaRequestBody() {
+        }
+        
+        public E_agregarDetallePreguntaRequestBody(string p, int idP, int idE) {
+            this.p = p;
+            this.idP = idP;
+            this.idE = idE;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_agregarDetallePreguntaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_agregarDetallePreguntaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.E_agregarDetallePreguntaResponseBody Body;
+        
+        public E_agregarDetallePreguntaResponse() {
+        }
+        
+        public E_agregarDetallePreguntaResponse(BLL.ServiceReference1.E_agregarDetallePreguntaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_agregarDetallePreguntaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool E_agregarDetallePreguntaResult;
+        
+        public E_agregarDetallePreguntaResponseBody() {
+        }
+        
+        public E_agregarDetallePreguntaResponseBody(bool E_agregarDetallePreguntaResult) {
+            this.E_agregarDetallePreguntaResult = E_agregarDetallePreguntaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class E_listarPreguntaXcategoriaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listarPreguntaXcategoria", Namespace="http://tempuri.org/", Order=0)]
@@ -2314,6 +2397,35 @@ namespace BLL.ServiceReference1 {
             inValue.Body.id = id;
             inValue.Body.p = p;
             return ((BLL.ServiceReference1.wsa1Soap)(this)).E_agregarPreguntaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.E_agregarDetallePreguntaResponse BLL.ServiceReference1.wsa1Soap.E_agregarDetallePregunta(BLL.ServiceReference1.E_agregarDetallePreguntaRequest request) {
+            return base.Channel.E_agregarDetallePregunta(request);
+        }
+        
+        public bool E_agregarDetallePregunta(string p, int idP, int idE) {
+            BLL.ServiceReference1.E_agregarDetallePreguntaRequest inValue = new BLL.ServiceReference1.E_agregarDetallePreguntaRequest();
+            inValue.Body = new BLL.ServiceReference1.E_agregarDetallePreguntaRequestBody();
+            inValue.Body.p = p;
+            inValue.Body.idP = idP;
+            inValue.Body.idE = idE;
+            BLL.ServiceReference1.E_agregarDetallePreguntaResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).E_agregarDetallePregunta(inValue);
+            return retVal.Body.E_agregarDetallePreguntaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.E_agregarDetallePreguntaResponse> BLL.ServiceReference1.wsa1Soap.E_agregarDetallePreguntaAsync(BLL.ServiceReference1.E_agregarDetallePreguntaRequest request) {
+            return base.Channel.E_agregarDetallePreguntaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.E_agregarDetallePreguntaResponse> E_agregarDetallePreguntaAsync(string p, int idP, int idE) {
+            BLL.ServiceReference1.E_agregarDetallePreguntaRequest inValue = new BLL.ServiceReference1.E_agregarDetallePreguntaRequest();
+            inValue.Body = new BLL.ServiceReference1.E_agregarDetallePreguntaRequestBody();
+            inValue.Body.p = p;
+            inValue.Body.idP = idP;
+            inValue.Body.idE = idE;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).E_agregarDetallePreguntaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

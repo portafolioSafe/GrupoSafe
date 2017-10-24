@@ -38,8 +38,8 @@ namespace web
             GridViewRow grid_row = (GridViewRow)rb_Yes.NamingContainer;
             if (((RadioButton)grid_row.FindControl("rb_Yes")).Checked == true)
             {
-                System.Windows.Forms.MessageBox.Show("Pregunta Guardada con exito" + grid_row.Cells[1].Text, "escogio si", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
-
+              //  System.Windows.Forms.MessageBox.Show("Pregunta Guardada con exito" + grid_row.Cells[1].Text, "escogio si", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                
             }
         }
 

@@ -376,6 +376,13 @@ namespace WebService
         {
             return Datos.DatosPregunta.AgregarPregunta(id, p);
         }
+
+        //detalle pregunta
+        [WebMethod]
+        public bool E_agregarDetallePregunta(string p , int idP, int idE)
+        {
+            return Datos.DatosDetalle_evaluacion.Agregar_detalle(idE,idP,p);
+        }
         [WebMethod]
         public List<Pregunta> E_listarPreguntaXcategoria(int id)
         {
@@ -388,12 +395,8 @@ namespace WebService
         {
             return Datos.DatosEmpresa.ListadoEmpresas();
         }
-        //Tipo Evaluaciones
-        //[WebMethod]
-        //public  List<TipoEvaluaciones> E_listarTipoEvaluacione()
-        //{
-        //    return Datos.DatosTipoEvaluacion.ListarTipo();
-        //}
+       
+
 
         [WebMethod]
         public List<ClassLibrary1.TipoEvaluaciones> listadodeevaluaciones()
