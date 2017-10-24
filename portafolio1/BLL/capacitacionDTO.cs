@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class capacitacionDTO
+    class capacitacionDTO
     {
 
         private int id;
@@ -66,61 +64,14 @@ namespace BLL
             get { return tipo_cap; }
             set { tipo_cap = value; }
         }
-        
-
-        ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
-
-        public List<ServiceReference1.capacitacion> listarCapacitacion()
-        {
-            ServiceReference1.capacitacion cat = new ServiceReference1.capacitacion();
-            return ws.ListarCapacitaciones();
-        }
-
-        public capacitacionDTO showCapacitacion(int id_cap) {
 
 
-            ServiceReference1.capacitacion cap = ws.ShowCapacitacion(id_cap);
-            this.Area = cap.Area;
-            this.Asistencia = cap.Asistencia;
-            this.Expositor = cap.Expositor;
-            this.Fecha = cap.Fecha;
-            this.Id = cap.Id;
-            this.Rut_empresa = cap.Rut_empresa;
-            this.Tema = cap.Tema;
-            this.Tipo_cap = cap.Tipo_cap;
 
 
-            return this;
-
-            
-        }
-
-        public List<ServiceReference1.cap_tipo> listarTipoCapacitacion()
-        {
-            ServiceReference1.cap_tipo cat = new ServiceReference1.cap_tipo();
-            return ws.GetListarTipoCap();
-        }
 
 
-        public string toCapital(string cadena) {
 
 
-            TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-            return textInfo.ToTitleCase(cadena);
-        }
-
-        public bool editarCapacitacion(int id_edit, string area, DateTime fecha, string tema, string expo, int asisten, string empresa, int tipocap)
-        {
-            if (ws.editarCApacitacion(id_edit, area, fecha, tema, expo, asisten, empresa, tipocap))
-            {
-                return true;
-            }
-            else {
-                return false;
-            }
-            
-          
-        }
 
 
 

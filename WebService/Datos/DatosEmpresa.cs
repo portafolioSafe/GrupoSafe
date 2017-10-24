@@ -34,8 +34,8 @@ namespace Datos
                     while (dr.Read())
                     {
                         empresa ev = new empresa();
-                        ev.Rut_empresa= dr["RUT_EMPRESA"].ToString();
-                        ev.Nombre_empresa = dr["NOMBRE"].ToString();
+                        ev.rut_empresa= dr["RUT_EMPRESA"].ToString();
+                        ev.nombre_empresa = dr["NOMBRE"].ToString();
 
                         listado.Add(ev);
                     }

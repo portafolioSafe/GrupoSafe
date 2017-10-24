@@ -45,9 +45,7 @@ namespace web
 
             
 
-            //ServiceReference1.wsa1SoapClient wf = new ServiceReference1.wsa1SoapClient();
-            BLL.loginController me = new BLL.loginController();
-
+            ServiceReference1.wsa1SoapClient wf = new ServiceReference1.wsa1SoapClient();
 
 
             string radiob = "";
@@ -59,14 +57,14 @@ namespace web
                     radiob = Request.Form["login"].ToString();
                 }
 
-                ServiceReference1.wsa1SoapClient memito = new ServiceReference1.wsa1SoapClient();
+                
                 pw= validarRut(user.Value).ToString();
-                string nombre = memito.Validar(pw, pass.Value, radiob);
+                string nombre = wf.Validar(pw,pass.Value , radiob);
                 string tipo = "";
+                
+               
 
-
-
-                tipo = memito.DevuelveTipo(pw, radiob);
+                    tipo = wf.DevuelveTipo(pw, radiob);
                     if (tipo.Equals("nope"))
                     {
                        // Response.Redirect("Log_in.aspx");
@@ -113,7 +111,7 @@ namespace web
 
                 
             }
-            catch (Exception ex) 
+            catch (Exception) 
             {
                 error.Visible = true;
                 //MessageBox.Show("Usuario: "+ pw +", pass: "+pass.Value+", tipo: "+radiob+"", "Error de autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);

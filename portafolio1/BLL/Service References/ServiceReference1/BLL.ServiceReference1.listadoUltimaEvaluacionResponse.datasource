@@ -5,11 +5,6 @@
     Renaming the file extension or editing the content of this file may   
     cause the file to be unrecognizable by the program.
 -->
-<<<<<<< HEAD:portafolio1/BLL/Service References/ServiceReference1/BLL.ServiceReference1.E_listarTipoEvaluacioneResponse.datasource
-<GenericObjectDataSource DisplayName="E_listarTipoEvaluacioneResponse" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>BLL.ServiceReference1.E_listarTipoEvaluacioneResponse, Service References.ServiceReference1.Reference.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
-=======
 <GenericObjectDataSource DisplayName="listadoUltimaEvaluacionResponse" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
    <TypeInfo>BLL.ServiceReference1.listadoUltimaEvaluacionResponse, Service References.ServiceReference1.Reference.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
->>>>>>> 2dad8eb95b93d2065ade786ba24866566c0ffe6d:portafolio1/BLL/Service References/ServiceReference1/BLL.ServiceReference1.listadoUltimaEvaluacionResponse.datasource
 </GenericObjectDataSource>

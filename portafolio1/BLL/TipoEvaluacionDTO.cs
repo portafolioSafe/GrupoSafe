@@ -29,13 +29,9 @@ namespace BLL
             this.Estado = estado;
         }
 
-<<<<<<< HEAD
-
-=======
         public int Id { get => id; set => id = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Estado { get => estado; set => estado = value; }
->>>>>>> 2dad8eb95b93d2065ade786ba24866566c0ffe6d
 
         ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
 

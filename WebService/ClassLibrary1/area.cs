@@ -8,29 +8,8 @@ namespace ClassLibrary1
 {
     public class area
     {
-        private int id;
-
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-        private string nombre_area;
-
-        public string Nombre_area
-        {
-            get { return nombre_area; }
-            set { nombre_area = value; }
-        }
-        private string estado;
-
-        public string Estado
-        {
-            get { return estado; }
-            set { estado = value; }
-        }
-
-
-        public area() { }
+        public int id { get; set; }
+        public string nombre_area { get; set; }
+        public string estado { get; set; }
     }
 }
