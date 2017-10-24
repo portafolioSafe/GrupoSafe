@@ -105,6 +105,7 @@ namespace web
                     {
                         Session["login"] = nombre;
                         Session["tipo"] = tipo;
+                        Session["Rut"] = pw;
                         FormsAuthentication.RedirectFromLoginPage(user.Value, false);
                     }
                   

@@ -16,7 +16,7 @@ namespace Datos
             DatosConexion c = new DatosConexion();
             using (OracleConnection conn = c.Connect())
             {
-                OracleCommand cmd = new OracleCommand("PKG_EVALUACION.Pro_AgregarCategoria", conn);
+                OracleCommand cmd = new OracleCommand("PKG_EVALUACION.pro_AgregarDetalle", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add("p_respuesta", "varchar2").Value = p;

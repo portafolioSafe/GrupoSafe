@@ -2,21 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      <div class="panel panel-default" style="margin-right: 10%; margin-left: 10%;">
-  <div class="panel-heading"><asp:Label ID="Label3" runat="server" Text="Editar capacitación" Font-Bold="True" Font-Size="Larger"></asp:Label>
-      <style>
-             #mensajeSI,#mensajeNO {
-  display: table;
-  margin: 0 auto;
-}
 
-      </style> 
-       </div>
-
-
+               <div class="panel panel-default" style="margin-right: 10%; margin-left: 10%;">
+  <div class="panel-heading"><asp:Label ID="Label3" runat="server" Text="Modificar capacitación" Font-Bold="True" Font-Size="Larger"></asp:Label>
+        </div>
   <div class="panel-body">
 
      <div class="form-group">
+<<<<<<< HEAD
          <div id="mensajeSI" runat="server" class="alert alert-success"  style="width:90%" visible="false">   
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ¡CAPACITACIÓN AGREGADA EXITOSAMENTE!
 
@@ -34,29 +27,40 @@
      
 
      </div>
+=======
+    <label for="em">Capacitación anual</label>
+      <asp:DropDownList ID="DropDownList1" class="form-control" runat="server"></asp:DropDownList>
+  </div>
+>>>>>>> 2dad8eb95b93d2065ade786ba24866566c0ffe6d
  
 
       <div class="form-group">
 
+<<<<<<< HEAD
     <label for="tx_especialidad">Tipo de capacitacion</label>
 
        <asp:DropDownList ID="Combotipocap" class="form-control" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nombre" DataValueField="id" ></asp:DropDownList>
+=======
+    <label for="tx_especialidad">Capacitación a editar</label>
+>>>>>>> 2dad8eb95b93d2065ade786ba24866566c0ffe6d
 
-          <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetListarTipoCap" TypeName="web.ServiceReference1.wsa1SoapClient"></asp:ObjectDataSource>
+       <asp:DropDownList ID="DropDownList2" class="form-control" runat="server"></asp:DropDownList>
 
   </div>
             <div class="form-group">
 
+<<<<<<< HEAD
     <label for="tx_especialidad">Tema</label>
                 <asp:TextBox ID="Txttema" CssClass="form-control" runat="server" ></asp:TextBox>
+=======
+    <label for="tx_especialidad">Nueva capacitación</label>
+>>>>>>> 2dad8eb95b93d2065ade786ba24866566c0ffe6d
 
-
-                      <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="Txttema" ErrorMessage="El rango es de 5 a 20 caracteres" Font-Bold="False" ForeColor="Red" ValidationExpression="^[\s\S]{5,20}$"></asp:RegularExpressionValidator>
-  
+    <asp:DropDownList ID="DropDownList3" class="form-control" runat="server"></asp:DropDownList>
 
   </div>
-                  <div class="form-group">
 
+<<<<<<< HEAD
     <label for="tx_especialidad">Area</label>
 
           <asp:DropDownList ID="Comboarea" class="form-control" runat="server" DataSourceID="ObjectDataSource3" DataTextField="Nombre_area" DataValueField="Nombre_area" ></asp:DropDownList>
@@ -85,27 +89,25 @@
 
   </div>
             <div class="form-group">
+=======
+               <div class="form-group">
+>>>>>>> 2dad8eb95b93d2065ade786ba24866566c0ffe6d
 
     <label for="tx_especialidad">Fecha</label>
 
-                <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="250px" NextPrevFormat="ShortMonth" Width="330px">
-                    <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
-                    <DayStyle BackColor="#CCCCCC" />
-                    <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />
-                    <OtherMonthDayStyle ForeColor="#999999" />
-                    <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-                    <TitleStyle BackColor="#337ab7" BorderStyle="Solid" Font-Bold="True" Font-Size="12pt" ForeColor="White" Height="12pt" />
-                    <TodayDayStyle BackColor="#999999" ForeColor="White" />
-                </asp:Calendar>
-  
-
+                   <asp:TextBox ID="TextBox1" class="form-control" runat="server" TextMode="Date"></asp:TextBox>
   </div>
-           
+ 
   
+<<<<<<< HEAD
                 <asp:Button ID="Button1" runat="server" class="btn btn-primary" Text="Agregar capacitación" ValidationGroup="valivali" OnClick="Button1_Click" />
+=======
+                <asp:Button ID="Button1" runat="server" class="btn btn-primary" Text="Modificar" />
+>>>>>>> 2dad8eb95b93d2065ade786ba24866566c0ffe6d
      
 
         </div>
 </div>
+ 
 
 </asp:Content>

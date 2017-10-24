@@ -44,7 +44,13 @@
     <Compile Include="Area_usDTO.cs" />
     <Compile Include="capacitacionDTO.cs" />
     <Compile Include="CategoriaDTO.cs" />
+<<<<<<< HEAD
     <Compile Include="EmpresaDTO.cs" />
+=======
+    <Compile Include="DetallePreguntaDTO.cs" />
+    <Compile Include="EmpresaDTO.cs" />
+    <Compile Include="EvaluacionDTO.cs" />
+>>>>>>> 2dad8eb95b93d2065ade786ba24866566c0ffe6d
     <Compile Include="loginController.cs" />
     <Compile Include="PreguntasDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,7 +87,14 @@
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.DevuelveTipoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+<<<<<<< HEAD
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.editarCApacitacionResponse.datasource">
+=======
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.Evaluacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.E_agregarDetallePreguntaResponse.datasource">
+>>>>>>> 2dad8eb95b93d2065ade786ba24866566c0ffe6d
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.E_agregarEvaluacionResponse.datasource">
@@ -105,9 +118,6 @@
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.E_listarPreguntaXcategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.E_listarTipoEvaluacioneResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.E_modificarEvaluacionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -118,6 +128,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.GuardarCapacitacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.listadodeevaluacionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.listadoUltimaEvaluacionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.listarAreaResponse.datasource">
@@ -132,7 +148,11 @@
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ShowCapacitacionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+<<<<<<< HEAD
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.TipoEvaluacion.datasource">
+=======
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.TipoEvaluaciones.datasource">
+>>>>>>> 2dad8eb95b93d2065ade786ba24866566c0ffe6d
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ValidarResponse.datasource">

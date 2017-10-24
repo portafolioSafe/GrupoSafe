@@ -11,7 +11,7 @@ namespace Datos
 {
     public class DatosTipoEvaluacion
     {
-        public static List<TipoEvaluacion> ListarTipo()
+        public static List<ClassLibrary1.TipoEvaluaciones> ListarTipo()
         {
 
             DatosConexion c = new DatosConexion();
@@ -19,7 +19,9 @@ namespace Datos
 
             using (OracleConnection conn = c.Connect())
             {
-                List<TipoEvaluacion> listado = new List<TipoEvaluacion>();
+                List<ClassLibrary1.TipoEvaluaciones> listado = new List<ClassLibrary1.TipoEvaluaciones>();
+
+
                 OracleCommand oracmd = new OracleCommand();
                 oracmd.Parameters.Add("listarEval", OracleDbType.RefCursor, ParameterDirection.Output);
                 oracmd.CommandText = "PKG_EVALUACION.ListarTipoEval";
@@ -34,7 +36,7 @@ namespace Datos
                     OracleDataReader dr = oracmd.ExecuteReader();
                     while (dr.Read())
                     {
-                        TipoEvaluacion ev = new TipoEvaluacion();
+                        ClassLibrary1.TipoEvaluaciones ev = new ClassLibrary1.TipoEvaluaciones();
                         ev.Id = int.Parse(dr["ID_TIPO"].ToString());
                         ev.Nombre = dr["NOMBRE_TIPO"].ToString();
 

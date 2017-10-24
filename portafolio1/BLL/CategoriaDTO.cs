@@ -10,33 +10,9 @@ namespace BLL
     {
 
         private int id_cat;
-
-        public int Id_cat
-        {
-            get { return id_cat; }
-            set { id_cat = value; }
-        }
         private string nombre;
-
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
         private string estado;
-
-        public string Estado
-        {
-            get { return estado; }
-            set { estado = value; }
-        }
         private int id;
-
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
 
 
 
@@ -57,17 +33,30 @@ namespace BLL
 
         }
 
-    
+        public int Id_cat { get => id_cat; set => id_cat = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Estado { get => estado; set => estado = value; }
+        public int Id { get => id; set => id = value; }
 
-        public List<ServiceReference1.categoria> listarCategoria()
+
+
+
+
+        public static List<ServiceReference1.categoria> listarCategoria()
         {
-            ServiceReference1.categoria cat = new ServiceReference1.categoria();
+            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
             return ws.E_listadoCategoria();
         }
 
         public bool AgregarCategoria(int id, string nombre)
         {
             return ws.E_guardarCategoria(nombre, id);
+        }
+
+        public static List<ServiceReference1.categoria> ListarXtipo(int idT)
+        {
+            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
+            return ws.E_listarCategoriasXtipo(idT);
         }
 
 

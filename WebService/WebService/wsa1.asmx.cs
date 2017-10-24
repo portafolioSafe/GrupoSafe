@@ -384,6 +384,13 @@ namespace WebService
         {
             return Datos.DatosPregunta.AgregarPregunta(id, p);
         }
+
+        //detalle pregunta
+        [WebMethod]
+        public bool E_agregarDetallePregunta(string p , int idP, int idE)
+        {
+            return Datos.DatosDetalle_evaluacion.Agregar_detalle(idE,idP,p);
+        }
         [WebMethod]
         public List<Pregunta> E_listarPreguntaXcategoria(int id)
         {
@@ -396,23 +403,31 @@ namespace WebService
         {
             return Datos.DatosEmpresa.ListadoEmpresas();
         }
-        //Tipo Evaluaciones
+       
+
+
         [WebMethod]
-        public List<TipoEvaluacion> E_listarTipoEvaluacione()
+        public List<ClassLibrary1.TipoEvaluaciones> listadodeevaluaciones()
         {
             return Datos.DatosTipoEvaluacion.ListarTipo();
         }
         //evaluacion
         [WebMethod]
-        public bool E_agregarEvaluacion(string idE, int idT, string rut, DateTime fecha, string obsTec, string recIng, string estado)
+        public bool E_agregarEvaluacion(DateTime fecha, string obsTec, string recIng, string estado, int idT, string idE, string rut)
         {
-            return Datos.DatosEvaluaciones.AgregarEvaluaciones(idE,idT,rut,fecha,obsTec,recIng,estado);
+            return Datos.DatosEvaluaciones.AgregarEvaluaciones(fecha,obsTec,recIng,estado,idT,idE,rut);
         }
 
         [WebMethod]
         public bool E_modificarEvaluacion(int id, string p)
         {
             return Datos.DatosEvaluaciones.ModificacionIngeniero(id,p);
+        }
+
+        [WebMethod]
+        public List<ClassLibrary1.Evaluacion> listadoUltimaEvaluacion(string rut)
+        {
+            return Datos.DatosEvaluaciones.idultimaEvaluacion(rut);
         }
 
 

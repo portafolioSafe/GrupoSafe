@@ -21,7 +21,7 @@ namespace web
         {
             string pregunta = TextBox1.Text;
             int id = int.Parse(DropDownList1.SelectedItem.Value);
-            bool resp = true;
+            bool resp = BLL.PreguntasDTO.AgregarPregunta(id,pregunta);
             GridView1.DataBind();
             if (resp)
             {
