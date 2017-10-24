@@ -40,7 +40,10 @@ namespace BLL
             return ws.listadodeevaluaciones();
         }
 
-
+        public List<ServiceReference1.Evaluacion> lis(string rut)
+        {
+            return ws.listadoUltimaEvaluacion(rut);
+        }
 
     }
 }

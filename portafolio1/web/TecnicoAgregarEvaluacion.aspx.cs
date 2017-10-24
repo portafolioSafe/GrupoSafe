@@ -34,7 +34,7 @@ namespace web
             {
                 //  System.Windows.Forms.MessageBox.Show("Pregunta Guardada con exito" + grid_row.Cells[1].Text, "escogio si", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
                 BLL.DetallePreguntaDTO de = new BLL.DetallePreguntaDTO();
-
+                
 
             }
         }
