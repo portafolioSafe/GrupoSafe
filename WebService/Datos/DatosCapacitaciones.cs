@@ -61,6 +61,59 @@ namespace Datos
             }
         }
 
+        public static List<capacitacion> ListadoCapacitacionXempresa(string empresa)
+        {
+
+            DatosConexion c = new DatosConexion();
+            using (OracleConnection conn = c.Connect())
+            {
+                List<capacitacion> listado = new List<capacitacion>();
+                OracleCommand oracmd = new OracleCommand();
+                oracmd.Parameters.Add("listarCAP", OracleDbType.RefCursor, ParameterDirection.Output);
+                oracmd.CommandText = "PROCEDIMIENTO_CAPACITACIONES.LISTAR_CAPACITACIONES";
+                oracmd.CommandType = CommandType.StoredProcedure;
+                oracmd.Connection = conn;
+                OracleDataAdapter da = new OracleDataAdapter(oracmd);
+                DataSet ds = new DataSet();
+                try
+                {
+                    conn.Open();
+                    da.Fill(ds);
+                    OracleDataReader dr = oracmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        if (dr["NOMBRE"].ToString() == empresa)
+                        {
+
+                            capacitacion cap = new capacitacion();
+                            cap.Id = int.Parse(dr["ID_CAP"].ToString());
+                            cap.Area = dr["AREA_CAPACITACION"].ToString();
+
+
+                            cap.Fecha = dr["FECHA"].ToString().Substring(0, 11);
+                            cap.Tema = dr["TEMA"].ToString();
+                            cap.Expositor = dr["EXPOSITOR"].ToString();
+                            cap.Asistencia = int.Parse(dr["ASISTENCIA_MIN"].ToString());
+                            cap.Rut_empresa = dr["NOMBRE"].ToString();
+                            cap.Tipo_cap = dr["TIPO"].ToString();
+
+                            listado.Add(cap);
+                        }
+                    }
+
+                    conn.Close();
+                    return listado;
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
+        }
+
         public static capacitacion ShowCapacitacion(int id_cap_edit)
         {
 
@@ -125,6 +178,66 @@ namespace Datos
 
 
         }
+
+        public static List<capacitacion> ListadoCapacitacionXfecha() {
+
+            DatosConexion c = new DatosConexion();
+            using (OracleConnection conn = c.Connect())
+            {
+                List<capacitacion> listado = new List<capacitacion>();
+                OracleCommand oracmd = new OracleCommand();
+                oracmd.Parameters.Add("listarCAP", OracleDbType.RefCursor, ParameterDirection.Output);
+                oracmd.CommandText = "PROCEDIMIENTO_CAPACITACIONES.LISTAR_CAPACITACIONES";
+                oracmd.CommandType = CommandType.StoredProcedure;
+                oracmd.Connection = conn;
+                OracleDataAdapter da = new OracleDataAdapter(oracmd);
+                DataSet ds = new DataSet();
+                try
+                {
+                    conn.Open();
+                    da.Fill(ds);
+                    OracleDataReader dr = oracmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+
+                        DateTime hoy = DateTime.Today;
+                        string fechaSET = dr["FECHA"].ToString().Substring(0, 11);
+                        DateTime fechaIN = Convert.ToDateTime(fechaSET);
+                       if  (fechaIN.DayOfYear > hoy.DayOfYear)
+	{
+
+                        capacitacion cap = new capacitacion();
+                        cap.Id = int.Parse(dr["ID_CAP"].ToString());
+                        cap.Area = dr["AREA_CAPACITACION"].ToString();
+
+
+                        cap.Fecha = dr["FECHA"].ToString().Substring(0, 11);
+                        cap.Tema = dr["TEMA"].ToString();
+                        cap.Expositor = dr["EXPOSITOR"].ToString();
+                        cap.Asistencia = int.Parse(dr["ASISTENCIA_MIN"].ToString());
+                        cap.Rut_empresa = dr["NOMBRE"].ToString();
+                        cap.Tipo_cap = dr["TIPO"].ToString();
+
+                        listado.Add(cap);
+    } 
+                    }
+
+                    conn.Close();
+                    return listado;
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
+        
+        }
+
+
+
 
         public static bool editarCapacitacion(int id_edit, string area, DateTime fecha, string tema, string expo, int asisten, string empresa, int tipocap)
         {
