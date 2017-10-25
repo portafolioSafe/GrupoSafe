@@ -40,6 +40,9 @@ namespace web
                         GridView1.DataSource = GetData(item.Id_tipo, item.Id);
                         GridView1.DataBind();
 
+                        TextBox1.Text = item.Obstec;
+                        TextBox2.Text = item.Obsing;
+
                     }
 
                     

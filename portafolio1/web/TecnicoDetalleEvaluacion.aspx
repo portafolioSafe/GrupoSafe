@@ -37,7 +37,7 @@
                             <ItemStyle Width="10%" />
                         </asp:BoundField>
 
-                        <asp:BoundField DataField="Pregunta" HeaderText="Empresa" ItemStyle-Width="60%">
+                        <asp:BoundField DataField="Pregunta" HeaderText="Pregunta" ItemStyle-Width="60%">
 
                             <ItemStyle Width="40%" />
                         </asp:BoundField>
@@ -53,6 +53,16 @@
 
 
                 </asp:GridView>
+            </div>
+               <div class="form-group">
+                <label for="em">Observación Técnico</label>
+                   <asp:TextBox ID="TextBox1" class="form-control" runat="server" ReadOnly="true" TextMode="MultiLine"></asp:TextBox>
+
+            </div>
+            <div class="form-group">
+                <label for="em">Recomendacion del Ingeniero</label>
+                   <asp:TextBox ID="TextBox2" class="form-control" runat="server" ReadOnly="true" TextMode="MultiLine"></asp:TextBox>
+
             </div>
 
 

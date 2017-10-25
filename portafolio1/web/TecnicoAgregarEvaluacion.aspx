@@ -9,10 +9,29 @@
 
         <div class="panel panel-default" style="margin-right: 10%; margin-left: 10%;">
             <div class="panel-heading">
+                <style>
+                    #mensajeSI, #mensajeNO {
+                        display: table;
+                        margin: 0 auto;
+                    }
+                </style> 
+
+
+               
                 <asp:Label ID="Label3" runat="server" Text="Agregar evaluacion" Font-Bold="True" Font-Size="Larger"></asp:Label>
             </div>
 
             <div class="panel-body">
+                 <div>
+                    <div id="mensajeSI" runat="server" class="alert alert-success" style="width: 90%" visible="false">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡EVALUACIÓN AGREGADA EXITOSAMENTE!
+
+                    </div>
+                    <div id="mensajeNO" runat="server" class="alert alert-danger" style="width: 90%" visible="false">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡ERROR DE CONEXIÓN, INTENTE OTRA VEZ!
+
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="em">Empresa</label>
                     <asp:DropDownList ID="DropDownList1" class="form-control" runat="server" DataSourceID="ObjectDataSource1" DataTextField="Nombre_empresa" DataValueField="Rut_empresa">
@@ -61,7 +80,7 @@
 
                                             <asp:RadioButton ID="rb_No" runat="server" GroupName="GpName" Text="No" OnCheckedChanged="rb_No_Click" AutoPostBack="true" />
 
-                                            <asp:RadioButton ID="rb_Na" runat="server" GroupName="GpName" Text="Na" OnCheckedChanged="rb_Na_Click" AutoPostBack="true" />
+                                            <asp:RadioButton ID="rb_Na" runat="server" GroupName="GpName" Text="No aplica" OnCheckedChanged="rb_Na_Click" AutoPostBack="true" />
 
                                         </ItemTemplate>
 
@@ -91,6 +110,8 @@
                 <div class="form-group">
                     <label for="tx_especialidad">Observaciones</label>
                     <asp:TextBox ID="TextBox1" class="form-control" runat="server" placeholder="Ingrese Observaciones" TextMode="MultiLine"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="El rango es de 5 a 300 caracteres" Font-Bold="False" ForeColor="Red" ValidationExpression="^[\s\S]{5,20}$"></asp:RegularExpressionValidator>
+
                 </div>
                 <div>
                     <asp:Button ID="Button1" runat="server" class="btn btn-primary" Text="Registrar" OnClick="Button1_Click" />

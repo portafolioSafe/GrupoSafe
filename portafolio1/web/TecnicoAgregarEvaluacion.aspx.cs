@@ -20,12 +20,14 @@ namespace web
             {
                 Response.Redirect("Home.aspx");
             }
+            mensajeSI.Visible = false;
+            mensajeNO.Visible = false;
 
-           rut = Session["Rut"].ToString();
+            rut = Session["Rut"].ToString();
 
             if (IsPostBack)
             {
-                Page.SetFocus(TextBox1);
+                //Page.SetFocus(TextBox1);
             }
             if (!IsPostBack)
             {
@@ -165,8 +167,8 @@ namespace web
         protected void rb_Na_Click(object sender, EventArgs e)
         {
 
-            RadioButton rb_Yes = (RadioButton)sender;
-            GridViewRow grid_row = (GridViewRow)rb_Yes.NamingContainer;
+            RadioButton rb_Na = (RadioButton)sender;
+            GridViewRow grid_row = (GridViewRow)rb_Na.NamingContainer;
             if (((RadioButton)grid_row.FindControl("rb_Na")).Checked == true)
             {
                 BLL.DetallePreguntaDTO de = new BLL.DetallePreguntaDTO();
@@ -256,8 +258,12 @@ namespace web
             int tipo_evaluacion = int.Parse(DropDownList2.SelectedItem.Value);
             DateTime fecha = DateTime.Now;
             string obst = TextBox1.Text;
-            string obsI = "";
+            string obsI = "Sin observaciones pendiente a revisar";
             string estado = "Enviado";
+            if (TextBox1.Text == "")
+            {
+                obst = "Sin observaciones";
+            }
             bool res =BLL.EvaluacionDTO.AgregarEvaluacion(empresa,tipo_evaluacion,rut,fecha,obst,obsI,estado);
             if (res)
             {
@@ -275,11 +281,12 @@ namespace web
                     //det.Respuesta = item.Respuesta;
                     BLL.DetallePreguntaDTO.AgregarDetalle(ide,item.IdPregunta,item.Respuesta);
                 }
-
+                mensajeSI.Visible = true;
                 // se muestra algo 
             }
             else
             {
+                mensajeSI.Visible = false;
                 // error al agregar 
             }
             
