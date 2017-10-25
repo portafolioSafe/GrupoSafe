@@ -698,9 +698,11 @@ namespace BLL.ServiceReference1 {
         
         private int Id_tipoField;
         
-        private int Id_empresaField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Id_empresaField;
         
-        private int Id_usuarioField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Id_usuarioField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -790,28 +792,103 @@ namespace BLL.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public int Id_empresa {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string Id_empresa {
             get {
                 return this.Id_empresaField;
             }
             set {
-                if ((this.Id_empresaField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.Id_empresaField, value) != true)) {
                     this.Id_empresaField = value;
                     this.RaisePropertyChanged("Id_empresa");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public int Id_usuario {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string Id_usuario {
             get {
                 return this.Id_usuarioField;
             }
             set {
-                if ((this.Id_usuarioField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.Id_usuarioField, value) != true)) {
                     this.Id_usuarioField = value;
                     this.RaisePropertyChanged("Id_usuario");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Detalle_evaluacion", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Detalle_evaluacion : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int Id_preguntaField;
+        
+        private int Id_evaluacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PreguntaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id_pregunta {
+            get {
+                return this.Id_preguntaField;
+            }
+            set {
+                if ((this.Id_preguntaField.Equals(value) != true)) {
+                    this.Id_preguntaField = value;
+                    this.RaisePropertyChanged("Id_pregunta");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int Id_evaluacion {
+            get {
+                return this.Id_evaluacionField;
+            }
+            set {
+                if ((this.Id_evaluacionField.Equals(value) != true)) {
+                    this.Id_evaluacionField = value;
+                    this.RaisePropertyChanged("Id_evaluacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Pregunta {
+            get {
+                return this.PreguntaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PreguntaField, value) != true)) {
+                    this.PreguntaField = value;
+                    this.RaisePropertyChanged("Pregunta");
                 }
             }
         }
@@ -969,6 +1046,27 @@ namespace BLL.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listadoUltimaEvaluacion", ReplyAction="*")]
         System.Threading.Tasks.Task<BLL.ServiceReference1.listadoUltimaEvaluacionResponse> listadoUltimaEvaluacionAsync(BLL.ServiceReference1.listadoUltimaEvaluacionRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listadoPorTecnico", ReplyAction="*")]
+        BLL.ServiceReference1.E_listadoPorTecnicoResponse E_listadoPorTecnico(BLL.ServiceReference1.E_listadoPorTecnicoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listadoPorTecnico", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.E_listadoPorTecnicoResponse> E_listadoPorTecnicoAsync(BLL.ServiceReference1.E_listadoPorTecnicoRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento E_ListadoIngenieroResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_ListadoIngeniero", ReplyAction="*")]
+        BLL.ServiceReference1.E_ListadoIngenieroResponse E_ListadoIngeniero(BLL.ServiceReference1.E_ListadoIngenieroRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_ListadoIngeniero", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.E_ListadoIngenieroResponse> E_ListadoIngenieroAsync(BLL.ServiceReference1.E_ListadoIngenieroRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento E_listadoDetalleResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listadoDetalle", ReplyAction="*")]
+        BLL.ServiceReference1.E_listadoDetalleResponse E_listadoDetalle(BLL.ServiceReference1.E_listadoDetalleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listadoDetalle", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.E_listadoDetalleResponse> E_listadoDetalleAsync(BLL.ServiceReference1.E_listadoDetalleRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2390,6 +2488,203 @@ namespace BLL.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_listadoPorTecnicoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listadoPorTecnico", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.E_listadoPorTecnicoRequestBody Body;
+        
+        public E_listadoPorTecnicoRequest() {
+        }
+        
+        public E_listadoPorTecnicoRequest(BLL.ServiceReference1.E_listadoPorTecnicoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_listadoPorTecnicoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string rut;
+        
+        public E_listadoPorTecnicoRequestBody() {
+        }
+        
+        public E_listadoPorTecnicoRequestBody(string rut) {
+            this.rut = rut;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_listadoPorTecnicoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listadoPorTecnicoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.E_listadoPorTecnicoResponseBody Body;
+        
+        public E_listadoPorTecnicoResponse() {
+        }
+        
+        public E_listadoPorTecnicoResponse(BLL.ServiceReference1.E_listadoPorTecnicoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_listadoPorTecnicoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Collections.Generic.List<BLL.ServiceReference1.Evaluacion> E_listadoPorTecnicoResult;
+        
+        public E_listadoPorTecnicoResponseBody() {
+        }
+        
+        public E_listadoPorTecnicoResponseBody(System.Collections.Generic.List<BLL.ServiceReference1.Evaluacion> E_listadoPorTecnicoResult) {
+            this.E_listadoPorTecnicoResult = E_listadoPorTecnicoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_ListadoIngenieroRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_ListadoIngeniero", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.E_ListadoIngenieroRequestBody Body;
+        
+        public E_ListadoIngenieroRequest() {
+        }
+        
+        public E_ListadoIngenieroRequest(BLL.ServiceReference1.E_ListadoIngenieroRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class E_ListadoIngenieroRequestBody {
+        
+        public E_ListadoIngenieroRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_ListadoIngenieroResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_ListadoIngenieroResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.E_ListadoIngenieroResponseBody Body;
+        
+        public E_ListadoIngenieroResponse() {
+        }
+        
+        public E_ListadoIngenieroResponse(BLL.ServiceReference1.E_ListadoIngenieroResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_ListadoIngenieroResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Collections.Generic.List<BLL.ServiceReference1.Evaluacion> E_ListadoIngenieroResult;
+        
+        public E_ListadoIngenieroResponseBody() {
+        }
+        
+        public E_ListadoIngenieroResponseBody(System.Collections.Generic.List<BLL.ServiceReference1.Evaluacion> E_ListadoIngenieroResult) {
+            this.E_ListadoIngenieroResult = E_ListadoIngenieroResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_listadoDetalleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listadoDetalle", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.E_listadoDetalleRequestBody Body;
+        
+        public E_listadoDetalleRequest() {
+        }
+        
+        public E_listadoDetalleRequest(BLL.ServiceReference1.E_listadoDetalleRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_listadoDetalleRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int evaluacion;
+        
+        public E_listadoDetalleRequestBody() {
+        }
+        
+        public E_listadoDetalleRequestBody(int evaluacion) {
+            this.evaluacion = evaluacion;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_listadoDetalleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listadoDetalleResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.E_listadoDetalleResponseBody Body;
+        
+        public E_listadoDetalleResponse() {
+        }
+        
+        public E_listadoDetalleResponse(BLL.ServiceReference1.E_listadoDetalleResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_listadoDetalleResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Collections.Generic.List<BLL.ServiceReference1.Detalle_evaluacion> E_listadoDetalleResult;
+        
+        public E_listadoDetalleResponseBody() {
+        }
+        
+        public E_listadoDetalleResponseBody(System.Collections.Generic.List<BLL.ServiceReference1.Detalle_evaluacion> E_listadoDetalleResult) {
+            this.E_listadoDetalleResult = E_listadoDetalleResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface wsa1SoapChannel : BLL.ServiceReference1.wsa1Soap, System.ServiceModel.IClientChannel {
     }
@@ -2955,6 +3250,79 @@ namespace BLL.ServiceReference1 {
             inValue.Body = new BLL.ServiceReference1.listadoUltimaEvaluacionRequestBody();
             inValue.Body.rut = rut;
             return ((BLL.ServiceReference1.wsa1Soap)(this)).listadoUltimaEvaluacionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.E_listadoPorTecnicoResponse BLL.ServiceReference1.wsa1Soap.E_listadoPorTecnico(BLL.ServiceReference1.E_listadoPorTecnicoRequest request) {
+            return base.Channel.E_listadoPorTecnico(request);
+        }
+        
+        public System.Collections.Generic.List<BLL.ServiceReference1.Evaluacion> E_listadoPorTecnico(string rut) {
+            BLL.ServiceReference1.E_listadoPorTecnicoRequest inValue = new BLL.ServiceReference1.E_listadoPorTecnicoRequest();
+            inValue.Body = new BLL.ServiceReference1.E_listadoPorTecnicoRequestBody();
+            inValue.Body.rut = rut;
+            BLL.ServiceReference1.E_listadoPorTecnicoResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).E_listadoPorTecnico(inValue);
+            return retVal.Body.E_listadoPorTecnicoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.E_listadoPorTecnicoResponse> BLL.ServiceReference1.wsa1Soap.E_listadoPorTecnicoAsync(BLL.ServiceReference1.E_listadoPorTecnicoRequest request) {
+            return base.Channel.E_listadoPorTecnicoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.E_listadoPorTecnicoResponse> E_listadoPorTecnicoAsync(string rut) {
+            BLL.ServiceReference1.E_listadoPorTecnicoRequest inValue = new BLL.ServiceReference1.E_listadoPorTecnicoRequest();
+            inValue.Body = new BLL.ServiceReference1.E_listadoPorTecnicoRequestBody();
+            inValue.Body.rut = rut;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).E_listadoPorTecnicoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.E_ListadoIngenieroResponse BLL.ServiceReference1.wsa1Soap.E_ListadoIngeniero(BLL.ServiceReference1.E_ListadoIngenieroRequest request) {
+            return base.Channel.E_ListadoIngeniero(request);
+        }
+        
+        public System.Collections.Generic.List<BLL.ServiceReference1.Evaluacion> E_ListadoIngeniero() {
+            BLL.ServiceReference1.E_ListadoIngenieroRequest inValue = new BLL.ServiceReference1.E_ListadoIngenieroRequest();
+            inValue.Body = new BLL.ServiceReference1.E_ListadoIngenieroRequestBody();
+            BLL.ServiceReference1.E_ListadoIngenieroResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).E_ListadoIngeniero(inValue);
+            return retVal.Body.E_ListadoIngenieroResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.E_ListadoIngenieroResponse> BLL.ServiceReference1.wsa1Soap.E_ListadoIngenieroAsync(BLL.ServiceReference1.E_ListadoIngenieroRequest request) {
+            return base.Channel.E_ListadoIngenieroAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.E_ListadoIngenieroResponse> E_ListadoIngenieroAsync() {
+            BLL.ServiceReference1.E_ListadoIngenieroRequest inValue = new BLL.ServiceReference1.E_ListadoIngenieroRequest();
+            inValue.Body = new BLL.ServiceReference1.E_ListadoIngenieroRequestBody();
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).E_ListadoIngenieroAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.E_listadoDetalleResponse BLL.ServiceReference1.wsa1Soap.E_listadoDetalle(BLL.ServiceReference1.E_listadoDetalleRequest request) {
+            return base.Channel.E_listadoDetalle(request);
+        }
+        
+        public System.Collections.Generic.List<BLL.ServiceReference1.Detalle_evaluacion> E_listadoDetalle(int evaluacion) {
+            BLL.ServiceReference1.E_listadoDetalleRequest inValue = new BLL.ServiceReference1.E_listadoDetalleRequest();
+            inValue.Body = new BLL.ServiceReference1.E_listadoDetalleRequestBody();
+            inValue.Body.evaluacion = evaluacion;
+            BLL.ServiceReference1.E_listadoDetalleResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).E_listadoDetalle(inValue);
+            return retVal.Body.E_listadoDetalleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.E_listadoDetalleResponse> BLL.ServiceReference1.wsa1Soap.E_listadoDetalleAsync(BLL.ServiceReference1.E_listadoDetalleRequest request) {
+            return base.Channel.E_listadoDetalleAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.E_listadoDetalleResponse> E_listadoDetalleAsync(int evaluacion) {
+            BLL.ServiceReference1.E_listadoDetalleRequest inValue = new BLL.ServiceReference1.E_listadoDetalleRequest();
+            inValue.Body = new BLL.ServiceReference1.E_listadoDetalleRequestBody();
+            inValue.Body.evaluacion = evaluacion;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).E_listadoDetalleAsync(inValue);
         }
     }
 }
