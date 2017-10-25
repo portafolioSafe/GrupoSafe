@@ -75,7 +75,7 @@ namespace BLL
 
         }
 
-     
+
 
 
         ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
@@ -84,6 +84,8 @@ namespace BLL
         {
             return ws.E_listarempresa();
         }
+
+        // public List<ServiceReference1.empresa>
 
 
     }

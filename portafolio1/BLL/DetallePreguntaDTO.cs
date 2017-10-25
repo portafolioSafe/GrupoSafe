@@ -50,6 +50,12 @@ namespace BLL
             return ws.E_agregarDetallePregunta(p,idP,idE);
         }
 
+        public static List<ServiceReference1.Detalle_evaluacion> ListarDetalle(int evaluacion)
+        {
+            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
+            return ws.E_listadoDetalle(evaluacion);
+        }
+
 
     }
 }

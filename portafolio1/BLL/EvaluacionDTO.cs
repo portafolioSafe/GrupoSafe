@@ -96,5 +96,11 @@ namespace BLL
             return ws.E_agregarEvaluacion(fecha,obsT,recI, estado,tipo,empresa,rut);
         }
 
+        public static List<ServiceReference1.Evaluacion> ListarEvaluacionTecnico(string rut)
+        {
+            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
+            return ws.E_listadoPorTecnico(rut);
+        }
+
     }
 }
