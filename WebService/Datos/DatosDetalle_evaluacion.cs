@@ -40,7 +40,47 @@ namespace Datos
 
         }
 
+        public static List<Detalle_evaluacion> LisarDetalle(int  evaluacion)
+        {
+            DatosConexion c = new DatosConexion();
+            using (OracleConnection conn = c.Connect())
+            {
+                List<Detalle_evaluacion> listado = new List<Detalle_evaluacion>();
+                OracleCommand oracmd = new OracleCommand();
+                oracmd.Parameters.Add(new OracleParameter("ListarDetalle", evaluacion));
+                oracmd.Parameters.Add("listarI", OracleDbType.RefCursor, ParameterDirection.Output);
+                oracmd.CommandText = "PKG_EVALUACION.pro_listarDetalle";
+                oracmd.CommandType = CommandType.StoredProcedure;
+                oracmd.Connection = conn;
+                OracleDataAdapter da = new OracleDataAdapter(oracmd);
+                DataSet ds = new DataSet();
+                try
+                {
+                    conn.Open();
+                    da.Fill(ds);
+                    OracleDataReader dr = oracmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        ClassLibrary1.Detalle_evaluacion ev = new ClassLibrary1.Detalle_evaluacion();
+                        ev.Id_evaluacion = int.Parse(dr["EVALUACION_ID_EVALUACION"].ToString());
+                        ev.Id_pregunta= int.Parse(dr["PREGUNTAS_ID_PREGUNTA"].ToString());
+                        ev.Pregunta = dr["RESPUESTA"].ToString();
 
+                        listado.Add(ev);
+                    }
+
+
+                    conn.Close();
+                    return listado;
+                }
+                catch (Exception ex)
+                {
+                    conn.Close();
+                    throw ex;
+                }
+            }
+
+        }
 
 
     }
