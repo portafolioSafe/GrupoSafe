@@ -70,7 +70,7 @@
 
     <label for="tx_especialidad">Expositor</label>
 
-          <asp:TextBox ID="txtExpositor" class="form-control" runat="server"  TextMode="Date"></asp:TextBox>
+          <asp:TextBox ID="txtExpositor" class="form-control" runat="server"  TextMode="SingleLine"></asp:TextBox>
   
 
   </div>
