@@ -357,6 +357,14 @@ namespace WebService
             }
         }
 
+        //[WebMethod]
+        //public List<capacitacion> ListarCapacitacionesxfecha()
+        //{
+
+        //    return Datos.DatosCapacitaciones.ListadoCapacitacionXfecha();
+        //}
+
+
 //FIN CAPACITACION
 
         //**************************************************************************************
