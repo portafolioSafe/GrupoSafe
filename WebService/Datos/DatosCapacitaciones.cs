@@ -179,54 +179,47 @@ namespace Datos
 
         }
 
-        public static List<capacitacion> ListadoCapacitacionXfecha() {
+        public static List<capacitacion> ListadoCapacitacionXfecha(string empresa) {
 
             DatosConexion c = new DatosConexion();
             using (OracleConnection conn = c.Connect())
             {
                 List<capacitacion> listado = new List<capacitacion>();
-                OracleCommand oracmd = new OracleCommand();
-                oracmd.Parameters.Add("listarCAP", OracleDbType.RefCursor, ParameterDirection.Output);
-                oracmd.CommandText = "PROCEDIMIENTO_CAPACITACIONES.LISTAR_CAPACITACIONES";
-                oracmd.CommandType = CommandType.StoredProcedure;
-                oracmd.Connection = conn;
-                OracleDataAdapter da = new OracleDataAdapter(oracmd);
-                DataSet ds = new DataSet();
+                List<capacitacion> listadoxEmpresa = ListadoCapacitacionXempresa(empresa);
+
                 try
                 {
-                    conn.Open();
-                    da.Fill(ds);
-                    OracleDataReader dr = oracmd.ExecuteReader();
-                    while (dr.Read())
+                    foreach (capacitacion item in listadoxEmpresa)
                     {
+                            DateTime hoy = DateTime.Today;
+                            string fechaSET = item.Fecha;
+                            DateTime fechaIN = Convert.ToDateTime(fechaSET);
+                           if  (fechaIN.DayOfYear > hoy.DayOfYear)
+	                    {
 
-                        DateTime hoy = DateTime.Today;
-                        string fechaSET = dr["FECHA"].ToString().Substring(0, 11);
-                        DateTime fechaIN = Convert.ToDateTime(fechaSET);
-                       if  (fechaIN.DayOfYear > hoy.DayOfYear)
-	{
-
-                        capacitacion cap = new capacitacion();
-                        cap.Id = int.Parse(dr["ID_CAP"].ToString());
-                        cap.Area = dr["AREA_CAPACITACION"].ToString();
+                            capacitacion cap = new capacitacion();
+                            cap.Id = item.Id;
+                            cap.Area =item.Area;
 
 
-                        cap.Fecha = dr["FECHA"].ToString().Substring(0, 11);
-                        cap.Tema = dr["TEMA"].ToString();
-                        cap.Expositor = dr["EXPOSITOR"].ToString();
-                        cap.Asistencia = int.Parse(dr["ASISTENCIA_MIN"].ToString());
-                        cap.Rut_empresa = dr["NOMBRE"].ToString();
-                        cap.Tipo_cap = dr["TIPO"].ToString();
+                            cap.Fecha =item.Fecha;
+                            cap.Tema = item.Tema;
+                            cap.Expositor = item.Expositor;
+                            cap.Asistencia = item.Asistencia;
+                            cap.Rut_empresa = item.Rut_empresa;
+                            cap.Tipo_cap = item.Tipo_cap;
 
-                        listado.Add(cap);
-    } 
+                            listado.Add(cap);
+
+
+                           }
+                
                     }
+                        conn.Close();
+                        return listado;
+                    
 
-                    conn.Close();
-                    return listado;
-
-
-                }
+                }  
                 catch (Exception ex)
                 {
 

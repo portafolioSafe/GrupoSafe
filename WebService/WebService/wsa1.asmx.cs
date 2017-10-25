@@ -357,12 +357,21 @@ namespace WebService
             }
         }
 
-        //[WebMethod]
-        //public List<capacitacion> ListarCapacitacionesxfecha()
-        //{
+        [WebMethod]
+        public List<capacitacion> ListarCapacitacionesxfecha(string empresaNombre)
+        {
 
-        //    return Datos.DatosCapacitaciones.ListadoCapacitacionXfecha();
-        //}
+            return Datos.DatosCapacitaciones.ListadoCapacitacionXfecha(empresaNombre);
+        }
+
+        [WebMethod]
+        public List<capacitacion> ListarCapacitacionesxempresa(string empresaNombre)
+        {
+
+            return Datos.DatosCapacitaciones.ListadoCapacitacionXempresa(empresaNombre);
+        }
+
+
 
 
 //FIN CAPACITACION
