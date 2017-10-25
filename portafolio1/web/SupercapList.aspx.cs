@@ -43,10 +43,10 @@ namespace web
                 TableCell contactName = selectedRow.Cells[0];
                 string contact = contactName.Text;
 
-                // Display the selected author.
+                // Captura el id de la capacitacion mostrada en la tabla en una variable de sesion
                 Session["id_capacitacion"] = contact;
-                MessageBox.Show("You selected " + contact + ".","asdasd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-       
+                //Pasa a la pagina de modificacion
+                Response.Redirect("SupercapEdit.aspx");
             }
         }
 
