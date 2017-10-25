@@ -164,7 +164,16 @@
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.TipoEvaluaciones.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ValidarEmpresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ValidarMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ValidarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ValidarUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\wsa1.wsdl" />

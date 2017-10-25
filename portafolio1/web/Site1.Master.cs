@@ -36,7 +36,7 @@ namespace web
                      case "Supervisor":
                          menuSupervisor.Visible = true;
                          break;
-                     case "Medico":
+                     case "Médico":
                          menuMedico.Visible = true;
                          break;
                      case "Ingeniero":

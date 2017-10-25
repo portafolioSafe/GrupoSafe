@@ -74,6 +74,8 @@
             <label for="contactChoice1">Usuario</label></td>
                     <td class="auto-style1">    <input type="radio" id="contactChoice2" name="login" value="Empresa" runat="server"/>
             <label for="contactChoice2">Empresa</label></td>
+                    <td class="auto-style1">    <input type="radio" id="Radio1" name="login" value="Medico" runat="server"/>
+            <label for="contactChoice2">Médico</label></td>
                     </tr>
    
             </table>

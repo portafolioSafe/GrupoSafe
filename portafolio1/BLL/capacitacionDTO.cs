@@ -128,6 +128,12 @@ namespace BLL
 
             return ws.ListarCapacitacionesxfecha(nombreEmpresa);
 
+        }
+        public List<ServiceReference1.capacitacion> ListarCapacitacionxEmpresa(string nombreEmpresa)
+        {
+
+            return ws.ListarCapacitacionesxempresa(nombreEmpresa);
+
         } 
 
 
