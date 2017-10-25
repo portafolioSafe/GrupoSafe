@@ -908,6 +908,27 @@ namespace BLL.ServiceReference1 {
     public interface wsa1Soap {
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidarUsuario", ReplyAction="*")]
+        BLL.ServiceReference1.ValidarUsuarioResponse ValidarUsuario(BLL.ServiceReference1.ValidarUsuarioRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidarUsuario", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ValidarUsuarioResponse> ValidarUsuarioAsync(BLL.ServiceReference1.ValidarUsuarioRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidarEmpresa", ReplyAction="*")]
+        BLL.ServiceReference1.ValidarEmpresaResponse ValidarEmpresa(BLL.ServiceReference1.ValidarEmpresaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidarEmpresa", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ValidarEmpresaResponse> ValidarEmpresaAsync(BLL.ServiceReference1.ValidarEmpresaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidarMedico", ReplyAction="*")]
+        BLL.ServiceReference1.ValidarMedicoResponse ValidarMedico(BLL.ServiceReference1.ValidarMedicoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidarMedico", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ValidarMedicoResponse> ValidarMedicoAsync(BLL.ServiceReference1.ValidarMedicoRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Validar", ReplyAction="*")]
         BLL.ServiceReference1.ValidarResponse Validar(BLL.ServiceReference1.ValidarRequest request);
         
@@ -1081,6 +1102,222 @@ namespace BLL.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listadoDetalle", ReplyAction="*")]
         System.Threading.Tasks.Task<BLL.ServiceReference1.E_listadoDetalleResponse> E_listadoDetalleAsync(BLL.ServiceReference1.E_listadoDetalleRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ValidarUsuarioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidarUsuario", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ValidarUsuarioRequestBody Body;
+        
+        public ValidarUsuarioRequest() {
+        }
+        
+        public ValidarUsuarioRequest(BLL.ServiceReference1.ValidarUsuarioRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ValidarUsuarioRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string rut;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string pass;
+        
+        public ValidarUsuarioRequestBody() {
+        }
+        
+        public ValidarUsuarioRequestBody(string rut, string pass) {
+            this.rut = rut;
+            this.pass = pass;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ValidarUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidarUsuarioResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ValidarUsuarioResponseBody Body;
+        
+        public ValidarUsuarioResponse() {
+        }
+        
+        public ValidarUsuarioResponse(BLL.ServiceReference1.ValidarUsuarioResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ValidarUsuarioResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ValidarUsuarioResult;
+        
+        public ValidarUsuarioResponseBody() {
+        }
+        
+        public ValidarUsuarioResponseBody(string ValidarUsuarioResult) {
+            this.ValidarUsuarioResult = ValidarUsuarioResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ValidarEmpresaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidarEmpresa", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ValidarEmpresaRequestBody Body;
+        
+        public ValidarEmpresaRequest() {
+        }
+        
+        public ValidarEmpresaRequest(BLL.ServiceReference1.ValidarEmpresaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ValidarEmpresaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string rut;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string pass;
+        
+        public ValidarEmpresaRequestBody() {
+        }
+        
+        public ValidarEmpresaRequestBody(string rut, string pass) {
+            this.rut = rut;
+            this.pass = pass;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ValidarEmpresaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidarEmpresaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ValidarEmpresaResponseBody Body;
+        
+        public ValidarEmpresaResponse() {
+        }
+        
+        public ValidarEmpresaResponse(BLL.ServiceReference1.ValidarEmpresaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ValidarEmpresaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ValidarEmpresaResult;
+        
+        public ValidarEmpresaResponseBody() {
+        }
+        
+        public ValidarEmpresaResponseBody(string ValidarEmpresaResult) {
+            this.ValidarEmpresaResult = ValidarEmpresaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ValidarMedicoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidarMedico", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ValidarMedicoRequestBody Body;
+        
+        public ValidarMedicoRequest() {
+        }
+        
+        public ValidarMedicoRequest(BLL.ServiceReference1.ValidarMedicoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ValidarMedicoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string rut;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string pass;
+        
+        public ValidarMedicoRequestBody() {
+        }
+        
+        public ValidarMedicoRequestBody(string rut, string pass) {
+            this.rut = rut;
+            this.pass = pass;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ValidarMedicoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidarMedicoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ValidarMedicoResponseBody Body;
+        
+        public ValidarMedicoResponse() {
+        }
+        
+        public ValidarMedicoResponse(BLL.ServiceReference1.ValidarMedicoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ValidarMedicoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ValidarMedicoResult;
+        
+        public ValidarMedicoResponseBody() {
+        }
+        
+        public ValidarMedicoResponseBody(string ValidarMedicoResult) {
+            this.ValidarMedicoResult = ValidarMedicoResult;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2860,6 +3097,87 @@ namespace BLL.ServiceReference1 {
         
         public wsa1SoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.ValidarUsuarioResponse BLL.ServiceReference1.wsa1Soap.ValidarUsuario(BLL.ServiceReference1.ValidarUsuarioRequest request) {
+            return base.Channel.ValidarUsuario(request);
+        }
+        
+        public string ValidarUsuario(string rut, string pass) {
+            BLL.ServiceReference1.ValidarUsuarioRequest inValue = new BLL.ServiceReference1.ValidarUsuarioRequest();
+            inValue.Body = new BLL.ServiceReference1.ValidarUsuarioRequestBody();
+            inValue.Body.rut = rut;
+            inValue.Body.pass = pass;
+            BLL.ServiceReference1.ValidarUsuarioResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).ValidarUsuario(inValue);
+            return retVal.Body.ValidarUsuarioResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ValidarUsuarioResponse> BLL.ServiceReference1.wsa1Soap.ValidarUsuarioAsync(BLL.ServiceReference1.ValidarUsuarioRequest request) {
+            return base.Channel.ValidarUsuarioAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.ValidarUsuarioResponse> ValidarUsuarioAsync(string rut, string pass) {
+            BLL.ServiceReference1.ValidarUsuarioRequest inValue = new BLL.ServiceReference1.ValidarUsuarioRequest();
+            inValue.Body = new BLL.ServiceReference1.ValidarUsuarioRequestBody();
+            inValue.Body.rut = rut;
+            inValue.Body.pass = pass;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).ValidarUsuarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.ValidarEmpresaResponse BLL.ServiceReference1.wsa1Soap.ValidarEmpresa(BLL.ServiceReference1.ValidarEmpresaRequest request) {
+            return base.Channel.ValidarEmpresa(request);
+        }
+        
+        public string ValidarEmpresa(string rut, string pass) {
+            BLL.ServiceReference1.ValidarEmpresaRequest inValue = new BLL.ServiceReference1.ValidarEmpresaRequest();
+            inValue.Body = new BLL.ServiceReference1.ValidarEmpresaRequestBody();
+            inValue.Body.rut = rut;
+            inValue.Body.pass = pass;
+            BLL.ServiceReference1.ValidarEmpresaResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).ValidarEmpresa(inValue);
+            return retVal.Body.ValidarEmpresaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ValidarEmpresaResponse> BLL.ServiceReference1.wsa1Soap.ValidarEmpresaAsync(BLL.ServiceReference1.ValidarEmpresaRequest request) {
+            return base.Channel.ValidarEmpresaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.ValidarEmpresaResponse> ValidarEmpresaAsync(string rut, string pass) {
+            BLL.ServiceReference1.ValidarEmpresaRequest inValue = new BLL.ServiceReference1.ValidarEmpresaRequest();
+            inValue.Body = new BLL.ServiceReference1.ValidarEmpresaRequestBody();
+            inValue.Body.rut = rut;
+            inValue.Body.pass = pass;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).ValidarEmpresaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.ValidarMedicoResponse BLL.ServiceReference1.wsa1Soap.ValidarMedico(BLL.ServiceReference1.ValidarMedicoRequest request) {
+            return base.Channel.ValidarMedico(request);
+        }
+        
+        public string ValidarMedico(string rut, string pass) {
+            BLL.ServiceReference1.ValidarMedicoRequest inValue = new BLL.ServiceReference1.ValidarMedicoRequest();
+            inValue.Body = new BLL.ServiceReference1.ValidarMedicoRequestBody();
+            inValue.Body.rut = rut;
+            inValue.Body.pass = pass;
+            BLL.ServiceReference1.ValidarMedicoResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).ValidarMedico(inValue);
+            return retVal.Body.ValidarMedicoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ValidarMedicoResponse> BLL.ServiceReference1.wsa1Soap.ValidarMedicoAsync(BLL.ServiceReference1.ValidarMedicoRequest request) {
+            return base.Channel.ValidarMedicoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.ValidarMedicoResponse> ValidarMedicoAsync(string rut, string pass) {
+            BLL.ServiceReference1.ValidarMedicoRequest inValue = new BLL.ServiceReference1.ValidarMedicoRequest();
+            inValue.Body = new BLL.ServiceReference1.ValidarMedicoRequestBody();
+            inValue.Body.rut = rut;
+            inValue.Body.pass = pass;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).ValidarMedicoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

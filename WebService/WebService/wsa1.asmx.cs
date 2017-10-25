@@ -21,14 +21,189 @@ namespace WebService
     public class wsa1 : System.Web.Services.WebService
     {
 //METODOS DE AUTENTICACION
+
+        [WebMethod]
+        public string ValidarUsuario(string rut, string pass)
+        {
+            string us = "";
+
+            string meme = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+            OracleConnection conn = new OracleConnection(meme);
+
+            try {
+
+                conn.Open();
+
+                OracleParameter param = new OracleParameter();
+                param.OracleDbType = OracleDbType.Decimal;
+
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.Parameters.Add(param);
+                // estado para empresa y usuario
+                cmd.CommandText = "SELECT  RUT_USUARIO , NOMBRE, ESTADO FROM USUARIO WHERE RUT_USUARIO = '" + rut + "' AND CONTRASEÑA ='" + pass + "'";
+                cmd.CommandType = CommandType.Text;
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    OracleDataReader dr = cmd.ExecuteReader();
+                    dr.Read();
+
+                    if (dr.GetString(2) == "inactivo")
+                    {
+                        us = "malo";
+
+                    }
+                    else
+                    {
+                        us = dr.GetString(1);
+
+                    }
+
+
+                }
+                catch (Exception)
+                {
+
+                    us = "nulo";
+
+                }
+
+
+            }catch(Exception ){
+                us = "server";
+            }
+            return us;
+        }
+
+        [WebMethod]
+        public string ValidarEmpresa(string rut, string pass)
+        {
+            string us = "";
+
+            string meme = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+            OracleConnection conn = new OracleConnection(meme);
+
+            try
+            {
+
+                conn.Open();
+
+                OracleParameter param = new OracleParameter();
+                param.OracleDbType = OracleDbType.Decimal;
+
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.Parameters.Add(param);
+                // estado para empresa y usuario
+                cmd.CommandText = "SELECT  RUT_EMPRESA , NOMBRE, ESTADO FROM EMPRESA WHERE RUT_EMPRESA = '" + rut + "' AND CONTRASEÑA ='" + pass + "'";
+                cmd.CommandType = CommandType.Text;
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    OracleDataReader dr = cmd.ExecuteReader();
+                    dr.Read();
+
+                    if (dr.GetString(2) == "inactivo")
+                    {
+                        us = "malo";
+
+                    }
+                    else
+                    {
+                        us = dr.GetString(1);
+
+                    }
+
+
+                }
+                catch (Exception)
+                {
+
+                    us = "nulo";
+
+                }
+
+
+            }
+            catch (Exception)
+            {
+                us = "server";
+            }
+            return us;
+        }
+
+        [WebMethod]
+        public string ValidarMedico(string rut, string pass)
+        {
+            string us = "";
+
+            string meme = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+            OracleConnection conn = new OracleConnection(meme);
+
+            try
+            {
+
+                conn.Open();
+
+                OracleParameter param = new OracleParameter();
+                param.OracleDbType = OracleDbType.Decimal;
+
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.Parameters.Add(param);
+                // estado para empresa y usuario
+                cmd.CommandText = "SELECT  RUT_MEDICO , NOMBRE FROM MEDICO WHERE RUT_MEDICO = '" + rut + "' AND CONTRASENA ='" + pass + "'";
+                cmd.CommandType = CommandType.Text;
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    OracleDataReader dr = cmd.ExecuteReader();
+                    dr.Read();
+
+
+
+
+
+                    us = dr.GetString(1);
+
+                    
+
+
+                }
+                catch (Exception)
+                {
+
+                    us = "nulo";
+
+                }
+
+
+            }
+            catch (Exception)
+            {
+                us = "server";
+            }
+            return us;
+        }
+
+
+
         [WebMethod]
         public string Validar(string rut, string pass, string tipo)
         {
             string us = "";
             string rut_login = "";
-            if (tipo == "EMPRESA")
+            if (tipo == "Empresa")
             {
                 rut_login = "RUT_EMPRESA";
+            }
+            else if(tipo == "Medico")
+            {
+                rut_login = "RUT_MEDICO";
             }
             else {
                 rut_login = "RUT_USUARIO";
@@ -46,7 +221,8 @@ namespace WebService
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = conn;
                 cmd.Parameters.Add(param);
-                cmd.CommandText = "SELECT " + rut_login + " , NOMBRE, ESTADO FROM " + tipo + " WHERE " + rut_login + " = '" + rut + "' AND CONTRASEÑA ='" + pass + "'";
+                // estado para empresa y usuario
+                cmd.CommandText = "SELECT " + rut_login + " , NOMBRE FROM " + tipo + " WHERE " + rut_login + " = '" + rut + "' AND CONTRASENA ='" + pass + "'";
                 cmd.CommandType = CommandType.Text;
 
 
@@ -90,9 +266,6 @@ namespace WebService
 
 
 
-
-
-
         }
 
         [WebMethod]
@@ -102,7 +275,12 @@ namespace WebService
 
             OracleConnection conn = new OracleConnection(str);
             string us = "";
-            
+            if (tipo =="Medico")
+            {
+                us = "Médico";
+            }
+
+
             if (tipo == "Usuario")
             {
                 //string meme = "DATA SOURCE = 190.163.62.242:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
@@ -181,7 +359,7 @@ namespace WebService
             }
 
             }
-            else
+            else if(tipo =="Empresa")
             {
                 us = "Cliente";
                 

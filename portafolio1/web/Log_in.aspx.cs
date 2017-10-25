@@ -43,28 +43,43 @@ namespace web
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            
+            MessageBox.Show("clave serializado "+BLL.loginController.Hash(pass.Value)+". ", "Error de autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 
             ServiceReference1.wsa1SoapClient wf = new ServiceReference1.wsa1SoapClient();
-
+            BLL.loginController memito = new BLL.loginController();
 
             string radiob = "";
+            string tipo = "";
+            pw= validarRut(user.Value).ToString();
+            string passsha1 = BLL.loginController.Hash(pass.Value);
             try
             {
-               
+                string nombre = "";
                 if (Request.Form["login"] != null)
                 {
                     radiob = Request.Form["login"].ToString();
                 }
 
-                
-                pw= validarRut(user.Value).ToString();
-                string nombre = wf.Validar(pw,pass.Value , radiob);
-                string tipo = "";
-                
-               
+                switch (radiob)
+	            {
+                    case "Usuario":
+                             nombre = memito.validaUsuario(pw, passsha1);
+                            break;
+                    case "Empresa":
+                          nombre = memito.validaEmpresa(pw, passsha1);
+                        break;
+                    case "Medico":
+                        nombre = memito.validaMedico(pw, passsha1);
+                        break;
+		            default:
+                        error1.Visible=true;
+                    break;
+	            }
 
-                    tipo = wf.DevuelveTipo(pw, radiob);
+                
+
+                    tipo = memito.devuelveTipo(pw, radiob);
                     if (tipo.Equals("nope"))
                     {
                        // Response.Redirect("Log_in.aspx");
