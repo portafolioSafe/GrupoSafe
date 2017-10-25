@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Area_usDTOcs.cs" />
     <Compile Include="capacitacionDTO.cs" />
     <Compile Include="CategoriaDTO.cs" />
     <Compile Include="DetallePreguntaDTO.cs" />
@@ -80,6 +81,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.DevuelveTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.editarCApacitacionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.Evaluacion.datasource">

@@ -10,12 +10,54 @@ namespace BLL
     {
 
         private string rut;
+
+        public string Rut
+        {
+            get { return rut; }
+            set { rut = value; }
+        }
         private string nombre;
+
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value; }
+        }
         private string direccion;
+
+        public string Direccion
+        {
+            get { return direccion; }
+            set { direccion = value; }
+        }
         private int telefono;
+
+        public int Telefono
+        {
+            get { return telefono; }
+            set { telefono = value; }
+        }
         private string correo;
+
+        public string Correo
+        {
+            get { return correo; }
+            set { correo = value; }
+        }
         private string estado;
+
+        public string Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
         private string contra;
+
+        public string Contra
+        {
+            get { return contra; }
+            set { contra = value; }
+        }
 
         public EmpresaDTO(string rut, string nombre, string direccion, int telefono, string correo, string estado, string contra)
         {
@@ -33,13 +75,7 @@ namespace BLL
 
         }
 
-        public string Rut { get => rut; set => rut = value; }
-        public string Nombre { get => nombre; set => nombre = value; }
-        public string Direccion { get => direccion; set => direccion = value; }
-        public int Telefono { get => telefono; set => telefono = value; }
-        public string Correo { get => correo; set => correo = value; }
-        public string Estado { get => estado; set => estado = value; }
-        public string Contra { get => contra; set => contra = value; }
+     
 
 
         ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();

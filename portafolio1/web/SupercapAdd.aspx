@@ -27,7 +27,7 @@
                         </div>
 
     <label for="em">Empresa</label>
-      <asp:DropDownList ID="Comboemp" class="form-control" runat="server" DataSourceID="ObjectDataSource1" DataTextField="nombre_empresa" DataValueField="rut_empresa" ></asp:DropDownList>
+      <asp:DropDownList ID="Comboemp" class="form-control" runat="server" DataSourceID="ObjectDataSource1" DataTextField="Nombre_empresa" DataValueField="Rut_empresa" ></asp:DropDownList>
   </div>
  
 
@@ -35,9 +35,9 @@
 
     <label for="tx_especialidad">Tipo de capacitacion</label>
 
-       <asp:DropDownList ID="Combotipocap" class="form-control" runat="server" DataSourceID="ObjectDataSource2" DataTextField="nombre" DataValueField="id" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged"></asp:DropDownList>
+       <asp:DropDownList ID="Combotipocap" class="form-control" runat="server" DataSourceID="ObjectDataSource2" DataTextField="Nombre" DataValueField="Id" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged"></asp:DropDownList>
 
-          <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetListarTipoCap" TypeName="web.ServiceReference1.wsa1SoapClient"></asp:ObjectDataSource>
+          <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="listarTipoCapacitacion" TypeName="BLL.capacitacionDTO"></asp:ObjectDataSource>
 
   </div>
             <div class="form-group">
@@ -54,9 +54,9 @@
 
     <label for="tx_especialidad">Area</label>
 
-          <asp:DropDownList ID="Comboarea" class="form-control" runat="server" DataSourceID="ObjectDataSource3" DataTextField="nombre_area" DataValueField="nombre_area" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged"></asp:DropDownList>
+          <asp:DropDownList ID="Comboarea" class="form-control" runat="server" DataSourceID="ObjectDataSource3" DataTextField="Nombre_area" DataValueField="Nombre_area" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged"></asp:DropDownList>
 
-                      <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="listarArea" TypeName="web.ServiceReference1.wsa1SoapClient"></asp:ObjectDataSource>
+                      <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="listarArea" TypeName="BLL.Area_usDTO"></asp:ObjectDataSource>
   
 
   </div>
@@ -100,7 +100,7 @@
                 <asp:Button ID="Button1" runat="server" class="btn btn-primary" Text="Agregar capacitación" ValidationGroup="valivali" OnClick="Button1_Click" />
      
 
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetlistarEmpresaList" TypeName="web.ServiceReference1.wsa1SoapClient"></asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="ListadoEmpresas" TypeName="BLL.EmpresaDTO"></asp:ObjectDataSource>
      
 
         </div>

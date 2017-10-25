@@ -10,9 +10,33 @@ namespace BLL
     {
 
         private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
         private string pregunta;
+
+        public string Pregunta
+        {
+            get { return pregunta; }
+            set { pregunta = value; }
+        }
         private string estado;
+
+        public string Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
         private int id_cat;
+
+        public int Id_cat
+        {
+            get { return id_cat; }
+            set { id_cat = value; }
+        }
 
         public PreguntasDTO(int id, string pregunta, string estado, int id_cat)
         {
@@ -25,11 +49,7 @@ namespace BLL
         {
 
         }
-        public int Id { get => id; set => id = value; }
-        public string Pregunta { get => pregunta; set => pregunta = value; }
-        public string Estado { get => estado; set => estado = value; }
-        public int Id_cat { get => id_cat; set => id_cat = value; }
-
+  
       
         public static bool AgregarPregunta(int id, string pregunta)
         {
