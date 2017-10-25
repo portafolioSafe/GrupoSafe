@@ -149,6 +149,12 @@
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ListarCapacitacionesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ListarCapacitacionesxempresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ListarCapacitacionesxfechaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.Pregunta.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

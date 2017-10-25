@@ -180,6 +180,34 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ListarCapacitacionesxfecha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empresaNombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarCapacitacionesxfechaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarCapacitacionesxfechaResult" type="tns:ArrayOfCapacitacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarCapacitacionesxempresa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empresaNombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarCapacitacionesxempresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarCapacitacionesxempresaResult" type="tns:ArrayOfCapacitacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="E_guardarCategoria">
         <s:complexType>
           <s:sequence>
@@ -494,6 +522,18 @@
   <wsdl:message name="editarCApacitacionSoapOut">
     <wsdl:part name="parameters" element="tns:editarCApacitacionResponse" />
   </wsdl:message>
+  <wsdl:message name="ListarCapacitacionesxfechaSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarCapacitacionesxfecha" />
+  </wsdl:message>
+  <wsdl:message name="ListarCapacitacionesxfechaSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarCapacitacionesxfechaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarCapacitacionesxempresaSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarCapacitacionesxempresa" />
+  </wsdl:message>
+  <wsdl:message name="ListarCapacitacionesxempresaSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarCapacitacionesxempresaResponse" />
+  </wsdl:message>
   <wsdl:message name="E_guardarCategoriaSoapIn">
     <wsdl:part name="parameters" element="tns:E_guardarCategoria" />
   </wsdl:message>
@@ -614,6 +654,14 @@
     <wsdl:operation name="editarCApacitacion">
       <wsdl:input message="tns:editarCApacitacionSoapIn" />
       <wsdl:output message="tns:editarCApacitacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarCapacitacionesxfecha">
+      <wsdl:input message="tns:ListarCapacitacionesxfechaSoapIn" />
+      <wsdl:output message="tns:ListarCapacitacionesxfechaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarCapacitacionesxempresa">
+      <wsdl:input message="tns:ListarCapacitacionesxempresaSoapIn" />
+      <wsdl:output message="tns:ListarCapacitacionesxempresaSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="E_guardarCategoria">
       <wsdl:input message="tns:E_guardarCategoriaSoapIn" />
@@ -748,6 +796,24 @@
     </wsdl:operation>
     <wsdl:operation name="editarCApacitacion">
       <soap:operation soapAction="http://tempuri.org/editarCApacitacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCapacitacionesxfecha">
+      <soap:operation soapAction="http://tempuri.org/ListarCapacitacionesxfecha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCapacitacionesxempresa">
+      <soap:operation soapAction="http://tempuri.org/ListarCapacitacionesxempresa" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -958,6 +1024,24 @@
     </wsdl:operation>
     <wsdl:operation name="editarCApacitacion">
       <soap12:operation soapAction="http://tempuri.org/editarCApacitacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCapacitacionesxfecha">
+      <soap12:operation soapAction="http://tempuri.org/ListarCapacitacionesxfecha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCapacitacionesxempresa">
+      <soap12:operation soapAction="http://tempuri.org/ListarCapacitacionesxempresa" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

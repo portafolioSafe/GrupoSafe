@@ -970,6 +970,20 @@ namespace BLL.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/editarCApacitacion", ReplyAction="*")]
         System.Threading.Tasks.Task<BLL.ServiceReference1.editarCApacitacionResponse> editarCApacitacionAsync(BLL.ServiceReference1.editarCApacitacionRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento empresaNombre del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCapacitacionesxfecha", ReplyAction="*")]
+        BLL.ServiceReference1.ListarCapacitacionesxfechaResponse ListarCapacitacionesxfecha(BLL.ServiceReference1.ListarCapacitacionesxfechaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCapacitacionesxfecha", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ListarCapacitacionesxfechaResponse> ListarCapacitacionesxfechaAsync(BLL.ServiceReference1.ListarCapacitacionesxfechaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento empresaNombre del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCapacitacionesxempresa", ReplyAction="*")]
+        BLL.ServiceReference1.ListarCapacitacionesxempresaResponse ListarCapacitacionesxempresa(BLL.ServiceReference1.ListarCapacitacionesxempresaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCapacitacionesxempresa", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ListarCapacitacionesxempresaResponse> ListarCapacitacionesxempresaAsync(BLL.ServiceReference1.ListarCapacitacionesxempresaRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento cat del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_guardarCategoria", ReplyAction="*")]
         BLL.ServiceReference1.E_guardarCategoriaResponse E_guardarCategoria(BLL.ServiceReference1.E_guardarCategoriaRequest request);
@@ -1714,6 +1728,142 @@ namespace BLL.ServiceReference1 {
         
         public editarCApacitacionResponseBody(bool editarCApacitacionResult) {
             this.editarCApacitacionResult = editarCApacitacionResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ListarCapacitacionesxfechaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListarCapacitacionesxfecha", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ListarCapacitacionesxfechaRequestBody Body;
+        
+        public ListarCapacitacionesxfechaRequest() {
+        }
+        
+        public ListarCapacitacionesxfechaRequest(BLL.ServiceReference1.ListarCapacitacionesxfechaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ListarCapacitacionesxfechaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string empresaNombre;
+        
+        public ListarCapacitacionesxfechaRequestBody() {
+        }
+        
+        public ListarCapacitacionesxfechaRequestBody(string empresaNombre) {
+            this.empresaNombre = empresaNombre;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ListarCapacitacionesxfechaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListarCapacitacionesxfechaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ListarCapacitacionesxfechaResponseBody Body;
+        
+        public ListarCapacitacionesxfechaResponse() {
+        }
+        
+        public ListarCapacitacionesxfechaResponse(BLL.ServiceReference1.ListarCapacitacionesxfechaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ListarCapacitacionesxfechaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BLL.ServiceReference1.ArrayOfCapacitacion ListarCapacitacionesxfechaResult;
+        
+        public ListarCapacitacionesxfechaResponseBody() {
+        }
+        
+        public ListarCapacitacionesxfechaResponseBody(BLL.ServiceReference1.ArrayOfCapacitacion ListarCapacitacionesxfechaResult) {
+            this.ListarCapacitacionesxfechaResult = ListarCapacitacionesxfechaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ListarCapacitacionesxempresaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListarCapacitacionesxempresa", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ListarCapacitacionesxempresaRequestBody Body;
+        
+        public ListarCapacitacionesxempresaRequest() {
+        }
+        
+        public ListarCapacitacionesxempresaRequest(BLL.ServiceReference1.ListarCapacitacionesxempresaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ListarCapacitacionesxempresaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string empresaNombre;
+        
+        public ListarCapacitacionesxempresaRequestBody() {
+        }
+        
+        public ListarCapacitacionesxempresaRequestBody(string empresaNombre) {
+            this.empresaNombre = empresaNombre;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ListarCapacitacionesxempresaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListarCapacitacionesxempresaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ListarCapacitacionesxempresaResponseBody Body;
+        
+        public ListarCapacitacionesxempresaResponse() {
+        }
+        
+        public ListarCapacitacionesxempresaResponse(BLL.ServiceReference1.ListarCapacitacionesxempresaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ListarCapacitacionesxempresaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BLL.ServiceReference1.ArrayOfCapacitacion ListarCapacitacionesxempresaResult;
+        
+        public ListarCapacitacionesxempresaResponseBody() {
+        }
+        
+        public ListarCapacitacionesxempresaResponseBody(BLL.ServiceReference1.ArrayOfCapacitacion ListarCapacitacionesxempresaResult) {
+            this.ListarCapacitacionesxempresaResult = ListarCapacitacionesxempresaResult;
         }
     }
     
@@ -2959,6 +3109,56 @@ namespace BLL.ServiceReference1 {
             inValue.Body.empresa = empresa;
             inValue.Body.tipocap = tipocap;
             return ((BLL.ServiceReference1.wsa1Soap)(this)).editarCApacitacionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.ListarCapacitacionesxfechaResponse BLL.ServiceReference1.wsa1Soap.ListarCapacitacionesxfecha(BLL.ServiceReference1.ListarCapacitacionesxfechaRequest request) {
+            return base.Channel.ListarCapacitacionesxfecha(request);
+        }
+        
+        public BLL.ServiceReference1.ArrayOfCapacitacion ListarCapacitacionesxfecha(string empresaNombre) {
+            BLL.ServiceReference1.ListarCapacitacionesxfechaRequest inValue = new BLL.ServiceReference1.ListarCapacitacionesxfechaRequest();
+            inValue.Body = new BLL.ServiceReference1.ListarCapacitacionesxfechaRequestBody();
+            inValue.Body.empresaNombre = empresaNombre;
+            BLL.ServiceReference1.ListarCapacitacionesxfechaResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).ListarCapacitacionesxfecha(inValue);
+            return retVal.Body.ListarCapacitacionesxfechaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ListarCapacitacionesxfechaResponse> BLL.ServiceReference1.wsa1Soap.ListarCapacitacionesxfechaAsync(BLL.ServiceReference1.ListarCapacitacionesxfechaRequest request) {
+            return base.Channel.ListarCapacitacionesxfechaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.ListarCapacitacionesxfechaResponse> ListarCapacitacionesxfechaAsync(string empresaNombre) {
+            BLL.ServiceReference1.ListarCapacitacionesxfechaRequest inValue = new BLL.ServiceReference1.ListarCapacitacionesxfechaRequest();
+            inValue.Body = new BLL.ServiceReference1.ListarCapacitacionesxfechaRequestBody();
+            inValue.Body.empresaNombre = empresaNombre;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).ListarCapacitacionesxfechaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.ListarCapacitacionesxempresaResponse BLL.ServiceReference1.wsa1Soap.ListarCapacitacionesxempresa(BLL.ServiceReference1.ListarCapacitacionesxempresaRequest request) {
+            return base.Channel.ListarCapacitacionesxempresa(request);
+        }
+        
+        public BLL.ServiceReference1.ArrayOfCapacitacion ListarCapacitacionesxempresa(string empresaNombre) {
+            BLL.ServiceReference1.ListarCapacitacionesxempresaRequest inValue = new BLL.ServiceReference1.ListarCapacitacionesxempresaRequest();
+            inValue.Body = new BLL.ServiceReference1.ListarCapacitacionesxempresaRequestBody();
+            inValue.Body.empresaNombre = empresaNombre;
+            BLL.ServiceReference1.ListarCapacitacionesxempresaResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).ListarCapacitacionesxempresa(inValue);
+            return retVal.Body.ListarCapacitacionesxempresaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ListarCapacitacionesxempresaResponse> BLL.ServiceReference1.wsa1Soap.ListarCapacitacionesxempresaAsync(BLL.ServiceReference1.ListarCapacitacionesxempresaRequest request) {
+            return base.Channel.ListarCapacitacionesxempresaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.ListarCapacitacionesxempresaResponse> ListarCapacitacionesxempresaAsync(string empresaNombre) {
+            BLL.ServiceReference1.ListarCapacitacionesxempresaRequest inValue = new BLL.ServiceReference1.ListarCapacitacionesxempresaRequest();
+            inValue.Body = new BLL.ServiceReference1.ListarCapacitacionesxempresaRequestBody();
+            inValue.Body.empresaNombre = empresaNombre;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).ListarCapacitacionesxempresaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
