@@ -104,6 +104,7 @@ namespace web
                         Session["login"] = nombre;
                         Session["tipo"] = tipo;
                         Session["Rut"] = pw;
+                        Session["NombreEmpresa"] = "WDEVPRO";
                         FormsAuthentication.RedirectFromLoginPage(user.Value, false);
                     }
                   
