@@ -455,7 +455,13 @@ namespace WebService
         {
             return Datos.DatosEvaluaciones.ListarTodo();
         }
-
+        //Listar el detalle de las evaluaciones por evaluacion 
+        [WebMethod]
+        public List<ClassLibrary1.Detalle_evaluacion> E_listadoDetalle(int evaluacion)
+        {
+            return Datos.DatosDetalle_evaluacion.LisarDetalle(evaluacion);
+        }
+        
 
 
     }
