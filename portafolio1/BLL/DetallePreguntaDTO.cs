@@ -9,8 +9,26 @@ namespace BLL
     public class DetallePreguntaDTO
     {
         private string respuesta;
+
+        public string Respuesta
+        {
+            get { return respuesta; }
+            set { respuesta = value; }
+        }
         private int idPregunta;
+
+        public int IdPregunta
+        {
+            get { return idPregunta; }
+            set { idPregunta = value; }
+        }
         private int idEvaluacion;
+
+        public int IdEvaluacion
+        {
+            get { return idEvaluacion; }
+            set { idEvaluacion = value; }
+        }
 
         public DetallePreguntaDTO()
         {
@@ -24,11 +42,7 @@ namespace BLL
             this.IdEvaluacion = idEvaluacion;
         }
 
-        public string Respuesta { get => respuesta; set => respuesta = value; }
-        public int IdPregunta { get => idPregunta; set => idPregunta = value; }
-        public int IdEvaluacion { get => idEvaluacion; set => idEvaluacion = value; }
-
-
+     
 
         public static bool AgregarDetalle(int idE, int idP, string p)
         {

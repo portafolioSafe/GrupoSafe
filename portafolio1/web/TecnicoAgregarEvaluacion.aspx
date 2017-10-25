@@ -15,7 +15,7 @@
             <div class="panel-body">
                 <div class="form-group">
                     <label for="em">Empresa</label>
-                    <asp:DropDownList ID="DropDownList1" class="form-control" runat="server" DataSourceID="ObjectDataSource1" DataTextField="nombre_empresa" DataValueField="rut_empresa">
+                    <asp:DropDownList ID="DropDownList1" class="form-control" runat="server" DataSourceID="ObjectDataSource1" DataTextField="Nombre_empresa" DataValueField="Rut_empresa">
                         <asp:ListItem>Seleccione empresa</asp:ListItem>
                     </asp:DropDownList>
                     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="ListadoEmpresas" TypeName="BLL.EmpresaDTO"></asp:ObjectDataSource>

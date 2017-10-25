@@ -50,8 +50,8 @@
       </s:complexType>
       <s:complexType name="empresa">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="rut_empresa" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="nombre_empresa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rut_empresa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre_empresa" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetListarTipoCap">
@@ -71,8 +71,30 @@
       </s:complexType>
       <s:complexType name="cap_tipo">
         <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listarArea">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarAreaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarAreaResult" type="tns:ArrayOfArea" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArea">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="area" nillable="true" type="tns:area" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="area">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre_area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="GuardarCapacitacion">
@@ -95,28 +117,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="listarArea">
-        <s:complexType />
-      </s:element>
-      <s:element name="listarAreaResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="listarAreaResult" type="tns:ArrayOfArea" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfArea">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="area" nillable="true" type="tns:area" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="area">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="nombre_area" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="ListarCapacitaciones">
         <s:complexType />
       </s:element>
@@ -156,6 +156,27 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="ShowCapacitacionResult" type="tns:capacitacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarCApacitacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_edit" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="area" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fecha" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="tema" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="expo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="asisten" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tipocap" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarCApacitacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="editarCApacitacionResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -393,17 +414,17 @@
   <wsdl:message name="GetListarTipoCapSoapOut">
     <wsdl:part name="parameters" element="tns:GetListarTipoCapResponse" />
   </wsdl:message>
-  <wsdl:message name="GuardarCapacitacionSoapIn">
-    <wsdl:part name="parameters" element="tns:GuardarCapacitacion" />
-  </wsdl:message>
-  <wsdl:message name="GuardarCapacitacionSoapOut">
-    <wsdl:part name="parameters" element="tns:GuardarCapacitacionResponse" />
-  </wsdl:message>
   <wsdl:message name="listarAreaSoapIn">
     <wsdl:part name="parameters" element="tns:listarArea" />
   </wsdl:message>
   <wsdl:message name="listarAreaSoapOut">
     <wsdl:part name="parameters" element="tns:listarAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarCapacitacionSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarCapacitacion" />
+  </wsdl:message>
+  <wsdl:message name="GuardarCapacitacionSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarCapacitacionResponse" />
   </wsdl:message>
   <wsdl:message name="ListarCapacitacionesSoapIn">
     <wsdl:part name="parameters" element="tns:ListarCapacitaciones" />
@@ -416,6 +437,12 @@
   </wsdl:message>
   <wsdl:message name="ShowCapacitacionSoapOut">
     <wsdl:part name="parameters" element="tns:ShowCapacitacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarCApacitacionSoapIn">
+    <wsdl:part name="parameters" element="tns:editarCApacitacion" />
+  </wsdl:message>
+  <wsdl:message name="editarCApacitacionSoapOut">
+    <wsdl:part name="parameters" element="tns:editarCApacitacionResponse" />
   </wsdl:message>
   <wsdl:message name="E_guardarCategoriaSoapIn">
     <wsdl:part name="parameters" element="tns:E_guardarCategoria" />
@@ -500,13 +527,13 @@
       <wsdl:input message="tns:GetListarTipoCapSoapIn" />
       <wsdl:output message="tns:GetListarTipoCapSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GuardarCapacitacion">
-      <wsdl:input message="tns:GuardarCapacitacionSoapIn" />
-      <wsdl:output message="tns:GuardarCapacitacionSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="listarArea">
       <wsdl:input message="tns:listarAreaSoapIn" />
       <wsdl:output message="tns:listarAreaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarCapacitacion">
+      <wsdl:input message="tns:GuardarCapacitacionSoapIn" />
+      <wsdl:output message="tns:GuardarCapacitacionSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ListarCapacitaciones">
       <wsdl:input message="tns:ListarCapacitacionesSoapIn" />
@@ -515,6 +542,10 @@
     <wsdl:operation name="ShowCapacitacion">
       <wsdl:input message="tns:ShowCapacitacionSoapIn" />
       <wsdl:output message="tns:ShowCapacitacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarCApacitacion">
+      <wsdl:input message="tns:editarCApacitacionSoapIn" />
+      <wsdl:output message="tns:editarCApacitacionSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="E_guardarCategoria">
       <wsdl:input message="tns:E_guardarCategoriaSoapIn" />
@@ -599,8 +630,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GuardarCapacitacion">
-      <soap:operation soapAction="http://tempuri.org/GuardarCapacitacion" style="document" />
+    <wsdl:operation name="listarArea">
+      <soap:operation soapAction="http://tempuri.org/listarArea" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -608,8 +639,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="listarArea">
-      <soap:operation soapAction="http://tempuri.org/listarArea" style="document" />
+    <wsdl:operation name="GuardarCapacitacion">
+      <soap:operation soapAction="http://tempuri.org/GuardarCapacitacion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -628,6 +659,15 @@
     </wsdl:operation>
     <wsdl:operation name="ShowCapacitacion">
       <soap:operation soapAction="http://tempuri.org/ShowCapacitacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarCApacitacion">
+      <soap:operation soapAction="http://tempuri.org/editarCApacitacion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -773,8 +813,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GuardarCapacitacion">
-      <soap12:operation soapAction="http://tempuri.org/GuardarCapacitacion" style="document" />
+    <wsdl:operation name="listarArea">
+      <soap12:operation soapAction="http://tempuri.org/listarArea" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -782,8 +822,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="listarArea">
-      <soap12:operation soapAction="http://tempuri.org/listarArea" style="document" />
+    <wsdl:operation name="GuardarCapacitacion">
+      <soap12:operation soapAction="http://tempuri.org/GuardarCapacitacion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -802,6 +842,15 @@
     </wsdl:operation>
     <wsdl:operation name="ShowCapacitacion">
       <soap12:operation soapAction="http://tempuri.org/ShowCapacitacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarCApacitacion">
+      <soap12:operation soapAction="http://tempuri.org/editarCApacitacion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
