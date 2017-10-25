@@ -12,6 +12,10 @@ namespace web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["tipo"].ToString() != "Tecnico")
+            {
+                Response.Redirect("Home.aspx");
+            }
 
             GridView1.DataBind();
         }

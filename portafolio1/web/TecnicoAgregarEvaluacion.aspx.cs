@@ -16,8 +16,12 @@ namespace web
         static string rut = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["tipo"].ToString() != "Tecnico")
+            {
+                Response.Redirect("Home.aspx");
+            }
 
-             rut = Session["Rut"].ToString();
+            rut = Session["Rut"].ToString();
 
             if (IsPostBack)
             {
