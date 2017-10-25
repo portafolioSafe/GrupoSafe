@@ -8,7 +8,6 @@ C:\GrupoSafe\portafolio1\web\bin\BLL.pdb
 C:\GrupoSafe\portafolio1\web\bin\BLL.dll.config
 C:\GrupoSafe\portafolio1\web\bin\EntityFramework.xml
 C:\GrupoSafe\portafolio1\web\bin\EntityFramework.SqlServer.xml
-C:\GrupoSafe\portafolio1\web\obj\Debug\web.csprojResolveAssemblyReference.cache
 C:\GrupoSafe\portafolio1\web\obj\Debug\web.csproj.CoreCompileInputs.cache
 C:\GrupoSafe\portafolio1\web\obj\Debug\web.dll
 C:\GrupoSafe\portafolio1\web\obj\Debug\web.pdb
@@ -24,3 +23,4 @@ C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\web\bin\EntityFramework.S
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\web\obj\Debug\web.csprojResolveAssemblyReference.cache
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\web\obj\Debug\web.dll
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\web\obj\Debug\web.pdb
+C:\GrupoSafe\portafolio1\web\obj\Debug\web.csprojResolveAssemblyReference.cache

@@ -85,7 +85,21 @@ namespace BLL
             return ws.E_listarempresa();
         }
 
-        // public List<ServiceReference1.empresa>
+        public static string NombreEpresa(string rut)
+        {
+            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
+
+            string nombre = "null";
+            foreach (var item in ws.GetlistarEmpresaList())
+            {
+                if (item.Rut_empresa.Equals(rut))
+                {
+                    nombre = item.Nombre_empresa;
+                }
+            }
+
+            return nombre;
+        } 
 
 
     }

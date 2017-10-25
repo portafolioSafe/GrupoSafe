@@ -170,6 +170,7 @@
     <Content Include="TecnicoAgregarEvaluacion.aspx" />
     <Content Include="TecnicoCrearCategorias.aspx" />
     <Content Include="TecnicoCrearSecciones.aspx" />
+    <Content Include="TecnicoDetalleEvaluacion.aspx" />
     <Content Include="TrabajadorHistA.aspx" />
     <Content Include="TrabajadorHistV.aspx" />
     <Content Include="TrabajadorHistC.aspx" />
@@ -384,6 +385,13 @@
     </Compile>
     <Compile Include="TecnicoCrearSecciones.aspx.designer.cs">
       <DependentUpon>TecnicoCrearSecciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TecnicoDetalleEvaluacion.aspx.cs">
+      <DependentUpon>TecnicoDetalleEvaluacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TecnicoDetalleEvaluacion.aspx.designer.cs">
+      <DependentUpon>TecnicoDetalleEvaluacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="TrabajadorHistA.aspx.cs">
       <DependentUpon>TrabajadorHistA.aspx</DependentUpon>

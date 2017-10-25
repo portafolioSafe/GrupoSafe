@@ -61,5 +61,22 @@ namespace BLL
             return ws.listadoUltimaEvaluacion(rut);
         }
 
+        public static string nombreEvaluaciones(int id)
+        {
+            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
+            string nombre = "";
+            foreach (var item in ws.listadodeevaluaciones())
+            {
+                if (item.Id == id)
+                {
+                    nombre = item.Nombre;
+                    break;
+                }
+
+            }
+
+            return nombre;
+        }
+
     }
 }
