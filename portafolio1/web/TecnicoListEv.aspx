@@ -8,20 +8,27 @@
         </div>
   <div class="panel-body">
 
-     <h4 style="text-align:center">No hay datos que mostrar.</h4>
+     
   
 
-      <asp:GridView ID="GridView1" runat="server">
+      <asp:GridView ID="GridView1" runat="server" CssClass="table table-bordered bs-table" EmptyDataText="No hay evaluaciones registradas" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
+          <HeaderStyle BackColor="#337ab7" Font-Bold="True" ForeColor="White" />
           <Columns>
-              <asp:BoundField />
-              <asp:BoundField />
-              <asp:BoundField />
-              <asp:BoundField />
-              <asp:BoundField />
-              <asp:BoundField />
-              <asp:BoundField />
+              <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
+              <asp:BoundField DataField="Fecha" HeaderText="Fecha" SortExpression="Fecha" />
+              <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
+              <asp:BoundField DataField="Id_tipo" HeaderText="Id_tipo" SortExpression="Id_tipo" />
+              <asp:BoundField DataField="Id_empresa" HeaderText="Id_empresa" SortExpression="Id_empresa" />
           </Columns>
       </asp:GridView>
+
+
+     
+      <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="ListarEvaluacionTecnico" TypeName="BLL.EvaluacionDTO">
+          <SelectParameters>
+              <asp:SessionParameter Name="rut" SessionField="Rut" Type="String" />
+          </SelectParameters>
+      </asp:ObjectDataSource>
 
 
      

@@ -21,7 +21,7 @@ namespace web
                 Response.Redirect("Home.aspx");
             }
 
-            rut = Session["Rut"].ToString();
+           rut = Session["Rut"].ToString();
 
             if (IsPostBack)
             {
