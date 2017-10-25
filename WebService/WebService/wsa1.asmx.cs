@@ -433,6 +433,21 @@ namespace WebService
             return Datos.DatosEvaluaciones.idultimaEvaluacion(rut);
         }
 
+        //Lisatar evaluaciones por tecnico 
+        [WebMethod]
+        public List<ClassLibrary1.Evaluacion> E_listadoPorTecnico(string rut)
+        {
+            return Datos.DatosEvaluaciones.ListarEvaluacion(rut);
+
+        }
+
+        //Listar todas las evaluaciones para el ingeniero
+        [WebMethod]
+        public List<ClassLibrary1.Evaluacion> E_ListadoIngeniero()
+        {
+            return Datos.DatosEvaluaciones.ListarTodo();
+        }
+
 
 
     }

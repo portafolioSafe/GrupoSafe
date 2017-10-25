@@ -50,16 +50,16 @@ namespace ClassLibrary1
             get { return id_tipo; }
             set { id_tipo = value; }
         }
-        private int id_empresa;
+        private string id_empresa;
 
-        public int Id_empresa
+        public string Id_empresa
         {
             get { return id_empresa; }
             set { id_empresa = value; }
         }
-        private int id_usuario;
+        private string id_usuario;
 
-        public int Id_usuario
+        public string Id_usuario
         {
             get { return id_usuario; }
             set { id_usuario = value; }
@@ -70,7 +70,7 @@ namespace ClassLibrary1
 
         }
 
-        public Evaluacion(int id, DateTime fecha, string obstec, string obsing, string estado, int id_tipo, int id_empresa, int id_usuario)
+        public Evaluacion(int id, DateTime fecha, string obstec, string obsing, string estado, int id_tipo, string id_empresa, string id_usuario)
         {
             this.Id = id;
             this.Fecha = fecha;

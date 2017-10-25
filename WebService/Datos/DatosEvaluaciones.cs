@@ -116,24 +116,104 @@ namespace Datos
         }
 
 
-        //public static List<Evaluacion> ListarEvaluacion(string rut)
-        //{
-        //    DatosConexion c = new DatosConexion();
+        public static List<Evaluacion> ListarEvaluacion(string rut)
+        {
+            DatosConexion c = new DatosConexion();
 
-        //    using (OracleConnection conn = c.Connect())
-        //    {
-        //        List<categoria> listado = new List<categoria>();
-        //        OracleCommand oracmd = new OracleCommand();
-        //        oracmd.Parameters.Add("ListarCat", OracleDbType.RefCursor, ParameterDirection.Output);
-        //        oracmd.CommandText = "PKG_EVALUACION.Listar_cat";
-        //        oracmd.CommandType = CommandType.StoredProcedure;
-        //        oracmd.Connection = conn;
-        //        OracleDataAdapter da = new OracleDataAdapter(oracmd);
-        //        DataSet ds = new DataSet();
+            using (OracleConnection conn = c.Connect())
+            {
+                List<Evaluacion> listado = new List<Evaluacion>();
+                OracleCommand oracmd = new OracleCommand();
+                oracmd.Parameters.Add(new OracleParameter("p_usuario", rut));
+                oracmd.Parameters.Add("listarPorTecnico", OracleDbType.RefCursor, ParameterDirection.Output);
+                oracmd.CommandText = "PKG_EVALUACION.Pro_ListarPorTecnico";
+                oracmd.CommandType = CommandType.StoredProcedure;
+                oracmd.Connection = conn;
+                OracleDataAdapter da = new OracleDataAdapter(oracmd);
+                DataSet ds = new DataSet();
 
-        //    }
+                try
+                {
+                    conn.Open();
+                    da.Fill(ds);
+                    OracleDataReader dr = oracmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        Evaluacion ev = new Evaluacion();
+                        ev.Id = int.Parse(dr["ID_EVALUACION"].ToString());
+                        ev.Fecha = Convert.ToDateTime(dr["FECHA"].ToString());
+                        ev.Obstec = dr["OBSERVACION_TEC"].ToString();
+                        ev.Obsing = dr["RECOMENDACION_ING"].ToString();
+                        ev.Estado = dr["ESTADO"].ToString();
+                        ev.Id_tipo = int.Parse(dr["TIPO_EVAL_ID_TIPO"].ToString());
+                        ev.Id_empresa = dr["EMPRESA_RUT_EMPRESA"].ToString();
+                        ev.Id_usuario = dr["USUARIO_RUT_USUARIO"].ToString();
 
-        //}
+                        listado.Add(ev);
+                    }
+
+                    conn.Close();
+                    return listado;
+
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+
+            }
+
+        }
+
+        public static List<Evaluacion> ListarTodo()
+        {
+            DatosConexion c = new DatosConexion();
+
+            using (OracleConnection conn = c.Connect())
+            {
+                List<Evaluacion> listado = new List<Evaluacion>();
+                OracleCommand oracmd = new OracleCommand();
+                oracmd.Parameters.Add("listarI", OracleDbType.RefCursor, ParameterDirection.Output);
+                oracmd.CommandText = "PKG_EVALUACION.pro_listaringeniero";
+                oracmd.CommandType = CommandType.StoredProcedure;
+                oracmd.Connection = conn;
+                OracleDataAdapter da = new OracleDataAdapter(oracmd);
+                DataSet ds = new DataSet();
+
+                try
+                {
+                    conn.Open();
+                    da.Fill(ds);
+                    OracleDataReader dr = oracmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        Evaluacion ev = new Evaluacion();
+                        ev.Id = int.Parse(dr["ID_EVALUACION"].ToString());
+                        ev.Fecha = Convert.ToDateTime(dr["FECHA"].ToString());
+                        ev.Obstec = dr["OBSERVACION_TEC"].ToString();
+                        ev.Obsing = dr["RECOMENDACION_ING"].ToString();
+                        ev.Estado = dr["ESTADO"].ToString();
+                        ev.Id_tipo = int.Parse(dr["TIPO_EVAL_ID_TIPO"].ToString());
+                        ev.Id_empresa = dr["EMPRESA_RUT_EMPRESA"].ToString();
+                        ev.Id_usuario = dr["USUARIO_RUT_USUARIO"].ToString();
+
+                        listado.Add(ev);
+                    }
+
+                    conn.Close();
+                    return listado;
+
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+
+
+            }
+        }
 
     }
 }
