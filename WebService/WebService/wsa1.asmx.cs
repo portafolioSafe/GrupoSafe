@@ -20,7 +20,7 @@ namespace WebService
     // [System.Web.Script.Services.ScriptService]
     public class wsa1 : System.Web.Services.WebService
     {
-
+//METODOS DE AUTENTICACION
         [WebMethod]
         public string Validar(string rut, string pass, string tipo)
         {
@@ -94,8 +94,6 @@ namespace WebService
 
 
         }
-        //********************************************************************************
-        
 
         [WebMethod]
         public string DevuelveTipo(string rut, string tipo)
@@ -194,42 +192,42 @@ namespace WebService
 
         }
 
-        //*******************************************************************************
+//FIN AUTENTICACION
 
-
-          [WebMethod]
+//METODOS LISTAR
+         [WebMethod]
           public List<empresa> GetlistarEmpresaList()
           {
 
 
+              return Datos.DatosEmpresa.ListadoEmpresas();
 
-
-              string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
-              OracleConnection oraconn = new OracleConnection(strConnectionString);
-              oraconn.Open();
-              OracleCommand oracmd = new OracleCommand();
-              oracmd.Parameters.Add("listarEmpr", OracleDbType.RefCursor, ParameterDirection.Output);
-              oracmd.CommandText = "pkg_empresas.listarEmpresa";
-              oracmd.CommandType = CommandType.StoredProcedure;
-              oracmd.Connection = oraconn;
-              OracleDataAdapter da = new OracleDataAdapter(oracmd);
-              DataSet ds = new DataSet();
-              List<empresa> milista = new List<empresa>();
-              da.Fill(ds);
-              foreach (DataRow row in ds.Tables[0].Rows)
-              {
-                  empresa nueva = new empresa();
-                  nueva.rut_empresa = row[0].ToString();
-                  nueva.nombre_empresa = row[1].ToString();
-                  milista.Add(nueva);
-                  //milista.Add(string.Format("{0}" + " " + "{1}", row["RUT_EMPRESA"], row["NOMBRE"]));
-              }
-              oraconn.Close();
-              return milista;
+              //string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+              //OracleConnection oraconn = new OracleConnection(strConnectionString);
+              //oraconn.Open();
+              //OracleCommand oracmd = new OracleCommand();
+              //oracmd.Parameters.Add("listarEmpr", OracleDbType.RefCursor, ParameterDirection.Output);
+              //oracmd.CommandText = "pkg_empresas.listarEmpresa";
+              //oracmd.CommandType = CommandType.StoredProcedure;
+              //oracmd.Connection = oraconn;
+              //OracleDataAdapter da = new OracleDataAdapter(oracmd);
+              //DataSet ds = new DataSet();
+              //List<empresa> milista = new List<empresa>();
+              //da.Fill(ds);
+              //foreach (DataRow row in ds.Tables[0].Rows)
+              //{
+              //    empresa nueva = new empresa();
+              //    nueva.Rut_empresa = row[0].ToString();
+              //    nueva.Nombre_empresa = row[1].ToString();
+              //    milista.Add(nueva);
+              //    //milista.Add(string.Format("{0}" + " " + "{1}", row["RUT_EMPRESA"], row["NOMBRE"]));
+              //}
+              //oraconn.Close();
+              //return milista;
               
           }
 
-          [WebMethod]
+         [WebMethod]
           public List<cap_tipo> GetListarTipoCap()
           {
               string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
@@ -247,8 +245,8 @@ namespace WebService
               foreach (DataRow row in ds.Tables[0].Rows)
               {
                   cap_tipo nueva = new cap_tipo();
-                  nueva.id = Int32.Parse(row[0].ToString());
-                  nueva.nombre = row[1].ToString();
+                  nueva.Id = Int32.Parse(row[0].ToString());
+                  nueva.Nombre = row[1].ToString();
                   milista.Add(nueva);
                   //milista.Add(string.Format("{0}" + " " + "{1}", row["RUT_EMPRESA"], row["NOMBRE"]));
               }
@@ -257,10 +255,41 @@ namespace WebService
              
           }
 
+         [WebMethod]
+          public List<area> listarArea()
+          {
 
 
-        //********************************************************************************************
-       
+
+
+              string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+              OracleConnection oraconn = new OracleConnection(strConnectionString);
+              oraconn.Open();
+              OracleCommand oracmd = new OracleCommand();
+              oracmd.Parameters.Add("LISTA", OracleDbType.RefCursor, ParameterDirection.Output);
+              oracmd.CommandText = "CARGO_TIPO_US.LISTAR_AREA";
+              oracmd.CommandType = CommandType.StoredProcedure;
+              oracmd.Connection = oraconn;
+              OracleDataAdapter da = new OracleDataAdapter(oracmd);
+              DataSet ds = new DataSet();
+              List<area> milista = new List<area>();
+              da.Fill(ds);
+              foreach (DataRow row in ds.Tables[0].Rows)
+              {
+                  area nueva = new area();
+                  nueva.Id = Int32.Parse(row[0].ToString());
+                  nueva.Nombre_area = row[1].ToString();
+                  milista.Add(nueva);
+                  //milista.Add(string.Format("{0}" + " " + "{1}", row["RUT_EMPRESA"], row["NOMBRE"]));
+              }
+              oraconn.Close();
+              return milista;
+
+          }
+    
+//FIN LISTAR
+
+//METODOS DE CAPACITACION
         [WebMethod]
         public  bool GuardarCapacitacion(string area,DateTime fecha, string tema,string expo,int asisten,string empresa,int tipocap )
         {
@@ -301,41 +330,6 @@ namespace WebService
             }
         }
 
-
-        [WebMethod]
-        public List<area> listarArea()
-        {
-
-
-
-
-            string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
-            OracleConnection oraconn = new OracleConnection(strConnectionString);
-            oraconn.Open();
-            OracleCommand oracmd = new OracleCommand();
-            oracmd.Parameters.Add("LISTA", OracleDbType.RefCursor, ParameterDirection.Output);
-            oracmd.CommandText = "CARGO_TIPO_US.LISTAR_AREA";
-            oracmd.CommandType = CommandType.StoredProcedure;
-            oracmd.Connection = oraconn;
-            OracleDataAdapter da = new OracleDataAdapter(oracmd);
-            DataSet ds = new DataSet();
-            List<area> milista = new List<area>();
-            da.Fill(ds);
-            foreach (DataRow row in ds.Tables[0].Rows)
-            {
-                area nueva = new area();
-                nueva.id = Int32.Parse(row[0].ToString());
-                nueva.nombre_area = row[1].ToString();
-                milista.Add(nueva);
-                //milista.Add(string.Format("{0}" + " " + "{1}", row["RUT_EMPRESA"], row["NOMBRE"]));
-            }
-            oraconn.Close();
-            return milista;
-
-        }
-
-
-
         [WebMethod]
         public List<capacitacion> ListarCapacitaciones()
         {
@@ -348,6 +342,23 @@ namespace WebService
         {
             return Datos.DatosCapacitaciones.ShowCapacitacion(id_cap_edit);
         }
+
+        [WebMethod]
+        public bool editarCApacitacion(int id_edit, string area, DateTime fecha, string tema, string expo, int asisten, string empresa, int tipocap)
+        {
+
+            if (Datos.DatosCapacitaciones.editarCapacitacion(id_edit, area, fecha, tema, expo, asisten, empresa, tipocap))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+//FIN CAPACITACION
+
         //**************************************************************************************
         //*****************Ws Modulo evaluaciones
         //ws Categoria

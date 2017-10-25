@@ -8,15 +8,27 @@ namespace ClassLibrary1
 {
     public class cap_tipo
     {
-        
-        
-            public int id { get; set; }
-            public string nombre { get; set; }
 
 
-            public cap_tipo() { }
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        private string nombre;
+
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value; }
+        }
 
 
-        
+        public cap_tipo() { }
+
+
+
     }
 }
