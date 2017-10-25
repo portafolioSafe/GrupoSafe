@@ -384,8 +384,58 @@
           <s:element minOccurs="0" maxOccurs="1" name="Obsing" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Id_tipo" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Id_empresa" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Id_usuario" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id_empresa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id_usuario" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="E_listadoPorTecnico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rut" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="E_listadoPorTecnicoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="E_listadoPorTecnicoResult" type="tns:ArrayOfEvaluacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="E_ListadoIngeniero">
+        <s:complexType />
+      </s:element>
+      <s:element name="E_ListadoIngenieroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="E_ListadoIngenieroResult" type="tns:ArrayOfEvaluacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="E_listadoDetalle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="evaluacion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="E_listadoDetalleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="E_listadoDetalleResult" type="tns:ArrayOfDetalle_evaluacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDetalle_evaluacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Detalle_evaluacion" nillable="true" type="tns:Detalle_evaluacion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Detalle_evaluacion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id_pregunta" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_evaluacion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pregunta" type="s:string" />
         </s:sequence>
       </s:complexType>
     </s:schema>
@@ -510,6 +560,24 @@
   <wsdl:message name="listadoUltimaEvaluacionSoapOut">
     <wsdl:part name="parameters" element="tns:listadoUltimaEvaluacionResponse" />
   </wsdl:message>
+  <wsdl:message name="E_listadoPorTecnicoSoapIn">
+    <wsdl:part name="parameters" element="tns:E_listadoPorTecnico" />
+  </wsdl:message>
+  <wsdl:message name="E_listadoPorTecnicoSoapOut">
+    <wsdl:part name="parameters" element="tns:E_listadoPorTecnicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="E_ListadoIngenieroSoapIn">
+    <wsdl:part name="parameters" element="tns:E_ListadoIngeniero" />
+  </wsdl:message>
+  <wsdl:message name="E_ListadoIngenieroSoapOut">
+    <wsdl:part name="parameters" element="tns:E_ListadoIngenieroResponse" />
+  </wsdl:message>
+  <wsdl:message name="E_listadoDetalleSoapIn">
+    <wsdl:part name="parameters" element="tns:E_listadoDetalle" />
+  </wsdl:message>
+  <wsdl:message name="E_listadoDetalleSoapOut">
+    <wsdl:part name="parameters" element="tns:E_listadoDetalleResponse" />
+  </wsdl:message>
   <wsdl:portType name="wsa1Soap">
     <wsdl:operation name="Validar">
       <wsdl:input message="tns:ValidarSoapIn" />
@@ -590,6 +658,18 @@
     <wsdl:operation name="listadoUltimaEvaluacion">
       <wsdl:input message="tns:listadoUltimaEvaluacionSoapIn" />
       <wsdl:output message="tns:listadoUltimaEvaluacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="E_listadoPorTecnico">
+      <wsdl:input message="tns:E_listadoPorTecnicoSoapIn" />
+      <wsdl:output message="tns:E_listadoPorTecnicoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="E_ListadoIngeniero">
+      <wsdl:input message="tns:E_ListadoIngenieroSoapIn" />
+      <wsdl:output message="tns:E_ListadoIngenieroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="E_listadoDetalle">
+      <wsdl:input message="tns:E_listadoDetalleSoapIn" />
+      <wsdl:output message="tns:E_listadoDetalleSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="wsa1Soap" type="tns:wsa1Soap">
@@ -774,6 +854,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="E_listadoPorTecnico">
+      <soap:operation soapAction="http://tempuri.org/E_listadoPorTecnico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_ListadoIngeniero">
+      <soap:operation soapAction="http://tempuri.org/E_ListadoIngeniero" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_listadoDetalle">
+      <soap:operation soapAction="http://tempuri.org/E_listadoDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="wsa1Soap12" type="tns:wsa1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -950,6 +1057,33 @@
     </wsdl:operation>
     <wsdl:operation name="listadoUltimaEvaluacion">
       <soap12:operation soapAction="http://tempuri.org/listadoUltimaEvaluacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_listadoPorTecnico">
+      <soap12:operation soapAction="http://tempuri.org/E_listadoPorTecnico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_ListadoIngeniero">
+      <soap12:operation soapAction="http://tempuri.org/E_ListadoIngeniero" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="E_listadoDetalle">
+      <soap12:operation soapAction="http://tempuri.org/E_listadoDetalle" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
