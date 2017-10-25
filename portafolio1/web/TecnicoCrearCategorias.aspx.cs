@@ -21,6 +21,9 @@ namespace web
             {
                 Response.Redirect("Home.aspx");
             }
+            mensajeSI.Visible = false;
+            mensajeNO.Visible = false;
+            mensajeNa.Visible = false;
             if (!IsPostBack)
             {
                 BLL.TipoEvaluacionDTO t = new BLL.TipoEvaluacionDTO();
@@ -29,7 +32,7 @@ namespace web
                 foreach (var item in t.listadodeEvaluaciones())
                 {
                     ListItem item2 = new ListItem(item.Nombre, item.Id.ToString());
-                    DropDownList1.Items.Add(item2);
+                    DropDownList2.Items.Add(item2);
                 }
 
                 
@@ -48,18 +51,60 @@ namespace web
         protected void Button1_Click(object sender, EventArgs e)
         {
 
+            BLL.CategoriaDTO cat = new BLL.CategoriaDTO();
+         
+
             string categoria = TextBox1.Text;
-            int id = int.Parse(DropDownList1.SelectedItem.Value);
+
+            if (int.Parse(DropDownList2.SelectedItem.Value) !=0 )
+            {
+                int id = int.Parse(DropDownList2.SelectedItem.Value);
+                if (categoria != "")
+                {
+
+                    try
+                    {
+                        cat.AgregarCategoria(id, categoria);
+                        GridView1.DataBind();
+                        
+                        mensajeSI.Visible = true;
+                        TextBox1.Text = " ";
+                    }
+                    catch (Exception)
+                    {
+                        mensajeNO.Visible = true;
+
+                    }
+                }
+                else
+                {
+                    mensajeNa.Visible = true;
+                }
+            }
+            else
+            {
+                mensajeNO.Visible = true;
+            }
            
 
-            BLL.CategoriaDTO cat = new BLL.CategoriaDTO();
-            cat.AgregarCategoria(id,categoria);
             
-            GridView1.DataBind();
+
+           
+
+
+          
 
 
 
+        }
 
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+
+        }
+
+        protected void GridView1_RowUpdated(object sender, GridViewUpdatedEventArgs e)
+        {
 
         }
     }
