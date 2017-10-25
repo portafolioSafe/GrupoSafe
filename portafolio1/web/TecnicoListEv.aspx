@@ -11,24 +11,34 @@
      
   
 
-      <asp:GridView ID="GridView1" runat="server" CssClass="table table-bordered bs-table" EmptyDataText="No hay evaluaciones registradas" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
+      <asp:GridView ID="GridView1" runat="server" CssClass="table table-bordered bs-table" EmptyDataText="No hay evaluaciones registradas" AutoGenerateColumns="False">
           <HeaderStyle BackColor="#337ab7" Font-Bold="True" ForeColor="White" />
           <Columns>
-              <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
-              <asp:BoundField DataField="Fecha" HeaderText="Fecha" SortExpression="Fecha" />
-              <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
-              <asp:BoundField DataField="Id_tipo" HeaderText="Id_tipo" SortExpression="Id_tipo" />
-              <asp:BoundField DataField="Id_empresa" HeaderText="Id_empresa" SortExpression="Id_empresa" />
+
+              <asp:BoundField DataField="Id" HeaderText="ID" ItemStyle-Width="10%">
+
+                  <ItemStyle Width="20%" />
+              </asp:BoundField>
+
+              <asp:BoundField DataField="Empresa" HeaderText="Empresa" ItemStyle-Width="60%">
+
+                  <ItemStyle Width="20%" />
+              </asp:BoundField>
+
+              <asp:BoundField DataField="Fecha" HeaderText="Fecha" ItemStyle-Width="10%">
+
+                  <ItemStyle Width="20%" />
+              </asp:BoundField>
+
+              <asp:BoundField DataField="TipoEvaluacion" HeaderText="Tipo de evaluacion" ItemStyle-Width="20%">
+
+                  <ItemStyle Width="20%" />
+              </asp:BoundField>
+
+
           </Columns>
       </asp:GridView>
 
-
-     
-      <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="ListarEvaluacionTecnico" TypeName="BLL.EvaluacionDTO">
-          <SelectParameters>
-              <asp:SessionParameter Name="rut" SessionField="Rut" Type="String" />
-          </SelectParameters>
-      </asp:ObjectDataSource>
 
 
      
