@@ -30,3 +30,4 @@ C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\BLL\bin\Debug\BLL.pdb
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.dll
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.pdb
+C:\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
