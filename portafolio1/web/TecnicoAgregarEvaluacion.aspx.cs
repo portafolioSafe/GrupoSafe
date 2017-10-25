@@ -22,6 +22,7 @@ namespace web
             }
             mensajeSI.Visible = false;
             mensajeNO.Visible = false;
+            MensajeNa.Visible = false;
 
             rut = Session["Rut"].ToString();
 
@@ -264,32 +265,42 @@ namespace web
             {
                 obst = "Sin observaciones";
             }
-            bool res =BLL.EvaluacionDTO.AgregarEvaluacion(empresa,tipo_evaluacion,rut,fecha,obst,obsI,estado);
-            if (res)
+            if (listado.Count != 0)
             {
-                int ide = 0;
-                foreach (var item in BLL.EvaluacionDTO.ultimaEvaluacionXtecnico(rut))
+
+
+                bool res = BLL.EvaluacionDTO.AgregarEvaluacion(empresa, tipo_evaluacion, rut, fecha, obst, obsI, estado);
+                if (res)
                 {
-                   ide = item.Id;
+                    int ide = 0;
+                    foreach (var item in BLL.EvaluacionDTO.ultimaEvaluacionXtecnico(rut))
+                    {
+                        ide = item.Id;
+                    }
+                    BLL.DetallePreguntaDTO det = new BLL.DetallePreguntaDTO();
+                    foreach (var item in listado)
+                    {
+
+                        //det.IdEvaluacion = ide;
+                        //det.IdPregunta = item.IdPregunta;
+                        //det.Respuesta = item.Respuesta;
+                        BLL.DetallePreguntaDTO.AgregarDetalle(ide, item.IdPregunta, item.Respuesta);
+                    }
+                    mensajeSI.Visible = true;
+                    // se muestra algo 
+                    listado.Clear();
                 }
-                BLL.DetallePreguntaDTO det = new BLL.DetallePreguntaDTO();
-                foreach (var item in listado)
+                else
                 {
-                    
-                    //det.IdEvaluacion = ide;
-                    //det.IdPregunta = item.IdPregunta;
-                    //det.Respuesta = item.Respuesta;
-                    BLL.DetallePreguntaDTO.AgregarDetalle(ide,item.IdPregunta,item.Respuesta);
+                    mensajeSI.Visible = false;
+                    // error al agregar
+                    listado.Clear();
                 }
-                mensajeSI.Visible = true;
-                // se muestra algo 
             }
             else
             {
-                mensajeSI.Visible = false;
-                // error al agregar 
+                MensajeNa.Visible = true;
             }
-            
 
             listado.Clear();
 

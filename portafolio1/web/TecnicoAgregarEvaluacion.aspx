@@ -31,6 +31,10 @@
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡ERROR DE CONEXIÓN, INTENTE OTRA VEZ!
 
                     </div>
+                        <div id="MensajeNa" runat="server" class="alert alert-info" style="width: 90%" visible="false">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡DEBE COMPLETAR EL FORMULARIO!
+
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="em">Empresa</label>
