@@ -253,6 +253,25 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="M_guardarMedico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rut" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="especialidad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="M_guardarMedicoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="M_guardarMedicoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="E_guardarCategoria">
         <s:complexType>
           <s:sequence>
@@ -613,6 +632,12 @@
   <wsdl:message name="ListarCapacitacionesxempresaSoapOut">
     <wsdl:part name="parameters" element="tns:ListarCapacitacionesxempresaResponse" />
   </wsdl:message>
+  <wsdl:message name="M_guardarMedicoSoapIn">
+    <wsdl:part name="parameters" element="tns:M_guardarMedico" />
+  </wsdl:message>
+  <wsdl:message name="M_guardarMedicoSoapOut">
+    <wsdl:part name="parameters" element="tns:M_guardarMedicoResponse" />
+  </wsdl:message>
   <wsdl:message name="E_guardarCategoriaSoapIn">
     <wsdl:part name="parameters" element="tns:E_guardarCategoria" />
   </wsdl:message>
@@ -759,6 +784,10 @@
     <wsdl:operation name="ListarCapacitacionesxempresa">
       <wsdl:input message="tns:ListarCapacitacionesxempresaSoapIn" />
       <wsdl:output message="tns:ListarCapacitacionesxempresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="M_guardarMedico">
+      <wsdl:input message="tns:M_guardarMedicoSoapIn" />
+      <wsdl:output message="tns:M_guardarMedicoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="E_guardarCategoria">
       <wsdl:input message="tns:E_guardarCategoriaSoapIn" />
@@ -942,6 +971,15 @@
     </wsdl:operation>
     <wsdl:operation name="ListarCapacitacionesxempresa">
       <soap:operation soapAction="http://tempuri.org/ListarCapacitacionesxempresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="M_guardarMedico">
+      <soap:operation soapAction="http://tempuri.org/M_guardarMedico" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1206,6 +1244,15 @@
     </wsdl:operation>
     <wsdl:operation name="ListarCapacitacionesxempresa">
       <soap12:operation soapAction="http://tempuri.org/ListarCapacitacionesxempresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="M_guardarMedico">
+      <soap12:operation soapAction="http://tempuri.org/M_guardarMedico" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

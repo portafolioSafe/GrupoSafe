@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL
+namespace ClassLibrary1
 {
-    public class MedicoDTO
+    public class medico
     {
-
-      private string rut_medico;
+        private string rut_medico;
 
         public string Rut_medico
         {
@@ -54,20 +53,6 @@ namespace BLL
             set { pass = value; }
         }
 
-        public MedicoDTO() { }
-
-
-
-
-        public static bool guardaelMedico(string rut, string nombre, string apellido, string especialidad, string correo, string pass)
-        {
-            ServiceReference1.wsa1SoapClient meme = new ServiceReference1.wsa1SoapClient();
-            return meme.M_guardarMedico(rut, nombre, apellido, especialidad, correo, pass);
-
-        }
+        public medico() { }
     }
-    
- 
-
-
 }

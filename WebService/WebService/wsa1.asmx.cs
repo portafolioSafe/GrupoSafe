@@ -554,6 +554,22 @@ namespace WebService
 
 //FIN CAPACITACION
 
+//METODOS MEDICO
+        [WebMethod]
+        public bool M_guardarMedico(string rut, string nombre, string apellido, string especialidad, string correo, string pass)
+        {
+            if (Datos.DatosMedico.guardarMedico(rut, nombre, apellido, especialidad, correo, pass))
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
+           
+        }
+
+ //FIN MEDICO
+
         //**************************************************************************************
         //*****************Ws Modulo evaluaciones
         //ws Categoria

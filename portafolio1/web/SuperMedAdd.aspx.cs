@@ -16,7 +16,25 @@ using System.Windows.Forms;
 namespace web
 {
     public partial class Formulario_web119 : System.Web.UI.Page
+
     {
+
+        public int validarRut(string rut)
+        {
+
+
+            rut = rut.ToUpper();
+            rut = rut.Replace(".", "");
+            rut = rut.Replace("-", "");
+            int rutAux = int.Parse(rut.Substring(0, rut.Length - 1));
+
+            char dv = char.Parse(rut.Substring(rut.Length - 1, 1));
+
+
+            return rutAux;
+
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -24,6 +42,21 @@ namespace web
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
+            string rutfinal = validarRut(txtRut.Text).ToString();
+            string passfinal = BLL.loginController.Hash(txtPassconfirm.Text);
+
+
+            if (BLL.MedicoDTO.guardaelMedico(rutfinal,txtNombre.Text,txtApellido.Text,txtEspecialidad.Text,txtCorreo.Text, passfinal))
+            {
+                mensajeSI.Visible = true;
+                mensajeNO.Visible = false;
+            }
+            else
+            {
+                mensajeNO.Visible = true;
+
+            }
 
         }
 
@@ -41,28 +74,42 @@ namespace web
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 // Realizar la petición GET
-                HttpResponseMessage response = client.GetAsync("http://xsknet.dyndns.org:8080/doctor?rut=" + txtRut.Text).Result;
+
+
+                string rut = validarRut(txtRut.Text).ToString();
+                HttpResponseMessage response = client.GetAsync("http://xsknet.dyndns.org:8080/doctor?rut=" + rut).Result;
                 try
                 {
                     if (response.IsSuccessStatusCode)
                     {
                          // Obtener el resultado como objeto dynamic 
+<<<<<<< HEAD
                         //var result = response.Content.ReadAsAsync<BLL.MedicoDTO>().Result;
+=======
+                      
+>>>>>>> 22ba53035ba16afe6914ba8c734e6bbd1f7518cb
                         //error.Text = "";
                         //nombre.Text = "Nombre: ";
                         //titulo.Text = "Título/Habilitante Legal: ";
                         //institucion.Text = "Institución Habilitante: ";
                         //especialidad.Text = "Especialidad: ";
+<<<<<<< HEAD
                         //MessageBox.Show("Rut asociado, nombre: "+result.Name+"", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                        
                         //txtNombre.Enabled = true;
                         //txtNombre.Text = result.Name;
+=======
+                        txtRut.Enabled = false;
+                        txtNombre.Enabled = true;
+                       
+>>>>>>> 22ba53035ba16afe6914ba8c734e6bbd1f7518cb
 
                         txtApellido.Enabled = true;
                         txtCorreo.Enabled = true;
                         txtPass.Enabled = true;
                         txtPassconfirm.Enabled = true;
                         txtEspecialidad.Enabled = true;
+<<<<<<< HEAD
                         
 
                         //txtEspecialidad.Text = result.Spec;
@@ -72,21 +119,18 @@ namespace web
                         //Console.WriteLine("ReturnCode: {0}", result.Returncode);
                         //Console.WriteLine("Message: {0}", result.Message);
                         //Console.WriteLine("Token: {0}", result.Token);
+=======
+                        Button1.Enabled = true;
+                        Button2.Enabled = false;
+                        MensajeFound.Visible = true;
+                        MensajeNotFound.Visible = false; 
+   
+>>>>>>> 22ba53035ba16afe6914ba8c734e6bbd1f7518cb
                     }
                     else
                     {
-                        MessageBox.Show("Rut no asociado a la escula de médicos", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                        //Debug.WriteLine("Rut no asociado a un médico");
-                        //error.Text = "Rut no asociado a un médico";
-                        //nombre.Text = "";
-                        //titulo.Text = "";
-                        //institucion.Text = "";
-                        //especialidad.Text = "";
-                        //name.Text = "";
-                        //degree.Text = "";
-                        //univ.Text = "";
-                        //spec.Text = "";
+                        MensajeNotFound.Visible = true;
+      
                     }
                 }
                 catch (Exception ex)
@@ -97,27 +141,7 @@ namespace web
 
             }
 
-            /*
-
-            using (var client = new WebClient())
-            {
-                try
-                {
-                    var json = client.DownloadString("http://xsknet.dyndns.org:8080/doctor?rut="+ rut.Text);
-                    var serializer = new JavaScriptSerializer();
-                    Debug.WriteLine(json);
-                    Doctor doc = serializer.Deserialize<Doctor>(json);
-                    // TODO: do something with the model
-
-                    Debug.WriteLine(doc.name);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Token: {0}", ex.Message);
-                }
-            }
-
-    */
+       
         }
     }
 }
