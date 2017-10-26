@@ -64,8 +64,11 @@
             <asp:Button ID="Button1" runat="server" CssClass="btn alert-success center-block" Text="Agregar" Width="86px" OnClick="Button1_Click" />
 
             <asp:Button ID="Button2" runat="server" CssClass="btn alert-success center-block" Text="Modificar" Width="86px" OnClick="Button2_Click" />
+            <br />
+            <br />
 
-            <asp:Button ID="Button3" runat="server" CssClass="btn alert-success center-block" Text="Cancelar" Width="86px" OnClick="Button3_Click" />
+            <br />
+            <asp:Button ID="Button3" runat="server" CssClass="btn alert-danger center-block" Text="Cancelar" Width="86px" OnClick="Button3_Click" />
 
 
             <h4 style="text-align: center;">Listado de preguntas poractegoria</h4>

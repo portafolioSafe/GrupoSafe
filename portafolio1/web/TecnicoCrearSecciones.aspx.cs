@@ -104,6 +104,8 @@ namespace web
             }
             else
             {
+                Button2.Visible = true;
+                Button3.Visible = true;
                 mensajeNa.Visible = true;
             }
            

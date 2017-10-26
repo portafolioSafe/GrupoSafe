@@ -26,6 +26,7 @@ namespace web
             mensajeNa.Visible = false;
             mensajeSiM.Visible = false;
             Button2.Visible = false;
+            Button3.Visible = false;
 
 
 
@@ -115,6 +116,7 @@ namespace web
             {
                 Button1.Visible = false;
                 Button2.Visible = true;
+                Button3.Visible = true;
                 // Convert the row index stored in the CommandArgument
                 // property to an Integer.
                 int index = Convert.ToInt32(e.CommandArgument);
@@ -138,17 +140,33 @@ namespace web
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            int idcat =  int.Parse(Session["idCategoria"].ToString());
+            int idcat = int.Parse(Session["idCategoria"].ToString());
             string nuevapregunta = TextBox1.Text;
             string estado = "Activo";
 
-            if (BLL.CategoriaDTO.ModificarCategoria(idcat, nuevapregunta, estado))
+
+            if (TextBox1.Text != "")
             {
-                TextBox1.Text = "";
-                mensajeSiM.Visible = true;
-                Button1.Visible = true;
-                Button2.Visible = false;
+                if (BLL.CategoriaDTO.ModificarCategoria(idcat, nuevapregunta, estado))
+                {
+                    TextBox1.Text = "";
+                    mensajeSiM.Visible = true;
+                    Button1.Visible = true;
+                    Button2.Visible = false;
+                }
             }
+            else
+            {
+                Button2.Visible = true;
+                Button3.Visible = true;
+                mensajeNa.Visible = true;
+            }
+            
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("TecnicoCrearCategoria.aspx");
         }
     }
 }
