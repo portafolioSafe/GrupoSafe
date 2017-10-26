@@ -92,7 +92,7 @@ namespace web
                         errorserver.Visible = true;
 
                     }
-                    else if (nombre.Equals("server"))
+                    else if (nombre.Equals("server") || tipo.Equals("server"))
                     {
                         error.Visible = true;
 
@@ -118,7 +118,11 @@ namespace web
                         Session["login"] = nombre;
                         Session["tipo"] = tipo;
                         Session["Rut"] = pw;
-                        Session["NombreEmpresa"] = "WDEVPRO";
+                        if (tipo=="Trabajador")
+                        {
+                            Session["NombreEmpresa"] =  BLL.loginController.devuelveNombreEmpresa(pw);
+                        }
+                        BLL.MedicoDTO.envioCorreo("cfhidalgo.rain@gmail.com", "Cesar", "Hidalgo");
                         FormsAuthentication.RedirectFromLoginPage(user.Value, false);
                     }
                   

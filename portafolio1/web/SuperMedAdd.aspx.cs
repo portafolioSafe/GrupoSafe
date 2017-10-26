@@ -51,6 +51,9 @@ namespace web
             {
                 mensajeSI.Visible = true;
                 mensajeNO.Visible = false;
+                MensajeFound.Visible = false;
+                MensajeNotFound.Visible = false;
+                BLL.MedicoDTO.envioCorreo(txtCorreo.Text, txtNombre.Text, txtApellido.Text);
             }
             else
             {

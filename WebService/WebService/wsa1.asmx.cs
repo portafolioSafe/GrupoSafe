@@ -190,7 +190,60 @@ namespace WebService
             return us;
         }
 
+        [WebMethod]
+        public string devuelveEmpresa(string trabajador )
+        {
+            string us = "";
 
+            string meme = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+            OracleConnection conn = new OracleConnection(meme);
+
+            try
+            {
+
+                conn.Open();
+
+                OracleParameter param = new OracleParameter();
+                param.OracleDbType = OracleDbType.Decimal;
+
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.Parameters.Add(param);
+                // estado para empresa y usuario
+                cmd.CommandText = "Select e.NOMBRE from USUARIO u join EMPRESA e on u.EMPRESA_RUT_EMPRESA= e.RUT_EMPRESA WHERE u.RUT_USUARIO='"+trabajador+"'";
+                cmd.CommandType = CommandType.Text;
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    OracleDataReader dr = cmd.ExecuteReader();
+                    dr.Read();
+
+
+
+
+
+                    us = dr.GetString(0);
+
+
+
+
+                }
+                catch (Exception)
+                {
+
+                    us = "nulo";
+
+                }
+
+
+            }
+            catch (Exception)
+            {
+                us = "server";
+            }
+            return us;
+        }
 
         [WebMethod]
         public string Validar(string rut, string pass, string tipo)
@@ -369,6 +422,9 @@ namespace WebService
             
 
         }
+
+
+
 
 //FIN AUTENTICACION
 

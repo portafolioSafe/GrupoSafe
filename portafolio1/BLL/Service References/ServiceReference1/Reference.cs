@@ -928,6 +928,13 @@ namespace BLL.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidarMedico", ReplyAction="*")]
         System.Threading.Tasks.Task<BLL.ServiceReference1.ValidarMedicoResponse> ValidarMedicoAsync(BLL.ServiceReference1.ValidarMedicoRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento trabajador del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/devuelveEmpresa", ReplyAction="*")]
+        BLL.ServiceReference1.devuelveEmpresaResponse devuelveEmpresa(BLL.ServiceReference1.devuelveEmpresaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/devuelveEmpresa", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.devuelveEmpresaResponse> devuelveEmpresaAsync(BLL.ServiceReference1.devuelveEmpresaRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Validar", ReplyAction="*")]
         BLL.ServiceReference1.ValidarResponse Validar(BLL.ServiceReference1.ValidarRequest request);
@@ -1331,6 +1338,74 @@ namespace BLL.ServiceReference1 {
         
         public ValidarMedicoResponseBody(string ValidarMedicoResult) {
             this.ValidarMedicoResult = ValidarMedicoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class devuelveEmpresaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="devuelveEmpresa", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.devuelveEmpresaRequestBody Body;
+        
+        public devuelveEmpresaRequest() {
+        }
+        
+        public devuelveEmpresaRequest(BLL.ServiceReference1.devuelveEmpresaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class devuelveEmpresaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string trabajador;
+        
+        public devuelveEmpresaRequestBody() {
+        }
+        
+        public devuelveEmpresaRequestBody(string trabajador) {
+            this.trabajador = trabajador;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class devuelveEmpresaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="devuelveEmpresaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.devuelveEmpresaResponseBody Body;
+        
+        public devuelveEmpresaResponse() {
+        }
+        
+        public devuelveEmpresaResponse(BLL.ServiceReference1.devuelveEmpresaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class devuelveEmpresaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string devuelveEmpresaResult;
+        
+        public devuelveEmpresaResponseBody() {
+        }
+        
+        public devuelveEmpresaResponseBody(string devuelveEmpresaResult) {
+            this.devuelveEmpresaResult = devuelveEmpresaResult;
         }
     }
     
@@ -3356,6 +3431,31 @@ namespace BLL.ServiceReference1 {
             inValue.Body.rut = rut;
             inValue.Body.pass = pass;
             return ((BLL.ServiceReference1.wsa1Soap)(this)).ValidarMedicoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.devuelveEmpresaResponse BLL.ServiceReference1.wsa1Soap.devuelveEmpresa(BLL.ServiceReference1.devuelveEmpresaRequest request) {
+            return base.Channel.devuelveEmpresa(request);
+        }
+        
+        public string devuelveEmpresa(string trabajador) {
+            BLL.ServiceReference1.devuelveEmpresaRequest inValue = new BLL.ServiceReference1.devuelveEmpresaRequest();
+            inValue.Body = new BLL.ServiceReference1.devuelveEmpresaRequestBody();
+            inValue.Body.trabajador = trabajador;
+            BLL.ServiceReference1.devuelveEmpresaResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).devuelveEmpresa(inValue);
+            return retVal.Body.devuelveEmpresaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.devuelveEmpresaResponse> BLL.ServiceReference1.wsa1Soap.devuelveEmpresaAsync(BLL.ServiceReference1.devuelveEmpresaRequest request) {
+            return base.Channel.devuelveEmpresaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.devuelveEmpresaResponse> devuelveEmpresaAsync(string trabajador) {
+            BLL.ServiceReference1.devuelveEmpresaRequest inValue = new BLL.ServiceReference1.devuelveEmpresaRequest();
+            inValue.Body = new BLL.ServiceReference1.devuelveEmpresaRequestBody();
+            inValue.Body.trabajador = trabajador;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).devuelveEmpresaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
