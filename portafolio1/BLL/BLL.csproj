@@ -48,6 +48,7 @@
     <Compile Include="EmpresaDTO.cs" />
     <Compile Include="EvaluacionDTO.cs" />
     <Compile Include="loginController.cs" />
+    <Compile Include="MedicoDTO.cs" />
     <Compile Include="PreguntasDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">

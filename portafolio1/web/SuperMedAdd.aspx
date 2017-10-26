@@ -30,7 +30,7 @@
     <label for="em">Rut Médico</label>
       <asp:TextBox ID="txtRut" CssClass="form-control" runat="server" ></asp:TextBox>
 
-         <asp:Button ID="Button2" runat="server" CssClass="btn  btn-primary" Text="Verificar" />
+         <asp:Button ID="Button2" runat="server" CssClass="btn  btn-primary" Text="Verificar" OnClick="Button2_Click" />
 
   </div>
  
@@ -46,7 +46,7 @@
             <div class="form-group">
 
     <label for="tx_especialidad">Apellido</label>
-                <asp:TextBox ID="Txttema" CssClass="form-control" runat="server"  Enabled="False"></asp:TextBox>
+                <asp:TextBox ID="txtApellido" CssClass="form-control" runat="server"  Enabled="False"></asp:TextBox>
 
 
                       <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="Txttema" ErrorMessage="El rango es de 5 a 20 caracteres" Font-Bold="False" ForeColor="Red" ValidationExpression="^[\s\S]{5,20}$"></asp:RegularExpressionValidator>
@@ -57,7 +57,7 @@
 
     <label for="tx_especialidad">Especialidad</label>
 
-               <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server" Enabled="False" ></asp:TextBox>
+               <asp:TextBox ID="txtEspecialidad" CssClass="form-control" runat="server" Enabled="False" ></asp:TextBox>
 
   
 
@@ -66,7 +66,7 @@
 
     <label for="tx_especialidad">Correo</label>
 
-             <asp:TextBox ID="TextBox2" CssClass="form-control" runat="server" Enabled="False" ></asp:TextBox>
+             <asp:TextBox ID="txtCorreo" CssClass="form-control" runat="server" Enabled="False" ></asp:TextBox>
 
   
 
@@ -75,7 +75,7 @@
 
     <label for="tx_especialidad">Contraseña</label>
 
-          <asp:TextBox ID="TxtAsistencia" class="form-control" runat="server"  TextMode="Number" ValidationGroup="valivali" CssClass="form-control" Enabled="False"></asp:TextBox>
+          <asp:TextBox ID="txtPass" class="form-control" runat="server"  TextMode="Password" ValidationGroup="valivali" CssClass="form-control" Enabled="False"></asp:TextBox>
   
 
                       <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Valor fuera de rango" ControlToValidate="txtasistencia" MaximumValue="300" MinimumValue="10" Type="Integer" ForeColor="Red"  ValidationGroup="valivali" Font-Bold="False"></asp:RangeValidator>
@@ -86,7 +86,7 @@
 
     <label for="tx_especialidad">Confirmar Contraseña</label>
 
-                <asp:TextBox ID="TextBox3" CssClass="form-control" runat="server" Enabled="False" ></asp:TextBox>
+                <asp:TextBox ID="txtPassconfirm" CssClass="form-control" runat="server" Enabled="False" TextMode="Password" ></asp:TextBox>
 
   
   

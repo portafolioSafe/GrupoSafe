@@ -43,8 +43,7 @@ namespace web
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show("clave serializado "+BLL.loginController.Hash(pass.Value)+". ", "Error de autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+         
 
             ServiceReference1.wsa1SoapClient wf = new ServiceReference1.wsa1SoapClient();
             BLL.loginController memito = new BLL.loginController();

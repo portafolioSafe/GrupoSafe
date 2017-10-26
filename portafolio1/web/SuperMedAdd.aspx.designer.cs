@@ -67,13 +67,13 @@ namespace web {
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
         
         /// <summary>
-        /// Control Txttema.
+        /// Control txtApellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Txttema;
+        protected global::System.Web.UI.WebControls.TextBox txtApellido;
         
         /// <summary>
         /// Control RegularExpressionValidator1.
@@ -85,31 +85,31 @@ namespace web {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control txtEspecialidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtEspecialidad;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control txtCorreo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txtCorreo;
         
         /// <summary>
-        /// Control TxtAsistencia.
+        /// Control txtPass.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtAsistencia;
+        protected global::System.Web.UI.WebControls.TextBox txtPass;
         
         /// <summary>
         /// Control RangeValidator1.
@@ -121,13 +121,13 @@ namespace web {
         protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
         
         /// <summary>
-        /// Control TextBox3.
+        /// Control txtPassconfirm.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox txtPassconfirm;
         
         /// <summary>
         /// Control Button1.
