@@ -23,9 +23,7 @@ C:\GrupoSafe\portafolio1\web\bin\EntityFramework.SqlServer.xml
 <<<<<<< HEAD
 =======
 C:\GrupoSafe\portafolio1\web\obj\Debug\web.csprojResolveAssemblyReference.cache
-<<<<<<< HEAD
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\web\bin\Newtonsoft.Json.dll
-=======
 >>>>>>> 6c0ba83a8c4d4621f799c3d5cd2933f12b71378d
 C:\GrupoSafe\portafolio1\web\obj\Debug\web.csproj.CoreCompileInputs.cache
 C:\GrupoSafe\portafolio1\web\obj\Debug\web.dll

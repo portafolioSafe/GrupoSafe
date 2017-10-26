@@ -31,9 +31,7 @@ C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.dll
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.pdb
 <<<<<<< HEAD
 =======
-<<<<<<< HEAD
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
-=======
 C:\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 >>>>>>> f37bd5f519b310f0817de9a713b8143a83d21391
 >>>>>>> 6c0ba83a8c4d4621f799c3d5cd2933f12b71378d
