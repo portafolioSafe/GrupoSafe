@@ -64,6 +64,7 @@
     <Compile Include="DatosDetalle_evaluacion.cs" />
     <Compile Include="DatosEmpresa.cs" />
     <Compile Include="DatosEvaluaciones.cs" />
+    <Compile Include="DatosMedico.cs" />
     <Compile Include="DatosPregunta.cs" />
     <Compile Include="DatosRespuesta.cs" />
     <Compile Include="DatosTipoEvaluacion.cs" />
