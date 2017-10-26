@@ -10,7 +10,7 @@
         <div class="panel panel-default" style="margin-right: 10%; margin-left: 10%;">
             <div class="panel-heading">
                 <style>
-                    #mensajeSI, #mensajeNO {
+                    #mensajeSI, #mensajeNO,#MensajeNa {
                         display: table;
                         margin: 0 auto;
                     }
