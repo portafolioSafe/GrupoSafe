@@ -6,7 +6,7 @@
             margin-left: 30%;
         }
 
-        #mensajeSI, #mensajeNO, #mensajeNa {
+        #mensajeSI, #mensajeNO, #mensajeNa,#mensajeSiM {
             display: table;
             margin: 0 auto;
         }
@@ -27,6 +27,10 @@
             <div>
                 <div id="mensajeSI" runat="server" class="alert alert-success" style="width: 90%" visible="false">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡CATEGORIA AGREGADA EXITOSAMENTE!
+
+                </div>
+                <div id="mensajeSiM" runat="server" class="alert alert-success" style="width: 90%" visible="false">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡CATEGORIA MODIFICADA EXITOSAMENTE!
 
                 </div>
                 <div id="mensajeNO" runat="server" class="alert alert-danger" style="width: 90%" visible="false">
@@ -70,9 +74,13 @@
 
             <asp:Button ID="Button1" runat="server" CssClass="btn alert-success center-block" Text="Agregar" Width="86px" OnClick="Button1_Click" />
 
+            <asp:Button ID="Button2" runat="server" CssClass="btn alert-success center-block" Text="Modificar" Width="86px" OnClick="Button2_Click" />
+
+
+
             <h4 style="text-align: center;">Listado de categorias actuales</h4>
 
-            <asp:GridView ID="GridView1" runat="server" DataKeyNames="id" EmptyDataText="No hay categorias" OnRowEditing="GridView1_RowEditing" OnRowUpdated="GridView1_RowUpdated" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CssClass="table table-bordered bs-table" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowUpdating="GridView1_RowUpdating">
+            <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand" DataKeyNames="id" EmptyDataText="No hay categorias" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CssClass="table table-bordered bs-table" >
                 <HeaderStyle BackColor="#337ab7" Font-Bold="True" ForeColor="White" />
 
                 <Columns>
@@ -80,10 +88,11 @@
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                     <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
 
-                    <asp:TemplateField>
-                        <ItemTemplate>
-                        </ItemTemplate>
-                    </asp:TemplateField>
+                    <asp:ButtonField ButtonType="Button" ControlStyle-CssClass="btn btn-warning" Text="Modificar" CommandName="Select" HeaderText="Acción">
+                        <HeaderStyle CssClass=" text-center" ForeColor="White" BackColor="#337ab7"></HeaderStyle>
+                        <ControlStyle CssClass="btn btn-warning"></ControlStyle>
+                    </asp:ButtonField>
+                    
                 </Columns>
             </asp:GridView>
 

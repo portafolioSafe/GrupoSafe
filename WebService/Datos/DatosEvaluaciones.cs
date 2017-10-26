@@ -57,7 +57,7 @@ namespace Datos
 
                 cmd.Parameters.Add("p_id", "number").Value = idE;
                 cmd.Parameters.Add("p_recIng", "varchar2").Value = obs;
-                cmd.Parameters.Add("p_estado", "number").Value = "Aprobada";
+                cmd.Parameters.Add("p_estado", "number").Value = "Aprobado";
 
                 try
                 {

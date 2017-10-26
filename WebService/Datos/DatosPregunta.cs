@@ -80,6 +80,32 @@ namespace Datos
                 }
             }
         }
+
+        public static bool ModificarPregunta(int id, string pregunta, string estado)
+        {
+            DatosConexion c = new DatosConexion();
+            using (OracleConnection conn = c.Connect())
+            {
+                OracleCommand cmd = new OracleCommand("PKG_EVALUACION.pro_ModificarPreguntas", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("p_id", "number").Value = id;
+                cmd.Parameters.Add("p_pregunta", "varchar2").Value = pregunta;
+                cmd.Parameters.Add("p_estado", "varchar2").Value = estado;
+
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
+        }
       
     }
 }

@@ -17,490 +17,61 @@ namespace web.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfEmpresa", Namespace="http://tempuri.org/", ItemName="empresa")]
     [System.SerializableAttribute()]
-    public class ArrayOfEmpresa : System.Collections.Generic.List<web.ServiceReference1.empresa> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="empresa", Namespace="http://tempuri.org/")]
-    [System.SerializableAttribute()]
-    public partial class empresa : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string rut_empresaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nombre_empresaField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string rut_empresa {
-            get {
-                return this.rut_empresaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.rut_empresaField, value) != true)) {
-                    this.rut_empresaField = value;
-                    this.RaisePropertyChanged("rut_empresa");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string nombre_empresa {
-            get {
-                return this.nombre_empresaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nombre_empresaField, value) != true)) {
-                    this.nombre_empresaField = value;
-                    this.RaisePropertyChanged("nombre_empresa");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
+    public class ArrayOfEmpresa : System.Collections.Generic.List<BLL.ServiceReference1.empresa> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfCap_tipo", Namespace="http://tempuri.org/", ItemName="cap_tipo")]
     [System.SerializableAttribute()]
-    public class ArrayOfCap_tipo : System.Collections.Generic.List<web.ServiceReference1.cap_tipo> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="cap_tipo", Namespace="http://tempuri.org/")]
-    [System.SerializableAttribute()]
-    public partial class cap_tipo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nombreField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string nombre {
-            get {
-                return this.nombreField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nombreField, value) != true)) {
-                    this.nombreField = value;
-                    this.RaisePropertyChanged("nombre");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfCategoria", Namespace="http://tempuri.org/", ItemName="categoria")]
-    [System.SerializableAttribute()]
-    public class ArrayOfCategoria : System.Collections.Generic.List<web.ServiceReference1.categoria> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="categoria", Namespace="http://tempuri.org/")]
-    [System.SerializableAttribute()]
-    public partial class categoria : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nombreField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string estadoField;
-        
-        private int idTipoField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string nombre {
-            get {
-                return this.nombreField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nombreField, value) != true)) {
-                    this.nombreField = value;
-                    this.RaisePropertyChanged("nombre");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string estado {
-            get {
-                return this.estadoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.estadoField, value) != true)) {
-                    this.estadoField = value;
-                    this.RaisePropertyChanged("estado");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public int idTipo {
-            get {
-                return this.idTipoField;
-            }
-            set {
-                if ((this.idTipoField.Equals(value) != true)) {
-                    this.idTipoField = value;
-                    this.RaisePropertyChanged("idTipo");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
+    public class ArrayOfCap_tipo : System.Collections.Generic.List<BLL.ServiceReference1.cap_tipo> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfArea", Namespace="http://tempuri.org/", ItemName="area")]
     [System.SerializableAttribute()]
-    public class ArrayOfArea : System.Collections.Generic.List<web.ServiceReference1.area> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="area", Namespace="http://tempuri.org/")]
-    [System.SerializableAttribute()]
-    public partial class area : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string nombre_areaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string estadoField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string nombre_area {
-            get {
-                return this.nombre_areaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.nombre_areaField, value) != true)) {
-                    this.nombre_areaField = value;
-                    this.RaisePropertyChanged("nombre_area");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string estado {
-            get {
-                return this.estadoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.estadoField, value) != true)) {
-                    this.estadoField = value;
-                    this.RaisePropertyChanged("estado");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
+    public class ArrayOfArea : System.Collections.Generic.List<BLL.ServiceReference1.area> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfCapacitacion", Namespace="http://tempuri.org/", ItemName="capacitacion")]
     [System.SerializableAttribute()]
-    public class ArrayOfCapacitacion : System.Collections.Generic.List<web.ServiceReference1.capacitacion> {
+    public class ArrayOfCapacitacion : System.Collections.Generic.List<BLL.ServiceReference1.capacitacion> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="capacitacion", Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfCategoria", Namespace="http://tempuri.org/", ItemName="categoria")]
     [System.SerializableAttribute()]
-    public partial class capacitacion : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AreaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FechaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TemaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ExpositorField;
-        
-        private int AsistenciaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Rut_empresaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Tipo_capField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string Area {
-            get {
-                return this.AreaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AreaField, value) != true)) {
-                    this.AreaField = value;
-                    this.RaisePropertyChanged("Area");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string Fecha {
-            get {
-                return this.FechaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FechaField, value) != true)) {
-                    this.FechaField = value;
-                    this.RaisePropertyChanged("Fecha");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Tema {
-            get {
-                return this.TemaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TemaField, value) != true)) {
-                    this.TemaField = value;
-                    this.RaisePropertyChanged("Tema");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string Expositor {
-            get {
-                return this.ExpositorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExpositorField, value) != true)) {
-                    this.ExpositorField = value;
-                    this.RaisePropertyChanged("Expositor");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public int Asistencia {
-            get {
-                return this.AsistenciaField;
-            }
-            set {
-                if ((this.AsistenciaField.Equals(value) != true)) {
-                    this.AsistenciaField = value;
-                    this.RaisePropertyChanged("Asistencia");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string Rut_empresa {
-            get {
-                return this.Rut_empresaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Rut_empresaField, value) != true)) {
-                    this.Rut_empresaField = value;
-                    this.RaisePropertyChanged("Rut_empresa");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string Tipo_cap {
-            get {
-                return this.Tipo_capField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Tipo_capField, value) != true)) {
-                    this.Tipo_capField = value;
-                    this.RaisePropertyChanged("Tipo_cap");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
+    public class ArrayOfCategoria : System.Collections.Generic.List<BLL.ServiceReference1.categoria> {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.wsa1Soap")]
     public interface wsa1Soap {
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento HelloWorldResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        web.ServiceReference1.HelloWorldResponse HelloWorld(web.ServiceReference1.HelloWorldRequest request);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidarUsuario", ReplyAction="*")]
+        web.ServiceReference1.ValidarUsuarioResponse ValidarUsuario(web.ServiceReference1.ValidarUsuarioRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        System.Threading.Tasks.Task<web.ServiceReference1.HelloWorldResponse> HelloWorldAsync(web.ServiceReference1.HelloWorldRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidarUsuario", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.ValidarUsuarioResponse> ValidarUsuarioAsync(web.ServiceReference1.ValidarUsuarioRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidarEmpresa", ReplyAction="*")]
+        web.ServiceReference1.ValidarEmpresaResponse ValidarEmpresa(web.ServiceReference1.ValidarEmpresaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidarEmpresa", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.ValidarEmpresaResponse> ValidarEmpresaAsync(web.ServiceReference1.ValidarEmpresaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidarMedico", ReplyAction="*")]
+        web.ServiceReference1.ValidarMedicoResponse ValidarMedico(web.ServiceReference1.ValidarMedicoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidarMedico", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.ValidarMedicoResponse> ValidarMedicoAsync(web.ServiceReference1.ValidarMedicoRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Validar", ReplyAction="*")]
@@ -530,26 +101,12 @@ namespace web.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListarTipoCap", ReplyAction="*")]
         System.Threading.Tasks.Task<web.ServiceReference1.GetListarTipoCapResponse> GetListarTipoCapAsync(web.ServiceReference1.GetListarTipoCapRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Item del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GuardarCategoria", ReplyAction="*")]
-        web.ServiceReference1.GuardarCategoriaResponse GuardarCategoria(web.ServiceReference1.GuardarCategoriaRequest request);
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento listarAreaResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listarArea", ReplyAction="*")]
+        web.ServiceReference1.listarAreaResponse listarArea(web.ServiceReference1.listarAreaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GuardarCategoria", ReplyAction="*")]
-        System.Threading.Tasks.Task<web.ServiceReference1.GuardarCategoriaResponse> GuardarCategoriaAsync(web.ServiceReference1.GuardarCategoriaRequest request);
-        
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ListarCategoriasResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCategorias", ReplyAction="*")]
-        web.ServiceReference1.ListarCategoriasResponse ListarCategorias(web.ServiceReference1.ListarCategoriasRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCategorias", ReplyAction="*")]
-        System.Threading.Tasks.Task<web.ServiceReference1.ListarCategoriasResponse> ListarCategoriasAsync(web.ServiceReference1.ListarCategoriasRequest request);
-        
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ListarCategoriasXtipoResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCategoriasXtipo", ReplyAction="*")]
-        web.ServiceReference1.ListarCategoriasXtipoResponse ListarCategoriasXtipo(web.ServiceReference1.ListarCategoriasXtipoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCategoriasXtipo", ReplyAction="*")]
-        System.Threading.Tasks.Task<web.ServiceReference1.ListarCategoriasXtipoResponse> ListarCategoriasXtipoAsync(web.ServiceReference1.ListarCategoriasXtipoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listarArea", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.listarAreaResponse> listarAreaAsync(web.ServiceReference1.listarAreaRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento area del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GuardarCapacitacion", ReplyAction="*")]
@@ -558,61 +115,167 @@ namespace web.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GuardarCapacitacion", ReplyAction="*")]
         System.Threading.Tasks.Task<web.ServiceReference1.GuardarCapacitacionResponse> GuardarCapacitacionAsync(web.ServiceReference1.GuardarCapacitacionRequest request);
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento listarAreaResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listarArea", ReplyAction="*")]
-        web.ServiceReference1.listarAreaResponse listarArea(web.ServiceReference1.listarAreaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listarArea", ReplyAction="*")]
-        System.Threading.Tasks.Task<web.ServiceReference1.listarAreaResponse> listarAreaAsync(web.ServiceReference1.listarAreaRequest request);
-        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ListarCapacitacionesResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCapacitaciones", ReplyAction="*")]
         web.ServiceReference1.ListarCapacitacionesResponse ListarCapacitaciones(web.ServiceReference1.ListarCapacitacionesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCapacitaciones", ReplyAction="*")]
         System.Threading.Tasks.Task<web.ServiceReference1.ListarCapacitacionesResponse> ListarCapacitacionesAsync(web.ServiceReference1.ListarCapacitacionesRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento ShowCapacitacionResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ShowCapacitacion", ReplyAction="*")]
+        web.ServiceReference1.ShowCapacitacionResponse ShowCapacitacion(web.ServiceReference1.ShowCapacitacionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ShowCapacitacion", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.ShowCapacitacionResponse> ShowCapacitacionAsync(web.ServiceReference1.ShowCapacitacionRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento area del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/editarCApacitacion", ReplyAction="*")]
+        web.ServiceReference1.editarCApacitacionResponse editarCApacitacion(web.ServiceReference1.editarCApacitacionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/editarCApacitacion", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.editarCApacitacionResponse> editarCApacitacionAsync(web.ServiceReference1.editarCApacitacionRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento empresaNombre del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCapacitacionesxfecha", ReplyAction="*")]
+        web.ServiceReference1.ListarCapacitacionesxfechaResponse ListarCapacitacionesxfecha(web.ServiceReference1.ListarCapacitacionesxfechaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCapacitacionesxfecha", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.ListarCapacitacionesxfechaResponse> ListarCapacitacionesxfechaAsync(web.ServiceReference1.ListarCapacitacionesxfechaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento empresaNombre del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCapacitacionesxempresa", ReplyAction="*")]
+        web.ServiceReference1.ListarCapacitacionesxempresaResponse ListarCapacitacionesxempresa(web.ServiceReference1.ListarCapacitacionesxempresaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCapacitacionesxempresa", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.ListarCapacitacionesxempresaResponse> ListarCapacitacionesxempresaAsync(web.ServiceReference1.ListarCapacitacionesxempresaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento cat del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_guardarCategoria", ReplyAction="*")]
+        web.ServiceReference1.E_guardarCategoriaResponse E_guardarCategoria(web.ServiceReference1.E_guardarCategoriaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_guardarCategoria", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_guardarCategoriaResponse> E_guardarCategoriaAsync(web.ServiceReference1.E_guardarCategoriaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento E_listadoCategoriaResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listadoCategoria", ReplyAction="*")]
+        web.ServiceReference1.E_listadoCategoriaResponse E_listadoCategoria(web.ServiceReference1.E_listadoCategoriaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listadoCategoria", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_listadoCategoriaResponse> E_listadoCategoriaAsync(web.ServiceReference1.E_listadoCategoriaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento E_listarCategoriasXtipoResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listarCategoriasXtipo", ReplyAction="*")]
+        web.ServiceReference1.E_listarCategoriasXtipoResponse E_listarCategoriasXtipo(web.ServiceReference1.E_listarCategoriasXtipoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listarCategoriasXtipo", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_listarCategoriasXtipoResponse> E_listarCategoriasXtipoAsync(web.ServiceReference1.E_listarCategoriasXtipoRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento p del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_agregarPregunta", ReplyAction="*")]
+        web.ServiceReference1.E_agregarPreguntaResponse E_agregarPregunta(web.ServiceReference1.E_agregarPreguntaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_agregarPregunta", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_agregarPreguntaResponse> E_agregarPreguntaAsync(web.ServiceReference1.E_agregarPreguntaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento p del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_agregarDetallePregunta", ReplyAction="*")]
+        web.ServiceReference1.E_agregarDetallePreguntaResponse E_agregarDetallePregunta(web.ServiceReference1.E_agregarDetallePreguntaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_agregarDetallePregunta", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_agregarDetallePreguntaResponse> E_agregarDetallePreguntaAsync(web.ServiceReference1.E_agregarDetallePreguntaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento E_listarPreguntaXcategoriaResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listarPreguntaXcategoria", ReplyAction="*")]
+        web.ServiceReference1.E_listarPreguntaXcategoriaResponse E_listarPreguntaXcategoria(web.ServiceReference1.E_listarPreguntaXcategoriaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listarPreguntaXcategoria", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_listarPreguntaXcategoriaResponse> E_listarPreguntaXcategoriaAsync(web.ServiceReference1.E_listarPreguntaXcategoriaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento E_listarempresaResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listarempresa", ReplyAction="*")]
+        web.ServiceReference1.E_listarempresaResponse E_listarempresa(web.ServiceReference1.E_listarempresaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listarempresa", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_listarempresaResponse> E_listarempresaAsync(web.ServiceReference1.E_listarempresaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento listadodeevaluacionesResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listadodeevaluaciones", ReplyAction="*")]
+        web.ServiceReference1.listadodeevaluacionesResponse listadodeevaluaciones(web.ServiceReference1.listadodeevaluacionesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listadodeevaluaciones", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.listadodeevaluacionesResponse> listadodeevaluacionesAsync(web.ServiceReference1.listadodeevaluacionesRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento obsTec del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_agregarEvaluacion", ReplyAction="*")]
+        web.ServiceReference1.E_agregarEvaluacionResponse E_agregarEvaluacion(web.ServiceReference1.E_agregarEvaluacionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_agregarEvaluacion", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_agregarEvaluacionResponse> E_agregarEvaluacionAsync(web.ServiceReference1.E_agregarEvaluacionRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento p del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_modificarEvaluacion", ReplyAction="*")]
+        web.ServiceReference1.E_modificarEvaluacionResponse E_modificarEvaluacion(web.ServiceReference1.E_modificarEvaluacionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_modificarEvaluacion", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_modificarEvaluacionResponse> E_modificarEvaluacionAsync(web.ServiceReference1.E_modificarEvaluacionRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listadoUltimaEvaluacion", ReplyAction="*")]
+        web.ServiceReference1.listadoUltimaEvaluacionResponse listadoUltimaEvaluacion(web.ServiceReference1.listadoUltimaEvaluacionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listadoUltimaEvaluacion", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.listadoUltimaEvaluacionResponse> listadoUltimaEvaluacionAsync(web.ServiceReference1.listadoUltimaEvaluacionRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listadoPorTecnico", ReplyAction="*")]
+        web.ServiceReference1.E_listadoPorTecnicoResponse E_listadoPorTecnico(web.ServiceReference1.E_listadoPorTecnicoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listadoPorTecnico", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_listadoPorTecnicoResponse> E_listadoPorTecnicoAsync(web.ServiceReference1.E_listadoPorTecnicoRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento E_ListadoIngenieroResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_ListadoIngeniero", ReplyAction="*")]
+        web.ServiceReference1.E_ListadoIngenieroResponse E_ListadoIngeniero(web.ServiceReference1.E_ListadoIngenieroRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_ListadoIngeniero", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_ListadoIngenieroResponse> E_ListadoIngenieroAsync(web.ServiceReference1.E_ListadoIngenieroRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento E_listadoDetalleResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listadoDetalle", ReplyAction="*")]
+        web.ServiceReference1.E_listadoDetalleResponse E_listadoDetalle(web.ServiceReference1.E_listadoDetalleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listadoDetalle", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_listadoDetalleResponse> E_listadoDetalleAsync(web.ServiceReference1.E_listadoDetalleRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento cat del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarCategoria", ReplyAction="*")]
+        web.ServiceReference1.ModificarCategoriaResponse ModificarCategoria(web.ServiceReference1.ModificarCategoriaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarCategoria", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.ModificarCategoriaResponse> ModificarCategoriaAsync(web.ServiceReference1.ModificarCategoriaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento pregunta del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarPregunta", ReplyAction="*")]
+        web.ServiceReference1.ModificarPreguntaResponse ModificarPregunta(web.ServiceReference1.ModificarPreguntaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarPregunta", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.ModificarPreguntaResponse> ModificarPreguntaAsync(web.ServiceReference1.ModificarPreguntaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldRequest {
+    public partial class ValidarUsuarioRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorld", Namespace="http://tempuri.org/", Order=0)]
-        public web.ServiceReference1.HelloWorldRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidarUsuario", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ValidarUsuarioRequestBody Body;
         
-        public HelloWorldRequest() {
+        public ValidarUsuarioRequest() {
         }
         
-        public HelloWorldRequest(web.ServiceReference1.HelloWorldRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class HelloWorldRequestBody {
-        
-        public HelloWorldRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorldResponse", Namespace="http://tempuri.org/", Order=0)]
-        public web.ServiceReference1.HelloWorldResponseBody Body;
-        
-        public HelloWorldResponse() {
-        }
-        
-        public HelloWorldResponse(web.ServiceReference1.HelloWorldResponseBody Body) {
+        public ValidarUsuarioRequest(web.ServiceReference1.ValidarUsuarioRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -621,16 +284,198 @@ namespace web.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class HelloWorldResponseBody {
+    public partial class ValidarUsuarioRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string HelloWorldResult;
+        public string rut;
         
-        public HelloWorldResponseBody() {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string pass;
+        
+        public ValidarUsuarioRequestBody() {
         }
         
-        public HelloWorldResponseBody(string HelloWorldResult) {
-            this.HelloWorldResult = HelloWorldResult;
+        public ValidarUsuarioRequestBody(string rut, string pass) {
+            this.rut = rut;
+            this.pass = pass;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ValidarUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidarUsuarioResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ValidarUsuarioResponseBody Body;
+        
+        public ValidarUsuarioResponse() {
+        }
+        
+        public ValidarUsuarioResponse(web.ServiceReference1.ValidarUsuarioResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ValidarUsuarioResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ValidarUsuarioResult;
+        
+        public ValidarUsuarioResponseBody() {
+        }
+        
+        public ValidarUsuarioResponseBody(string ValidarUsuarioResult) {
+            this.ValidarUsuarioResult = ValidarUsuarioResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ValidarEmpresaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidarEmpresa", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ValidarEmpresaRequestBody Body;
+        
+        public ValidarEmpresaRequest() {
+        }
+        
+        public ValidarEmpresaRequest(web.ServiceReference1.ValidarEmpresaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ValidarEmpresaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string rut;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string pass;
+        
+        public ValidarEmpresaRequestBody() {
+        }
+        
+        public ValidarEmpresaRequestBody(string rut, string pass) {
+            this.rut = rut;
+            this.pass = pass;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ValidarEmpresaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidarEmpresaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ValidarEmpresaResponseBody Body;
+        
+        public ValidarEmpresaResponse() {
+        }
+        
+        public ValidarEmpresaResponse(web.ServiceReference1.ValidarEmpresaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ValidarEmpresaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ValidarEmpresaResult;
+        
+        public ValidarEmpresaResponseBody() {
+        }
+        
+        public ValidarEmpresaResponseBody(string ValidarEmpresaResult) {
+            this.ValidarEmpresaResult = ValidarEmpresaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ValidarMedicoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidarMedico", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ValidarMedicoRequestBody Body;
+        
+        public ValidarMedicoRequest() {
+        }
+        
+        public ValidarMedicoRequest(web.ServiceReference1.ValidarMedicoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ValidarMedicoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string rut;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string pass;
+        
+        public ValidarMedicoRequestBody() {
+        }
+        
+        public ValidarMedicoRequestBody(string rut, string pass) {
+            this.rut = rut;
+            this.pass = pass;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ValidarMedicoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidarMedicoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ValidarMedicoResponseBody Body;
+        
+        public ValidarMedicoResponse() {
+        }
+        
+        public ValidarMedicoResponse(web.ServiceReference1.ValidarMedicoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ValidarMedicoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ValidarMedicoResult;
+        
+        public ValidarMedicoResponseBody() {
+        }
+        
+        public ValidarMedicoResponseBody(string ValidarMedicoResult) {
+            this.ValidarMedicoResult = ValidarMedicoResult;
         }
     }
     
@@ -908,87 +753,15 @@ namespace web.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GuardarCategoriaRequest {
+    public partial class listarAreaRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GuardarCategoria", Namespace="http://tempuri.org/", Order=0)]
-        public web.ServiceReference1.GuardarCategoriaRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listarArea", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.listarAreaRequestBody Body;
         
-        public GuardarCategoriaRequest() {
+        public listarAreaRequest() {
         }
         
-        public GuardarCategoriaRequest(web.ServiceReference1.GuardarCategoriaRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GuardarCategoriaRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string Item;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public int id;
-        
-        public GuardarCategoriaRequestBody() {
-        }
-        
-        public GuardarCategoriaRequestBody(string Item, int id) {
-            this.Item = Item;
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GuardarCategoriaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GuardarCategoriaResponse", Namespace="http://tempuri.org/", Order=0)]
-        public web.ServiceReference1.GuardarCategoriaResponseBody Body;
-        
-        public GuardarCategoriaResponse() {
-        }
-        
-        public GuardarCategoriaResponse(web.ServiceReference1.GuardarCategoriaResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GuardarCategoriaResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public bool GuardarCategoriaResult;
-        
-        public GuardarCategoriaResponseBody() {
-        }
-        
-        public GuardarCategoriaResponseBody(bool GuardarCategoriaResult) {
-            this.GuardarCategoriaResult = GuardarCategoriaResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ListarCategoriasRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListarCategorias", Namespace="http://tempuri.org/", Order=0)]
-        public web.ServiceReference1.ListarCategoriasRequestBody Body;
-        
-        public ListarCategoriasRequest() {
-        }
-        
-        public ListarCategoriasRequest(web.ServiceReference1.ListarCategoriasRequestBody Body) {
+        public listarAreaRequest(web.ServiceReference1.listarAreaRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -997,9 +770,9 @@ namespace web.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class ListarCategoriasRequestBody {
+    public partial class listarAreaRequestBody {
         
-        public ListarCategoriasRequestBody() {
+        public listarAreaRequestBody() {
         }
     }
     
@@ -1007,15 +780,15 @@ namespace web.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ListarCategoriasResponse {
+    public partial class listarAreaResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListarCategoriasResponse", Namespace="http://tempuri.org/", Order=0)]
-        public web.ServiceReference1.ListarCategoriasResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listarAreaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.listarAreaResponseBody Body;
         
-        public ListarCategoriasResponse() {
+        public listarAreaResponse() {
         }
         
-        public ListarCategoriasResponse(web.ServiceReference1.ListarCategoriasResponseBody Body) {
+        public listarAreaResponse(web.ServiceReference1.listarAreaResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1024,84 +797,16 @@ namespace web.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class ListarCategoriasResponseBody {
+    public partial class listarAreaResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public web.ServiceReference1.ArrayOfCategoria ListarCategoriasResult;
+        public web.ServiceReference1.ArrayOfArea listarAreaResult;
         
-        public ListarCategoriasResponseBody() {
+        public listarAreaResponseBody() {
         }
         
-        public ListarCategoriasResponseBody(web.ServiceReference1.ArrayOfCategoria ListarCategoriasResult) {
-            this.ListarCategoriasResult = ListarCategoriasResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ListarCategoriasXtipoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListarCategoriasXtipo", Namespace="http://tempuri.org/", Order=0)]
-        public web.ServiceReference1.ListarCategoriasXtipoRequestBody Body;
-        
-        public ListarCategoriasXtipoRequest() {
-        }
-        
-        public ListarCategoriasXtipoRequest(web.ServiceReference1.ListarCategoriasXtipoRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class ListarCategoriasXtipoRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int id;
-        
-        public ListarCategoriasXtipoRequestBody() {
-        }
-        
-        public ListarCategoriasXtipoRequestBody(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ListarCategoriasXtipoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListarCategoriasXtipoResponse", Namespace="http://tempuri.org/", Order=0)]
-        public web.ServiceReference1.ListarCategoriasXtipoResponseBody Body;
-        
-        public ListarCategoriasXtipoResponse() {
-        }
-        
-        public ListarCategoriasXtipoResponse(web.ServiceReference1.ListarCategoriasXtipoResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class ListarCategoriasXtipoResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public web.ServiceReference1.ArrayOfCategoria ListarCategoriasXtipoResult;
-        
-        public ListarCategoriasXtipoResponseBody() {
-        }
-        
-        public ListarCategoriasXtipoResponseBody(web.ServiceReference1.ArrayOfCategoria ListarCategoriasXtipoResult) {
-            this.ListarCategoriasXtipoResult = ListarCategoriasXtipoResult;
+        public listarAreaResponseBody(web.ServiceReference1.ArrayOfArea listarAreaResult) {
+            this.listarAreaResult = listarAreaResult;
         }
     }
     
@@ -1201,67 +906,6 @@ namespace web.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class listarAreaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="listarArea", Namespace="http://tempuri.org/", Order=0)]
-        public web.ServiceReference1.listarAreaRequestBody Body;
-        
-        public listarAreaRequest() {
-        }
-        
-        public listarAreaRequest(web.ServiceReference1.listarAreaRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class listarAreaRequestBody {
-        
-        public listarAreaRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class listarAreaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="listarAreaResponse", Namespace="http://tempuri.org/", Order=0)]
-        public web.ServiceReference1.listarAreaResponseBody Body;
-        
-        public listarAreaResponse() {
-        }
-        
-        public listarAreaResponse(web.ServiceReference1.listarAreaResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class listarAreaResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public web.ServiceReference1.ArrayOfArea listarAreaResult;
-        
-        public listarAreaResponseBody() {
-        }
-        
-        public listarAreaResponseBody(web.ServiceReference1.ArrayOfArea listarAreaResult) {
-            this.listarAreaResult = listarAreaResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class ListarCapacitacionesRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="ListarCapacitaciones", Namespace="http://tempuri.org/", Order=0)]
@@ -1319,6 +963,1426 @@ namespace web.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ShowCapacitacionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ShowCapacitacion", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ShowCapacitacionRequestBody Body;
+        
+        public ShowCapacitacionRequest() {
+        }
+        
+        public ShowCapacitacionRequest(web.ServiceReference1.ShowCapacitacionRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ShowCapacitacionRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id_cap_edit;
+        
+        public ShowCapacitacionRequestBody() {
+        }
+        
+        public ShowCapacitacionRequestBody(int id_cap_edit) {
+            this.id_cap_edit = id_cap_edit;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ShowCapacitacionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ShowCapacitacionResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ShowCapacitacionResponseBody Body;
+        
+        public ShowCapacitacionResponse() {
+        }
+        
+        public ShowCapacitacionResponse(web.ServiceReference1.ShowCapacitacionResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ShowCapacitacionResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BLL.ServiceReference1.capacitacion ShowCapacitacionResult;
+        
+        public ShowCapacitacionResponseBody() {
+        }
+        
+        public ShowCapacitacionResponseBody(BLL.ServiceReference1.capacitacion ShowCapacitacionResult) {
+            this.ShowCapacitacionResult = ShowCapacitacionResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class editarCApacitacionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="editarCApacitacion", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.editarCApacitacionRequestBody Body;
+        
+        public editarCApacitacionRequest() {
+        }
+        
+        public editarCApacitacionRequest(web.ServiceReference1.editarCApacitacionRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class editarCApacitacionRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id_edit;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string area;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public System.DateTime fecha;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string tema;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string expo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int asisten;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string empresa;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public int tipocap;
+        
+        public editarCApacitacionRequestBody() {
+        }
+        
+        public editarCApacitacionRequestBody(int id_edit, string area, System.DateTime fecha, string tema, string expo, int asisten, string empresa, int tipocap) {
+            this.id_edit = id_edit;
+            this.area = area;
+            this.fecha = fecha;
+            this.tema = tema;
+            this.expo = expo;
+            this.asisten = asisten;
+            this.empresa = empresa;
+            this.tipocap = tipocap;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class editarCApacitacionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="editarCApacitacionResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.editarCApacitacionResponseBody Body;
+        
+        public editarCApacitacionResponse() {
+        }
+        
+        public editarCApacitacionResponse(web.ServiceReference1.editarCApacitacionResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class editarCApacitacionResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool editarCApacitacionResult;
+        
+        public editarCApacitacionResponseBody() {
+        }
+        
+        public editarCApacitacionResponseBody(bool editarCApacitacionResult) {
+            this.editarCApacitacionResult = editarCApacitacionResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ListarCapacitacionesxfechaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListarCapacitacionesxfecha", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ListarCapacitacionesxfechaRequestBody Body;
+        
+        public ListarCapacitacionesxfechaRequest() {
+        }
+        
+        public ListarCapacitacionesxfechaRequest(web.ServiceReference1.ListarCapacitacionesxfechaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ListarCapacitacionesxfechaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string empresaNombre;
+        
+        public ListarCapacitacionesxfechaRequestBody() {
+        }
+        
+        public ListarCapacitacionesxfechaRequestBody(string empresaNombre) {
+            this.empresaNombre = empresaNombre;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ListarCapacitacionesxfechaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListarCapacitacionesxfechaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ListarCapacitacionesxfechaResponseBody Body;
+        
+        public ListarCapacitacionesxfechaResponse() {
+        }
+        
+        public ListarCapacitacionesxfechaResponse(web.ServiceReference1.ListarCapacitacionesxfechaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ListarCapacitacionesxfechaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public web.ServiceReference1.ArrayOfCapacitacion ListarCapacitacionesxfechaResult;
+        
+        public ListarCapacitacionesxfechaResponseBody() {
+        }
+        
+        public ListarCapacitacionesxfechaResponseBody(web.ServiceReference1.ArrayOfCapacitacion ListarCapacitacionesxfechaResult) {
+            this.ListarCapacitacionesxfechaResult = ListarCapacitacionesxfechaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ListarCapacitacionesxempresaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListarCapacitacionesxempresa", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ListarCapacitacionesxempresaRequestBody Body;
+        
+        public ListarCapacitacionesxempresaRequest() {
+        }
+        
+        public ListarCapacitacionesxempresaRequest(web.ServiceReference1.ListarCapacitacionesxempresaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ListarCapacitacionesxempresaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string empresaNombre;
+        
+        public ListarCapacitacionesxempresaRequestBody() {
+        }
+        
+        public ListarCapacitacionesxempresaRequestBody(string empresaNombre) {
+            this.empresaNombre = empresaNombre;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ListarCapacitacionesxempresaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListarCapacitacionesxempresaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ListarCapacitacionesxempresaResponseBody Body;
+        
+        public ListarCapacitacionesxempresaResponse() {
+        }
+        
+        public ListarCapacitacionesxempresaResponse(web.ServiceReference1.ListarCapacitacionesxempresaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ListarCapacitacionesxempresaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public web.ServiceReference1.ArrayOfCapacitacion ListarCapacitacionesxempresaResult;
+        
+        public ListarCapacitacionesxempresaResponseBody() {
+        }
+        
+        public ListarCapacitacionesxempresaResponseBody(web.ServiceReference1.ArrayOfCapacitacion ListarCapacitacionesxempresaResult) {
+            this.ListarCapacitacionesxempresaResult = ListarCapacitacionesxempresaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_guardarCategoriaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_guardarCategoria", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_guardarCategoriaRequestBody Body;
+        
+        public E_guardarCategoriaRequest() {
+        }
+        
+        public E_guardarCategoriaRequest(web.ServiceReference1.E_guardarCategoriaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_guardarCategoriaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string cat;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int id;
+        
+        public E_guardarCategoriaRequestBody() {
+        }
+        
+        public E_guardarCategoriaRequestBody(string cat, int id) {
+            this.cat = cat;
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_guardarCategoriaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_guardarCategoriaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_guardarCategoriaResponseBody Body;
+        
+        public E_guardarCategoriaResponse() {
+        }
+        
+        public E_guardarCategoriaResponse(web.ServiceReference1.E_guardarCategoriaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_guardarCategoriaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool E_guardarCategoriaResult;
+        
+        public E_guardarCategoriaResponseBody() {
+        }
+        
+        public E_guardarCategoriaResponseBody(bool E_guardarCategoriaResult) {
+            this.E_guardarCategoriaResult = E_guardarCategoriaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_listadoCategoriaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listadoCategoria", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_listadoCategoriaRequestBody Body;
+        
+        public E_listadoCategoriaRequest() {
+        }
+        
+        public E_listadoCategoriaRequest(web.ServiceReference1.E_listadoCategoriaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class E_listadoCategoriaRequestBody {
+        
+        public E_listadoCategoriaRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_listadoCategoriaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listadoCategoriaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_listadoCategoriaResponseBody Body;
+        
+        public E_listadoCategoriaResponse() {
+        }
+        
+        public E_listadoCategoriaResponse(web.ServiceReference1.E_listadoCategoriaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_listadoCategoriaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public web.ServiceReference1.ArrayOfCategoria E_listadoCategoriaResult;
+        
+        public E_listadoCategoriaResponseBody() {
+        }
+        
+        public E_listadoCategoriaResponseBody(web.ServiceReference1.ArrayOfCategoria E_listadoCategoriaResult) {
+            this.E_listadoCategoriaResult = E_listadoCategoriaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_listarCategoriasXtipoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listarCategoriasXtipo", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_listarCategoriasXtipoRequestBody Body;
+        
+        public E_listarCategoriasXtipoRequest() {
+        }
+        
+        public E_listarCategoriasXtipoRequest(web.ServiceReference1.E_listarCategoriasXtipoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_listarCategoriasXtipoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public E_listarCategoriasXtipoRequestBody() {
+        }
+        
+        public E_listarCategoriasXtipoRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_listarCategoriasXtipoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listarCategoriasXtipoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_listarCategoriasXtipoResponseBody Body;
+        
+        public E_listarCategoriasXtipoResponse() {
+        }
+        
+        public E_listarCategoriasXtipoResponse(web.ServiceReference1.E_listarCategoriasXtipoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_listarCategoriasXtipoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public web.ServiceReference1.ArrayOfCategoria E_listarCategoriasXtipoResult;
+        
+        public E_listarCategoriasXtipoResponseBody() {
+        }
+        
+        public E_listarCategoriasXtipoResponseBody(web.ServiceReference1.ArrayOfCategoria E_listarCategoriasXtipoResult) {
+            this.E_listarCategoriasXtipoResult = E_listarCategoriasXtipoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_agregarPreguntaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_agregarPregunta", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_agregarPreguntaRequestBody Body;
+        
+        public E_agregarPreguntaRequest() {
+        }
+        
+        public E_agregarPreguntaRequest(web.ServiceReference1.E_agregarPreguntaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_agregarPreguntaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string p;
+        
+        public E_agregarPreguntaRequestBody() {
+        }
+        
+        public E_agregarPreguntaRequestBody(int id, string p) {
+            this.id = id;
+            this.p = p;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_agregarPreguntaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_agregarPreguntaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_agregarPreguntaResponseBody Body;
+        
+        public E_agregarPreguntaResponse() {
+        }
+        
+        public E_agregarPreguntaResponse(web.ServiceReference1.E_agregarPreguntaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_agregarPreguntaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool E_agregarPreguntaResult;
+        
+        public E_agregarPreguntaResponseBody() {
+        }
+        
+        public E_agregarPreguntaResponseBody(bool E_agregarPreguntaResult) {
+            this.E_agregarPreguntaResult = E_agregarPreguntaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_agregarDetallePreguntaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_agregarDetallePregunta", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_agregarDetallePreguntaRequestBody Body;
+        
+        public E_agregarDetallePreguntaRequest() {
+        }
+        
+        public E_agregarDetallePreguntaRequest(web.ServiceReference1.E_agregarDetallePreguntaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_agregarDetallePreguntaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string p;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int idP;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int idE;
+        
+        public E_agregarDetallePreguntaRequestBody() {
+        }
+        
+        public E_agregarDetallePreguntaRequestBody(string p, int idP, int idE) {
+            this.p = p;
+            this.idP = idP;
+            this.idE = idE;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_agregarDetallePreguntaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_agregarDetallePreguntaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_agregarDetallePreguntaResponseBody Body;
+        
+        public E_agregarDetallePreguntaResponse() {
+        }
+        
+        public E_agregarDetallePreguntaResponse(web.ServiceReference1.E_agregarDetallePreguntaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_agregarDetallePreguntaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool E_agregarDetallePreguntaResult;
+        
+        public E_agregarDetallePreguntaResponseBody() {
+        }
+        
+        public E_agregarDetallePreguntaResponseBody(bool E_agregarDetallePreguntaResult) {
+            this.E_agregarDetallePreguntaResult = E_agregarDetallePreguntaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_listarPreguntaXcategoriaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listarPreguntaXcategoria", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_listarPreguntaXcategoriaRequestBody Body;
+        
+        public E_listarPreguntaXcategoriaRequest() {
+        }
+        
+        public E_listarPreguntaXcategoriaRequest(web.ServiceReference1.E_listarPreguntaXcategoriaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_listarPreguntaXcategoriaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public E_listarPreguntaXcategoriaRequestBody() {
+        }
+        
+        public E_listarPreguntaXcategoriaRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_listarPreguntaXcategoriaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listarPreguntaXcategoriaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_listarPreguntaXcategoriaResponseBody Body;
+        
+        public E_listarPreguntaXcategoriaResponse() {
+        }
+        
+        public E_listarPreguntaXcategoriaResponse(web.ServiceReference1.E_listarPreguntaXcategoriaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_listarPreguntaXcategoriaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BLL.ServiceReference1.Pregunta[] E_listarPreguntaXcategoriaResult;
+        
+        public E_listarPreguntaXcategoriaResponseBody() {
+        }
+        
+        public E_listarPreguntaXcategoriaResponseBody(BLL.ServiceReference1.Pregunta[] E_listarPreguntaXcategoriaResult) {
+            this.E_listarPreguntaXcategoriaResult = E_listarPreguntaXcategoriaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_listarempresaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listarempresa", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_listarempresaRequestBody Body;
+        
+        public E_listarempresaRequest() {
+        }
+        
+        public E_listarempresaRequest(web.ServiceReference1.E_listarempresaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class E_listarempresaRequestBody {
+        
+        public E_listarempresaRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_listarempresaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listarempresaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_listarempresaResponseBody Body;
+        
+        public E_listarempresaResponse() {
+        }
+        
+        public E_listarempresaResponse(web.ServiceReference1.E_listarempresaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_listarempresaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public web.ServiceReference1.ArrayOfEmpresa E_listarempresaResult;
+        
+        public E_listarempresaResponseBody() {
+        }
+        
+        public E_listarempresaResponseBody(web.ServiceReference1.ArrayOfEmpresa E_listarempresaResult) {
+            this.E_listarempresaResult = E_listarempresaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listadodeevaluacionesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listadodeevaluaciones", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.listadodeevaluacionesRequestBody Body;
+        
+        public listadodeevaluacionesRequest() {
+        }
+        
+        public listadodeevaluacionesRequest(web.ServiceReference1.listadodeevaluacionesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class listadodeevaluacionesRequestBody {
+        
+        public listadodeevaluacionesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listadodeevaluacionesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listadodeevaluacionesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.listadodeevaluacionesResponseBody Body;
+        
+        public listadodeevaluacionesResponse() {
+        }
+        
+        public listadodeevaluacionesResponse(web.ServiceReference1.listadodeevaluacionesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class listadodeevaluacionesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BLL.ServiceReference1.TipoEvaluaciones[] listadodeevaluacionesResult;
+        
+        public listadodeevaluacionesResponseBody() {
+        }
+        
+        public listadodeevaluacionesResponseBody(BLL.ServiceReference1.TipoEvaluaciones[] listadodeevaluacionesResult) {
+            this.listadodeevaluacionesResult = listadodeevaluacionesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_agregarEvaluacionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_agregarEvaluacion", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_agregarEvaluacionRequestBody Body;
+        
+        public E_agregarEvaluacionRequest() {
+        }
+        
+        public E_agregarEvaluacionRequest(web.ServiceReference1.E_agregarEvaluacionRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_agregarEvaluacionRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public System.DateTime fecha;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string obsTec;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string recIng;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string estado;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public int idT;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string idE;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string rut;
+        
+        public E_agregarEvaluacionRequestBody() {
+        }
+        
+        public E_agregarEvaluacionRequestBody(System.DateTime fecha, string obsTec, string recIng, string estado, int idT, string idE, string rut) {
+            this.fecha = fecha;
+            this.obsTec = obsTec;
+            this.recIng = recIng;
+            this.estado = estado;
+            this.idT = idT;
+            this.idE = idE;
+            this.rut = rut;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_agregarEvaluacionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_agregarEvaluacionResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_agregarEvaluacionResponseBody Body;
+        
+        public E_agregarEvaluacionResponse() {
+        }
+        
+        public E_agregarEvaluacionResponse(web.ServiceReference1.E_agregarEvaluacionResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_agregarEvaluacionResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool E_agregarEvaluacionResult;
+        
+        public E_agregarEvaluacionResponseBody() {
+        }
+        
+        public E_agregarEvaluacionResponseBody(bool E_agregarEvaluacionResult) {
+            this.E_agregarEvaluacionResult = E_agregarEvaluacionResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_modificarEvaluacionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_modificarEvaluacion", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_modificarEvaluacionRequestBody Body;
+        
+        public E_modificarEvaluacionRequest() {
+        }
+        
+        public E_modificarEvaluacionRequest(web.ServiceReference1.E_modificarEvaluacionRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_modificarEvaluacionRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string p;
+        
+        public E_modificarEvaluacionRequestBody() {
+        }
+        
+        public E_modificarEvaluacionRequestBody(int id, string p) {
+            this.id = id;
+            this.p = p;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_modificarEvaluacionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_modificarEvaluacionResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_modificarEvaluacionResponseBody Body;
+        
+        public E_modificarEvaluacionResponse() {
+        }
+        
+        public E_modificarEvaluacionResponse(web.ServiceReference1.E_modificarEvaluacionResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_modificarEvaluacionResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool E_modificarEvaluacionResult;
+        
+        public E_modificarEvaluacionResponseBody() {
+        }
+        
+        public E_modificarEvaluacionResponseBody(bool E_modificarEvaluacionResult) {
+            this.E_modificarEvaluacionResult = E_modificarEvaluacionResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listadoUltimaEvaluacionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listadoUltimaEvaluacion", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.listadoUltimaEvaluacionRequestBody Body;
+        
+        public listadoUltimaEvaluacionRequest() {
+        }
+        
+        public listadoUltimaEvaluacionRequest(web.ServiceReference1.listadoUltimaEvaluacionRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class listadoUltimaEvaluacionRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string rut;
+        
+        public listadoUltimaEvaluacionRequestBody() {
+        }
+        
+        public listadoUltimaEvaluacionRequestBody(string rut) {
+            this.rut = rut;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listadoUltimaEvaluacionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listadoUltimaEvaluacionResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.listadoUltimaEvaluacionResponseBody Body;
+        
+        public listadoUltimaEvaluacionResponse() {
+        }
+        
+        public listadoUltimaEvaluacionResponse(web.ServiceReference1.listadoUltimaEvaluacionResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class listadoUltimaEvaluacionResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BLL.ServiceReference1.Evaluacion[] listadoUltimaEvaluacionResult;
+        
+        public listadoUltimaEvaluacionResponseBody() {
+        }
+        
+        public listadoUltimaEvaluacionResponseBody(BLL.ServiceReference1.Evaluacion[] listadoUltimaEvaluacionResult) {
+            this.listadoUltimaEvaluacionResult = listadoUltimaEvaluacionResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_listadoPorTecnicoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listadoPorTecnico", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_listadoPorTecnicoRequestBody Body;
+        
+        public E_listadoPorTecnicoRequest() {
+        }
+        
+        public E_listadoPorTecnicoRequest(web.ServiceReference1.E_listadoPorTecnicoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_listadoPorTecnicoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string rut;
+        
+        public E_listadoPorTecnicoRequestBody() {
+        }
+        
+        public E_listadoPorTecnicoRequestBody(string rut) {
+            this.rut = rut;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_listadoPorTecnicoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listadoPorTecnicoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_listadoPorTecnicoResponseBody Body;
+        
+        public E_listadoPorTecnicoResponse() {
+        }
+        
+        public E_listadoPorTecnicoResponse(web.ServiceReference1.E_listadoPorTecnicoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_listadoPorTecnicoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BLL.ServiceReference1.Evaluacion[] E_listadoPorTecnicoResult;
+        
+        public E_listadoPorTecnicoResponseBody() {
+        }
+        
+        public E_listadoPorTecnicoResponseBody(BLL.ServiceReference1.Evaluacion[] E_listadoPorTecnicoResult) {
+            this.E_listadoPorTecnicoResult = E_listadoPorTecnicoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_ListadoIngenieroRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_ListadoIngeniero", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_ListadoIngenieroRequestBody Body;
+        
+        public E_ListadoIngenieroRequest() {
+        }
+        
+        public E_ListadoIngenieroRequest(web.ServiceReference1.E_ListadoIngenieroRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class E_ListadoIngenieroRequestBody {
+        
+        public E_ListadoIngenieroRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_ListadoIngenieroResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_ListadoIngenieroResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_ListadoIngenieroResponseBody Body;
+        
+        public E_ListadoIngenieroResponse() {
+        }
+        
+        public E_ListadoIngenieroResponse(web.ServiceReference1.E_ListadoIngenieroResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_ListadoIngenieroResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BLL.ServiceReference1.Evaluacion[] E_ListadoIngenieroResult;
+        
+        public E_ListadoIngenieroResponseBody() {
+        }
+        
+        public E_ListadoIngenieroResponseBody(BLL.ServiceReference1.Evaluacion[] E_ListadoIngenieroResult) {
+            this.E_ListadoIngenieroResult = E_ListadoIngenieroResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_listadoDetalleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listadoDetalle", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_listadoDetalleRequestBody Body;
+        
+        public E_listadoDetalleRequest() {
+        }
+        
+        public E_listadoDetalleRequest(web.ServiceReference1.E_listadoDetalleRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_listadoDetalleRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int evaluacion;
+        
+        public E_listadoDetalleRequestBody() {
+        }
+        
+        public E_listadoDetalleRequestBody(int evaluacion) {
+            this.evaluacion = evaluacion;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class E_listadoDetalleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="E_listadoDetalleResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.E_listadoDetalleResponseBody Body;
+        
+        public E_listadoDetalleResponse() {
+        }
+        
+        public E_listadoDetalleResponse(web.ServiceReference1.E_listadoDetalleResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class E_listadoDetalleResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BLL.ServiceReference1.Detalle_evaluacion[] E_listadoDetalleResult;
+        
+        public E_listadoDetalleResponseBody() {
+        }
+        
+        public E_listadoDetalleResponseBody(BLL.ServiceReference1.Detalle_evaluacion[] E_listadoDetalleResult) {
+            this.E_listadoDetalleResult = E_listadoDetalleResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ModificarCategoriaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ModificarCategoria", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ModificarCategoriaRequestBody Body;
+        
+        public ModificarCategoriaRequest() {
+        }
+        
+        public ModificarCategoriaRequest(web.ServiceReference1.ModificarCategoriaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ModificarCategoriaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string cat;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string estado;
+        
+        public ModificarCategoriaRequestBody() {
+        }
+        
+        public ModificarCategoriaRequestBody(int id, string cat, string estado) {
+            this.id = id;
+            this.cat = cat;
+            this.estado = estado;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ModificarCategoriaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ModificarCategoriaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ModificarCategoriaResponseBody Body;
+        
+        public ModificarCategoriaResponse() {
+        }
+        
+        public ModificarCategoriaResponse(web.ServiceReference1.ModificarCategoriaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ModificarCategoriaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool ModificarCategoriaResult;
+        
+        public ModificarCategoriaResponseBody() {
+        }
+        
+        public ModificarCategoriaResponseBody(bool ModificarCategoriaResult) {
+            this.ModificarCategoriaResult = ModificarCategoriaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ModificarPreguntaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ModificarPregunta", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ModificarPreguntaRequestBody Body;
+        
+        public ModificarPreguntaRequest() {
+        }
+        
+        public ModificarPreguntaRequest(web.ServiceReference1.ModificarPreguntaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ModificarPreguntaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string pregunta;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string estado;
+        
+        public ModificarPreguntaRequestBody() {
+        }
+        
+        public ModificarPreguntaRequestBody(int id, string pregunta, string estado) {
+            this.id = id;
+            this.pregunta = pregunta;
+            this.estado = estado;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ModificarPreguntaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ModificarPreguntaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ModificarPreguntaResponseBody Body;
+        
+        public ModificarPreguntaResponse() {
+        }
+        
+        public ModificarPreguntaResponse(web.ServiceReference1.ModificarPreguntaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ModificarPreguntaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool ModificarPreguntaResult;
+        
+        public ModificarPreguntaResponseBody() {
+        }
+        
+        public ModificarPreguntaResponseBody(bool ModificarPreguntaResult) {
+            this.ModificarPreguntaResult = ModificarPreguntaResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface wsa1SoapChannel : web.ServiceReference1.wsa1Soap, System.ServiceModel.IClientChannel {
     }
@@ -1347,26 +2411,84 @@ namespace web.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        web.ServiceReference1.HelloWorldResponse web.ServiceReference1.wsa1Soap.HelloWorld(web.ServiceReference1.HelloWorldRequest request) {
-            return base.Channel.HelloWorld(request);
+        web.ServiceReference1.ValidarUsuarioResponse web.ServiceReference1.wsa1Soap.ValidarUsuario(web.ServiceReference1.ValidarUsuarioRequest request) {
+            return base.Channel.ValidarUsuario(request);
         }
         
-        public string HelloWorld() {
-            web.ServiceReference1.HelloWorldRequest inValue = new web.ServiceReference1.HelloWorldRequest();
-            inValue.Body = new web.ServiceReference1.HelloWorldRequestBody();
-            web.ServiceReference1.HelloWorldResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).HelloWorld(inValue);
-            return retVal.Body.HelloWorldResult;
+        public string ValidarUsuario(string rut, string pass) {
+            web.ServiceReference1.ValidarUsuarioRequest inValue = new web.ServiceReference1.ValidarUsuarioRequest();
+            inValue.Body = new web.ServiceReference1.ValidarUsuarioRequestBody();
+            inValue.Body.rut = rut;
+            inValue.Body.pass = pass;
+            web.ServiceReference1.ValidarUsuarioResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).ValidarUsuario(inValue);
+            return retVal.Body.ValidarUsuarioResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<web.ServiceReference1.HelloWorldResponse> web.ServiceReference1.wsa1Soap.HelloWorldAsync(web.ServiceReference1.HelloWorldRequest request) {
-            return base.Channel.HelloWorldAsync(request);
+        System.Threading.Tasks.Task<web.ServiceReference1.ValidarUsuarioResponse> web.ServiceReference1.wsa1Soap.ValidarUsuarioAsync(web.ServiceReference1.ValidarUsuarioRequest request) {
+            return base.Channel.ValidarUsuarioAsync(request);
         }
         
-        public System.Threading.Tasks.Task<web.ServiceReference1.HelloWorldResponse> HelloWorldAsync() {
-            web.ServiceReference1.HelloWorldRequest inValue = new web.ServiceReference1.HelloWorldRequest();
-            inValue.Body = new web.ServiceReference1.HelloWorldRequestBody();
-            return ((web.ServiceReference1.wsa1Soap)(this)).HelloWorldAsync(inValue);
+        public System.Threading.Tasks.Task<web.ServiceReference1.ValidarUsuarioResponse> ValidarUsuarioAsync(string rut, string pass) {
+            web.ServiceReference1.ValidarUsuarioRequest inValue = new web.ServiceReference1.ValidarUsuarioRequest();
+            inValue.Body = new web.ServiceReference1.ValidarUsuarioRequestBody();
+            inValue.Body.rut = rut;
+            inValue.Body.pass = pass;
+            return ((web.ServiceReference1.wsa1Soap)(this)).ValidarUsuarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.ValidarEmpresaResponse web.ServiceReference1.wsa1Soap.ValidarEmpresa(web.ServiceReference1.ValidarEmpresaRequest request) {
+            return base.Channel.ValidarEmpresa(request);
+        }
+        
+        public string ValidarEmpresa(string rut, string pass) {
+            web.ServiceReference1.ValidarEmpresaRequest inValue = new web.ServiceReference1.ValidarEmpresaRequest();
+            inValue.Body = new web.ServiceReference1.ValidarEmpresaRequestBody();
+            inValue.Body.rut = rut;
+            inValue.Body.pass = pass;
+            web.ServiceReference1.ValidarEmpresaResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).ValidarEmpresa(inValue);
+            return retVal.Body.ValidarEmpresaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.ValidarEmpresaResponse> web.ServiceReference1.wsa1Soap.ValidarEmpresaAsync(web.ServiceReference1.ValidarEmpresaRequest request) {
+            return base.Channel.ValidarEmpresaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.ValidarEmpresaResponse> ValidarEmpresaAsync(string rut, string pass) {
+            web.ServiceReference1.ValidarEmpresaRequest inValue = new web.ServiceReference1.ValidarEmpresaRequest();
+            inValue.Body = new web.ServiceReference1.ValidarEmpresaRequestBody();
+            inValue.Body.rut = rut;
+            inValue.Body.pass = pass;
+            return ((web.ServiceReference1.wsa1Soap)(this)).ValidarEmpresaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.ValidarMedicoResponse web.ServiceReference1.wsa1Soap.ValidarMedico(web.ServiceReference1.ValidarMedicoRequest request) {
+            return base.Channel.ValidarMedico(request);
+        }
+        
+        public string ValidarMedico(string rut, string pass) {
+            web.ServiceReference1.ValidarMedicoRequest inValue = new web.ServiceReference1.ValidarMedicoRequest();
+            inValue.Body = new web.ServiceReference1.ValidarMedicoRequestBody();
+            inValue.Body.rut = rut;
+            inValue.Body.pass = pass;
+            web.ServiceReference1.ValidarMedicoResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).ValidarMedico(inValue);
+            return retVal.Body.ValidarMedicoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.ValidarMedicoResponse> web.ServiceReference1.wsa1Soap.ValidarMedicoAsync(web.ServiceReference1.ValidarMedicoRequest request) {
+            return base.Channel.ValidarMedicoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.ValidarMedicoResponse> ValidarMedicoAsync(string rut, string pass) {
+            web.ServiceReference1.ValidarMedicoRequest inValue = new web.ServiceReference1.ValidarMedicoRequest();
+            inValue.Body = new web.ServiceReference1.ValidarMedicoRequestBody();
+            inValue.Body.rut = rut;
+            inValue.Body.pass = pass;
+            return ((web.ServiceReference1.wsa1Soap)(this)).ValidarMedicoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1472,78 +2594,26 @@ namespace web.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        web.ServiceReference1.GuardarCategoriaResponse web.ServiceReference1.wsa1Soap.GuardarCategoria(web.ServiceReference1.GuardarCategoriaRequest request) {
-            return base.Channel.GuardarCategoria(request);
+        web.ServiceReference1.listarAreaResponse web.ServiceReference1.wsa1Soap.listarArea(web.ServiceReference1.listarAreaRequest request) {
+            return base.Channel.listarArea(request);
         }
         
-        public bool GuardarCategoria(string Item, int id) {
-            web.ServiceReference1.GuardarCategoriaRequest inValue = new web.ServiceReference1.GuardarCategoriaRequest();
-            inValue.Body = new web.ServiceReference1.GuardarCategoriaRequestBody();
-            inValue.Body.Item = Item;
-            inValue.Body.id = id;
-            web.ServiceReference1.GuardarCategoriaResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).GuardarCategoria(inValue);
-            return retVal.Body.GuardarCategoriaResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<web.ServiceReference1.GuardarCategoriaResponse> web.ServiceReference1.wsa1Soap.GuardarCategoriaAsync(web.ServiceReference1.GuardarCategoriaRequest request) {
-            return base.Channel.GuardarCategoriaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<web.ServiceReference1.GuardarCategoriaResponse> GuardarCategoriaAsync(string Item, int id) {
-            web.ServiceReference1.GuardarCategoriaRequest inValue = new web.ServiceReference1.GuardarCategoriaRequest();
-            inValue.Body = new web.ServiceReference1.GuardarCategoriaRequestBody();
-            inValue.Body.Item = Item;
-            inValue.Body.id = id;
-            return ((web.ServiceReference1.wsa1Soap)(this)).GuardarCategoriaAsync(inValue);
+        public web.ServiceReference1.ArrayOfArea listarArea() {
+            web.ServiceReference1.listarAreaRequest inValue = new web.ServiceReference1.listarAreaRequest();
+            inValue.Body = new web.ServiceReference1.listarAreaRequestBody();
+            web.ServiceReference1.listarAreaResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).listarArea(inValue);
+            return retVal.Body.listarAreaResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        web.ServiceReference1.ListarCategoriasResponse web.ServiceReference1.wsa1Soap.ListarCategorias(web.ServiceReference1.ListarCategoriasRequest request) {
-            return base.Channel.ListarCategorias(request);
+        System.Threading.Tasks.Task<web.ServiceReference1.listarAreaResponse> web.ServiceReference1.wsa1Soap.listarAreaAsync(web.ServiceReference1.listarAreaRequest request) {
+            return base.Channel.listarAreaAsync(request);
         }
         
-        public web.ServiceReference1.ArrayOfCategoria ListarCategorias() {
-            web.ServiceReference1.ListarCategoriasRequest inValue = new web.ServiceReference1.ListarCategoriasRequest();
-            inValue.Body = new web.ServiceReference1.ListarCategoriasRequestBody();
-            web.ServiceReference1.ListarCategoriasResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).ListarCategorias(inValue);
-            return retVal.Body.ListarCategoriasResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<web.ServiceReference1.ListarCategoriasResponse> web.ServiceReference1.wsa1Soap.ListarCategoriasAsync(web.ServiceReference1.ListarCategoriasRequest request) {
-            return base.Channel.ListarCategoriasAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<web.ServiceReference1.ListarCategoriasResponse> ListarCategoriasAsync() {
-            web.ServiceReference1.ListarCategoriasRequest inValue = new web.ServiceReference1.ListarCategoriasRequest();
-            inValue.Body = new web.ServiceReference1.ListarCategoriasRequestBody();
-            return ((web.ServiceReference1.wsa1Soap)(this)).ListarCategoriasAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        web.ServiceReference1.ListarCategoriasXtipoResponse web.ServiceReference1.wsa1Soap.ListarCategoriasXtipo(web.ServiceReference1.ListarCategoriasXtipoRequest request) {
-            return base.Channel.ListarCategoriasXtipo(request);
-        }
-        
-        public web.ServiceReference1.ArrayOfCategoria ListarCategoriasXtipo(int id) {
-            web.ServiceReference1.ListarCategoriasXtipoRequest inValue = new web.ServiceReference1.ListarCategoriasXtipoRequest();
-            inValue.Body = new web.ServiceReference1.ListarCategoriasXtipoRequestBody();
-            inValue.Body.id = id;
-            web.ServiceReference1.ListarCategoriasXtipoResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).ListarCategoriasXtipo(inValue);
-            return retVal.Body.ListarCategoriasXtipoResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<web.ServiceReference1.ListarCategoriasXtipoResponse> web.ServiceReference1.wsa1Soap.ListarCategoriasXtipoAsync(web.ServiceReference1.ListarCategoriasXtipoRequest request) {
-            return base.Channel.ListarCategoriasXtipoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<web.ServiceReference1.ListarCategoriasXtipoResponse> ListarCategoriasXtipoAsync(int id) {
-            web.ServiceReference1.ListarCategoriasXtipoRequest inValue = new web.ServiceReference1.ListarCategoriasXtipoRequest();
-            inValue.Body = new web.ServiceReference1.ListarCategoriasXtipoRequestBody();
-            inValue.Body.id = id;
-            return ((web.ServiceReference1.wsa1Soap)(this)).ListarCategoriasXtipoAsync(inValue);
+        public System.Threading.Tasks.Task<web.ServiceReference1.listarAreaResponse> listarAreaAsync() {
+            web.ServiceReference1.listarAreaRequest inValue = new web.ServiceReference1.listarAreaRequest();
+            inValue.Body = new web.ServiceReference1.listarAreaRequestBody();
+            return ((web.ServiceReference1.wsa1Soap)(this)).listarAreaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1584,29 +2654,6 @@ namespace web.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        web.ServiceReference1.listarAreaResponse web.ServiceReference1.wsa1Soap.listarArea(web.ServiceReference1.listarAreaRequest request) {
-            return base.Channel.listarArea(request);
-        }
-        
-        public web.ServiceReference1.ArrayOfArea listarArea() {
-            web.ServiceReference1.listarAreaRequest inValue = new web.ServiceReference1.listarAreaRequest();
-            inValue.Body = new web.ServiceReference1.listarAreaRequestBody();
-            web.ServiceReference1.listarAreaResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).listarArea(inValue);
-            return retVal.Body.listarAreaResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<web.ServiceReference1.listarAreaResponse> web.ServiceReference1.wsa1Soap.listarAreaAsync(web.ServiceReference1.listarAreaRequest request) {
-            return base.Channel.listarAreaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<web.ServiceReference1.listarAreaResponse> listarAreaAsync() {
-            web.ServiceReference1.listarAreaRequest inValue = new web.ServiceReference1.listarAreaRequest();
-            inValue.Body = new web.ServiceReference1.listarAreaRequestBody();
-            return ((web.ServiceReference1.wsa1Soap)(this)).listarAreaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         web.ServiceReference1.ListarCapacitacionesResponse web.ServiceReference1.wsa1Soap.ListarCapacitaciones(web.ServiceReference1.ListarCapacitacionesRequest request) {
             return base.Channel.ListarCapacitaciones(request);
         }
@@ -1627,6 +2674,542 @@ namespace web.ServiceReference1 {
             web.ServiceReference1.ListarCapacitacionesRequest inValue = new web.ServiceReference1.ListarCapacitacionesRequest();
             inValue.Body = new web.ServiceReference1.ListarCapacitacionesRequestBody();
             return ((web.ServiceReference1.wsa1Soap)(this)).ListarCapacitacionesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.ShowCapacitacionResponse web.ServiceReference1.wsa1Soap.ShowCapacitacion(web.ServiceReference1.ShowCapacitacionRequest request) {
+            return base.Channel.ShowCapacitacion(request);
+        }
+        
+        public BLL.ServiceReference1.capacitacion ShowCapacitacion(int id_cap_edit) {
+            web.ServiceReference1.ShowCapacitacionRequest inValue = new web.ServiceReference1.ShowCapacitacionRequest();
+            inValue.Body = new web.ServiceReference1.ShowCapacitacionRequestBody();
+            inValue.Body.id_cap_edit = id_cap_edit;
+            web.ServiceReference1.ShowCapacitacionResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).ShowCapacitacion(inValue);
+            return retVal.Body.ShowCapacitacionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.ShowCapacitacionResponse> web.ServiceReference1.wsa1Soap.ShowCapacitacionAsync(web.ServiceReference1.ShowCapacitacionRequest request) {
+            return base.Channel.ShowCapacitacionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.ShowCapacitacionResponse> ShowCapacitacionAsync(int id_cap_edit) {
+            web.ServiceReference1.ShowCapacitacionRequest inValue = new web.ServiceReference1.ShowCapacitacionRequest();
+            inValue.Body = new web.ServiceReference1.ShowCapacitacionRequestBody();
+            inValue.Body.id_cap_edit = id_cap_edit;
+            return ((web.ServiceReference1.wsa1Soap)(this)).ShowCapacitacionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.editarCApacitacionResponse web.ServiceReference1.wsa1Soap.editarCApacitacion(web.ServiceReference1.editarCApacitacionRequest request) {
+            return base.Channel.editarCApacitacion(request);
+        }
+        
+        public bool editarCApacitacion(int id_edit, string area, System.DateTime fecha, string tema, string expo, int asisten, string empresa, int tipocap) {
+            web.ServiceReference1.editarCApacitacionRequest inValue = new web.ServiceReference1.editarCApacitacionRequest();
+            inValue.Body = new web.ServiceReference1.editarCApacitacionRequestBody();
+            inValue.Body.id_edit = id_edit;
+            inValue.Body.area = area;
+            inValue.Body.fecha = fecha;
+            inValue.Body.tema = tema;
+            inValue.Body.expo = expo;
+            inValue.Body.asisten = asisten;
+            inValue.Body.empresa = empresa;
+            inValue.Body.tipocap = tipocap;
+            web.ServiceReference1.editarCApacitacionResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).editarCApacitacion(inValue);
+            return retVal.Body.editarCApacitacionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.editarCApacitacionResponse> web.ServiceReference1.wsa1Soap.editarCApacitacionAsync(web.ServiceReference1.editarCApacitacionRequest request) {
+            return base.Channel.editarCApacitacionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.editarCApacitacionResponse> editarCApacitacionAsync(int id_edit, string area, System.DateTime fecha, string tema, string expo, int asisten, string empresa, int tipocap) {
+            web.ServiceReference1.editarCApacitacionRequest inValue = new web.ServiceReference1.editarCApacitacionRequest();
+            inValue.Body = new web.ServiceReference1.editarCApacitacionRequestBody();
+            inValue.Body.id_edit = id_edit;
+            inValue.Body.area = area;
+            inValue.Body.fecha = fecha;
+            inValue.Body.tema = tema;
+            inValue.Body.expo = expo;
+            inValue.Body.asisten = asisten;
+            inValue.Body.empresa = empresa;
+            inValue.Body.tipocap = tipocap;
+            return ((web.ServiceReference1.wsa1Soap)(this)).editarCApacitacionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.ListarCapacitacionesxfechaResponse web.ServiceReference1.wsa1Soap.ListarCapacitacionesxfecha(web.ServiceReference1.ListarCapacitacionesxfechaRequest request) {
+            return base.Channel.ListarCapacitacionesxfecha(request);
+        }
+        
+        public web.ServiceReference1.ArrayOfCapacitacion ListarCapacitacionesxfecha(string empresaNombre) {
+            web.ServiceReference1.ListarCapacitacionesxfechaRequest inValue = new web.ServiceReference1.ListarCapacitacionesxfechaRequest();
+            inValue.Body = new web.ServiceReference1.ListarCapacitacionesxfechaRequestBody();
+            inValue.Body.empresaNombre = empresaNombre;
+            web.ServiceReference1.ListarCapacitacionesxfechaResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).ListarCapacitacionesxfecha(inValue);
+            return retVal.Body.ListarCapacitacionesxfechaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.ListarCapacitacionesxfechaResponse> web.ServiceReference1.wsa1Soap.ListarCapacitacionesxfechaAsync(web.ServiceReference1.ListarCapacitacionesxfechaRequest request) {
+            return base.Channel.ListarCapacitacionesxfechaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.ListarCapacitacionesxfechaResponse> ListarCapacitacionesxfechaAsync(string empresaNombre) {
+            web.ServiceReference1.ListarCapacitacionesxfechaRequest inValue = new web.ServiceReference1.ListarCapacitacionesxfechaRequest();
+            inValue.Body = new web.ServiceReference1.ListarCapacitacionesxfechaRequestBody();
+            inValue.Body.empresaNombre = empresaNombre;
+            return ((web.ServiceReference1.wsa1Soap)(this)).ListarCapacitacionesxfechaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.ListarCapacitacionesxempresaResponse web.ServiceReference1.wsa1Soap.ListarCapacitacionesxempresa(web.ServiceReference1.ListarCapacitacionesxempresaRequest request) {
+            return base.Channel.ListarCapacitacionesxempresa(request);
+        }
+        
+        public web.ServiceReference1.ArrayOfCapacitacion ListarCapacitacionesxempresa(string empresaNombre) {
+            web.ServiceReference1.ListarCapacitacionesxempresaRequest inValue = new web.ServiceReference1.ListarCapacitacionesxempresaRequest();
+            inValue.Body = new web.ServiceReference1.ListarCapacitacionesxempresaRequestBody();
+            inValue.Body.empresaNombre = empresaNombre;
+            web.ServiceReference1.ListarCapacitacionesxempresaResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).ListarCapacitacionesxempresa(inValue);
+            return retVal.Body.ListarCapacitacionesxempresaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.ListarCapacitacionesxempresaResponse> web.ServiceReference1.wsa1Soap.ListarCapacitacionesxempresaAsync(web.ServiceReference1.ListarCapacitacionesxempresaRequest request) {
+            return base.Channel.ListarCapacitacionesxempresaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.ListarCapacitacionesxempresaResponse> ListarCapacitacionesxempresaAsync(string empresaNombre) {
+            web.ServiceReference1.ListarCapacitacionesxempresaRequest inValue = new web.ServiceReference1.ListarCapacitacionesxempresaRequest();
+            inValue.Body = new web.ServiceReference1.ListarCapacitacionesxempresaRequestBody();
+            inValue.Body.empresaNombre = empresaNombre;
+            return ((web.ServiceReference1.wsa1Soap)(this)).ListarCapacitacionesxempresaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.E_guardarCategoriaResponse web.ServiceReference1.wsa1Soap.E_guardarCategoria(web.ServiceReference1.E_guardarCategoriaRequest request) {
+            return base.Channel.E_guardarCategoria(request);
+        }
+        
+        public bool E_guardarCategoria(string cat, int id) {
+            web.ServiceReference1.E_guardarCategoriaRequest inValue = new web.ServiceReference1.E_guardarCategoriaRequest();
+            inValue.Body = new web.ServiceReference1.E_guardarCategoriaRequestBody();
+            inValue.Body.cat = cat;
+            inValue.Body.id = id;
+            web.ServiceReference1.E_guardarCategoriaResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).E_guardarCategoria(inValue);
+            return retVal.Body.E_guardarCategoriaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_guardarCategoriaResponse> web.ServiceReference1.wsa1Soap.E_guardarCategoriaAsync(web.ServiceReference1.E_guardarCategoriaRequest request) {
+            return base.Channel.E_guardarCategoriaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.E_guardarCategoriaResponse> E_guardarCategoriaAsync(string cat, int id) {
+            web.ServiceReference1.E_guardarCategoriaRequest inValue = new web.ServiceReference1.E_guardarCategoriaRequest();
+            inValue.Body = new web.ServiceReference1.E_guardarCategoriaRequestBody();
+            inValue.Body.cat = cat;
+            inValue.Body.id = id;
+            return ((web.ServiceReference1.wsa1Soap)(this)).E_guardarCategoriaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.E_listadoCategoriaResponse web.ServiceReference1.wsa1Soap.E_listadoCategoria(web.ServiceReference1.E_listadoCategoriaRequest request) {
+            return base.Channel.E_listadoCategoria(request);
+        }
+        
+        public web.ServiceReference1.ArrayOfCategoria E_listadoCategoria() {
+            web.ServiceReference1.E_listadoCategoriaRequest inValue = new web.ServiceReference1.E_listadoCategoriaRequest();
+            inValue.Body = new web.ServiceReference1.E_listadoCategoriaRequestBody();
+            web.ServiceReference1.E_listadoCategoriaResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).E_listadoCategoria(inValue);
+            return retVal.Body.E_listadoCategoriaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_listadoCategoriaResponse> web.ServiceReference1.wsa1Soap.E_listadoCategoriaAsync(web.ServiceReference1.E_listadoCategoriaRequest request) {
+            return base.Channel.E_listadoCategoriaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.E_listadoCategoriaResponse> E_listadoCategoriaAsync() {
+            web.ServiceReference1.E_listadoCategoriaRequest inValue = new web.ServiceReference1.E_listadoCategoriaRequest();
+            inValue.Body = new web.ServiceReference1.E_listadoCategoriaRequestBody();
+            return ((web.ServiceReference1.wsa1Soap)(this)).E_listadoCategoriaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.E_listarCategoriasXtipoResponse web.ServiceReference1.wsa1Soap.E_listarCategoriasXtipo(web.ServiceReference1.E_listarCategoriasXtipoRequest request) {
+            return base.Channel.E_listarCategoriasXtipo(request);
+        }
+        
+        public web.ServiceReference1.ArrayOfCategoria E_listarCategoriasXtipo(int id) {
+            web.ServiceReference1.E_listarCategoriasXtipoRequest inValue = new web.ServiceReference1.E_listarCategoriasXtipoRequest();
+            inValue.Body = new web.ServiceReference1.E_listarCategoriasXtipoRequestBody();
+            inValue.Body.id = id;
+            web.ServiceReference1.E_listarCategoriasXtipoResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).E_listarCategoriasXtipo(inValue);
+            return retVal.Body.E_listarCategoriasXtipoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_listarCategoriasXtipoResponse> web.ServiceReference1.wsa1Soap.E_listarCategoriasXtipoAsync(web.ServiceReference1.E_listarCategoriasXtipoRequest request) {
+            return base.Channel.E_listarCategoriasXtipoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.E_listarCategoriasXtipoResponse> E_listarCategoriasXtipoAsync(int id) {
+            web.ServiceReference1.E_listarCategoriasXtipoRequest inValue = new web.ServiceReference1.E_listarCategoriasXtipoRequest();
+            inValue.Body = new web.ServiceReference1.E_listarCategoriasXtipoRequestBody();
+            inValue.Body.id = id;
+            return ((web.ServiceReference1.wsa1Soap)(this)).E_listarCategoriasXtipoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.E_agregarPreguntaResponse web.ServiceReference1.wsa1Soap.E_agregarPregunta(web.ServiceReference1.E_agregarPreguntaRequest request) {
+            return base.Channel.E_agregarPregunta(request);
+        }
+        
+        public bool E_agregarPregunta(int id, string p) {
+            web.ServiceReference1.E_agregarPreguntaRequest inValue = new web.ServiceReference1.E_agregarPreguntaRequest();
+            inValue.Body = new web.ServiceReference1.E_agregarPreguntaRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.p = p;
+            web.ServiceReference1.E_agregarPreguntaResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).E_agregarPregunta(inValue);
+            return retVal.Body.E_agregarPreguntaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_agregarPreguntaResponse> web.ServiceReference1.wsa1Soap.E_agregarPreguntaAsync(web.ServiceReference1.E_agregarPreguntaRequest request) {
+            return base.Channel.E_agregarPreguntaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.E_agregarPreguntaResponse> E_agregarPreguntaAsync(int id, string p) {
+            web.ServiceReference1.E_agregarPreguntaRequest inValue = new web.ServiceReference1.E_agregarPreguntaRequest();
+            inValue.Body = new web.ServiceReference1.E_agregarPreguntaRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.p = p;
+            return ((web.ServiceReference1.wsa1Soap)(this)).E_agregarPreguntaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.E_agregarDetallePreguntaResponse web.ServiceReference1.wsa1Soap.E_agregarDetallePregunta(web.ServiceReference1.E_agregarDetallePreguntaRequest request) {
+            return base.Channel.E_agregarDetallePregunta(request);
+        }
+        
+        public bool E_agregarDetallePregunta(string p, int idP, int idE) {
+            web.ServiceReference1.E_agregarDetallePreguntaRequest inValue = new web.ServiceReference1.E_agregarDetallePreguntaRequest();
+            inValue.Body = new web.ServiceReference1.E_agregarDetallePreguntaRequestBody();
+            inValue.Body.p = p;
+            inValue.Body.idP = idP;
+            inValue.Body.idE = idE;
+            web.ServiceReference1.E_agregarDetallePreguntaResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).E_agregarDetallePregunta(inValue);
+            return retVal.Body.E_agregarDetallePreguntaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_agregarDetallePreguntaResponse> web.ServiceReference1.wsa1Soap.E_agregarDetallePreguntaAsync(web.ServiceReference1.E_agregarDetallePreguntaRequest request) {
+            return base.Channel.E_agregarDetallePreguntaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.E_agregarDetallePreguntaResponse> E_agregarDetallePreguntaAsync(string p, int idP, int idE) {
+            web.ServiceReference1.E_agregarDetallePreguntaRequest inValue = new web.ServiceReference1.E_agregarDetallePreguntaRequest();
+            inValue.Body = new web.ServiceReference1.E_agregarDetallePreguntaRequestBody();
+            inValue.Body.p = p;
+            inValue.Body.idP = idP;
+            inValue.Body.idE = idE;
+            return ((web.ServiceReference1.wsa1Soap)(this)).E_agregarDetallePreguntaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.E_listarPreguntaXcategoriaResponse web.ServiceReference1.wsa1Soap.E_listarPreguntaXcategoria(web.ServiceReference1.E_listarPreguntaXcategoriaRequest request) {
+            return base.Channel.E_listarPreguntaXcategoria(request);
+        }
+        
+        public BLL.ServiceReference1.Pregunta[] E_listarPreguntaXcategoria(int id) {
+            web.ServiceReference1.E_listarPreguntaXcategoriaRequest inValue = new web.ServiceReference1.E_listarPreguntaXcategoriaRequest();
+            inValue.Body = new web.ServiceReference1.E_listarPreguntaXcategoriaRequestBody();
+            inValue.Body.id = id;
+            web.ServiceReference1.E_listarPreguntaXcategoriaResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).E_listarPreguntaXcategoria(inValue);
+            return retVal.Body.E_listarPreguntaXcategoriaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_listarPreguntaXcategoriaResponse> web.ServiceReference1.wsa1Soap.E_listarPreguntaXcategoriaAsync(web.ServiceReference1.E_listarPreguntaXcategoriaRequest request) {
+            return base.Channel.E_listarPreguntaXcategoriaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.E_listarPreguntaXcategoriaResponse> E_listarPreguntaXcategoriaAsync(int id) {
+            web.ServiceReference1.E_listarPreguntaXcategoriaRequest inValue = new web.ServiceReference1.E_listarPreguntaXcategoriaRequest();
+            inValue.Body = new web.ServiceReference1.E_listarPreguntaXcategoriaRequestBody();
+            inValue.Body.id = id;
+            return ((web.ServiceReference1.wsa1Soap)(this)).E_listarPreguntaXcategoriaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.E_listarempresaResponse web.ServiceReference1.wsa1Soap.E_listarempresa(web.ServiceReference1.E_listarempresaRequest request) {
+            return base.Channel.E_listarempresa(request);
+        }
+        
+        public web.ServiceReference1.ArrayOfEmpresa E_listarempresa() {
+            web.ServiceReference1.E_listarempresaRequest inValue = new web.ServiceReference1.E_listarempresaRequest();
+            inValue.Body = new web.ServiceReference1.E_listarempresaRequestBody();
+            web.ServiceReference1.E_listarempresaResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).E_listarempresa(inValue);
+            return retVal.Body.E_listarempresaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_listarempresaResponse> web.ServiceReference1.wsa1Soap.E_listarempresaAsync(web.ServiceReference1.E_listarempresaRequest request) {
+            return base.Channel.E_listarempresaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.E_listarempresaResponse> E_listarempresaAsync() {
+            web.ServiceReference1.E_listarempresaRequest inValue = new web.ServiceReference1.E_listarempresaRequest();
+            inValue.Body = new web.ServiceReference1.E_listarempresaRequestBody();
+            return ((web.ServiceReference1.wsa1Soap)(this)).E_listarempresaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.listadodeevaluacionesResponse web.ServiceReference1.wsa1Soap.listadodeevaluaciones(web.ServiceReference1.listadodeevaluacionesRequest request) {
+            return base.Channel.listadodeevaluaciones(request);
+        }
+        
+        public BLL.ServiceReference1.TipoEvaluaciones[] listadodeevaluaciones() {
+            web.ServiceReference1.listadodeevaluacionesRequest inValue = new web.ServiceReference1.listadodeevaluacionesRequest();
+            inValue.Body = new web.ServiceReference1.listadodeevaluacionesRequestBody();
+            web.ServiceReference1.listadodeevaluacionesResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).listadodeevaluaciones(inValue);
+            return retVal.Body.listadodeevaluacionesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.listadodeevaluacionesResponse> web.ServiceReference1.wsa1Soap.listadodeevaluacionesAsync(web.ServiceReference1.listadodeevaluacionesRequest request) {
+            return base.Channel.listadodeevaluacionesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.listadodeevaluacionesResponse> listadodeevaluacionesAsync() {
+            web.ServiceReference1.listadodeevaluacionesRequest inValue = new web.ServiceReference1.listadodeevaluacionesRequest();
+            inValue.Body = new web.ServiceReference1.listadodeevaluacionesRequestBody();
+            return ((web.ServiceReference1.wsa1Soap)(this)).listadodeevaluacionesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.E_agregarEvaluacionResponse web.ServiceReference1.wsa1Soap.E_agregarEvaluacion(web.ServiceReference1.E_agregarEvaluacionRequest request) {
+            return base.Channel.E_agregarEvaluacion(request);
+        }
+        
+        public bool E_agregarEvaluacion(System.DateTime fecha, string obsTec, string recIng, string estado, int idT, string idE, string rut) {
+            web.ServiceReference1.E_agregarEvaluacionRequest inValue = new web.ServiceReference1.E_agregarEvaluacionRequest();
+            inValue.Body = new web.ServiceReference1.E_agregarEvaluacionRequestBody();
+            inValue.Body.fecha = fecha;
+            inValue.Body.obsTec = obsTec;
+            inValue.Body.recIng = recIng;
+            inValue.Body.estado = estado;
+            inValue.Body.idT = idT;
+            inValue.Body.idE = idE;
+            inValue.Body.rut = rut;
+            web.ServiceReference1.E_agregarEvaluacionResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).E_agregarEvaluacion(inValue);
+            return retVal.Body.E_agregarEvaluacionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_agregarEvaluacionResponse> web.ServiceReference1.wsa1Soap.E_agregarEvaluacionAsync(web.ServiceReference1.E_agregarEvaluacionRequest request) {
+            return base.Channel.E_agregarEvaluacionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.E_agregarEvaluacionResponse> E_agregarEvaluacionAsync(System.DateTime fecha, string obsTec, string recIng, string estado, int idT, string idE, string rut) {
+            web.ServiceReference1.E_agregarEvaluacionRequest inValue = new web.ServiceReference1.E_agregarEvaluacionRequest();
+            inValue.Body = new web.ServiceReference1.E_agregarEvaluacionRequestBody();
+            inValue.Body.fecha = fecha;
+            inValue.Body.obsTec = obsTec;
+            inValue.Body.recIng = recIng;
+            inValue.Body.estado = estado;
+            inValue.Body.idT = idT;
+            inValue.Body.idE = idE;
+            inValue.Body.rut = rut;
+            return ((web.ServiceReference1.wsa1Soap)(this)).E_agregarEvaluacionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.E_modificarEvaluacionResponse web.ServiceReference1.wsa1Soap.E_modificarEvaluacion(web.ServiceReference1.E_modificarEvaluacionRequest request) {
+            return base.Channel.E_modificarEvaluacion(request);
+        }
+        
+        public bool E_modificarEvaluacion(int id, string p) {
+            web.ServiceReference1.E_modificarEvaluacionRequest inValue = new web.ServiceReference1.E_modificarEvaluacionRequest();
+            inValue.Body = new web.ServiceReference1.E_modificarEvaluacionRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.p = p;
+            web.ServiceReference1.E_modificarEvaluacionResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).E_modificarEvaluacion(inValue);
+            return retVal.Body.E_modificarEvaluacionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_modificarEvaluacionResponse> web.ServiceReference1.wsa1Soap.E_modificarEvaluacionAsync(web.ServiceReference1.E_modificarEvaluacionRequest request) {
+            return base.Channel.E_modificarEvaluacionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.E_modificarEvaluacionResponse> E_modificarEvaluacionAsync(int id, string p) {
+            web.ServiceReference1.E_modificarEvaluacionRequest inValue = new web.ServiceReference1.E_modificarEvaluacionRequest();
+            inValue.Body = new web.ServiceReference1.E_modificarEvaluacionRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.p = p;
+            return ((web.ServiceReference1.wsa1Soap)(this)).E_modificarEvaluacionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.listadoUltimaEvaluacionResponse web.ServiceReference1.wsa1Soap.listadoUltimaEvaluacion(web.ServiceReference1.listadoUltimaEvaluacionRequest request) {
+            return base.Channel.listadoUltimaEvaluacion(request);
+        }
+        
+        public BLL.ServiceReference1.Evaluacion[] listadoUltimaEvaluacion(string rut) {
+            web.ServiceReference1.listadoUltimaEvaluacionRequest inValue = new web.ServiceReference1.listadoUltimaEvaluacionRequest();
+            inValue.Body = new web.ServiceReference1.listadoUltimaEvaluacionRequestBody();
+            inValue.Body.rut = rut;
+            web.ServiceReference1.listadoUltimaEvaluacionResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).listadoUltimaEvaluacion(inValue);
+            return retVal.Body.listadoUltimaEvaluacionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.listadoUltimaEvaluacionResponse> web.ServiceReference1.wsa1Soap.listadoUltimaEvaluacionAsync(web.ServiceReference1.listadoUltimaEvaluacionRequest request) {
+            return base.Channel.listadoUltimaEvaluacionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.listadoUltimaEvaluacionResponse> listadoUltimaEvaluacionAsync(string rut) {
+            web.ServiceReference1.listadoUltimaEvaluacionRequest inValue = new web.ServiceReference1.listadoUltimaEvaluacionRequest();
+            inValue.Body = new web.ServiceReference1.listadoUltimaEvaluacionRequestBody();
+            inValue.Body.rut = rut;
+            return ((web.ServiceReference1.wsa1Soap)(this)).listadoUltimaEvaluacionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.E_listadoPorTecnicoResponse web.ServiceReference1.wsa1Soap.E_listadoPorTecnico(web.ServiceReference1.E_listadoPorTecnicoRequest request) {
+            return base.Channel.E_listadoPorTecnico(request);
+        }
+        
+        public BLL.ServiceReference1.Evaluacion[] E_listadoPorTecnico(string rut) {
+            web.ServiceReference1.E_listadoPorTecnicoRequest inValue = new web.ServiceReference1.E_listadoPorTecnicoRequest();
+            inValue.Body = new web.ServiceReference1.E_listadoPorTecnicoRequestBody();
+            inValue.Body.rut = rut;
+            web.ServiceReference1.E_listadoPorTecnicoResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).E_listadoPorTecnico(inValue);
+            return retVal.Body.E_listadoPorTecnicoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_listadoPorTecnicoResponse> web.ServiceReference1.wsa1Soap.E_listadoPorTecnicoAsync(web.ServiceReference1.E_listadoPorTecnicoRequest request) {
+            return base.Channel.E_listadoPorTecnicoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.E_listadoPorTecnicoResponse> E_listadoPorTecnicoAsync(string rut) {
+            web.ServiceReference1.E_listadoPorTecnicoRequest inValue = new web.ServiceReference1.E_listadoPorTecnicoRequest();
+            inValue.Body = new web.ServiceReference1.E_listadoPorTecnicoRequestBody();
+            inValue.Body.rut = rut;
+            return ((web.ServiceReference1.wsa1Soap)(this)).E_listadoPorTecnicoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.E_ListadoIngenieroResponse web.ServiceReference1.wsa1Soap.E_ListadoIngeniero(web.ServiceReference1.E_ListadoIngenieroRequest request) {
+            return base.Channel.E_ListadoIngeniero(request);
+        }
+        
+        public BLL.ServiceReference1.Evaluacion[] E_ListadoIngeniero() {
+            web.ServiceReference1.E_ListadoIngenieroRequest inValue = new web.ServiceReference1.E_ListadoIngenieroRequest();
+            inValue.Body = new web.ServiceReference1.E_ListadoIngenieroRequestBody();
+            web.ServiceReference1.E_ListadoIngenieroResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).E_ListadoIngeniero(inValue);
+            return retVal.Body.E_ListadoIngenieroResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_ListadoIngenieroResponse> web.ServiceReference1.wsa1Soap.E_ListadoIngenieroAsync(web.ServiceReference1.E_ListadoIngenieroRequest request) {
+            return base.Channel.E_ListadoIngenieroAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.E_ListadoIngenieroResponse> E_ListadoIngenieroAsync() {
+            web.ServiceReference1.E_ListadoIngenieroRequest inValue = new web.ServiceReference1.E_ListadoIngenieroRequest();
+            inValue.Body = new web.ServiceReference1.E_ListadoIngenieroRequestBody();
+            return ((web.ServiceReference1.wsa1Soap)(this)).E_ListadoIngenieroAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.E_listadoDetalleResponse web.ServiceReference1.wsa1Soap.E_listadoDetalle(web.ServiceReference1.E_listadoDetalleRequest request) {
+            return base.Channel.E_listadoDetalle(request);
+        }
+        
+        public BLL.ServiceReference1.Detalle_evaluacion[] E_listadoDetalle(int evaluacion) {
+            web.ServiceReference1.E_listadoDetalleRequest inValue = new web.ServiceReference1.E_listadoDetalleRequest();
+            inValue.Body = new web.ServiceReference1.E_listadoDetalleRequestBody();
+            inValue.Body.evaluacion = evaluacion;
+            web.ServiceReference1.E_listadoDetalleResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).E_listadoDetalle(inValue);
+            return retVal.Body.E_listadoDetalleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.E_listadoDetalleResponse> web.ServiceReference1.wsa1Soap.E_listadoDetalleAsync(web.ServiceReference1.E_listadoDetalleRequest request) {
+            return base.Channel.E_listadoDetalleAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.E_listadoDetalleResponse> E_listadoDetalleAsync(int evaluacion) {
+            web.ServiceReference1.E_listadoDetalleRequest inValue = new web.ServiceReference1.E_listadoDetalleRequest();
+            inValue.Body = new web.ServiceReference1.E_listadoDetalleRequestBody();
+            inValue.Body.evaluacion = evaluacion;
+            return ((web.ServiceReference1.wsa1Soap)(this)).E_listadoDetalleAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.ModificarCategoriaResponse web.ServiceReference1.wsa1Soap.ModificarCategoria(web.ServiceReference1.ModificarCategoriaRequest request) {
+            return base.Channel.ModificarCategoria(request);
+        }
+        
+        public bool ModificarCategoria(int id, string cat, string estado) {
+            web.ServiceReference1.ModificarCategoriaRequest inValue = new web.ServiceReference1.ModificarCategoriaRequest();
+            inValue.Body = new web.ServiceReference1.ModificarCategoriaRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.cat = cat;
+            inValue.Body.estado = estado;
+            web.ServiceReference1.ModificarCategoriaResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).ModificarCategoria(inValue);
+            return retVal.Body.ModificarCategoriaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.ModificarCategoriaResponse> web.ServiceReference1.wsa1Soap.ModificarCategoriaAsync(web.ServiceReference1.ModificarCategoriaRequest request) {
+            return base.Channel.ModificarCategoriaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.ModificarCategoriaResponse> ModificarCategoriaAsync(int id, string cat, string estado) {
+            web.ServiceReference1.ModificarCategoriaRequest inValue = new web.ServiceReference1.ModificarCategoriaRequest();
+            inValue.Body = new web.ServiceReference1.ModificarCategoriaRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.cat = cat;
+            inValue.Body.estado = estado;
+            return ((web.ServiceReference1.wsa1Soap)(this)).ModificarCategoriaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.ModificarPreguntaResponse web.ServiceReference1.wsa1Soap.ModificarPregunta(web.ServiceReference1.ModificarPreguntaRequest request) {
+            return base.Channel.ModificarPregunta(request);
+        }
+        
+        public bool ModificarPregunta(int id, string pregunta, string estado) {
+            web.ServiceReference1.ModificarPreguntaRequest inValue = new web.ServiceReference1.ModificarPreguntaRequest();
+            inValue.Body = new web.ServiceReference1.ModificarPreguntaRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.pregunta = pregunta;
+            inValue.Body.estado = estado;
+            web.ServiceReference1.ModificarPreguntaResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).ModificarPregunta(inValue);
+            return retVal.Body.ModificarPreguntaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.ModificarPreguntaResponse> web.ServiceReference1.wsa1Soap.ModificarPreguntaAsync(web.ServiceReference1.ModificarPreguntaRequest request) {
+            return base.Channel.ModificarPreguntaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.ModificarPreguntaResponse> ModificarPreguntaAsync(int id, string pregunta, string estado) {
+            web.ServiceReference1.ModificarPreguntaRequest inValue = new web.ServiceReference1.ModificarPreguntaRequest();
+            inValue.Body = new web.ServiceReference1.ModificarPreguntaRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.pregunta = pregunta;
+            inValue.Body.estado = estado;
+            return ((web.ServiceReference1.wsa1Soap)(this)).ModificarPreguntaAsync(inValue);
         }
     }
 }
