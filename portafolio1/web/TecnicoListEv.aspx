@@ -12,7 +12,7 @@
 
 
 
-            <asp:GridView ID="GridView1" runat="server" CssClass="table table-bordered bs-table" OnRowCommand="GridView1_RowCommand" EmptyDataText="No hay evaluaciones registradas" AutoGenerateColumns="False">
+            <asp:GridView ID="GridView1" runat="server"  CssClass="table table-bordered bs-table" OnRowCommand="GridView1_RowCommand" EmptyDataText="No hay evaluaciones registradas" AutoGenerateColumns="False">
                 <HeaderStyle BackColor="#337ab7" Font-Bold="True" ForeColor="White" />
                 <Columns>
 
