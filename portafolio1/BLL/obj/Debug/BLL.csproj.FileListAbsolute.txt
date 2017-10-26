@@ -35,6 +35,6 @@ C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.csprojR
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
-
+//oscar qliao
 
 C:\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
