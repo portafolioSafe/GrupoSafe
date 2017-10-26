@@ -102,5 +102,18 @@ namespace BLL
             return ws.E_listadoPorTecnico(rut);
         }
 
+        public static List<ServiceReference1.Evaluacion> ListarTodoIng()
+        {
+            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
+            
+            return ws.E_ListadoIngeniero();
+        }
+
+        public static bool ModificarIngeniero(int id, string rec)
+        {
+            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
+            return ws.E_modificarEvaluacion(id,rec);
+        }
+
     }
 }

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
-using System.Net.Http.Formatting;
+//using System.Net.Http.Formatting;
 using System.Diagnostics;
 using System.Net;
 using System.Web.Script.Serialization;
@@ -86,12 +86,25 @@ namespace web
                     if (response.IsSuccessStatusCode)
                     {
                          // Obtener el resultado como objeto dynamic 
-                      
+
+                        //var result = response.Content.ReadAsAsync<BLL.MedicoDTO>().Result;
+
+  
                         //error.Text = "";
                         //nombre.Text = "Nombre: ";
                         //titulo.Text = "Título/Habilitante Legal: ";
                         //institucion.Text = "Institución Habilitante: ";
                         //especialidad.Text = "Especialidad: ";
+
+                        //MessageBox.Show("Rut asociado, nombre: "+result.Name+"", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                       
+                        //txtNombre.Enabled = true;
+                        //txtNombre.Text = result.Name;
+
+                        txtRut.Enabled = false;
+                        txtNombre.Enabled = true;
+                       
+
                         txtRut.Enabled = false;
                         txtNombre.Enabled = true;
                        
@@ -101,11 +114,23 @@ namespace web
                         txtPass.Enabled = true;
                         txtPassconfirm.Enabled = true;
                         txtEspecialidad.Enabled = true;
+
+                        
+
+                        //txtEspecialidad.Text = result.Spec;
+                       
+
+
+                        //Console.WriteLine("ReturnCode: {0}", result.Returncode);
+                        //Console.WriteLine("Message: {0}", result.Message);
+                        //Console.WriteLine("Token: {0}", result.Token);
+
                         Button1.Enabled = true;
                         Button2.Enabled = false;
                         MensajeFound.Visible = true;
                         MensajeNotFound.Visible = false; 
    
+
                     }
                     else
                     {

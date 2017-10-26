@@ -162,6 +162,9 @@
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ModificarCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ModificarPreguntaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.M_guardarMedicoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

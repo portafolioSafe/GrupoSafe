@@ -24,8 +24,16 @@ namespace web
             mensajeSI.Visible = false;
             mensajeNO.Visible = false;
             mensajeNa.Visible = false;
+            mensajeSiM.Visible = false;
+            Button2.Visible = false;
+            Button3.Visible = false;
+
+
+
+
             if (!IsPostBack)
             {
+                
                 BLL.TipoEvaluacionDTO t = new BLL.TipoEvaluacionDTO();
 
 
@@ -98,30 +106,67 @@ namespace web
 
         }
 
-        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
-        {
-            GridView1.EditIndex = e.NewEditIndex;
-            GridView1.DataBind();
-        }
 
-        protected void GridView1_RowUpdated(object sender, GridViewUpdatedEventArgs e)
-        {
-           
-        }
-
-        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-            GridView1.EditIndex = -1;
-        }
-
-        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
 
+            // If multiple ButtonField column fields are used, use the
+            // CommandName property to determine which button was clicked.
+            if (e.CommandName == "Select")
+            {
+                Button1.Visible = false;
+                Button2.Visible = true;
+                Button3.Visible = true;
+                // Convert the row index stored in the CommandArgument
+                // property to an Integer.
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                // Get the last name of the selected author from the appropriate
+                // cell in the GridView control.
+                GridViewRow selectedRow = GridView1.Rows[index];
+                TableCell contactName = selectedRow.Cells[0];
+                TableCell contact2 = selectedRow.Cells[1];
+                string contact = contactName.Text;
+                TextBox1.Text = contact2.Text;
+                // Captura el id de la capacitacion mostrada en la tabla en una variable de sesion
+                Session["idCategoria"] = contact;
+                //Pasa a la pagina de modificacion
+                // Response.Redirect("TecnicoCrearCategorias.aspx");
+                //Response.Redirect("TecnicoDetalleEvaluacion.aspx");
+                //MessageBox.Show(contact, "asdasd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            //string nueva = TextBox2.Text;
+            int idcat = int.Parse(Session["idCategoria"].ToString());
+            string nuevapregunta = TextBox1.Text;
+            string estado = "Activo";
+
+
+            if (TextBox1.Text != "")
+            {
+                if (BLL.CategoriaDTO.ModificarCategoria(idcat, nuevapregunta, estado))
+                {
+                    TextBox1.Text = "";
+                    mensajeSiM.Visible = true;
+                    Button1.Visible = true;
+                    Button2.Visible = false;
+                }
+            }
+            else
+            {
+                Button2.Visible = true;
+                Button3.Visible = true;
+                mensajeNa.Visible = true;
+            }
+            
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("TecnicoCrearCategoria.aspx");
         }
     }
 }

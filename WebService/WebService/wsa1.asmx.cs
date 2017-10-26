@@ -726,7 +726,11 @@ namespace WebService
         {
             return Datos.DatosCategoria.ModificarCategoria(id,cat,estado);
         }
-
+        [WebMethod]
+        public bool ModificarPregunta(int id, string pregunta, string estado)
+        {
+            return Datos.DatosPregunta.ModificarPregunta(id,pregunta,estado);
+        }
 
     }
 
