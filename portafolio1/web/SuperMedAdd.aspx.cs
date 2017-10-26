@@ -84,7 +84,11 @@ namespace web
                     {
                          // Obtener el resultado como objeto dynamic 
 <<<<<<< HEAD
+<<<<<<< HEAD
                         //var result = response.Content.ReadAsAsync<BLL.MedicoDTO>().Result;
+=======
+                      
+>>>>>>> 22ba53035ba16afe6914ba8c734e6bbd1f7518cb
 =======
                       
 >>>>>>> 22ba53035ba16afe6914ba8c734e6bbd1f7518cb
@@ -94,10 +98,16 @@ namespace web
                         //institucion.Text = "Institución Habilitante: ";
                         //especialidad.Text = "Especialidad: ";
 <<<<<<< HEAD
+<<<<<<< HEAD
                         //MessageBox.Show("Rut asociado, nombre: "+result.Name+"", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                        
                         //txtNombre.Enabled = true;
                         //txtNombre.Text = result.Name;
+=======
+                        txtRut.Enabled = false;
+                        txtNombre.Enabled = true;
+                       
+>>>>>>> 22ba53035ba16afe6914ba8c734e6bbd1f7518cb
 =======
                         txtRut.Enabled = false;
                         txtNombre.Enabled = true;
@@ -110,6 +120,7 @@ namespace web
                         txtPassconfirm.Enabled = true;
                         txtEspecialidad.Enabled = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
                         
 
                         //txtEspecialidad.Text = result.Spec;
@@ -120,11 +131,16 @@ namespace web
                         //Console.WriteLine("Message: {0}", result.Message);
                         //Console.WriteLine("Token: {0}", result.Token);
 =======
+=======
+>>>>>>> 22ba53035ba16afe6914ba8c734e6bbd1f7518cb
                         Button1.Enabled = true;
                         Button2.Enabled = false;
                         MensajeFound.Visible = true;
                         MensajeNotFound.Visible = false; 
    
+<<<<<<< HEAD
+>>>>>>> 22ba53035ba16afe6914ba8c734e6bbd1f7518cb
+=======
 >>>>>>> 22ba53035ba16afe6914ba8c734e6bbd1f7518cb
                     }
                     else
