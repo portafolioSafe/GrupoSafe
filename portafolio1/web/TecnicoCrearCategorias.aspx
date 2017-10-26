@@ -1,21 +1,24 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="TecnicoCrearCategorias.aspx.cs" Inherits="web.TecnicoCrearCategorias" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .style2 {
             margin-left: 30%;
+        }
 
-            }
-          #mensajeSI, #mensajeNO,#mensajeNa {
-                        display: table;
-                        margin: 0 auto;
-                    }
+        #mensajeSI, #mensajeNO, #mensajeNa {
+            display: table;
+            margin: 0 auto;
+        }
+    </style>
 
-        </style>
-    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-    
+
+
+
+
+
     <div class="panel panel-default" style="margin-right: 10%; margin-left: 10%;">
         <div class="panel-heading">
             <asp:Label ID="Label3" runat="server" Text="Agregar Categoria" Font-Bold="True" Font-Size="Larger"></asp:Label>
@@ -55,29 +58,32 @@
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="El rango es de 1 a 300 caracteres" Font-Bold="False" ForeColor="Red" ValidationExpression="^[\s\S]{1,100}$"></asp:RegularExpressionValidator>
 
             </div>
-           
-           
+         
 
 
 
 
-            
-                <asp:Button ID="Button1" runat="server" CssClass="btn alert-success center-block"  Text="Agregar" Width="86px" OnClick="Button1_Click" />
-            
+
+
+
+
+
+            <asp:Button ID="Button1" runat="server" CssClass="btn alert-success center-block" Text="Agregar" Width="86px" OnClick="Button1_Click" />
+
             <h4 style="text-align: center;">Listado de categorias actuales</h4>
 
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" OnRowEditing="GridView1_RowEditing" OnRowUpdated="GridView1_RowUpdated" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CssClass="table table-bordered bs-table">
+            <asp:GridView ID="GridView1" runat="server" DataKeyNames="id" EmptyDataText="No hay categorias" OnRowEditing="GridView1_RowEditing" OnRowUpdated="GridView1_RowUpdated" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" CssClass="table table-bordered bs-table" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowUpdating="GridView1_RowUpdating">
                 <HeaderStyle BackColor="#337ab7" Font-Bold="True" ForeColor="White" />
 
                 <Columns>
                     <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                     <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
-                    
 
-
-
-
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
             </asp:GridView>
 

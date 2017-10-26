@@ -131,8 +131,37 @@ namespace Datos
 
         }
 
-        //*****
-        
+        //************************************************************
+        public static bool ModificarCategoria(int id, string cat, string estado)
+        {
+            DatosConexion c = new DatosConexion();
+
+            using (OracleConnection conn = c.Connect())
+            {
+
+                OracleCommand cmd = new OracleCommand("PKG_EVALUACION.pro_ModificarCategoria", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("p_id", "number").Value = id;
+                cmd.Parameters.Add("p_nombre", "varchar2").Value = cat;
+                cmd.Parameters.Add("p_estado", "varchar2").Value = estado;
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+
+            }
+
+        }
+
 
 
     }

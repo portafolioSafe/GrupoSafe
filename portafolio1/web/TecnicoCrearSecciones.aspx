@@ -1,62 +1,95 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="TecnicoCrearSecciones.aspx.cs" Inherits="web.TecnicoCrearSecciones" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-      <style type="text/css">
+    <style type="text/css">
         .auto-style1 {
             margin-left: 30%;
         }
-         .style2 {
-             margin-left: 30%;
-         }
+
+        .style2 {
+            margin-left: 30%;
+        }
+        
+
+        #mensajeSI, #mensajeNO, #mensajeNa {
+            display: table;
+            margin: 0 auto;
+        }
+    
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="panel panel-default" style="margin-right: 10%; margin-left: 10%;">
-  <div class="panel-heading"><asp:Label ID="Label3" runat="server" Text="Agregar Seccion de preguntas" Font-Bold="True" Font-Size="Larger"></asp:Label>
+        <div class="panel-heading">
+            <asp:Label ID="Label3" runat="server" Text="Agregar Seccion de preguntas" Font-Bold="True" Font-Size="Larger"></asp:Label>
         </div>
-  <div class="panel-body">
-  
-      
-      <h4 style="text-align:center;">Seleccione categoria</h4>
-      &nbsp;<asp:DropDownList ID="DropDownList1" runat="server" CssClass="auto-style1" Height="30px" Width="222px" DataSourceID="ObjectDataSource2" DataTextField="Nombre" DataValueField="Id" AutoPostBack="True">
-          </asp:DropDownList>
-      <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="listarCategoria" TypeName="BLL.CategoriaDTO"></asp:ObjectDataSource>
-      <br />
-      <h4 style="text-align:center">Agregar pregunta </h4>
-&nbsp;
-        <asp:TextBox ID="TextBox1"  runat="server" CssClass="style2" Width="265px"></asp:TextBox>
-        <asp:Button ID="Button1" runat="server" Text="Agregar" Width="86px" OnClick="Button1_Click" />
+        <div class="panel-body">
+            <div>
+                <div id="mensajeSI" runat="server" class="alert alert-success" style="width: 90%" visible="false">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡PREGUNTA AGREGADA EXITOSAMENTE!
 
-       <h4 style="text-align:center;">Listado de preguntas poractegoria</h4>
-      <div>
-          <asp:GridView ID="GridView1" runat="server" CssClass="table table-bordered bs-table" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
-               <HeaderStyle BackColor="#337ab7" Font-Bold="True" ForeColor="White" />
-              <Columns>
-                  <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
-                  <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
-                  <asp:BoundField DataField="Pregunta1" HeaderText="Pregunta" SortExpression="Pregunta1" />
-              </Columns>
-          </asp:GridView>
+                </div>
+                <div id="mensajeNO" runat="server" class="alert alert-danger" style="width: 90%" visible="false">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡DEBE ESCOGER CATEGORIA!
 
+                  
+                </div>
+                <div id="mensajeNa" runat="server" class="alert alert-danger" style="width: 90%" visible="false">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡DEBE AGREGAR UNA PREGUNTA!
 
-
-
-          <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="lisatopreguntas" TypeName="BLL.PreguntasDTO">
-              <SelectParameters>
-                  <asp:ControlParameter ControlID="DropDownList1" DefaultValue="1" Name="id" PropertyName="SelectedValue" Type="Int32" />
-              </SelectParameters>
-          </asp:ObjectDataSource>
-
-
-
-
-      </div>
-
-
-     
-      
-
-
-     
-  </div>
+                  
+                </div>
             </div>
+
+
+            <div class="form-group">
+                <label for="em">Seleccione categoria</label>
+                <asp:DropDownList ID="DropDownList1" class="form-control" runat="server" DataSourceID="ObjectDataSource2" DataTextField="Nombre" AutoPostBack="true" DataValueField="Id">
+                </asp:DropDownList>
+
+            </div>
+            <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="listarCategoria" TypeName="BLL.CategoriaDTO"></asp:ObjectDataSource>
+            <br />
+            &nbsp;
+         <div class="form-group">
+             <label for="em">Agregar pregunta</label>
+             <asp:TextBox ID="TextBox1" class="form-control" runat="server" placeholder="Ingrese pregunta" TextMode="SingleLine"></asp:TextBox>
+             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="El rango es de 1 a 150 caracteres" Font-Bold="False" ForeColor="Red" ValidationExpression="^[\s\S]{1,150}$"></asp:RegularExpressionValidator>
+
+         </div>
+            <asp:Button ID="Button1" runat="server" CssClass="btn alert-success center-block" Text="Agregar" Width="86px" OnClick="Button1_Click" />
+
+            <h4 style="text-align: center;">Listado de preguntas poractegoria</h4>
+            <div>
+                <asp:GridView ID="GridView1" runat="server" EmptyDataText="No hay preguntas." CssClass="table table-bordered bs-table" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
+                    <HeaderStyle BackColor="#337ab7" Font-Bold="True" ForeColor="White" />
+                    <Columns>
+                        <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
+                        <asp:BoundField DataField="Pregunta1" HeaderText="Pregunta" SortExpression="Pregunta1" ControlStyle-Width="60%" />
+                        <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
+                    </Columns>
+                </asp:GridView>
+
+
+
+
+                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="lisatopreguntas" TypeName="BLL.PreguntasDTO">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="DropDownList1" DefaultValue="1" Name="id" PropertyName="SelectedValue" Type="Int32" />
+                    </SelectParameters>
+                </asp:ObjectDataSource>
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
 </asp:Content>

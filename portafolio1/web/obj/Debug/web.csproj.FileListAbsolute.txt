@@ -20,10 +20,17 @@ C:\GrupoSafe\portafolio1\web\bin\BLL.pdb
 C:\GrupoSafe\portafolio1\web\bin\BLL.dll.config
 C:\GrupoSafe\portafolio1\web\bin\EntityFramework.xml
 C:\GrupoSafe\portafolio1\web\bin\EntityFramework.SqlServer.xml
+<<<<<<< HEAD
+=======
 C:\GrupoSafe\portafolio1\web\obj\Debug\web.csprojResolveAssemblyReference.cache
 
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\web\bin\Newtonsoft.Json.dll
+<<<<<<< HEAD
 
+=======
+=======
+>>>>>>> 6c0ba83a8c4d4621f799c3d5cd2933f12b71378d
+>>>>>>> 2b9fed63b53ccf9c6ad578b79a19b831f2ec1eb1
 C:\GrupoSafe\portafolio1\web\obj\Debug\web.csproj.CoreCompileInputs.cache
 C:\GrupoSafe\portafolio1\web\obj\Debug\web.dll
 C:\GrupoSafe\portafolio1\web\obj\Debug\web.pdb
