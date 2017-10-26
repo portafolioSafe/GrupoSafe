@@ -135,6 +135,8 @@
     <Content Include="ClenteListC.aspx" />
     <Content Include="ClenteListVi.aspx" />
     <Content Include="ClenteListEv.aspx" />
+    <Content Include="SuperVisList.aspx" />
+    <Content Include="SuperMedAdd.aspx" />
     <Content Include="loginrespaldo.aspx" />
     <Content Include="sample.aspx" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
@@ -238,6 +240,20 @@
     </Compile>
     <Compile Include="ClenteListEv.aspx.designer.cs">
       <DependentUpon>ClenteListEv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuperVisList.aspx.cs">
+      <DependentUpon>SuperVisList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperVisList.aspx.designer.cs">
+      <DependentUpon>SuperVisList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuperMedAdd.aspx.cs">
+      <DependentUpon>SuperMedAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperMedAdd.aspx.designer.cs">
+      <DependentUpon>SuperMedAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="loginrespaldo.aspx.cs">
       <DependentUpon>loginrespaldo.aspx</DependentUpon>

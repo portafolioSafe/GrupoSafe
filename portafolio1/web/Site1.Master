@@ -230,8 +230,9 @@
                  <li class="dropdown" >
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Visitas médicas <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
+                  <li><a href="SuperMedAdd.aspx">Agregar médico</a></li>
 	            <li><a href="SuperVisAdd.aspx">Crear visita médica</a></li>
-                  <li><a href="SuperVisEdit.aspx">Modificar visitas</a></li>
+                  <li><a href="SuperVisList.aspx">Listar visitas médicas</a></li>
 	            
 	          </ul>
 	        </li>
