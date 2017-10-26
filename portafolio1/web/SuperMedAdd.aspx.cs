@@ -46,13 +46,15 @@ namespace web
                 {
                     if (response.IsSuccessStatusCode)
                     {
-                        // Obtener el resultado como objeto dynamic 
+                         // Obtener el resultado como objeto dynamic 
                         var result = response.Content.ReadAsAsync<BLL.MedicoDTO>().Result;
                         //error.Text = "";
                         //nombre.Text = "Nombre: ";
                         //titulo.Text = "Título/Habilitante Legal: ";
                         //institucion.Text = "Institución Habilitante: ";
                         //especialidad.Text = "Especialidad: ";
+                        MessageBox.Show("Rut asociado, nombre: "+result.Name+"", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                       
                         txtNombre.Enabled = true;
                         txtNombre.Text = result.Name;
 

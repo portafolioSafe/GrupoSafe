@@ -49,7 +49,7 @@
                 <asp:TextBox ID="txtApellido" CssClass="form-control" runat="server"  Enabled="False"></asp:TextBox>
 
 
-                      <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="Txttema" ErrorMessage="El rango es de 5 a 20 caracteres" Font-Bold="False" ForeColor="Red" ValidationExpression="^[\s\S]{5,20}$"></asp:RegularExpressionValidator>
+                      <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtApellido" ErrorMessage="El rango es de 5 a 20 caracteres" Font-Bold="False" ForeColor="Red" ValidationExpression="^[\s\S]{5,20}$"></asp:RegularExpressionValidator>
   
 
   </div>
@@ -78,7 +78,7 @@
           <asp:TextBox ID="txtPass" class="form-control" runat="server"  TextMode="Password" ValidationGroup="valivali" CssClass="form-control" Enabled="False"></asp:TextBox>
   
 
-                      <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Valor fuera de rango" ControlToValidate="txtasistencia" MaximumValue="300" MinimumValue="10" Type="Integer" ForeColor="Red"  ValidationGroup="valivali" Font-Bold="False"></asp:RangeValidator>
+                      <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Valor fuera de rango" ControlToValidate="txtPass" MaximumValue="300" MinimumValue="10" Type="Integer" ForeColor="Red"  ValidationGroup="valivali" Font-Bold="False"></asp:RangeValidator>
   
 
   </div>
