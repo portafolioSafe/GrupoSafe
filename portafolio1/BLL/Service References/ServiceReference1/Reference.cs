@@ -1116,6 +1116,13 @@ namespace BLL.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarCategoria", ReplyAction="*")]
         System.Threading.Tasks.Task<BLL.ServiceReference1.ModificarCategoriaResponse> ModificarCategoriaAsync(BLL.ServiceReference1.ModificarCategoriaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento pregunta del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarPregunta", ReplyAction="*")]
+        BLL.ServiceReference1.ModificarPreguntaResponse ModificarPregunta(BLL.ServiceReference1.ModificarPreguntaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarPregunta", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ModificarPreguntaResponse> ModificarPreguntaAsync(BLL.ServiceReference1.ModificarPreguntaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3250,6 +3257,82 @@ namespace BLL.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ModificarPreguntaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ModificarPregunta", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ModificarPreguntaRequestBody Body;
+        
+        public ModificarPreguntaRequest() {
+        }
+        
+        public ModificarPreguntaRequest(BLL.ServiceReference1.ModificarPreguntaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ModificarPreguntaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string pregunta;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string estado;
+        
+        public ModificarPreguntaRequestBody() {
+        }
+        
+        public ModificarPreguntaRequestBody(int id, string pregunta, string estado) {
+            this.id = id;
+            this.pregunta = pregunta;
+            this.estado = estado;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ModificarPreguntaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ModificarPreguntaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ModificarPreguntaResponseBody Body;
+        
+        public ModificarPreguntaResponse() {
+        }
+        
+        public ModificarPreguntaResponse(BLL.ServiceReference1.ModificarPreguntaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ModificarPreguntaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool ModificarPreguntaResult;
+        
+        public ModificarPreguntaResponseBody() {
+        }
+        
+        public ModificarPreguntaResponseBody(bool ModificarPreguntaResult) {
+            this.ModificarPreguntaResult = ModificarPreguntaResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface wsa1SoapChannel : BLL.ServiceReference1.wsa1Soap, System.ServiceModel.IClientChannel {
     }
@@ -4083,6 +4166,35 @@ namespace BLL.ServiceReference1 {
             inValue.Body.cat = cat;
             inValue.Body.estado = estado;
             return ((BLL.ServiceReference1.wsa1Soap)(this)).ModificarCategoriaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.ModificarPreguntaResponse BLL.ServiceReference1.wsa1Soap.ModificarPregunta(BLL.ServiceReference1.ModificarPreguntaRequest request) {
+            return base.Channel.ModificarPregunta(request);
+        }
+        
+        public bool ModificarPregunta(int id, string pregunta, string estado) {
+            BLL.ServiceReference1.ModificarPreguntaRequest inValue = new BLL.ServiceReference1.ModificarPreguntaRequest();
+            inValue.Body = new BLL.ServiceReference1.ModificarPreguntaRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.pregunta = pregunta;
+            inValue.Body.estado = estado;
+            BLL.ServiceReference1.ModificarPreguntaResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).ModificarPregunta(inValue);
+            return retVal.Body.ModificarPreguntaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ModificarPreguntaResponse> BLL.ServiceReference1.wsa1Soap.ModificarPreguntaAsync(BLL.ServiceReference1.ModificarPreguntaRequest request) {
+            return base.Channel.ModificarPreguntaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.ModificarPreguntaResponse> ModificarPreguntaAsync(int id, string pregunta, string estado) {
+            BLL.ServiceReference1.ModificarPreguntaRequest inValue = new BLL.ServiceReference1.ModificarPreguntaRequest();
+            inValue.Body = new BLL.ServiceReference1.ModificarPreguntaRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.pregunta = pregunta;
+            inValue.Body.estado = estado;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).ModificarPreguntaAsync(inValue);
         }
     }
 }

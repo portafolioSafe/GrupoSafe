@@ -83,44 +83,35 @@ namespace web
                     if (response.IsSuccessStatusCode)
                     {
                          // Obtener el resultado como objeto dynamic 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                         //var result = response.Content.ReadAsAsync<BLL.MedicoDTO>().Result;
-=======
-                      
->>>>>>> 22ba53035ba16afe6914ba8c734e6bbd1f7518cb
-=======
-                      
->>>>>>> 22ba53035ba16afe6914ba8c734e6bbd1f7518cb
+
+  
                         //error.Text = "";
                         //nombre.Text = "Nombre: ";
                         //titulo.Text = "Título/Habilitante Legal: ";
                         //institucion.Text = "Institución Habilitante: ";
                         //especialidad.Text = "Especialidad: ";
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                         //MessageBox.Show("Rut asociado, nombre: "+result.Name+"", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                        
                         //txtNombre.Enabled = true;
                         //txtNombre.Text = result.Name;
-=======
+
                         txtRut.Enabled = false;
                         txtNombre.Enabled = true;
                        
->>>>>>> 22ba53035ba16afe6914ba8c734e6bbd1f7518cb
-=======
+
                         txtRut.Enabled = false;
                         txtNombre.Enabled = true;
                        
->>>>>>> 22ba53035ba16afe6914ba8c734e6bbd1f7518cb
 
                         txtApellido.Enabled = true;
                         txtCorreo.Enabled = true;
                         txtPass.Enabled = true;
                         txtPassconfirm.Enabled = true;
                         txtEspecialidad.Enabled = true;
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                         
 
                         //txtEspecialidad.Text = result.Spec;
@@ -130,18 +121,13 @@ namespace web
                         //Console.WriteLine("ReturnCode: {0}", result.Returncode);
                         //Console.WriteLine("Message: {0}", result.Message);
                         //Console.WriteLine("Token: {0}", result.Token);
-=======
-=======
->>>>>>> 22ba53035ba16afe6914ba8c734e6bbd1f7518cb
+
                         Button1.Enabled = true;
                         Button2.Enabled = false;
                         MensajeFound.Visible = true;
                         MensajeNotFound.Visible = false; 
    
-<<<<<<< HEAD
->>>>>>> 22ba53035ba16afe6914ba8c734e6bbd1f7518cb
-=======
->>>>>>> 22ba53035ba16afe6914ba8c734e6bbd1f7518cb
+
                     }
                     else
                     {

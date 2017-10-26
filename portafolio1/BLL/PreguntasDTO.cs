@@ -81,5 +81,12 @@ namespace BLL
         }
 
 
+        public static bool ModificarPregunta(int id, string pregunta, string estado)
+        {
+            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
+            return ws.ModificarPregunta(id,pregunta,estado);
+        }
+
+
     }
 }

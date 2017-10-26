@@ -11,7 +11,7 @@
         }
         
 
-        #mensajeSI, #mensajeNO, #mensajeNa {
+        #mensajeSI, #mensajeNO, #mensajeNa,#mensajeSiM {
             display: table;
             margin: 0 auto;
         }
@@ -27,6 +27,10 @@
             <div>
                 <div id="mensajeSI" runat="server" class="alert alert-success" style="width: 90%" visible="false">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡PREGUNTA AGREGADA EXITOSAMENTE!
+
+                </div>
+                <div id="mensajeSiM" runat="server" class="alert alert-success" style="width: 90%" visible="false">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡PREGUNTA MODIFICADA EXITOSAMENTE!
 
                 </div>
                 <div id="mensajeNO" runat="server" class="alert alert-danger" style="width: 90%" visible="false">
@@ -59,14 +63,26 @@
          </div>
             <asp:Button ID="Button1" runat="server" CssClass="btn alert-success center-block" Text="Agregar" Width="86px" OnClick="Button1_Click" />
 
+            <asp:Button ID="Button2" runat="server" CssClass="btn alert-success center-block" Text="Modificar" Width="86px" OnClick="Button2_Click" />
+
+            <asp:Button ID="Button3" runat="server" CssClass="btn alert-success center-block" Text="Cancelar" Width="86px" OnClick="Button3_Click" />
+
+
             <h4 style="text-align: center;">Listado de preguntas poractegoria</h4>
             <div>
-                <asp:GridView ID="GridView1" runat="server" EmptyDataText="No hay preguntas." CssClass="table table-bordered bs-table" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
+                <asp:GridView ID="GridView1" OnRowCommand="GridView1_RowCommand" runat="server" EmptyDataText="No hay preguntas." CssClass="table table-bordered bs-table" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
                     <HeaderStyle BackColor="#337ab7" Font-Bold="True" ForeColor="White" />
                     <Columns>
                         <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
                         <asp:BoundField DataField="Pregunta1" HeaderText="Pregunta" SortExpression="Pregunta1" ControlStyle-Width="60%" />
                         <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
+
+
+                         <asp:ButtonField ButtonType="Button" ControlStyle-CssClass="btn btn-warning" Text="Modificar" CommandName="Select" HeaderText="Acción">
+                        <HeaderStyle CssClass=" text-center" ForeColor="White" BackColor="#337ab7"></HeaderStyle>
+                        <ControlStyle CssClass="btn btn-warning"></ControlStyle>
+                    </asp:ButtonField>
+
                     </Columns>
                 </asp:GridView>
 

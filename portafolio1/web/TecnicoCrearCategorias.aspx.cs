@@ -138,7 +138,7 @@ namespace web
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-          int idcat =  int.Parse(Session["idCategoria"].ToString());
+            int idcat =  int.Parse(Session["idCategoria"].ToString());
             string nuevapregunta = TextBox1.Text;
             string estado = "Activo";
 
