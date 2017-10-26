@@ -28,6 +28,7 @@ namespace web
             Button2.Visible = false;
             Button3.Visible = false;
 
+            GridView1.DataBind();
 
 
 
@@ -81,26 +82,30 @@ namespace web
                     catch (Exception)
                     {
                         mensajeNO.Visible = true;
-
+                        GridView1.DataBind();
                     }
                 }
                 else
                 {
                     mensajeNa.Visible = true;
+                    GridView1.DataBind();
+
                 }
             }
             else
             {
                 mensajeNO.Visible = true;
+                GridView1.DataBind();
+
             }
-           
-
-            
-
-           
 
 
-          
+
+
+
+            GridView1.DataBind();
+
+
 
 
 
@@ -120,7 +125,7 @@ namespace web
                 // Convert the row index stored in the CommandArgument
                 // property to an Integer.
                 int index = Convert.ToInt32(e.CommandArgument);
-
+                GridView1.DataBind();
                 // Get the last name of the selected author from the appropriate
                 // cell in the GridView control.
                 GridViewRow selectedRow = GridView1.Rows[index];
@@ -166,7 +171,7 @@ namespace web
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            Response.Redirect("TecnicoCrearCategoria.aspx");
+            Response.Redirect("TecnicoCrearCategorias.aspx");
         }
     }
 }
