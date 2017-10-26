@@ -1102,6 +1102,13 @@ namespace BLL.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_listadoDetalle", ReplyAction="*")]
         System.Threading.Tasks.Task<BLL.ServiceReference1.E_listadoDetalleResponse> E_listadoDetalleAsync(BLL.ServiceReference1.E_listadoDetalleRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento cat del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarCategoria", ReplyAction="*")]
+        BLL.ServiceReference1.ModificarCategoriaResponse ModificarCategoria(BLL.ServiceReference1.ModificarCategoriaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarCategoria", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ModificarCategoriaResponse> ModificarCategoriaAsync(BLL.ServiceReference1.ModificarCategoriaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3072,6 +3079,82 @@ namespace BLL.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ModificarCategoriaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ModificarCategoria", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ModificarCategoriaRequestBody Body;
+        
+        public ModificarCategoriaRequest() {
+        }
+        
+        public ModificarCategoriaRequest(BLL.ServiceReference1.ModificarCategoriaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ModificarCategoriaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string cat;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string estado;
+        
+        public ModificarCategoriaRequestBody() {
+        }
+        
+        public ModificarCategoriaRequestBody(int id, string cat, string estado) {
+            this.id = id;
+            this.cat = cat;
+            this.estado = estado;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ModificarCategoriaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ModificarCategoriaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ModificarCategoriaResponseBody Body;
+        
+        public ModificarCategoriaResponse() {
+        }
+        
+        public ModificarCategoriaResponse(BLL.ServiceReference1.ModificarCategoriaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ModificarCategoriaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool ModificarCategoriaResult;
+        
+        public ModificarCategoriaResponseBody() {
+        }
+        
+        public ModificarCategoriaResponseBody(bool ModificarCategoriaResult) {
+            this.ModificarCategoriaResult = ModificarCategoriaResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface wsa1SoapChannel : BLL.ServiceReference1.wsa1Soap, System.ServiceModel.IClientChannel {
     }
@@ -3841,6 +3924,35 @@ namespace BLL.ServiceReference1 {
             inValue.Body = new BLL.ServiceReference1.E_listadoDetalleRequestBody();
             inValue.Body.evaluacion = evaluacion;
             return ((BLL.ServiceReference1.wsa1Soap)(this)).E_listadoDetalleAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.ModificarCategoriaResponse BLL.ServiceReference1.wsa1Soap.ModificarCategoria(BLL.ServiceReference1.ModificarCategoriaRequest request) {
+            return base.Channel.ModificarCategoria(request);
+        }
+        
+        public bool ModificarCategoria(int id, string cat, string estado) {
+            BLL.ServiceReference1.ModificarCategoriaRequest inValue = new BLL.ServiceReference1.ModificarCategoriaRequest();
+            inValue.Body = new BLL.ServiceReference1.ModificarCategoriaRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.cat = cat;
+            inValue.Body.estado = estado;
+            BLL.ServiceReference1.ModificarCategoriaResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).ModificarCategoria(inValue);
+            return retVal.Body.ModificarCategoriaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ModificarCategoriaResponse> BLL.ServiceReference1.wsa1Soap.ModificarCategoriaAsync(BLL.ServiceReference1.ModificarCategoriaRequest request) {
+            return base.Channel.ModificarCategoriaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.ModificarCategoriaResponse> ModificarCategoriaAsync(int id, string cat, string estado) {
+            BLL.ServiceReference1.ModificarCategoriaRequest inValue = new BLL.ServiceReference1.ModificarCategoriaRequest();
+            inValue.Body = new BLL.ServiceReference1.ModificarCategoriaRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.cat = cat;
+            inValue.Body.estado = estado;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).ModificarCategoriaAsync(inValue);
         }
     }
 }

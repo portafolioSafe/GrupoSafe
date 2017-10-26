@@ -100,12 +100,28 @@ namespace web
 
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
-
+            GridView1.EditIndex = e.NewEditIndex;
+            GridView1.DataBind();
         }
 
         protected void GridView1_RowUpdated(object sender, GridViewUpdatedEventArgs e)
         {
+           
+        }
 
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            GridView1.EditIndex = -1;
+        }
+
+        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            //string nueva = TextBox2.Text;
         }
     }
 }

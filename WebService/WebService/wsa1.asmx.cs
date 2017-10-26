@@ -649,6 +649,11 @@ namespace WebService
             return Datos.DatosDetalle_evaluacion.LisarDetalle(evaluacion);
         }
         
+        [WebMethod]
+        public bool ModificarCategoria(int id, string cat, string estado)
+        {
+            return Datos.DatosCategoria.ModificarCategoria(id,cat,estado);
+        }
 
 
     }

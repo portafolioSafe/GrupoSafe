@@ -16,7 +16,9 @@ namespace web
             {
                 Response.Redirect("Home.aspx");
             }
-
+            mensajeSI.Visible = false;
+            mensajeNO.Visible = false;
+            mensajeNa.Visible = false;
             GridView1.DataBind();
         }
 
@@ -24,19 +26,29 @@ namespace web
         protected void Button1_Click(object sender, EventArgs e)
         {
             string pregunta = TextBox1.Text;
-            int id = int.Parse(DropDownList1.SelectedItem.Value);
-            bool resp = BLL.PreguntasDTO.AgregarPregunta(id,pregunta);
-            GridView1.DataBind();
-            if (resp)
-            {
 
-                MessageBox.Show("Pregunta Guardada con exito", "Preguntas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (int.Parse(DropDownList1.SelectedItem.Value) !=0 )
+            {
+                int id = int.Parse(DropDownList1.SelectedItem.Value);
+                if (pregunta != "")
+                {
+                     BLL.PreguntasDTO.AgregarPregunta(id, pregunta);
+                    GridView1.DataBind();
+                    TextBox1.Text = " ";
+                    mensajeSI.Visible = true;
+                }
+                else
+                {
+                    mensajeNa.Visible = true;
+                }
             }
             else
             {
-                MessageBox.Show("Error al guardar", "Preguntas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mensajeNO.Visible = true;
             }
-
+            
+            
+           
 
         }
     }

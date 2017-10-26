@@ -78,6 +78,12 @@ namespace BLL
             return ws.E_listarCategoriasXtipo(idT);
         }
 
+        public static bool ModificarCategoria(int id, string cat, string estado)
+        {
+            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
+
+            return ws.ModificarCategoria(id,cat,estado);
+        }
 
 
 
