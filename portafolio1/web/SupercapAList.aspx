@@ -15,17 +15,63 @@
       <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="ListadoEmpresas" TypeName="BLL.EmpresaDTO"></asp:ObjectDataSource>
   
 
-      <asp:GridView ID="GridView1" runat="server" DataSourceID="ObjectDataSource2" AutoGenerateColumns="False" EmptyDataText="No hay datos que mostrar">
+      <asp:GridView ID="GridView1" runat="server" DataSourceID="ObjectDataSource2" AutoGenerateColumns="False" CssClass="table table-bordered bs-table"  EmptyDataText="No hay datos que mostrar">
           <Columns>
-              <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
-              <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
-              <asp:BoundField DataField="Area" HeaderText="Area" SortExpression="Area" />
-              <asp:BoundField DataField="Fecha" HeaderText="Fecha" SortExpression="Fecha" />
-              <asp:BoundField DataField="Tema" HeaderText="Tema" SortExpression="Tema" />
-              <asp:BoundField DataField="Expositor" HeaderText="Expositor" SortExpression="Expositor" />
-              <asp:BoundField DataField="Asistencia" HeaderText="Asistencia" SortExpression="Asistencia" />
-              <asp:BoundField DataField="Rut_empresa" HeaderText="Rut_empresa" SortExpression="Rut_empresa" />
-              <asp:BoundField DataField="Tipo_cap" HeaderText="Tipo_cap" SortExpression="Tipo_cap" />
+
+
+             
+              <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" ItemStyle-HorizontalAlign="Center"  HeaderStyle-Width="10px" ItemStyle-Width="40px" HeaderStyle-CssClass=" text-center" ItemStyle-CssClass="text-center" HeaderStyle-HorizontalAlign="Center" FooterStyle-HorizontalAlign="Center">
+<FooterStyle HorizontalAlign="Center"></FooterStyle>
+
+<HeaderStyle HorizontalAlign="Center" ForeColor="White" BackColor="#337ab7"  CssClass=" text-center" Width="10px"></HeaderStyle>
+
+<ItemStyle HorizontalAlign="Justify" VerticalAlign="Middle"></ItemStyle>
+              </asp:BoundField>
+              <asp:BoundField DataField="Tema" HeaderText="Tema" SortExpression="Tema" FooterStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-CssClass=" text-center" ItemStyle-HorizontalAlign="Center" >
+<FooterStyle HorizontalAlign="Center"></FooterStyle>
+
+<HeaderStyle HorizontalAlign="Center" BackColor="#337ab7"  CssClass=" text-center" ForeColor="White"></HeaderStyle>
+
+<ItemStyle HorizontalAlign="Center"></ItemStyle>
+              </asp:BoundField>
+              <asp:BoundField DataField="Fecha" HeaderStyle-CssClass=" text-center" ItemStyle-CssClass="text-center" HeaderText="Fecha" SortExpression="Fecha" HeaderStyle-HorizontalAlign="Center" >
+<HeaderStyle HorizontalAlign="Center" BackColor="#337ab7" ForeColor="White"></HeaderStyle>
+
+<ItemStyle CssClass="text-center"></ItemStyle>
+              </asp:BoundField>
+              <asp:BoundField DataField="Area" HeaderStyle-CssClass=" text-center" ItemStyle-CssClass="text-center" HeaderText="Area" SortExpression="Area" >
+<HeaderStyle CssClass=" text-center" BackColor="#337ab7" ForeColor="White"></HeaderStyle>
+
+<ItemStyle CssClass="text-center"></ItemStyle>
+              </asp:BoundField>
+              <asp:BoundField DataField="Expositor" HeaderText="Expositor" SortExpression="Expositor" HeaderStyle-CssClass=" text-center" ItemStyle-CssClass="text-center" HeaderStyle-HorizontalAlign="Center" ItemStyle-Width="120px" >
+<HeaderStyle HorizontalAlign="Center" BackColor="#337ab7" ForeColor="White"></HeaderStyle>
+
+<ItemStyle Width="120px"></ItemStyle>
+              </asp:BoundField>
+              <asp:BoundField DataField="Asistencia" HeaderStyle-CssClass=" text-center" ItemStyle-CssClass="text-center" HeaderText="Asistencia" SortExpression="Asistencia" ItemStyle-Width="120px" >
+<HeaderStyle CssClass=" text-center" BackColor="#337ab7" ForeColor="White"></HeaderStyle>
+
+<ItemStyle Width="120px"></ItemStyle>
+              </asp:BoundField>
+              <asp:BoundField DataField="Rut_empresa" HeaderText="Empresa" SortExpression="Rut_empresa" HeaderStyle-CssClass=" text-center" ItemStyle-CssClass="text-center" >
+<HeaderStyle CssClass=" text-center" BackColor="#337ab7" ForeColor="White"></HeaderStyle>
+
+<ItemStyle CssClass="text-center"></ItemStyle>
+              </asp:BoundField>
+              <asp:BoundField DataField="Tipo_cap" HeaderText="Tipo" SortExpression="Tipo_cap" HeaderStyle-CssClass=" text-center" ItemStyle-CssClass="text-center" >
+<HeaderStyle CssClass=" text-center" ForeColor="White" BackColor="#337ab7" ></HeaderStyle>
+
+<ItemStyle CssClass="text-center"></ItemStyle>
+              </asp:BoundField>
+
+
+                     
+              <asp:ButtonField ButtonType="Button"  ControlStyle-CssClass="btn btn-warning"  Text="Editar" CommandName="Select"  HeaderText="Acción" >
+                  <HeaderStyle CssClass=" text-center" ForeColor="White" BackColor="#337ab7" ></HeaderStyle>
+<ControlStyle CssClass="btn btn-warning"  ></ControlStyle>
+              </asp:ButtonField>
+
           </Columns>
       </asp:GridView>
 

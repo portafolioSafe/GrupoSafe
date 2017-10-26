@@ -79,9 +79,9 @@
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Historial <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
-	            <li><a href="TrabajadorHistA.aspx">Atenciones</a></li>
+<%--	            <li><a href="TrabajadorHistA.aspx">Atenciones</a></li>
                   <li><a href="TrabajadorHistV.aspx">Visitas médicas</a></li>
-                  <li><a href="TrabajadorHistC.aspx">Capacitaciones</a></li>
+                  <li><a href="TrabajadorHistC.aspx">Capacitaciones</a></li>--%>
 	            
 	          </ul>
 	        </li>
@@ -197,9 +197,9 @@
             <ul class="nav navbar-nav" id="menuSupervisor" runat="server">
 	   
 	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Informes <span class="caret"></span></a>
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Evaluaciones <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
-	            <li><a href="SupervListIn.aspx">Listar Informes</a></li>
+	            <li><a href="SupervListIn.aspx">Listar evaluaciones</a></li>
 
 	            
 	          </ul>
@@ -208,8 +208,8 @@
               <li class="dropdown" >
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Capacitaciones anual <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
-                   <li><a href="SupercapAAdd.aspx">Crear plan de capacitación anual</a></li>
-                   <li><a href="SupercapAEdit.aspx">Modificar plan de capacitación anual</a></li>
+              <%--     <li><a href="SupercapAAdd.aspx">Crear plan de capacitación anual</a></li>--%>
+      <%--             <li><a href="SupercapAEdit.aspx">Modificar plan de capacitación anual</a></li>--%>
 	            <li><a href="SupercapAList.aspx">Listar capacitaciones anuales</a></li>
 
 	            
@@ -221,7 +221,7 @@
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Capacitaciones <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
                    <li><a href="SupercapAdd.aspx">Crear plan de capacitación </a></li>
-                   <li><a href="SupercapEdit.aspx">Modificar plan de capacitación </a></li>
+          <%--         <li><a href="SupercapEdit.aspx">Modificar plan de capacitación </a></li>--%>
 	            <li><a href="SupercapList.aspx">Listar capacitaciones</a></li>
 
 	            
