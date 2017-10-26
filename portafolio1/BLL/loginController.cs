@@ -74,5 +74,15 @@ namespace BLL
             return ws.DevuelveTipo(rut, tipo);
 
         }
+
+        public static string devuelveNombreEmpresa(string rut_usuario) {
+            string meme = "";
+
+            ServiceReference1.wsa1SoapClient memito = new ServiceReference1.wsa1SoapClient();
+            meme= memito.devuelveEmpresa(rut_usuario);
+
+            return meme;
+        
+        }
     }
 }
