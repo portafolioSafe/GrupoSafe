@@ -1,0 +1,6 @@
+https://oracle-base.com/articles/misc/killing-oracle-sessions
+
+consulta par matar la sesion buscar la sesion y eliminarla. posible solucion al tema de las conexiones
+select sid, serial# from v$session where audsid = sys_context('userenv','sessionid') 
+followed by an 
+alter system kill session(sid,session) immediate
