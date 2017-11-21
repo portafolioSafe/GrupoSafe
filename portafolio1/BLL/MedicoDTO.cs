@@ -16,6 +16,11 @@ namespace BLL
 
       private string rut_medico;
 
+        public string name { get; set; }
+        public string degree { get; set; }
+        public string univ { get; set; }
+        public string spec { get; set; }
+
         public string Rut_medico
         {
             get { return rut_medico; }

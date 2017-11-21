@@ -67,3 +67,4 @@ C:\GrupoSafe\portafolio1\web\obj\Debug\Fakes\snhf\o\f.csprojResolveAssemblyRefer
 C:\GrupoSafe\portafolio1\web\obj\Debug\Fakes\snhf\o\System.Net.Http.Formatting.Fakes.dll
 C:\GrupoSafe\portafolio1\web\obj\Debug\Fakes\snhf\o\System.Net.Http.Formatting.Fakes.pdb
 C:\GrupoSafe\portafolio1\web\obj\Debug\web.csprojResolveAssemblyReference.cache
+C:\GrupoSafe\portafolio1\web\bin\System.Net.Http.Formatting.Fakes.fakesconfig

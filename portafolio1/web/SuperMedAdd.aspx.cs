@@ -89,6 +89,12 @@ namespace web
 
                         var result = response.Content.ReadAsAsync<BLL.MedicoDTO>().Result;
 
+                        string cadena = result.name;
+                        string[] values = cadena.Split(',');
+                        txtNombre.Text = values[1].Substring(1,values[1].Length-1);
+                        txtApellido.Text = values[0].Substring(1, values[0].Length-1);
+
+                        txtEspecialidad.Text = result.degree;
 
                         //error.Text = "";
                         //nombre.Text = "Nombre: ";
