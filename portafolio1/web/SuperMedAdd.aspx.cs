@@ -12,6 +12,7 @@ using System.Diagnostics;
 using System.Net;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
+using BLL;
 
 namespace web
 {
@@ -87,9 +88,23 @@ namespace web
                     {
                          // Obtener el resultado como objeto dynamic 
 
+<<<<<<< HEAD
                         var result = response.Content.ReadAsAsync<BLL.MedicoDTO>().Result;
 
 
+=======
+                        var result = response.Content.ReadAsAsync<MedicoDTO>().Result;
+
+
+                        
+                        string cadena = result.name;
+                        string[] values = cadena.Split(',');
+                        txtNombre.Text = values[1];
+                        txtApellido.Text = values[0];
+
+                        txtEspecialidad.Text = result.degree;
+                       
+>>>>>>> 2a44473c70f609a7602fe2f757ca1752b57e6d2a
                         //error.Text = "";
                         //nombre.Text = "Nombre: ";
                         //titulo.Text = "Título/Habilitante Legal: ";
