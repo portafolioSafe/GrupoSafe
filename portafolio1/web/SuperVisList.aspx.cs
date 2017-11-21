@@ -190,7 +190,7 @@ namespace web
             document.Close();
             writer.Close();
             // fs.Close();
-            Response.AddHeader("content-disposition", "attachment;filename=Invoice_" + Empresa.Text + ".pdf");
+          //  Response.AddHeader("content-disposition", "attachment;filename=Invoice_" + Empresa.Text + ".pdf");
 
             Response.End();
 

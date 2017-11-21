@@ -74,6 +74,7 @@ namespace WebService
             }catch(Exception ){
                 us = "server";
             }
+            conn.Close();
             return us;
         }
 
@@ -132,6 +133,7 @@ namespace WebService
             {
                 us = "server";
             }
+            conn.Close();
             return us;
         }
 
@@ -187,6 +189,7 @@ namespace WebService
             {
                 us = "server";
             }
+            conn.Close();
             return us;
         }
 
@@ -242,6 +245,7 @@ namespace WebService
             {
                 us = "server";
             }
+            conn.Close();
             return us;
         }
 
