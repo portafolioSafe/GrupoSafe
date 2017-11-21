@@ -7,11 +7,12 @@ using System.Web.UI.WebControls;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
-//using System.Net.Http.Formatting;
+using System.Net.Http.Formatting;
 using System.Diagnostics;
 using System.Net;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
+using BLL;
 
 namespace web
 {
@@ -87,9 +88,17 @@ namespace web
                     {
                          // Obtener el resultado como objeto dynamic 
 
-                        //var result = response.Content.ReadAsAsync<BLL.MedicoDTO>().Result;
+                        var result = response.Content.ReadAsAsync<MedicoDTO>().Result;
 
-  
+
+                        
+                        string cadena = result.name;
+                        string[] values = cadena.Split(',');
+                        txtNombre.Text = values[1];
+                        txtApellido.Text = values[0];
+
+                        txtEspecialidad.Text = result.degree;
+                       
                         //error.Text = "";
                         //nombre.Text = "Nombre: ";
                         //titulo.Text = "Título/Habilitante Legal: ";
