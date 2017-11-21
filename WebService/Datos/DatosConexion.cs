@@ -10,6 +10,7 @@ namespace Datos
     public class DatosConexion
     {
 
+
         private string password, user;
 
         public DatosConexion()
@@ -27,13 +28,16 @@ namespace Datos
             password = "portafolio";
 
             if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(password))
+            {
                 throw new Exception("El usuario y el password son datos requeridos");
-            
+            }
             //ConnectionStrings["ConnectionStringUsers"].ConnectionString;
             string strConnectionString = "DATA SOURCE = 190.161.202.171:1521/DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
 
             //oradb = string.Format(oradb, user, password);
+           
             OracleConnection conn = new OracleConnection();
+            conn.Close();
             conn.ConnectionString = strConnectionString;
             return conn;
         }

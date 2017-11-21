@@ -122,7 +122,7 @@ namespace web
                         {
                             Session["NombreEmpresa"] =  BLL.loginController.devuelveNombreEmpresa(pw);
                         }
-                        BLL.MedicoDTO.envioCorreo("cfhidalgo.rain@gmail.com", "Cesar", "Hidalgo");
+                        //BLL.MedicoDTO.envioCorreo("cfhidalgo.rain@gmail.com", "Cesar", "Hidalgo");
                         FormsAuthentication.RedirectFromLoginPage(user.Value, false);
                     }
                   

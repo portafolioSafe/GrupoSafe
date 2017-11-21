@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
-//using System.Net.Http.Formatting;
+using System.Net.Http.Formatting;
 using System.Diagnostics;
 using System.Net;
 using System.Web.Script.Serialization;
@@ -87,17 +87,17 @@ namespace web
                     {
                          // Obtener el resultado como objeto dynamic 
 
-                        //var result = response.Content.ReadAsAsync<BLL.MedicoDTO>().Result;
+                        var result = response.Content.ReadAsAsync<BLL.MedicoDTO>().Result;
 
-  
+
                         //error.Text = "";
                         //nombre.Text = "Nombre: ";
                         //titulo.Text = "Título/Habilitante Legal: ";
                         //institucion.Text = "Institución Habilitante: ";
                         //especialidad.Text = "Especialidad: ";
 
-                        //MessageBox.Show("Rut asociado, nombre: "+result.Name+"", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                       
+                        //MessageBox.Show("Rut asociado, nombre: " + result.Name + "", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                         //txtNombre.Enabled = true;
                         //txtNombre.Text = result.Name;
 
