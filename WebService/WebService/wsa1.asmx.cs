@@ -30,8 +30,7 @@ namespace WebService
             string meme = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
             OracleConnection conn = new OracleConnection(meme);
 
-            try
-            {
+            try {
 
                 conn.Open();
 
@@ -72,16 +71,10 @@ namespace WebService
                 }
 
 
-            }
-            catch (Exception)
-            {
+            }catch(Exception ){
                 us = "server";
-
-                
             }
-            conn.Close();
             return us;
-
         }
 
         [WebMethod]

@@ -14,14 +14,6 @@ namespace BLL
     public class MedicoDTO
     {
 
-        public string name { get; set; }
-        public string degree { get; set; }
-        public string univ { get; set; }
-        public string spec { get; set; }
-    
-
-    
-
       private string rut_medico;
 
         public string Rut_medico
