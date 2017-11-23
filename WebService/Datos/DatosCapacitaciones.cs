@@ -279,10 +279,54 @@ namespace Datos
                 }
 
             }
-
-
         }
+        //fin Metodo
+        public static string AsistirCapcitacion(int ID_CAPACITACION,string USUARIO_RUT)
+        {
 
+
+
+            string mensaje = "";
+            DatosConexion c = new DatosConexion();
+            using (OracleConnection conn = c.Connect())
+            {
+
+                OracleCommand cmd = new OracleCommand("PKG_DETALLE_CAP.INSERTAR_DETALLE_CAP", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                try
+                {
+                    conn.Open();
+
+                   
+
+
+                    cmd.Parameters.Add("ID_CAPACITACION", "number").Value = ID_CAPACITACION;
+                    cmd.Parameters.Add("USUARIO_RUT", "varchar2").Value = USUARIO_RUT;
+                    cmd.Parameters.Add("NOTITA", "number").Value = 0;
+                    cmd.Parameters.Add("ASISTE", "number").Value = 0;
+                   
+
+
+                    //falta estado?
+
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    mensaje = "true";
+
+                    return mensaje;
+                }
+                catch (Exception)
+                {
+                    mensaje = "false";
+                    return mensaje;
+                }
+
+            }
+        }
+        //fin Metodo
 
     }
 }
