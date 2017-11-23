@@ -61,8 +61,13 @@ namespace Datos
 
                 try
                 {
-                    conn.Open();
+
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
                     cmd.ExecuteNonQuery();
+                    
                     return true;
 
                 }

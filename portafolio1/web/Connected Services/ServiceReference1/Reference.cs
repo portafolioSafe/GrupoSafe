@@ -73,6 +73,13 @@ namespace web.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidarMedico", ReplyAction="*")]
         System.Threading.Tasks.Task<web.ServiceReference1.ValidarMedicoResponse> ValidarMedicoAsync(web.ServiceReference1.ValidarMedicoRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento trabajador del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/devuelveEmpresa", ReplyAction="*")]
+        web.ServiceReference1.devuelveEmpresaResponse devuelveEmpresa(web.ServiceReference1.devuelveEmpresaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/devuelveEmpresa", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.devuelveEmpresaResponse> devuelveEmpresaAsync(web.ServiceReference1.devuelveEmpresaRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Validar", ReplyAction="*")]
         web.ServiceReference1.ValidarResponse Validar(web.ServiceReference1.ValidarRequest request);
@@ -149,6 +156,13 @@ namespace web.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCapacitacionesxempresa", ReplyAction="*")]
         System.Threading.Tasks.Task<web.ServiceReference1.ListarCapacitacionesxempresaResponse> ListarCapacitacionesxempresaAsync(web.ServiceReference1.ListarCapacitacionesxempresaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/M_guardarMedico", ReplyAction="*")]
+        web.ServiceReference1.M_guardarMedicoResponse M_guardarMedico(web.ServiceReference1.M_guardarMedicoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/M_guardarMedico", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.M_guardarMedicoResponse> M_guardarMedicoAsync(web.ServiceReference1.M_guardarMedicoRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento cat del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_guardarCategoria", ReplyAction="*")]
@@ -476,6 +490,74 @@ namespace web.ServiceReference1 {
         
         public ValidarMedicoResponseBody(string ValidarMedicoResult) {
             this.ValidarMedicoResult = ValidarMedicoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class devuelveEmpresaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="devuelveEmpresa", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.devuelveEmpresaRequestBody Body;
+        
+        public devuelveEmpresaRequest() {
+        }
+        
+        public devuelveEmpresaRequest(web.ServiceReference1.devuelveEmpresaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class devuelveEmpresaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string trabajador;
+        
+        public devuelveEmpresaRequestBody() {
+        }
+        
+        public devuelveEmpresaRequestBody(string trabajador) {
+            this.trabajador = trabajador;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class devuelveEmpresaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="devuelveEmpresaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.devuelveEmpresaResponseBody Body;
+        
+        public devuelveEmpresaResponse() {
+        }
+        
+        public devuelveEmpresaResponse(web.ServiceReference1.devuelveEmpresaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class devuelveEmpresaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string devuelveEmpresaResult;
+        
+        public devuelveEmpresaResponseBody() {
+        }
+        
+        public devuelveEmpresaResponseBody(string devuelveEmpresaResult) {
+            this.devuelveEmpresaResult = devuelveEmpresaResult;
         }
     }
     
@@ -1260,6 +1342,94 @@ namespace web.ServiceReference1 {
         
         public ListarCapacitacionesxempresaResponseBody(web.ServiceReference1.ArrayOfCapacitacion ListarCapacitacionesxempresaResult) {
             this.ListarCapacitacionesxempresaResult = ListarCapacitacionesxempresaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class M_guardarMedicoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="M_guardarMedico", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.M_guardarMedicoRequestBody Body;
+        
+        public M_guardarMedicoRequest() {
+        }
+        
+        public M_guardarMedicoRequest(web.ServiceReference1.M_guardarMedicoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class M_guardarMedicoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string rut;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string nombre;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string apellido;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string especialidad;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string correo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string pass;
+        
+        public M_guardarMedicoRequestBody() {
+        }
+        
+        public M_guardarMedicoRequestBody(string rut, string nombre, string apellido, string especialidad, string correo, string pass) {
+            this.rut = rut;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.especialidad = especialidad;
+            this.correo = correo;
+            this.pass = pass;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class M_guardarMedicoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="M_guardarMedicoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.M_guardarMedicoResponseBody Body;
+        
+        public M_guardarMedicoResponse() {
+        }
+        
+        public M_guardarMedicoResponse(web.ServiceReference1.M_guardarMedicoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class M_guardarMedicoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool M_guardarMedicoResult;
+        
+        public M_guardarMedicoResponseBody() {
+        }
+        
+        public M_guardarMedicoResponseBody(bool M_guardarMedicoResult) {
+            this.M_guardarMedicoResult = M_guardarMedicoResult;
         }
     }
     
@@ -2492,6 +2662,31 @@ namespace web.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.devuelveEmpresaResponse web.ServiceReference1.wsa1Soap.devuelveEmpresa(web.ServiceReference1.devuelveEmpresaRequest request) {
+            return base.Channel.devuelveEmpresa(request);
+        }
+        
+        public string devuelveEmpresa(string trabajador) {
+            web.ServiceReference1.devuelveEmpresaRequest inValue = new web.ServiceReference1.devuelveEmpresaRequest();
+            inValue.Body = new web.ServiceReference1.devuelveEmpresaRequestBody();
+            inValue.Body.trabajador = trabajador;
+            web.ServiceReference1.devuelveEmpresaResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).devuelveEmpresa(inValue);
+            return retVal.Body.devuelveEmpresaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.devuelveEmpresaResponse> web.ServiceReference1.wsa1Soap.devuelveEmpresaAsync(web.ServiceReference1.devuelveEmpresaRequest request) {
+            return base.Channel.devuelveEmpresaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.devuelveEmpresaResponse> devuelveEmpresaAsync(string trabajador) {
+            web.ServiceReference1.devuelveEmpresaRequest inValue = new web.ServiceReference1.devuelveEmpresaRequest();
+            inValue.Body = new web.ServiceReference1.devuelveEmpresaRequestBody();
+            inValue.Body.trabajador = trabajador;
+            return ((web.ServiceReference1.wsa1Soap)(this)).devuelveEmpresaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         web.ServiceReference1.ValidarResponse web.ServiceReference1.wsa1Soap.Validar(web.ServiceReference1.ValidarRequest request) {
             return base.Channel.Validar(request);
         }
@@ -2788,6 +2983,41 @@ namespace web.ServiceReference1 {
             inValue.Body = new web.ServiceReference1.ListarCapacitacionesxempresaRequestBody();
             inValue.Body.empresaNombre = empresaNombre;
             return ((web.ServiceReference1.wsa1Soap)(this)).ListarCapacitacionesxempresaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.M_guardarMedicoResponse web.ServiceReference1.wsa1Soap.M_guardarMedico(web.ServiceReference1.M_guardarMedicoRequest request) {
+            return base.Channel.M_guardarMedico(request);
+        }
+        
+        public bool M_guardarMedico(string rut, string nombre, string apellido, string especialidad, string correo, string pass) {
+            web.ServiceReference1.M_guardarMedicoRequest inValue = new web.ServiceReference1.M_guardarMedicoRequest();
+            inValue.Body = new web.ServiceReference1.M_guardarMedicoRequestBody();
+            inValue.Body.rut = rut;
+            inValue.Body.nombre = nombre;
+            inValue.Body.apellido = apellido;
+            inValue.Body.especialidad = especialidad;
+            inValue.Body.correo = correo;
+            inValue.Body.pass = pass;
+            web.ServiceReference1.M_guardarMedicoResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).M_guardarMedico(inValue);
+            return retVal.Body.M_guardarMedicoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.M_guardarMedicoResponse> web.ServiceReference1.wsa1Soap.M_guardarMedicoAsync(web.ServiceReference1.M_guardarMedicoRequest request) {
+            return base.Channel.M_guardarMedicoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.M_guardarMedicoResponse> M_guardarMedicoAsync(string rut, string nombre, string apellido, string especialidad, string correo, string pass) {
+            web.ServiceReference1.M_guardarMedicoRequest inValue = new web.ServiceReference1.M_guardarMedicoRequest();
+            inValue.Body = new web.ServiceReference1.M_guardarMedicoRequestBody();
+            inValue.Body.rut = rut;
+            inValue.Body.nombre = nombre;
+            inValue.Body.apellido = apellido;
+            inValue.Body.especialidad = especialidad;
+            inValue.Body.correo = correo;
+            inValue.Body.pass = pass;
+            return ((web.ServiceReference1.wsa1Soap)(this)).M_guardarMedicoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
