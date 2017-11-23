@@ -1,5 +1,4 @@
 ﻿using ClassLibrary1;
-using Datos;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
@@ -28,50 +27,37 @@ namespace WebService
         {
             string us = "";
 
-            //string meme = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
-            //OracleConnection conn = new OracleConnection(meme);
-            Datos.DatosConexion c = new Datos.DatosConexion();
-            OracleConnection conn = new OracleConnection();
-            using ( conn = c.Connect())
-            {
+            string meme = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+            OracleConnection conn = new OracleConnection(meme);
+
+            try {
+
+                conn.Open();
+
+                OracleParameter param = new OracleParameter();
+                param.OracleDbType = OracleDbType.Decimal;
+
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.Parameters.Add(param);
+                // estado para empresa y usuario
+                cmd.CommandText = "SELECT  RUT_USUARIO , NOMBRE, ESTADO FROM USUARIO WHERE RUT_USUARIO = '" + rut + "' AND CONTRASEÑA ='" + pass + "'";
+                cmd.CommandType = CommandType.Text;
+
                 try
                 {
+                    cmd.ExecuteNonQuery();
+                    OracleDataReader dr = cmd.ExecuteReader();
+                    dr.Read();
 
-                    conn.Open();
-
-                    OracleParameter param = new OracleParameter();
-                    param.OracleDbType = OracleDbType.Decimal;
-
-                    OracleCommand cmd = new OracleCommand();
-                    cmd.Connection = conn;
-                    cmd.Parameters.Add(param);
-                    // estado para empresa y usuario
-                    cmd.CommandText = "SELECT  RUT_USUARIO , NOMBRE, ESTADO FROM USUARIO WHERE RUT_USUARIO = '" + rut + "' AND CONTRASEÑA ='" + pass + "'";
-                    cmd.CommandType = CommandType.Text;
-
-                    try
+                    if (dr.GetString(2) == "inactivo")
                     {
-                        cmd.ExecuteNonQuery();
-                        OracleDataReader dr = cmd.ExecuteReader();
-                        dr.Read();
-
-                        if (dr.GetString(2) == "inactivo")
-                        {
-                            us = "malo";
-
-                        }
-                        else
-                        {
-                            us = dr.GetString(1);
-
-                        }
-
+                        us = "malo";
 
                     }
-                    catch (Exception)
+                    else
                     {
-
-                        us = "nulo";
+                        us = dr.GetString(1);
 
                     }
 
@@ -79,19 +65,17 @@ namespace WebService
                 }
                 catch (Exception)
                 {
-                    us = "server";
+
+                    us = "nulo";
 
                 }
 
-                conn.Dispose();
-                conn.Close();
-                return us;
 
-
+            }catch(Exception ){
+                us = "server";
             }
-
-                
-          
+            conn.Close();
+            return us;
         }
 
         [WebMethod]
@@ -265,8 +249,8 @@ namespace WebService
             return us;
         }
 
-       // [WebMethod]
-       public string Validar(string rut, string pass, string tipo)
+        [WebMethod]
+        public string Validar(string rut, string pass, string tipo)
         {
             string us = "";
             string rut_login = "";
@@ -344,91 +328,102 @@ namespace WebService
         [WebMethod]
         public string DevuelveTipo(string rut, string tipo)
         {
+            string str = "DATA SOURCE=190.161.202.171:1521/DBORACLE;USER ID=GRUPOSAFE; Password=portafolio";
 
-            DatosConexion c = new DatosConexion();
-            OracleConnection conn = new OracleConnection();
-            using (conn = c.Connect())
+            OracleConnection conn = new OracleConnection(str);
+            string us = "";
+            if (tipo =="Medico")
             {
-                string us = "";
-                if (tipo == "Medico")
-                {
-                    us = "Médico";
-                }
-                if (tipo == "Usuario")
-                {
-
-
-
-
-                    try
-                    {
-                      
-                        conn.Open();
-
-                        //se escoge el pakete y despues el procedimiento 
-                        OracleCommand oracmd = new OracleCommand();
-
-                        oracmd.CommandText = "PROCEDIMIENTO_USUARIO.SELECT_TIPO";
-                        oracmd.CommandType = CommandType.StoredProcedure;
-                        oracmd.Connection = conn;
-
-                        //Se colocan las variables del procedimiento el tipo y despues la variable con el dato
-                        oracmd.Parameters.Add("RUT", "varchar2").Value = rut;
-                        oracmd.Parameters.Add("listarsalida", OracleDbType.RefCursor, ParameterDirection.Output);
-                        oracmd.ExecuteNonQuery();
-                        OracleDataReader reader;
-                        try
-                        {
-                            reader = oracmd.ExecuteReader();
-
-                            while (reader.Read())
-                            {
-                                if (reader.GetString(0) == "Administrador")
-                                {
-                                    us = "nope";
-                                    //conn.Close();
-                                }
-                                else
-                                {
-                                    us = reader.GetString(0);
-                                    //conn.Close();
-                                }
-                            }
-                        }
-
-                        catch (Exception)
-                        {
-                            us = "tipo_nulo";
-
-                        }
-
-
-
-                    }
-                    catch (Exception)
-                    {
-
-                        us = "server";
-
-                    }
-
-                }
-                else if (tipo == "Empresa")
-                {
-                    us = "Cliente";
-
-                }
-            
-                conn.Close();
-
-                return us;
-
-
+                us = "Médico";
             }
 
 
+            if (tipo == "Usuario")
+            {
+                //string meme = "DATA SOURCE = 190.163.62.242:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+                // OracleConnection conn = new OracleConnection(meme);
+                // conn.Open();
+
+                // OracleParameter param = new OracleParameter();
+                // param.OracleDbType = OracleDbType.Decimal;
+
+                // OracleCommand cmd = new OracleCommand();
+                // cmd.Connection = conn;
+                // cmd.Parameters.Add(param);
+                // cmd.CommandText = "SELECT RUT_USUARIO, TIPO_USR_ID_TIPO FROM USUARIO WHERE RUT_USUARIO = '" + rut + "'";
+                // cmd.CommandType = CommandType.Text;
+                // cmd.ExecuteNonQuery();
+                // OracleDataReader dr = cmd.ExecuteReader();
+                // dr.Read();
+                 
+
+                // try
+                // {
+                //     us = dr.GetString(1);
+                // }
+
+          
+             
+            try
+            {
+                conn.Open();
+
+                //se escoge el pakete y despues el procedimiento 
+                OracleCommand oracmd = new OracleCommand();
+
+                oracmd.CommandText = "PROCEDIMIENTO_USUARIO.SELECT_TIPO";
+                oracmd.CommandType = CommandType.StoredProcedure;
+                oracmd.Connection = conn;
+
+                //Se colocan las variables del procedimiento el tipo y despues la variable con el dato
+                oracmd.Parameters.Add("RUT", "varchar2").Value = rut;
+                oracmd.Parameters.Add("listarsalida", OracleDbType.RefCursor, ParameterDirection.Output);
+                oracmd.ExecuteNonQuery();
+                OracleDataReader reader;
+                try
+                {
+                    reader = oracmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        if (reader.GetString(0) == "Administrador")
+                        {
+                            us = "nope";
+                            //conn.Close();
+                        }
+                        else
+                        {
+                            us = reader.GetString(0);
+                            //conn.Close();
+                        }
+                    }
+                }
+
+                catch (Exception)
+                {
+                    us = "tipo_nulo";
+                   
+                }
+                
 
 
+            }
+            catch (Exception)
+            {
+                
+                us = "server";
+              
+            }
+
+            }
+            else if(tipo =="Empresa")
+            {
+                us = "Cliente";
+                
+            }
+            conn.Close(); 
+            return us;
+            
 
         }
 
@@ -473,41 +468,28 @@ namespace WebService
          [WebMethod]
           public List<cap_tipo> GetListarTipoCap()
           {
-            Datos.DatosConexion c = new Datos.DatosConexion();
-            OracleConnection conn = new OracleConnection();
-            using (conn = c.Connect())
-            {
-                OracleCommand oracmd = new OracleCommand();
-                oracmd.Parameters.Add("listarCAP", OracleDbType.RefCursor, ParameterDirection.Output);
-                oracmd.CommandText = "PROCEDIMIENTO_TCAP.LISTAR_TIPO_CAP";
-                oracmd.CommandType = CommandType.StoredProcedure;
-                List<cap_tipo> milista = new List<cap_tipo>();
-                
-                    conn.Open();
-                    oracmd.Connection = conn;
-                    OracleDataAdapter da = new OracleDataAdapter(oracmd);
-                    DataSet ds = new DataSet();
-                    
-                    da.Fill(ds);
-                    foreach (DataRow row in ds.Tables[0].Rows)
-                    {
-                        cap_tipo nueva = new cap_tipo();
-                        nueva.Id = Int32.Parse(row[0].ToString());
-                        nueva.Nombre = row[1].ToString();
-                        milista.Add(nueva);
-                        //milista.Add(string.Format("{0}" + " " + "{1}", row["RUT_EMPRESA"], row["NOMBRE"]));
-                    }
-
-               
-                conn.Close();
-                return milista;
-            }
-               
-              
-              
-              
-             
-              
+              string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+              OracleConnection oraconn = new OracleConnection(strConnectionString);
+              oraconn.Open();
+              OracleCommand oracmd = new OracleCommand();
+              oracmd.Parameters.Add("listarCAP", OracleDbType.RefCursor, ParameterDirection.Output);
+              oracmd.CommandText = "PROCEDIMIENTO_TCAP.LISTAR_TIPO_CAP";
+              oracmd.CommandType = CommandType.StoredProcedure;
+              oracmd.Connection = oraconn;
+              OracleDataAdapter da = new OracleDataAdapter(oracmd);
+              DataSet ds = new DataSet();
+              List<cap_tipo> milista = new List<cap_tipo>();
+              da.Fill(ds);
+              foreach (DataRow row in ds.Tables[0].Rows)
+              {
+                  cap_tipo nueva = new cap_tipo();
+                  nueva.Id = Int32.Parse(row[0].ToString());
+                  nueva.Nombre = row[1].ToString();
+                  milista.Add(nueva);
+                  //milista.Add(string.Format("{0}" + " " + "{1}", row["RUT_EMPRESA"], row["NOMBRE"]));
+              }
+              oraconn.Close();
+              return milista;
              
           }
 
@@ -516,36 +498,30 @@ namespace WebService
           {
 
 
-            Datos.DatosConexion c = new Datos.DatosConexion();
-            OracleConnection conn = new OracleConnection();
-            using (conn = c.Connect())
-            {
-                //string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
-                //OracleConnection oraconn = new OracleConnection(strConnectionString);
-                conn.Open();
-                OracleCommand oracmd = new OracleCommand();
-                oracmd.Parameters.Add("LISTA", OracleDbType.RefCursor, ParameterDirection.Output);
-                oracmd.CommandText = "CARGO_TIPO_US.LISTAR_AREA";
-                oracmd.CommandType = CommandType.StoredProcedure;
-                oracmd.Connection = conn;
-                OracleDataAdapter da = new OracleDataAdapter(oracmd);
-                DataSet ds = new DataSet();
-                List<area> milista = new List<area>();
-                da.Fill(ds);
-                foreach (DataRow row in ds.Tables[0].Rows)
-                {
-                    area nueva = new area();
-                    nueva.Id = Int32.Parse(row[0].ToString());
-                    nueva.Nombre_area = row[1].ToString();
-                    milista.Add(nueva);
-                    //milista.Add(string.Format("{0}" + " " + "{1}", row["RUT_EMPRESA"], row["NOMBRE"]));
-                }
-                conn.Close();
-                return milista;
 
-            }
 
-              
+              string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+              OracleConnection oraconn = new OracleConnection(strConnectionString);
+              oraconn.Open();
+              OracleCommand oracmd = new OracleCommand();
+              oracmd.Parameters.Add("LISTA", OracleDbType.RefCursor, ParameterDirection.Output);
+              oracmd.CommandText = "CARGO_TIPO_US.LISTAR_AREA";
+              oracmd.CommandType = CommandType.StoredProcedure;
+              oracmd.Connection = oraconn;
+              OracleDataAdapter da = new OracleDataAdapter(oracmd);
+              DataSet ds = new DataSet();
+              List<area> milista = new List<area>();
+              da.Fill(ds);
+              foreach (DataRow row in ds.Tables[0].Rows)
+              {
+                  area nueva = new area();
+                  nueva.Id = Int32.Parse(row[0].ToString());
+                  nueva.Nombre_area = row[1].ToString();
+                  milista.Add(nueva);
+                  //milista.Add(string.Format("{0}" + " " + "{1}", row["RUT_EMPRESA"], row["NOMBRE"]));
+              }
+              oraconn.Close();
+              return milista;
 
           }
     
