@@ -73,6 +73,20 @@ namespace web.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ValidarMedico", ReplyAction="*")]
         System.Threading.Tasks.Task<web.ServiceReference1.ValidarMedicoResponse> ValidarMedicoAsync(web.ServiceReference1.ValidarMedicoRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento trabajador del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/devuelveEmpresa", ReplyAction="*")]
+        web.ServiceReference1.devuelveEmpresaResponse devuelveEmpresa(web.ServiceReference1.devuelveEmpresaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/devuelveEmpresa", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.devuelveEmpresaResponse> devuelveEmpresaAsync(web.ServiceReference1.devuelveEmpresaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Validar", ReplyAction="*")]
+        web.ServiceReference1.ValidarResponse Validar(web.ServiceReference1.ValidarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Validar", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.ValidarResponse> ValidarAsync(web.ServiceReference1.ValidarRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevuelveTipo", ReplyAction="*")]
         web.ServiceReference1.DevuelveTipoResponse DevuelveTipo(web.ServiceReference1.DevuelveTipoRequest request);
@@ -143,7 +157,6 @@ namespace web.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCapacitacionesxempresa", ReplyAction="*")]
         System.Threading.Tasks.Task<web.ServiceReference1.ListarCapacitacionesxempresaResponse> ListarCapacitacionesxempresaAsync(web.ServiceReference1.ListarCapacitacionesxempresaRequest request);
         
-<<<<<<< HEAD
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento USUARIO_RUT del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AsistirCapcitacion", ReplyAction="*")]
         web.ServiceReference1.AsistirCapcitacionResponse AsistirCapcitacion(web.ServiceReference1.AsistirCapcitacionRequest request);
@@ -158,8 +171,6 @@ namespace web.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/M_guardarMedico", ReplyAction="*")]
         System.Threading.Tasks.Task<web.ServiceReference1.M_guardarMedicoResponse> M_guardarMedicoAsync(web.ServiceReference1.M_guardarMedicoRequest request);
         
-=======
->>>>>>> 451452568d0c50f77fb77f457f19eace91b38bd4
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento cat del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_guardarCategoria", ReplyAction="*")]
         web.ServiceReference1.E_guardarCategoriaResponse E_guardarCategoria(web.ServiceReference1.E_guardarCategoriaRequest request);
@@ -493,7 +504,6 @@ namespace web.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-<<<<<<< HEAD
     public partial class devuelveEmpresaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="devuelveEmpresa", Namespace="http://tempuri.org/", Order=0)]
@@ -503,17 +513,6 @@ namespace web.ServiceReference1 {
         }
         
         public devuelveEmpresaRequest(web.ServiceReference1.devuelveEmpresaRequestBody Body) {
-=======
-    public partial class ValidarRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Validar", Namespace="http://tempuri.org/", Order=0)]
-        public web.ServiceReference1.ValidarRequestBody Body;
-        
-        public ValidarRequest() {
-        }
-        
-        public ValidarRequest(web.ServiceReference1.ValidarRequestBody Body) {
->>>>>>> 451452568d0c50f77fb77f457f19eace91b38bd4
             this.Body = Body;
         }
     }
@@ -522,7 +521,6 @@ namespace web.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-<<<<<<< HEAD
     public partial class devuelveEmpresaRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -533,7 +531,64 @@ namespace web.ServiceReference1 {
         
         public devuelveEmpresaRequestBody(string trabajador) {
             this.trabajador = trabajador;
-=======
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class devuelveEmpresaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="devuelveEmpresaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.devuelveEmpresaResponseBody Body;
+        
+        public devuelveEmpresaResponse() {
+        }
+        
+        public devuelveEmpresaResponse(web.ServiceReference1.devuelveEmpresaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class devuelveEmpresaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string devuelveEmpresaResult;
+        
+        public devuelveEmpresaResponseBody() {
+        }
+        
+        public devuelveEmpresaResponseBody(string devuelveEmpresaResult) {
+            this.devuelveEmpresaResult = devuelveEmpresaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ValidarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Validar", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ValidarRequestBody Body;
+        
+        public ValidarRequest() {
+        }
+        
+        public ValidarRequest(web.ServiceReference1.ValidarRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
     public partial class ValidarRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -552,7 +607,6 @@ namespace web.ServiceReference1 {
             this.rut = rut;
             this.pass = pass;
             this.tipo = tipo;
->>>>>>> 451452568d0c50f77fb77f457f19eace91b38bd4
         }
     }
     
@@ -560,17 +614,6 @@ namespace web.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-<<<<<<< HEAD
-    public partial class devuelveEmpresaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="devuelveEmpresaResponse", Namespace="http://tempuri.org/", Order=0)]
-        public web.ServiceReference1.devuelveEmpresaResponseBody Body;
-        
-        public devuelveEmpresaResponse() {
-        }
-        
-        public devuelveEmpresaResponse(web.ServiceReference1.devuelveEmpresaResponseBody Body) {
-=======
     public partial class ValidarResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidarResponse", Namespace="http://tempuri.org/", Order=0)]
@@ -580,7 +623,6 @@ namespace web.ServiceReference1 {
         }
         
         public ValidarResponse(web.ServiceReference1.ValidarResponseBody Body) {
->>>>>>> 451452568d0c50f77fb77f457f19eace91b38bd4
             this.Body = Body;
         }
     }
@@ -589,18 +631,6 @@ namespace web.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-<<<<<<< HEAD
-    public partial class devuelveEmpresaResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string devuelveEmpresaResult;
-        
-        public devuelveEmpresaResponseBody() {
-        }
-        
-        public devuelveEmpresaResponseBody(string devuelveEmpresaResult) {
-            this.devuelveEmpresaResult = devuelveEmpresaResult;
-=======
     public partial class ValidarResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -611,7 +641,6 @@ namespace web.ServiceReference1 {
         
         public ValidarResponseBody(string ValidarResult) {
             this.ValidarResult = ValidarResult;
->>>>>>> 451452568d0c50f77fb77f457f19eace91b38bd4
         }
     }
     
@@ -1327,7 +1356,6 @@ namespace web.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-<<<<<<< HEAD
     public partial class AsistirCapcitacionRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="AsistirCapcitacion", Namespace="http://tempuri.org/", Order=0)]
@@ -1488,8 +1516,6 @@ namespace web.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-=======
->>>>>>> 451452568d0c50f77fb77f457f19eace91b38bd4
     public partial class E_guardarCategoriaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="E_guardarCategoria", Namespace="http://tempuri.org/", Order=0)]
@@ -2719,7 +2745,6 @@ namespace web.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< HEAD
         web.ServiceReference1.devuelveEmpresaResponse web.ServiceReference1.wsa1Soap.devuelveEmpresa(web.ServiceReference1.devuelveEmpresaRequest request) {
             return base.Channel.devuelveEmpresa(request);
         }
@@ -2742,7 +2767,9 @@ namespace web.ServiceReference1 {
             inValue.Body = new web.ServiceReference1.devuelveEmpresaRequestBody();
             inValue.Body.trabajador = trabajador;
             return ((web.ServiceReference1.wsa1Soap)(this)).devuelveEmpresaAsync(inValue);
-=======
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         web.ServiceReference1.ValidarResponse web.ServiceReference1.wsa1Soap.Validar(web.ServiceReference1.ValidarRequest request) {
             return base.Channel.Validar(request);
         }
@@ -2769,7 +2796,6 @@ namespace web.ServiceReference1 {
             inValue.Body.pass = pass;
             inValue.Body.tipo = tipo;
             return ((web.ServiceReference1.wsa1Soap)(this)).ValidarAsync(inValue);
->>>>>>> 451452568d0c50f77fb77f457f19eace91b38bd4
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3043,7 +3069,6 @@ namespace web.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-<<<<<<< HEAD
         web.ServiceReference1.AsistirCapcitacionResponse web.ServiceReference1.wsa1Soap.AsistirCapcitacion(web.ServiceReference1.AsistirCapcitacionRequest request) {
             return base.Channel.AsistirCapcitacion(request);
         }
@@ -3106,8 +3131,6 @@ namespace web.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-=======
->>>>>>> 451452568d0c50f77fb77f457f19eace91b38bd4
         web.ServiceReference1.E_guardarCategoriaResponse web.ServiceReference1.wsa1Soap.E_guardarCategoria(web.ServiceReference1.E_guardarCategoriaRequest request) {
             return base.Channel.E_guardarCategoria(request);
         }

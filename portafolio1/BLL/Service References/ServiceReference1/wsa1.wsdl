@@ -61,6 +61,22 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Validar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rut" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="DevuelveTipo">
         <s:complexType>
           <s:sequence>
@@ -602,6 +618,12 @@
   <wsdl:message name="devuelveEmpresaSoapOut">
     <wsdl:part name="parameters" element="tns:devuelveEmpresaResponse" />
   </wsdl:message>
+  <wsdl:message name="ValidarSoapIn">
+    <wsdl:part name="parameters" element="tns:Validar" />
+  </wsdl:message>
+  <wsdl:message name="ValidarSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarResponse" />
+  </wsdl:message>
   <wsdl:message name="DevuelveTipoSoapIn">
     <wsdl:part name="parameters" element="tns:DevuelveTipo" />
   </wsdl:message>
@@ -787,6 +809,10 @@
       <wsdl:input message="tns:devuelveEmpresaSoapIn" />
       <wsdl:output message="tns:devuelveEmpresaSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="Validar">
+      <wsdl:input message="tns:ValidarSoapIn" />
+      <wsdl:output message="tns:ValidarSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="DevuelveTipo">
       <wsdl:input message="tns:DevuelveTipoSoapIn" />
       <wsdl:output message="tns:DevuelveTipoSoapOut" />
@@ -931,6 +957,15 @@
     </wsdl:operation>
     <wsdl:operation name="devuelveEmpresa">
       <soap:operation soapAction="http://tempuri.org/devuelveEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Validar">
+      <soap:operation soapAction="http://tempuri.org/Validar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1222,6 +1257,15 @@
     </wsdl:operation>
     <wsdl:operation name="devuelveEmpresa">
       <soap12:operation soapAction="http://tempuri.org/devuelveEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Validar">
+      <soap12:operation soapAction="http://tempuri.org/Validar" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

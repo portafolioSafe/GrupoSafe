@@ -69,6 +69,8 @@ namespace web
             DataTable dt = new DataTable();
             string nombreEm = "";
             string fecha = "";
+            string obsTecnico = "";
+            string obsingeniero = "";
             dt.Columns.AddRange(new DataColumn[2] { new DataColumn("Item"), new DataColumn("Respuesta") });
 
             foreach (var item in BLL.EvaluacionDTO.ListarTodoIng())
@@ -80,6 +82,8 @@ namespace web
                     string nombreE = BLL.TipoEvaluacionDTO.nombreEvaluaciones(item.Id_tipo);
                     fecha = item.Fecha.ToString().Substring(0,11);
                     nombreEm = nombre;
+                    obsTecnico = item.Obstec;
+                    obsingeniero = item.Obsing;
                     dt.Merge(GetData2(item.Id_tipo, item.Id));
                    
 
@@ -93,7 +97,7 @@ namespace web
 
 
             Document document = new Document();
-            document.SetPageSize(iTextSharp.text.PageSize.A4);
+            document.SetPageSize(iTextSharp.text.PageSize.LETTER);
             PdfWriter writer = PdfWriter.GetInstance(document, Response.OutputStream);
             document.Open();
 
@@ -154,15 +158,56 @@ namespace web
                     table.AddCell(dt.Rows[i][j].ToString());
                 }
             }
-            Response.ContentType = "application/pdf";
+
 
             document.Add(table);
+
+            document.Add(p);
+
+            Paragraph pa2 = new Paragraph();
+            pa2.Alignment = Element.ALIGN_CENTER;
+            pa2.Add(new Chunk("Observaciones del Técnico"));
+            document.Add(pa2);
+
+            Paragraph prfTecnico = new Paragraph();
+            //prfTecnico.Alignment = Element.ALIGN_CENTER;
+            prfTecnico.Alignment = Element.ALIGN_JUSTIFIED;
+            prfTecnico.Add(new Chunk(obsTecnico));
+            document.Add(prfTecnico);
+
+            document.Add(p);
+
+            Paragraph pa3 = new Paragraph();
+            pa3.Alignment = Element.ALIGN_CENTER;
+            pa3.Add(new Chunk("Recomendaciones del Ingeniero"));
+            document.Add(pa3);
+
+            Paragraph prfI = new Paragraph();
+            //prfTecnico.Alignment = Element.ALIGN_CENTER;
+            prfI.Alignment = Element.ALIGN_JUSTIFIED;
+            prfI.Add(new Chunk(obsingeniero));
+            document.Add(prfI);
+
+            document.Add(p);
+
+            document.Add(new Chunk("\n"));
+            document.Add(new Chunk("\n"));
+            document.Add(new Chunk("\n"));
+
+            iTextSharp.text.Image imagen = iTextSharp.text.Image.GetInstance("C:\\GrupoSafe\\portafolio1\\web\\NewFolder1\\firma.png");
+            imagen.ScalePercent(40f);
+            imagen.Alignment = Element.ALIGN_RIGHT;
+            document.Add(imagen);
+
+
+            Response.ContentType = "application/pdf";
+
             Response.Write(document);
             document.Close();
             writer.Close();
 
 
-             Response.AddHeader("content-disposition", "attachment;filename=Invoice_" + nombreEm + ".pdf");
+             Response.AddHeader("content-disposition", "attachment;filename=Evaluacion empresa: " + nombreEm + ".pdf");
             Response.End();
 
         }

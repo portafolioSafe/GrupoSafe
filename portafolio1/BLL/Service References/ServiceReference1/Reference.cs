@@ -936,6 +936,13 @@ namespace BLL.ServiceReference1 {
         System.Threading.Tasks.Task<BLL.ServiceReference1.devuelveEmpresaResponse> devuelveEmpresaAsync(BLL.ServiceReference1.devuelveEmpresaRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Validar", ReplyAction="*")]
+        BLL.ServiceReference1.ValidarResponse Validar(BLL.ServiceReference1.ValidarRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Validar", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ValidarResponse> ValidarAsync(BLL.ServiceReference1.ValidarRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevuelveTipo", ReplyAction="*")]
         BLL.ServiceReference1.DevuelveTipoResponse DevuelveTipo(BLL.ServiceReference1.DevuelveTipoRequest request);
         
@@ -1413,6 +1420,82 @@ namespace BLL.ServiceReference1 {
         
         public devuelveEmpresaResponseBody(string devuelveEmpresaResult) {
             this.devuelveEmpresaResult = devuelveEmpresaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ValidarRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Validar", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ValidarRequestBody Body;
+        
+        public ValidarRequest() {
+        }
+        
+        public ValidarRequest(BLL.ServiceReference1.ValidarRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ValidarRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string rut;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string pass;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string tipo;
+        
+        public ValidarRequestBody() {
+        }
+        
+        public ValidarRequestBody(string rut, string pass, string tipo) {
+            this.rut = rut;
+            this.pass = pass;
+            this.tipo = tipo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ValidarResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidarResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.ValidarResponseBody Body;
+        
+        public ValidarResponse() {
+        }
+        
+        public ValidarResponse(BLL.ServiceReference1.ValidarResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ValidarResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ValidarResult;
+        
+        public ValidarResponseBody() {
+        }
+        
+        public ValidarResponseBody(string ValidarResult) {
+            this.ValidarResult = ValidarResult;
         }
     }
     
@@ -3539,6 +3622,35 @@ namespace BLL.ServiceReference1 {
             inValue.Body = new BLL.ServiceReference1.devuelveEmpresaRequestBody();
             inValue.Body.trabajador = trabajador;
             return ((BLL.ServiceReference1.wsa1Soap)(this)).devuelveEmpresaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.ValidarResponse BLL.ServiceReference1.wsa1Soap.Validar(BLL.ServiceReference1.ValidarRequest request) {
+            return base.Channel.Validar(request);
+        }
+        
+        public string Validar(string rut, string pass, string tipo) {
+            BLL.ServiceReference1.ValidarRequest inValue = new BLL.ServiceReference1.ValidarRequest();
+            inValue.Body = new BLL.ServiceReference1.ValidarRequestBody();
+            inValue.Body.rut = rut;
+            inValue.Body.pass = pass;
+            inValue.Body.tipo = tipo;
+            BLL.ServiceReference1.ValidarResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).Validar(inValue);
+            return retVal.Body.ValidarResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.ValidarResponse> BLL.ServiceReference1.wsa1Soap.ValidarAsync(BLL.ServiceReference1.ValidarRequest request) {
+            return base.Channel.ValidarAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.ValidarResponse> ValidarAsync(string rut, string pass, string tipo) {
+            BLL.ServiceReference1.ValidarRequest inValue = new BLL.ServiceReference1.ValidarRequest();
+            inValue.Body = new BLL.ServiceReference1.ValidarRequestBody();
+            inValue.Body.rut = rut;
+            inValue.Body.pass = pass;
+            inValue.Body.tipo = tipo;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).ValidarAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
