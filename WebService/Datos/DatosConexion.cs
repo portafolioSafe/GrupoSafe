@@ -10,25 +10,16 @@ namespace Datos
     public class DatosConexion
     {
 
-        //private static volatile DatosConexion instance;
-        //private static object syncRoot = new Object();
-        
-
 
         private string password, user;
 
         public DatosConexion()
         { }
         ///
-        /// Permite crear una cadena de conexión tipo Oracle
-        /// </summary>
+/// Permite crear una cadena de conexión tipo Oracle
+ /// </summary>
         ///
-
-       
-    
-
-
-    public OracleConnection Connect()
+        public OracleConnection Connect()
         {
             ////////////////////////////////////////////////////////////////////////////////////
             //Referencia estática al usuario y password ingresados en el login de la aplicación/
@@ -40,11 +31,13 @@ namespace Datos
             {
                 throw new Exception("El usuario y el password son datos requeridos");
             }
-          
-            string strConnectionString = "DATA SOURCE = 190.161.202.171:1521/DBORACLE; USER ID = GRUPOSAFE;Password = portafolio; pooling=false";
+            //ConnectionStrings["ConnectionStringUsers"].ConnectionString;
+            string strConnectionString = "DATA SOURCE = 190.161.202.171:1521/DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
 
+            //oradb = string.Format(oradb, user, password);
+           
             OracleConnection conn = new OracleConnection();
-
+            conn.Close();
             conn.ConnectionString = strConnectionString;
             return conn;
         }

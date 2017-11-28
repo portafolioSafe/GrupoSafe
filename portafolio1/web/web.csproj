@@ -196,12 +196,6 @@
     <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.ValidarUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.devuelveEmpresaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.M_guardarMedicoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Connected Services\ServiceReference1\wsa1.disco" />
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />

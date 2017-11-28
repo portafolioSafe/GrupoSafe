@@ -25,4 +25,3 @@ C:\GrupoSafe\WebService\ClassLibrary1\obj\Debug\ClasesDB.csproj.CoreCompileInput
 C:\GrupoSafe\WebService\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 C:\GrupoSafe\WebService\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\WebService\ClassLibrary1\obj\Debug\ClasesDB.csprojResolveAssemblyReference.cache
-C:\GrupoSafe\WebService\ClassLibrary1\obj\Debug\ClasesDB.csprojResolveAssemblyReference.cache
