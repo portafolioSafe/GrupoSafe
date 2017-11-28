@@ -437,7 +437,7 @@ namespace WebService
 
 //FIN AUTENTICACION
 
-//METODOS LISTAR
+//METODOS LISTAR PARA COMBOBOX
          [WebMethod]
           public List<empresa> GetlistarEmpresaList()
           {
@@ -633,6 +633,15 @@ namespace WebService
             return Datos.DatosCapacitaciones.ListadoCapacitacionXempresa(empresaNombre);
         }
 
+        [WebMethod]
+        public string AsistirCapcitacion(int ID_CAPACITACION,string USUARIO_RUT)
+        {
+            return Datos.DatosCapacitaciones.AsistirCapcitacion( ID_CAPACITACION, USUARIO_RUT);
+
+            
+        }
+
+
 
 
 
@@ -717,9 +726,9 @@ namespace WebService
         }
 
         [WebMethod]
-        public bool E_modificarEvaluacion(int id, string p)
+        public bool E_modificarEvaluacion(int id, string p, string estado)
         {
-            return Datos.DatosEvaluaciones.ModificacionIngeniero(id,p);
+            return Datos.DatosEvaluaciones.ModificacionIngeniero(id,p,estado);
         }
 
         [WebMethod]

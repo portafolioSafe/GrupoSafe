@@ -46,7 +46,7 @@ namespace Datos
                 
         }
 
-        public static bool ModificacionIngeniero(int idE, string obs)
+        public static bool ModificacionIngeniero(int idE, string obs, string estado)
         {
             DatosConexion c = new DatosConexion();
             using (OracleConnection conn = c.Connect())
@@ -57,7 +57,7 @@ namespace Datos
 
                 cmd.Parameters.Add("p_id", "number").Value = idE;
                 cmd.Parameters.Add("p_recIng", "varchar2").Value = obs;
-                cmd.Parameters.Add("p_estado", "number").Value = "Aprobado";
+                cmd.Parameters.Add("p_estado", "number").Value = estado;
 
                 try
                 {

@@ -81,13 +81,6 @@ namespace web.ServiceReference1 {
         System.Threading.Tasks.Task<web.ServiceReference1.devuelveEmpresaResponse> devuelveEmpresaAsync(web.ServiceReference1.devuelveEmpresaRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Validar", ReplyAction="*")]
-        web.ServiceReference1.ValidarResponse Validar(web.ServiceReference1.ValidarRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Validar", ReplyAction="*")]
-        System.Threading.Tasks.Task<web.ServiceReference1.ValidarResponse> ValidarAsync(web.ServiceReference1.ValidarRequest request);
-        
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DevuelveTipo", ReplyAction="*")]
         web.ServiceReference1.DevuelveTipoResponse DevuelveTipo(web.ServiceReference1.DevuelveTipoRequest request);
         
@@ -156,6 +149,13 @@ namespace web.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCapacitacionesxempresa", ReplyAction="*")]
         System.Threading.Tasks.Task<web.ServiceReference1.ListarCapacitacionesxempresaResponse> ListarCapacitacionesxempresaAsync(web.ServiceReference1.ListarCapacitacionesxempresaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento USUARIO_RUT del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AsistirCapcitacion", ReplyAction="*")]
+        web.ServiceReference1.AsistirCapcitacionResponse AsistirCapcitacion(web.ServiceReference1.AsistirCapcitacionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AsistirCapcitacion", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.AsistirCapcitacionResponse> AsistirCapcitacionAsync(web.ServiceReference1.AsistirCapcitacionRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/M_guardarMedico", ReplyAction="*")]
@@ -558,82 +558,6 @@ namespace web.ServiceReference1 {
         
         public devuelveEmpresaResponseBody(string devuelveEmpresaResult) {
             this.devuelveEmpresaResult = devuelveEmpresaResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ValidarRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Validar", Namespace="http://tempuri.org/", Order=0)]
-        public web.ServiceReference1.ValidarRequestBody Body;
-        
-        public ValidarRequest() {
-        }
-        
-        public ValidarRequest(web.ServiceReference1.ValidarRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class ValidarRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string rut;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string pass;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string tipo;
-        
-        public ValidarRequestBody() {
-        }
-        
-        public ValidarRequestBody(string rut, string pass, string tipo) {
-            this.rut = rut;
-            this.pass = pass;
-            this.tipo = tipo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ValidarResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ValidarResponse", Namespace="http://tempuri.org/", Order=0)]
-        public web.ServiceReference1.ValidarResponseBody Body;
-        
-        public ValidarResponse() {
-        }
-        
-        public ValidarResponse(web.ServiceReference1.ValidarResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class ValidarResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string ValidarResult;
-        
-        public ValidarResponseBody() {
-        }
-        
-        public ValidarResponseBody(string ValidarResult) {
-            this.ValidarResult = ValidarResult;
         }
     }
     
@@ -1342,6 +1266,78 @@ namespace web.ServiceReference1 {
         
         public ListarCapacitacionesxempresaResponseBody(web.ServiceReference1.ArrayOfCapacitacion ListarCapacitacionesxempresaResult) {
             this.ListarCapacitacionesxempresaResult = ListarCapacitacionesxempresaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AsistirCapcitacionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AsistirCapcitacion", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.AsistirCapcitacionRequestBody Body;
+        
+        public AsistirCapcitacionRequest() {
+        }
+        
+        public AsistirCapcitacionRequest(web.ServiceReference1.AsistirCapcitacionRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AsistirCapcitacionRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int ID_CAPACITACION;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string USUARIO_RUT;
+        
+        public AsistirCapcitacionRequestBody() {
+        }
+        
+        public AsistirCapcitacionRequestBody(int ID_CAPACITACION, string USUARIO_RUT) {
+            this.ID_CAPACITACION = ID_CAPACITACION;
+            this.USUARIO_RUT = USUARIO_RUT;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AsistirCapcitacionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AsistirCapcitacionResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.AsistirCapcitacionResponseBody Body;
+        
+        public AsistirCapcitacionResponse() {
+        }
+        
+        public AsistirCapcitacionResponse(web.ServiceReference1.AsistirCapcitacionResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AsistirCapcitacionResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string AsistirCapcitacionResult;
+        
+        public AsistirCapcitacionResponseBody() {
+        }
+        
+        public AsistirCapcitacionResponseBody(string AsistirCapcitacionResult) {
+            this.AsistirCapcitacionResult = AsistirCapcitacionResult;
         }
     }
     
@@ -2093,12 +2089,16 @@ namespace web.ServiceReference1 {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
         public string p;
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string estado;
+        
         public E_modificarEvaluacionRequestBody() {
         }
         
-        public E_modificarEvaluacionRequestBody(int id, string p) {
+        public E_modificarEvaluacionRequestBody(int id, string p, string estado) {
             this.id = id;
             this.p = p;
+            this.estado = estado;
         }
     }
     
@@ -2687,35 +2687,6 @@ namespace web.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        web.ServiceReference1.ValidarResponse web.ServiceReference1.wsa1Soap.Validar(web.ServiceReference1.ValidarRequest request) {
-            return base.Channel.Validar(request);
-        }
-        
-        public string Validar(string rut, string pass, string tipo) {
-            web.ServiceReference1.ValidarRequest inValue = new web.ServiceReference1.ValidarRequest();
-            inValue.Body = new web.ServiceReference1.ValidarRequestBody();
-            inValue.Body.rut = rut;
-            inValue.Body.pass = pass;
-            inValue.Body.tipo = tipo;
-            web.ServiceReference1.ValidarResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).Validar(inValue);
-            return retVal.Body.ValidarResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<web.ServiceReference1.ValidarResponse> web.ServiceReference1.wsa1Soap.ValidarAsync(web.ServiceReference1.ValidarRequest request) {
-            return base.Channel.ValidarAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<web.ServiceReference1.ValidarResponse> ValidarAsync(string rut, string pass, string tipo) {
-            web.ServiceReference1.ValidarRequest inValue = new web.ServiceReference1.ValidarRequest();
-            inValue.Body = new web.ServiceReference1.ValidarRequestBody();
-            inValue.Body.rut = rut;
-            inValue.Body.pass = pass;
-            inValue.Body.tipo = tipo;
-            return ((web.ServiceReference1.wsa1Soap)(this)).ValidarAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         web.ServiceReference1.DevuelveTipoResponse web.ServiceReference1.wsa1Soap.DevuelveTipo(web.ServiceReference1.DevuelveTipoRequest request) {
             return base.Channel.DevuelveTipo(request);
         }
@@ -2983,6 +2954,33 @@ namespace web.ServiceReference1 {
             inValue.Body = new web.ServiceReference1.ListarCapacitacionesxempresaRequestBody();
             inValue.Body.empresaNombre = empresaNombre;
             return ((web.ServiceReference1.wsa1Soap)(this)).ListarCapacitacionesxempresaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.AsistirCapcitacionResponse web.ServiceReference1.wsa1Soap.AsistirCapcitacion(web.ServiceReference1.AsistirCapcitacionRequest request) {
+            return base.Channel.AsistirCapcitacion(request);
+        }
+        
+        public string AsistirCapcitacion(int ID_CAPACITACION, string USUARIO_RUT) {
+            web.ServiceReference1.AsistirCapcitacionRequest inValue = new web.ServiceReference1.AsistirCapcitacionRequest();
+            inValue.Body = new web.ServiceReference1.AsistirCapcitacionRequestBody();
+            inValue.Body.ID_CAPACITACION = ID_CAPACITACION;
+            inValue.Body.USUARIO_RUT = USUARIO_RUT;
+            web.ServiceReference1.AsistirCapcitacionResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).AsistirCapcitacion(inValue);
+            return retVal.Body.AsistirCapcitacionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.AsistirCapcitacionResponse> web.ServiceReference1.wsa1Soap.AsistirCapcitacionAsync(web.ServiceReference1.AsistirCapcitacionRequest request) {
+            return base.Channel.AsistirCapcitacionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.AsistirCapcitacionResponse> AsistirCapcitacionAsync(int ID_CAPACITACION, string USUARIO_RUT) {
+            web.ServiceReference1.AsistirCapcitacionRequest inValue = new web.ServiceReference1.AsistirCapcitacionRequest();
+            inValue.Body = new web.ServiceReference1.AsistirCapcitacionRequestBody();
+            inValue.Body.ID_CAPACITACION = ID_CAPACITACION;
+            inValue.Body.USUARIO_RUT = USUARIO_RUT;
+            return ((web.ServiceReference1.wsa1Soap)(this)).AsistirCapcitacionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3264,11 +3262,12 @@ namespace web.ServiceReference1 {
             return base.Channel.E_modificarEvaluacion(request);
         }
         
-        public bool E_modificarEvaluacion(int id, string p) {
+        public bool E_modificarEvaluacion(int id, string p, string estado) {
             web.ServiceReference1.E_modificarEvaluacionRequest inValue = new web.ServiceReference1.E_modificarEvaluacionRequest();
             inValue.Body = new web.ServiceReference1.E_modificarEvaluacionRequestBody();
             inValue.Body.id = id;
             inValue.Body.p = p;
+            inValue.Body.estado = estado;
             web.ServiceReference1.E_modificarEvaluacionResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).E_modificarEvaluacion(inValue);
             return retVal.Body.E_modificarEvaluacionResult;
         }
@@ -3278,11 +3277,12 @@ namespace web.ServiceReference1 {
             return base.Channel.E_modificarEvaluacionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<web.ServiceReference1.E_modificarEvaluacionResponse> E_modificarEvaluacionAsync(int id, string p) {
+        public System.Threading.Tasks.Task<web.ServiceReference1.E_modificarEvaluacionResponse> E_modificarEvaluacionAsync(int id, string p, string estado) {
             web.ServiceReference1.E_modificarEvaluacionRequest inValue = new web.ServiceReference1.E_modificarEvaluacionRequest();
             inValue.Body = new web.ServiceReference1.E_modificarEvaluacionRequestBody();
             inValue.Body.id = id;
             inValue.Body.p = p;
+            inValue.Body.estado = estado;
             return ((web.ServiceReference1.wsa1Soap)(this)).E_modificarEvaluacionAsync(inValue);
         }
         

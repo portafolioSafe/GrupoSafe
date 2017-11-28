@@ -61,22 +61,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="Validar">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="rut" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ValidarResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ValidarResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="DevuelveTipo">
         <s:complexType>
           <s:sequence>
@@ -267,6 +251,21 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="AsistirCapcitacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID_CAPACITACION" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="USUARIO_RUT" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AsistirCapcitacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AsistirCapcitacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="M_guardarMedico">
         <s:complexType>
           <s:sequence>
@@ -453,6 +452,7 @@
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="p" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -602,12 +602,6 @@
   <wsdl:message name="devuelveEmpresaSoapOut">
     <wsdl:part name="parameters" element="tns:devuelveEmpresaResponse" />
   </wsdl:message>
-  <wsdl:message name="ValidarSoapIn">
-    <wsdl:part name="parameters" element="tns:Validar" />
-  </wsdl:message>
-  <wsdl:message name="ValidarSoapOut">
-    <wsdl:part name="parameters" element="tns:ValidarResponse" />
-  </wsdl:message>
   <wsdl:message name="DevuelveTipoSoapIn">
     <wsdl:part name="parameters" element="tns:DevuelveTipo" />
   </wsdl:message>
@@ -667,6 +661,12 @@
   </wsdl:message>
   <wsdl:message name="ListarCapacitacionesxempresaSoapOut">
     <wsdl:part name="parameters" element="tns:ListarCapacitacionesxempresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AsistirCapcitacionSoapIn">
+    <wsdl:part name="parameters" element="tns:AsistirCapcitacion" />
+  </wsdl:message>
+  <wsdl:message name="AsistirCapcitacionSoapOut">
+    <wsdl:part name="parameters" element="tns:AsistirCapcitacionResponse" />
   </wsdl:message>
   <wsdl:message name="M_guardarMedicoSoapIn">
     <wsdl:part name="parameters" element="tns:M_guardarMedico" />
@@ -787,10 +787,6 @@
       <wsdl:input message="tns:devuelveEmpresaSoapIn" />
       <wsdl:output message="tns:devuelveEmpresaSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="Validar">
-      <wsdl:input message="tns:ValidarSoapIn" />
-      <wsdl:output message="tns:ValidarSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="DevuelveTipo">
       <wsdl:input message="tns:DevuelveTipoSoapIn" />
       <wsdl:output message="tns:DevuelveTipoSoapOut" />
@@ -830,6 +826,10 @@
     <wsdl:operation name="ListarCapacitacionesxempresa">
       <wsdl:input message="tns:ListarCapacitacionesxempresaSoapIn" />
       <wsdl:output message="tns:ListarCapacitacionesxempresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AsistirCapcitacion">
+      <wsdl:input message="tns:AsistirCapcitacionSoapIn" />
+      <wsdl:output message="tns:AsistirCapcitacionSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="M_guardarMedico">
       <wsdl:input message="tns:M_guardarMedicoSoapIn" />
@@ -938,15 +938,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Validar">
-      <soap:operation soapAction="http://tempuri.org/Validar" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="DevuelveTipo">
       <soap:operation soapAction="http://tempuri.org/DevuelveTipo" style="document" />
       <wsdl:input>
@@ -1030,6 +1021,15 @@
     </wsdl:operation>
     <wsdl:operation name="ListarCapacitacionesxempresa">
       <soap:operation soapAction="http://tempuri.org/ListarCapacitacionesxempresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsistirCapcitacion">
+      <soap:operation soapAction="http://tempuri.org/AsistirCapcitacion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1229,15 +1229,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Validar">
-      <soap12:operation soapAction="http://tempuri.org/Validar" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="DevuelveTipo">
       <soap12:operation soapAction="http://tempuri.org/DevuelveTipo" style="document" />
       <wsdl:input>
@@ -1321,6 +1312,15 @@
     </wsdl:operation>
     <wsdl:operation name="ListarCapacitacionesxempresa">
       <soap12:operation soapAction="http://tempuri.org/ListarCapacitacionesxempresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsistirCapcitacion">
+      <soap12:operation soapAction="http://tempuri.org/AsistirCapcitacion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

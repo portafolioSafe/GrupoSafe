@@ -109,10 +109,10 @@ namespace BLL
             return ws.E_ListadoIngeniero();
         }
 
-        public static bool ModificarIngeniero(int id, string rec)
+        public static bool ModificarIngeniero(int id, string rec, string estado)
         {
             ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
-            return ws.E_modificarEvaluacion(id,rec);
+            return ws.E_modificarEvaluacion(id,rec, estado);
         }
 
     }

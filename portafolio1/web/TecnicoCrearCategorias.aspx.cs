@@ -25,6 +25,7 @@ namespace web
             mensajeNO.Visible = false;
             mensajeNa.Visible = false;
             mensajeSiM.Visible = false;
+            mensajeEX.Visible = false;
             Button2.Visible = false;
             Button3.Visible = false;
 
@@ -64,26 +65,44 @@ namespace web
          
 
             string categoria = TextBox1.Text;
-
+            
             if (int.Parse(DropDownList2.SelectedItem.Value) !=0 )
             {
                 int id = int.Parse(DropDownList2.SelectedItem.Value);
                 if (categoria != "")
                 {
+                    foreach (var item in BLL.CategoriaDTO.listarCategoria())
+                    {
 
-                    try
-                    {
-                        cat.AgregarCategoria(id, categoria);
-                        GridView1.DataBind();
+                        if (categoria.ToLower() == item.Nombre.ToLower())
+                        {
+                           
+                            mensajeEX.Visible = true;
+                            categoria = "ya existe";
+                            break;
+                        }
                         
-                        mensajeSI.Visible = true;
-                        TextBox1.Text = " ";
+                        
+                       
                     }
-                    catch (Exception)
+                    if (!categoria.Equals("ya existe"))
                     {
-                        mensajeNO.Visible = true;
-                        GridView1.DataBind();
+                        try
+                        {
+                            cat.AgregarCategoria(id, categoria);
+                            GridView1.DataBind();
+                            
+
+                            mensajeSI.Visible = true;
+                            TextBox1.Text = " ";
+                        }
+                        catch (Exception)
+                        {
+                            mensajeNO.Visible = true;
+                            GridView1.DataBind();
+                        }
                     }
+                    
                 }
                 else
                 {

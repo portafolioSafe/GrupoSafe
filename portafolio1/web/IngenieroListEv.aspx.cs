@@ -71,8 +71,11 @@ namespace web
 
                 string nombre = BLL.EmpresaDTO.NombreEpresa(item.Id_empresa);
                 string nombreE = BLL.TipoEvaluacionDTO.nombreEvaluaciones(item.Id_tipo);
+                if (item.Estado.Equals("Enviado"))
+                {
+                    dt.Rows.Add(item.Id, nombre, item.Fecha.ToString().Substring(0, 11), nombreE, item.Estado);
 
-                dt.Rows.Add(item.Id, nombre, item.Fecha.ToString().Substring(0, 11), nombreE, item.Estado);
+                }
 
             }
             return dt;
