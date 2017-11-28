@@ -6,7 +6,7 @@
             margin-left: 30%;
         }
 
-        #mensajeSI, #mensajeNO, #mensajeNa,#mensajeSiM {
+        #mensajeSI, #mensajeNO, #mensajeNa,#mensajeSiM,#mensajeEx {
             display: table;
             margin: 0 auto;
         }
@@ -27,6 +27,11 @@
             <div>
                 <div id="mensajeSI" runat="server" class="alert alert-success" style="width: 90%" visible="false">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡CATEGORIA AGREGADA EXITOSAMENTE!
+
+                </div>
+                
+                <div id="mensajeEX" runat="server" class="alert alert-danger" style="width: 90%" visible="false">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign fade:10S"></span>&nbsp; ¡CATEGORIA YA EXISTE!
 
                 </div>
                 <div id="mensajeSiM" runat="server" class="alert alert-success" style="width: 90%" visible="false">

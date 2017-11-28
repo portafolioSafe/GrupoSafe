@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ClenteListEv.aspx.cs" Inherits="web.Formulario_web113" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="IngenieroListEv2.aspx.cs" Inherits="web.IngenieroListEv2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-        <div class="panel panel-default" style="margin-right: 10%; margin-left: 10%;">
+    
+          <div class="panel panel-default" style="margin-right: 10%; margin-left: 10%;">
         <div class="panel-heading">
             <asp:Label ID="Label3" runat="server" Text="Mis evaluaciones" Font-Bold="True" Font-Size="Larger"></asp:Label>
         </div>
@@ -41,10 +41,9 @@
                     </asp:BoundField>
 
 
-                    <asp:ButtonField ButtonType="Button" ControlStyle-CssClass="btn btn-warning" Text="Descargar Informe " CommandName="Select" HeaderText="Acción">
+                    <asp:ButtonField ButtonType="Button" ControlStyle-CssClass="btn btn-warning" Text="Ver detalle" CommandName="Select" HeaderText="Acción">
                         <HeaderStyle CssClass=" text-center" ForeColor="White" BackColor="#337ab7"></HeaderStyle>
-                        <ControlStyle CssClass="btn btn-warning" ></ControlStyle>
-
+                        <ControlStyle CssClass="btn btn-warning"></ControlStyle>
                     </asp:ButtonField>
 
 

@@ -118,9 +118,6 @@
     <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.listarAreaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.ValidarResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.ArrayOfCapacitacion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -196,6 +193,18 @@
     <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.ValidarUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.devuelveEmpresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.M_guardarMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.AsistirCapcitacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.ValidarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServiceReference1\wsa1.disco" />
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
@@ -209,6 +218,7 @@
     <Content Include="ClenteListC.aspx" />
     <Content Include="ClenteListVi.aspx" />
     <Content Include="ClenteListEv.aspx" />
+    <Content Include="IngenieroListEv2.aspx" />
     <Content Include="SuperVisList.aspx" />
     <Content Include="SuperMedAdd.aspx" />
     <Content Include="loginrespaldo.aspx" />
@@ -233,6 +243,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="SupervisorListln2.aspx" />
     <Content Include="SupervListIn.aspx" />
     <Content Include="SupercapAAdd.aspx" />
     <Content Include="SupercapAEdit.aspx" />
@@ -321,6 +332,13 @@
     <Compile Include="ClenteListEv.aspx.designer.cs">
       <DependentUpon>ClenteListEv.aspx</DependentUpon>
     </Compile>
+    <Compile Include="IngenieroListEv2.aspx.cs">
+      <DependentUpon>IngenieroListEv2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IngenieroListEv2.aspx.designer.cs">
+      <DependentUpon>IngenieroListEv2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SuperVisList.aspx.cs">
       <DependentUpon>SuperVisList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -348,6 +366,13 @@
     </Compile>
     <Compile Include="sample.aspx.designer.cs">
       <DependentUpon>sample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorListln2.aspx.cs">
+      <DependentUpon>SupervisorListln2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorListln2.aspx.designer.cs">
+      <DependentUpon>SupervisorListln2.aspx</DependentUpon>
     </Compile>
     <Compile Include="SupervListIn.aspx.cs">
       <DependentUpon>SupervListIn.aspx</DependentUpon>

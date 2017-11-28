@@ -22,6 +22,7 @@ namespace web
             mensajeSI.Visible = false;
             if (!IsPostBack)
             {
+               
                 foreach (var item in BLL.EvaluacionDTO.ListarTodoIng())
                 {
 
@@ -40,14 +41,16 @@ namespace web
 
                         TextBox1.Text = item.Obstec;
                         TextBox2.Text = item.Obsing;
+                        if (item.Estado.Equals("Aprobado"))
+                        {
+                            Button2.Visible = false;
+                            TextBox2.ReadOnly = true;
+                        }
 
                     }
-
-
-
-
-
+                    
                 }
+                
 
             }
         }
@@ -98,7 +101,7 @@ namespace web
                 rec = "Sin recomendacion";
 
             }
-            if (BLL.EvaluacionDTO.ModificarIngeniero(idEvaluacion, rec))
+            if (BLL.EvaluacionDTO.ModificarIngeniero(idEvaluacion, rec,"Aprobado"))
             {
                 mensajeSI.Visible = true;
             }

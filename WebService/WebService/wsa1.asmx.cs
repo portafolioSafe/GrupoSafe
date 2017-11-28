@@ -702,9 +702,9 @@ namespace WebService
         }
 
         [WebMethod]
-        public bool E_modificarEvaluacion(int id, string p)
+        public bool E_modificarEvaluacion(int id, string p, string estado)
         {
-            return Datos.DatosEvaluaciones.ModificacionIngeniero(id,p);
+            return Datos.DatosEvaluaciones.ModificacionIngeniero(id,p,estado);
         }
 
         [WebMethod]

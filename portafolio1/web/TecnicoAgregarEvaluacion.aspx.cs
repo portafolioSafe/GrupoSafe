@@ -13,6 +13,7 @@ namespace web
     {
         static List<BLL.DetallePreguntaDTO> listado = new List<BLL.DetallePreguntaDTO>();
         static List<BLL.DetallePreguntaDTO> listado2 = new List<BLL.DetallePreguntaDTO>();
+  
         static string rut = "";
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -238,6 +239,8 @@ namespace web
                 foreach (var item2 in BLL.PreguntasDTO.ListarXcategoria(item.Id))
                 {
                     dt.Rows.Add(item2.Id,item2.Pregunta1);
+                    
+
                 }
             }
 
@@ -261,13 +264,16 @@ namespace web
             string obst = TextBox1.Text;
             string obsI = "Sin observaciones pendiente a revisar";
             string estado = "Enviado";
+            DataTable a = GetData(tipo_evaluacion);
+           int contador = a.Rows.Count;
+
             if (TextBox1.Text == "")
             {
                 obst = "Sin observaciones";
             }
-            if (listado.Count != 0)
+            if (listado.Count != 0 && listado.Count == contador)
             {
-
+               
 
                 bool res = BLL.EvaluacionDTO.AgregarEvaluacion(empresa, tipo_evaluacion, rut, fecha, obst, obsI, estado);
                 if (res)

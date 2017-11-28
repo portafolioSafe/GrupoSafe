@@ -1012,6 +1012,13 @@ namespace BLL.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCapacitacionesxempresa", ReplyAction="*")]
         System.Threading.Tasks.Task<BLL.ServiceReference1.ListarCapacitacionesxempresaResponse> ListarCapacitacionesxempresaAsync(BLL.ServiceReference1.ListarCapacitacionesxempresaRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento USUARIO_RUT del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AsistirCapcitacion", ReplyAction="*")]
+        BLL.ServiceReference1.AsistirCapcitacionResponse AsistirCapcitacion(BLL.ServiceReference1.AsistirCapcitacionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AsistirCapcitacion", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.AsistirCapcitacionResponse> AsistirCapcitacionAsync(BLL.ServiceReference1.AsistirCapcitacionRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/M_guardarMedico", ReplyAction="*")]
         BLL.ServiceReference1.M_guardarMedicoResponse M_guardarMedico(BLL.ServiceReference1.M_guardarMedicoRequest request);
@@ -2204,6 +2211,78 @@ namespace BLL.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AsistirCapcitacionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AsistirCapcitacion", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.AsistirCapcitacionRequestBody Body;
+        
+        public AsistirCapcitacionRequest() {
+        }
+        
+        public AsistirCapcitacionRequest(BLL.ServiceReference1.AsistirCapcitacionRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AsistirCapcitacionRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int ID_CAPACITACION;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string USUARIO_RUT;
+        
+        public AsistirCapcitacionRequestBody() {
+        }
+        
+        public AsistirCapcitacionRequestBody(int ID_CAPACITACION, string USUARIO_RUT) {
+            this.ID_CAPACITACION = ID_CAPACITACION;
+            this.USUARIO_RUT = USUARIO_RUT;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AsistirCapcitacionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AsistirCapcitacionResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.AsistirCapcitacionResponseBody Body;
+        
+        public AsistirCapcitacionResponse() {
+        }
+        
+        public AsistirCapcitacionResponse(BLL.ServiceReference1.AsistirCapcitacionResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AsistirCapcitacionResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string AsistirCapcitacionResult;
+        
+        public AsistirCapcitacionResponseBody() {
+        }
+        
+        public AsistirCapcitacionResponseBody(string AsistirCapcitacionResult) {
+            this.AsistirCapcitacionResult = AsistirCapcitacionResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class M_guardarMedicoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="M_guardarMedico", Namespace="http://tempuri.org/", Order=0)]
@@ -2948,12 +3027,16 @@ namespace BLL.ServiceReference1 {
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
         public string p;
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string estado;
+        
         public E_modificarEvaluacionRequestBody() {
         }
         
-        public E_modificarEvaluacionRequestBody(int id, string p) {
+        public E_modificarEvaluacionRequestBody(int id, string p, string estado) {
             this.id = id;
             this.p = p;
+            this.estado = estado;
         }
     }
     
@@ -3841,6 +3924,33 @@ namespace BLL.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.AsistirCapcitacionResponse BLL.ServiceReference1.wsa1Soap.AsistirCapcitacion(BLL.ServiceReference1.AsistirCapcitacionRequest request) {
+            return base.Channel.AsistirCapcitacion(request);
+        }
+        
+        public string AsistirCapcitacion(int ID_CAPACITACION, string USUARIO_RUT) {
+            BLL.ServiceReference1.AsistirCapcitacionRequest inValue = new BLL.ServiceReference1.AsistirCapcitacionRequest();
+            inValue.Body = new BLL.ServiceReference1.AsistirCapcitacionRequestBody();
+            inValue.Body.ID_CAPACITACION = ID_CAPACITACION;
+            inValue.Body.USUARIO_RUT = USUARIO_RUT;
+            BLL.ServiceReference1.AsistirCapcitacionResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).AsistirCapcitacion(inValue);
+            return retVal.Body.AsistirCapcitacionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.AsistirCapcitacionResponse> BLL.ServiceReference1.wsa1Soap.AsistirCapcitacionAsync(BLL.ServiceReference1.AsistirCapcitacionRequest request) {
+            return base.Channel.AsistirCapcitacionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.AsistirCapcitacionResponse> AsistirCapcitacionAsync(int ID_CAPACITACION, string USUARIO_RUT) {
+            BLL.ServiceReference1.AsistirCapcitacionRequest inValue = new BLL.ServiceReference1.AsistirCapcitacionRequest();
+            inValue.Body = new BLL.ServiceReference1.AsistirCapcitacionRequestBody();
+            inValue.Body.ID_CAPACITACION = ID_CAPACITACION;
+            inValue.Body.USUARIO_RUT = USUARIO_RUT;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).AsistirCapcitacionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         BLL.ServiceReference1.M_guardarMedicoResponse BLL.ServiceReference1.wsa1Soap.M_guardarMedico(BLL.ServiceReference1.M_guardarMedicoRequest request) {
             return base.Channel.M_guardarMedico(request);
         }
@@ -4119,11 +4229,12 @@ namespace BLL.ServiceReference1 {
             return base.Channel.E_modificarEvaluacion(request);
         }
         
-        public bool E_modificarEvaluacion(int id, string p) {
+        public bool E_modificarEvaluacion(int id, string p, string estado) {
             BLL.ServiceReference1.E_modificarEvaluacionRequest inValue = new BLL.ServiceReference1.E_modificarEvaluacionRequest();
             inValue.Body = new BLL.ServiceReference1.E_modificarEvaluacionRequestBody();
             inValue.Body.id = id;
             inValue.Body.p = p;
+            inValue.Body.estado = estado;
             BLL.ServiceReference1.E_modificarEvaluacionResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).E_modificarEvaluacion(inValue);
             return retVal.Body.E_modificarEvaluacionResult;
         }
@@ -4133,11 +4244,12 @@ namespace BLL.ServiceReference1 {
             return base.Channel.E_modificarEvaluacionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<BLL.ServiceReference1.E_modificarEvaluacionResponse> E_modificarEvaluacionAsync(int id, string p) {
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.E_modificarEvaluacionResponse> E_modificarEvaluacionAsync(int id, string p, string estado) {
             BLL.ServiceReference1.E_modificarEvaluacionRequest inValue = new BLL.ServiceReference1.E_modificarEvaluacionRequest();
             inValue.Body = new BLL.ServiceReference1.E_modificarEvaluacionRequestBody();
             inValue.Body.id = id;
             inValue.Body.p = p;
+            inValue.Body.estado = estado;
             return ((BLL.ServiceReference1.wsa1Soap)(this)).E_modificarEvaluacionAsync(inValue);
         }
         

@@ -8,10 +8,12 @@ using System.Web.UI.WebControls;
 
 namespace web
 {
-    public partial class Formulario_web118 : System.Web.UI.Page
+    public partial class SupervisorListln2 : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (Session["tipo"].ToString() != "Supervisor")
             {
                 Response.Redirect("Home.aspx");
@@ -24,8 +26,6 @@ namespace web
                 GridView1.DataBind();
 
             }
-
-
 
         }
 
@@ -70,7 +70,7 @@ namespace web
 
                 string nombre = BLL.EmpresaDTO.NombreEpresa(item.Id_empresa);
                 string nombreE = BLL.TipoEvaluacionDTO.nombreEvaluaciones(item.Id_tipo);
-                if (item.Estado.Equals("Aprobado"))
+                if (item.Estado.Equals("Revisado"))
                 {
                     dt.Rows.Add(item.Id, nombre, item.Fecha.ToString().Substring(0, 11), nombreE, item.Estado);
 
@@ -80,6 +80,7 @@ namespace web
             return dt;
 
         }
+
 
 
 

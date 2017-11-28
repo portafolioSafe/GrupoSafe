@@ -82,6 +82,9 @@
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ArrayOfEmpresa.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.AsistirCapcitacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.capacitacion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

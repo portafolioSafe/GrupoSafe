@@ -8,11 +8,11 @@ using System.Web.UI.WebControls;
 
 namespace web
 {
-    public partial class Formulario_web118 : System.Web.UI.Page
+    public partial class IngenieroListEv2 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["tipo"].ToString() != "Supervisor")
+            if (Session["tipo"].ToString() != "Ingeniero")
             {
                 Response.Redirect("Home.aspx");
             }
@@ -24,8 +24,6 @@ namespace web
                 GridView1.DataBind();
 
             }
-
-
 
         }
 
@@ -51,11 +49,12 @@ namespace web
                 Session["Id_evaluacion"] = contact;
                 //Pasa a la pagina de modificacion
                 //  Response.Redirect("SupercapEdit.aspx");
-                Response.Redirect("SuperVisList.aspx");
+                Response.Redirect("IngenieroInfoAdd.aspx");
                 //MessageBox.Show(contact, "asdasd", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
+
 
         public DataTable GetData()
         {
@@ -80,9 +79,5 @@ namespace web
             return dt;
 
         }
-
-
-
-
     }
 }
