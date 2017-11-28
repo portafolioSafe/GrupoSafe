@@ -32,3 +32,5 @@ C:\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.dll
 C:\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.pdb
 C:\GrupoSafe\portafolio1\BLL\bin\Debug\BLL.pdb
 C:\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+
+
