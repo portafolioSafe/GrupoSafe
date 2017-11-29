@@ -294,10 +294,13 @@ namespace Datos
                 OracleCommand cmd = new OracleCommand("PKG_DETALLE_CAP.INSERTAR_DETALLE_CAP", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("ID_CAPACITACION", "number").Value = 4;
-                cmd.Parameters.Add("USUARIO_RUT", "varchar2").Value = "18944691";
                 cmd.Parameters.Add("NOTITA", "number").Value = 3;
                 cmd.Parameters.Add("ASISTE", "number").Value = 3;
+                cmd.Parameters.Add("ID_CAPACITACION", "number").Value = ID_CAPACITACION;
+                cmd.Parameters.Add("USUARIO_RUT", OracleDbType.Varchar2).Value = USUARIO_RUT;
+
+
+
                 try
                 {
                     conn.Open();
@@ -309,10 +312,10 @@ namespace Datos
 
                     return true;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    mensaje = "false";
-                    return false;
+
+                    throw ex;
                 }
 
             }
