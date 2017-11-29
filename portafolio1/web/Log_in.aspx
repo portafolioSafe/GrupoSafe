@@ -51,19 +51,19 @@
                         <div id="errorserver" runat="server" class="alert alert-warning"  style="width:90%" visible="false">   
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ¡SERVIDOR OCUPADO!
 
-                        </div>
+                            (CODIGO LOG00)</div>
                         <div id="error1" runat="server" class="alert alert-danger"  style="width:90%" visible="false">   
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ¡USUARIO INACTIVO!
 
-                        </div>
+                            (CODIGO LOG01)</div>
                         <div id="error2" runat="server" class="alert alert-danger"  style="width:90%" visible="false">   
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ¡USUARIO NO PERMITIDO!
 
-                        </div>
+                            (CODIGO LOG02)</div>
                          <div id="error" runat="server" class="alert alert-danger"  style="width:90%" visible="false">   
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ¡CREDENCIALES INVALIDAS!
 
-                        </div>
+                             (CODIGO LOG03)</div>
                         <form class="form-signin"  data-toggle="validator" role="form" runat="server">
                         <input type="text" class="form-control" placeholder="Ingrese RUT" id="user" runat="server" oninput="checkRut(this)" required="required" autofocus="autofocus"/>
                         <input type="password" class="form-control" placeholder="Contraseña" id="pass" runat="server" required="required"/>

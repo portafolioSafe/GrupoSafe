@@ -33,13 +33,11 @@ C:\GrupoSafe\portafolio1\web\bin\System.Net.Http.Formatting.xml
 C:\GrupoSafe\portafolio1\web\bin\es\Microsoft.QualityTools.Testing.Fakes.resources.dll
 C:\GrupoSafe\portafolio1\web\bin\System.Net.Http.Formatting.Fakes.fakesconfig
 C:\GrupoSafe\portafolio1\web\bin\BLL.pdb
-<<<<<<< HEAD
 C:\GrupoSafe\portafolio1\web\obj\Debug\web.csprojFakesResolveAssemblyReference.cache
-=======
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\web\bin\itextsharp.dll
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\web\bin\System.Net.Http.Formatting.dll
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\web\bin\itextsharp.xml
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\web\bin\Newtonsoft.Json.xml
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\web\bin\System.Net.Http.Formatting.xml
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\web\bin\es\Microsoft.QualityTools.Testing.Fakes.resources.dll
->>>>>>> d12a49a7d63efa8e2cd7183abd27a2a0ba7a2d89
+C:\GrupoSafe\portafolio1\web\obj\Debug\web.csprojResolveAssemblyReference.cache
