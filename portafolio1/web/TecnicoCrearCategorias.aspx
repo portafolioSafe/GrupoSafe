@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="TecnicoCrearCategorias.aspx.cs" Inherits="web.TecnicoCrearCategorias" %>
+﻿<%@ Page Title="" Language="C#"  MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="TecnicoCrearCategorias.aspx.cs" Inherits="web.TecnicoCrearCategorias" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
@@ -33,7 +33,7 @@
                 <div id="mensajeEX" runat="server" class="alert alert-danger" style="width: 90%" visible="false">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign fade:10S"></span>&nbsp; ¡CATEGORIA YA EXISTE!
 
-                </div>
+                    (CODIGO EV02)</div>
                 <div id="mensajeSiM" runat="server" class="alert alert-success" style="width: 90%" visible="false">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡CATEGORIA MODIFICADA EXITOSAMENTE!
 
@@ -42,12 +42,12 @@
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡DEBE ESCOGER TIPO DE EVALUACION!
 
                   
-                </div>
+                    (CODIGO EV03)</div>
                 <div id="mensajeNa" runat="server" class="alert alert-danger" style="width: 90%" visible="false">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡DEBE AGREGAR EL NOMBRE DE LA CATEGORIA!
 
                   
-                </div>
+                    (CODIGO EV04)</div>
             </div>
 
             <div class="form-group">

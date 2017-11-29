@@ -2,10 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
-        .auto-style1 {
-            margin-left: 30%;
-        }
-
+        
         .style2 {
             margin-left: 30%;
         }
@@ -37,12 +34,12 @@
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡DEBE ESCOGER CATEGORIA!
 
                   
-                </div>
+                    (CODIGO EV05)</div>
                 <div id="mensajeNa" runat="server" class="alert alert-danger" style="width: 90%" visible="false">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡DEBE AGREGAR UNA PREGUNTA!
 
                   
-                </div>
+                    (CODIGO EV06)</div>
             </div>
 
 
@@ -71,7 +68,7 @@
             <asp:Button ID="Button3" runat="server" CssClass="btn alert-danger center-block" Text="Cancelar" Width="86px" OnClick="Button3_Click" />
 
 
-            <h4 style="text-align: center;">Listado de preguntas poractegoria</h4>
+            <h4 style="text-align: center;">Listado de preguntas por categoria</h4>
             <div>
                 <asp:GridView ID="GridView1" OnRowCommand="GridView1_RowCommand" runat="server" EmptyDataText="No hay preguntas." CssClass="table table-bordered bs-table" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
                     <HeaderStyle BackColor="#337ab7" Font-Bold="True" ForeColor="White" />

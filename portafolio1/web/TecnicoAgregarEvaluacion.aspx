@@ -23,16 +23,16 @@
 
             <div class="panel-body">
                  <div>
-                    <div id="mensajeSI" runat="server" class="alert alert-success" style="width: 90%" visible="false">
+                    <div id="mensajeSI" runat="server" class="alert alert-success" style="width: 100%" visible="false">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡EVALUACIÓN AGREGADA EXITOSAMENTE!
 
                     </div>
-                    <div id="mensajeNO" runat="server" class="alert alert-danger" style="width: 90%" visible="false">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡ERROR DE CONEXIÓN, INTENTE OTRA VEZ!
+                    <div id="mensajeNO" runat="server" class="alert alert-danger" style="width: 100%" visible="false">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡ERROR DE CONEXIÓN, INTENTE OTRA VEZ! (CODIGO EV00)
 
                     </div>
-                        <div id="MensajeNa" runat="server" class="alert alert-info" style="width: 90%" visible="false">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡DEBE COMPLETAR EL FORMULARIO!
+                        <div id="MensajeNa" runat="server" class="alert alert-info" style="width: 100%" visible="false">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span>&nbsp; ¡DEBE COMPLETAR EL FORMULARIO! (CODIGO EV01)
 
                     </div>
                 </div>
