@@ -41,7 +41,7 @@ namespace Datos
                         cap.Fecha = dr["FECHA"].ToString().Substring(0, 11);
                         cap.Hora = dr["HORA"].ToString();
                         cap.Rut_empresa = dr["EMPRESA_RUT_EMPRESA"].ToString();
-                        cap.Tipo_examen = int.Parse(dr["EMPRESA_RUT_EMPRESA"].ToString());
+                        cap.Tipo_examen = int.Parse(dr["TIPO_EXAMEN_ID_TIPO_EX"].ToString());
 
                         listado.Add(cap);
                     }
@@ -91,7 +91,7 @@ namespace Datos
                             cap.Fecha = dr["FECHA"].ToString().Substring(0, 11);
                             cap.Hora = dr["HORA"].ToString();
                             cap.Rut_empresa = dr["EMPRESA_RUT_EMPRESA"].ToString();
-                            cap.Tipo_examen = int.Parse(dr["EMPRESA_RUT_EMPRESA"].ToString());
+                            cap.Tipo_examen = int.Parse(dr["TIPO_EXAMEN_ID_TIPO_EX"].ToString());
 
                             listado.Add(cap);
                         }
@@ -110,11 +110,12 @@ namespace Datos
 
         }//
 
-        public static visitasMedicas ShowCapacitacion(int id_cap_edit)
+        public static visitasMedicas ShowVisita(int id_cap_edit)
         {
             DatosConexion c = new DatosConexion();
             using (OracleConnection conn = c.Connect())
             {
+                
                 OracleCommand oracmd = new OracleCommand();
                 oracmd.Parameters.Add("LISTA", OracleDbType.RefCursor, ParameterDirection.Output);
                 oracmd.CommandText = "visita_medica.LISTAR_VIS";
@@ -132,7 +133,7 @@ namespace Datos
                     while (dr.Read())
                     {
 
-                        if (int.Parse(dr["EMPRESA_RUT_EMPRESA"].ToString()) == id_cap_edit)
+                        if (int.Parse(dr["ID_VISITA"].ToString()) == id_cap_edit)
                         {
 
                             cap.Id = int.Parse(dr["ID_VISITA"].ToString());
@@ -141,7 +142,7 @@ namespace Datos
                             cap.Fecha = dr["FECHA"].ToString().Substring(0, 11);
                             cap.Hora = dr["HORA"].ToString();
                             cap.Rut_empresa = dr["EMPRESA_RUT_EMPRESA"].ToString();
-                            cap.Tipo_examen = int.Parse(dr["EMPRESA_RUT_EMPRESA"].ToString());
+                            cap.Tipo_examen = int.Parse(dr["TIPO_EXAMEN_ID_TIPO_EX"].ToString());
 
                             return cap;
                         }
