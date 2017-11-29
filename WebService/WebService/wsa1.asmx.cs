@@ -610,7 +610,7 @@ namespace WebService
         }
 
         [WebMethod]
-        public string AsistirCapcitacion(int ID_CAPACITACION,string USUARIO_RUT)
+        public bool AsistirCapcitacion(int ID_CAPACITACION,string USUARIO_RUT)
         {
             return Datos.DatosCapacitaciones.AsistirCapcitacion( ID_CAPACITACION, USUARIO_RUT);
 
@@ -745,6 +745,28 @@ namespace WebService
             return Datos.DatosPregunta.ModificarPregunta(id,pregunta,estado);
         }
 
+        //-----------VISITAS MEDICAS--------------
+
+        //LISTAR VISITAS MEDICAS
+        [WebMethod]
+        public List<visitasMedicas> listarVisitas() {
+            return Datos.DatosVisitasMedicas.listadoVisitas();
+
+        }
+        //LISTAR VISITAS SEGUN LA EMPRESA
+        [WebMethod]
+        public List<visitasMedicas> listarVisitasxempresa(string empresa)
+        {
+            return Datos.DatosVisitasMedicas.listadoVisitasxEmpresa(empresa);
+
+        }
+        //BUSQUEDA DE VISITA POR ID
+        [WebMethod]
+        public visitasMedicas MostrarVisita(int id)
+        {
+            return Datos.DatosVisitasMedicas.ShowVisita(id);
+
+        }
     }
 
 

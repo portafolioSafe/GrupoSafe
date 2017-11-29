@@ -69,6 +69,7 @@
     <Compile Include="DatosRespuesta.cs" />
     <Compile Include="DatosTipoEvaluacion.cs" />
     <Compile Include="DatosUsuario.cs" />
+    <Compile Include="DatosVisitasMedicas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
