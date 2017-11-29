@@ -68,3 +68,9 @@ C:\GrupoSafe\portafolio1\web\obj\Debug\Fakes\snhf\o\System.Net.Http.Formatting.F
 C:\GrupoSafe\portafolio1\web\obj\Debug\web.csprojResolveAssemblyReference.cache
 C:\GrupoSafe\portafolio1\web\bin\System.Net.Http.Formatting.Fakes.fakesconfig
 C:\GrupoSafe\portafolio1\web\bin\BLL.pdb
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\web\bin\itextsharp.dll
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\web\bin\System.Net.Http.Formatting.dll
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\web\bin\itextsharp.xml
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\web\bin\Newtonsoft.Json.xml
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\web\bin\System.Net.Http.Formatting.xml
+C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\web\bin\es\Microsoft.QualityTools.Testing.Fakes.resources.dll

@@ -903,6 +903,235 @@ namespace BLL.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfExamen_tipo", Namespace="http://tempuri.org/", ItemName="examen_tipo")]
+    [System.SerializableAttribute()]
+    public class ArrayOfExamen_tipo : System.Collections.Generic.List<BLL.ServiceReference1.examen_tipo> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="examen_tipo", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class examen_tipo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Nombre {
+            get {
+                return this.NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfVisitasMedicas", Namespace="http://tempuri.org/", ItemName="visitasMedicas")]
+    [System.SerializableAttribute()]
+    public class ArrayOfVisitasMedicas : System.Collections.Generic.List<BLL.ServiceReference1.visitasMedicas> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="visitasMedicas", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class visitasMedicas : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LugarField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FechaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HoraField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Rut_empresaField;
+        
+        private int Tipo_examenField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Lugar {
+            get {
+                return this.LugarField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LugarField, value) != true)) {
+                    this.LugarField = value;
+                    this.RaisePropertyChanged("Lugar");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Fecha {
+            get {
+                return this.FechaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FechaField, value) != true)) {
+                    this.FechaField = value;
+                    this.RaisePropertyChanged("Fecha");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Hora {
+            get {
+                return this.HoraField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HoraField, value) != true)) {
+                    this.HoraField = value;
+                    this.RaisePropertyChanged("Hora");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Rut_empresa {
+            get {
+                return this.Rut_empresaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Rut_empresaField, value) != true)) {
+                    this.Rut_empresaField = value;
+                    this.RaisePropertyChanged("Rut_empresa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public int Tipo_examen {
+            get {
+                return this.Tipo_examenField;
+            }
+            set {
+                if ((this.Tipo_examenField.Equals(value) != true)) {
+                    this.Tipo_examenField = value;
+                    this.RaisePropertyChanged("Tipo_examen");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.wsa1Soap")]
     public interface wsa1Soap {
@@ -1137,6 +1366,41 @@ namespace BLL.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ModificarPregunta", ReplyAction="*")]
         System.Threading.Tasks.Task<BLL.ServiceReference1.ModificarPreguntaResponse> ModificarPreguntaAsync(BLL.ServiceReference1.ModificarPreguntaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento lugar del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GuardarVisita", ReplyAction="*")]
+        BLL.ServiceReference1.GuardarVisitaResponse GuardarVisita(BLL.ServiceReference1.GuardarVisitaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GuardarVisita", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.GuardarVisitaResponse> GuardarVisitaAsync(BLL.ServiceReference1.GuardarVisitaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento listarTipoExamen1Result del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listarTipoExamen1", ReplyAction="*")]
+        BLL.ServiceReference1.listarTipoExamen1Response listarTipoExamen1(BLL.ServiceReference1.listarTipoExamen1Request request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listarTipoExamen1", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.listarTipoExamen1Response> listarTipoExamen1Async(BLL.ServiceReference1.listarTipoExamen1Request request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento listarVisitasResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listarVisitas", ReplyAction="*")]
+        BLL.ServiceReference1.listarVisitasResponse listarVisitas(BLL.ServiceReference1.listarVisitasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listarVisitas", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.listarVisitasResponse> listarVisitasAsync(BLL.ServiceReference1.listarVisitasRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento empresa del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listarVisitasxempresa", ReplyAction="*")]
+        BLL.ServiceReference1.listarVisitasxempresaResponse listarVisitasxempresa(BLL.ServiceReference1.listarVisitasxempresaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listarVisitasxempresa", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.listarVisitasxempresaResponse> listarVisitasxempresaAsync(BLL.ServiceReference1.listarVisitasxempresaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento MostrarVisitaResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MostrarVisita", ReplyAction="*")]
+        BLL.ServiceReference1.MostrarVisitaResponse MostrarVisita(BLL.ServiceReference1.MostrarVisitaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MostrarVisita", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.MostrarVisitaResponse> MostrarVisitaAsync(BLL.ServiceReference1.MostrarVisitaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2268,13 +2532,13 @@ namespace BLL.ServiceReference1 {
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
     public partial class AsistirCapcitacionResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string AsistirCapcitacionResult;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool AsistirCapcitacionResult;
         
         public AsistirCapcitacionResponseBody() {
         }
         
-        public AsistirCapcitacionResponseBody(string AsistirCapcitacionResult) {
+        public AsistirCapcitacionResponseBody(bool AsistirCapcitacionResult) {
             this.AsistirCapcitacionResult = AsistirCapcitacionResult;
         }
     }
@@ -3491,6 +3755,348 @@ namespace BLL.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GuardarVisitaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GuardarVisita", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.GuardarVisitaRequestBody Body;
+        
+        public GuardarVisitaRequest() {
+        }
+        
+        public GuardarVisitaRequest(BLL.ServiceReference1.GuardarVisitaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GuardarVisitaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string lugar;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public System.DateTime fecha;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public System.DateTime hora;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string empresa;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public int tipoexamen;
+        
+        public GuardarVisitaRequestBody() {
+        }
+        
+        public GuardarVisitaRequestBody(string lugar, System.DateTime fecha, System.DateTime hora, string empresa, int tipoexamen) {
+            this.lugar = lugar;
+            this.fecha = fecha;
+            this.hora = hora;
+            this.empresa = empresa;
+            this.tipoexamen = tipoexamen;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GuardarVisitaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GuardarVisitaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.GuardarVisitaResponseBody Body;
+        
+        public GuardarVisitaResponse() {
+        }
+        
+        public GuardarVisitaResponse(BLL.ServiceReference1.GuardarVisitaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GuardarVisitaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool GuardarVisitaResult;
+        
+        public GuardarVisitaResponseBody() {
+        }
+        
+        public GuardarVisitaResponseBody(bool GuardarVisitaResult) {
+            this.GuardarVisitaResult = GuardarVisitaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listarTipoExamen1Request {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listarTipoExamen1", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.listarTipoExamen1RequestBody Body;
+        
+        public listarTipoExamen1Request() {
+        }
+        
+        public listarTipoExamen1Request(BLL.ServiceReference1.listarTipoExamen1RequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class listarTipoExamen1RequestBody {
+        
+        public listarTipoExamen1RequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listarTipoExamen1Response {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listarTipoExamen1Response", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.listarTipoExamen1ResponseBody Body;
+        
+        public listarTipoExamen1Response() {
+        }
+        
+        public listarTipoExamen1Response(BLL.ServiceReference1.listarTipoExamen1ResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class listarTipoExamen1ResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BLL.ServiceReference1.ArrayOfExamen_tipo listarTipoExamen1Result;
+        
+        public listarTipoExamen1ResponseBody() {
+        }
+        
+        public listarTipoExamen1ResponseBody(BLL.ServiceReference1.ArrayOfExamen_tipo listarTipoExamen1Result) {
+            this.listarTipoExamen1Result = listarTipoExamen1Result;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listarVisitasRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listarVisitas", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.listarVisitasRequestBody Body;
+        
+        public listarVisitasRequest() {
+        }
+        
+        public listarVisitasRequest(BLL.ServiceReference1.listarVisitasRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class listarVisitasRequestBody {
+        
+        public listarVisitasRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listarVisitasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listarVisitasResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.listarVisitasResponseBody Body;
+        
+        public listarVisitasResponse() {
+        }
+        
+        public listarVisitasResponse(BLL.ServiceReference1.listarVisitasResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class listarVisitasResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BLL.ServiceReference1.ArrayOfVisitasMedicas listarVisitasResult;
+        
+        public listarVisitasResponseBody() {
+        }
+        
+        public listarVisitasResponseBody(BLL.ServiceReference1.ArrayOfVisitasMedicas listarVisitasResult) {
+            this.listarVisitasResult = listarVisitasResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listarVisitasxempresaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listarVisitasxempresa", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.listarVisitasxempresaRequestBody Body;
+        
+        public listarVisitasxempresaRequest() {
+        }
+        
+        public listarVisitasxempresaRequest(BLL.ServiceReference1.listarVisitasxempresaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class listarVisitasxempresaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string empresa;
+        
+        public listarVisitasxempresaRequestBody() {
+        }
+        
+        public listarVisitasxempresaRequestBody(string empresa) {
+            this.empresa = empresa;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listarVisitasxempresaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listarVisitasxempresaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.listarVisitasxempresaResponseBody Body;
+        
+        public listarVisitasxempresaResponse() {
+        }
+        
+        public listarVisitasxempresaResponse(BLL.ServiceReference1.listarVisitasxempresaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class listarVisitasxempresaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BLL.ServiceReference1.ArrayOfVisitasMedicas listarVisitasxempresaResult;
+        
+        public listarVisitasxempresaResponseBody() {
+        }
+        
+        public listarVisitasxempresaResponseBody(BLL.ServiceReference1.ArrayOfVisitasMedicas listarVisitasxempresaResult) {
+            this.listarVisitasxempresaResult = listarVisitasxempresaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class MostrarVisitaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="MostrarVisita", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.MostrarVisitaRequestBody Body;
+        
+        public MostrarVisitaRequest() {
+        }
+        
+        public MostrarVisitaRequest(BLL.ServiceReference1.MostrarVisitaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class MostrarVisitaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public MostrarVisitaRequestBody() {
+        }
+        
+        public MostrarVisitaRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class MostrarVisitaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="MostrarVisitaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.MostrarVisitaResponseBody Body;
+        
+        public MostrarVisitaResponse() {
+        }
+        
+        public MostrarVisitaResponse(BLL.ServiceReference1.MostrarVisitaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class MostrarVisitaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BLL.ServiceReference1.visitasMedicas MostrarVisitaResult;
+        
+        public MostrarVisitaResponseBody() {
+        }
+        
+        public MostrarVisitaResponseBody(BLL.ServiceReference1.visitasMedicas MostrarVisitaResult) {
+            this.MostrarVisitaResult = MostrarVisitaResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface wsa1SoapChannel : BLL.ServiceReference1.wsa1Soap, System.ServiceModel.IClientChannel {
     }
@@ -3928,7 +4534,7 @@ namespace BLL.ServiceReference1 {
             return base.Channel.AsistirCapcitacion(request);
         }
         
-        public string AsistirCapcitacion(int ID_CAPACITACION, string USUARIO_RUT) {
+        public bool AsistirCapcitacion(int ID_CAPACITACION, string USUARIO_RUT) {
             BLL.ServiceReference1.AsistirCapcitacionRequest inValue = new BLL.ServiceReference1.AsistirCapcitacionRequest();
             inValue.Body = new BLL.ServiceReference1.AsistirCapcitacionRequestBody();
             inValue.Body.ID_CAPACITACION = ID_CAPACITACION;
@@ -4407,6 +5013,135 @@ namespace BLL.ServiceReference1 {
             inValue.Body.pregunta = pregunta;
             inValue.Body.estado = estado;
             return ((BLL.ServiceReference1.wsa1Soap)(this)).ModificarPreguntaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.GuardarVisitaResponse BLL.ServiceReference1.wsa1Soap.GuardarVisita(BLL.ServiceReference1.GuardarVisitaRequest request) {
+            return base.Channel.GuardarVisita(request);
+        }
+        
+        public bool GuardarVisita(string lugar, System.DateTime fecha, System.DateTime hora, string empresa, int tipoexamen) {
+            BLL.ServiceReference1.GuardarVisitaRequest inValue = new BLL.ServiceReference1.GuardarVisitaRequest();
+            inValue.Body = new BLL.ServiceReference1.GuardarVisitaRequestBody();
+            inValue.Body.lugar = lugar;
+            inValue.Body.fecha = fecha;
+            inValue.Body.hora = hora;
+            inValue.Body.empresa = empresa;
+            inValue.Body.tipoexamen = tipoexamen;
+            BLL.ServiceReference1.GuardarVisitaResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).GuardarVisita(inValue);
+            return retVal.Body.GuardarVisitaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.GuardarVisitaResponse> BLL.ServiceReference1.wsa1Soap.GuardarVisitaAsync(BLL.ServiceReference1.GuardarVisitaRequest request) {
+            return base.Channel.GuardarVisitaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.GuardarVisitaResponse> GuardarVisitaAsync(string lugar, System.DateTime fecha, System.DateTime hora, string empresa, int tipoexamen) {
+            BLL.ServiceReference1.GuardarVisitaRequest inValue = new BLL.ServiceReference1.GuardarVisitaRequest();
+            inValue.Body = new BLL.ServiceReference1.GuardarVisitaRequestBody();
+            inValue.Body.lugar = lugar;
+            inValue.Body.fecha = fecha;
+            inValue.Body.hora = hora;
+            inValue.Body.empresa = empresa;
+            inValue.Body.tipoexamen = tipoexamen;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).GuardarVisitaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.listarTipoExamen1Response BLL.ServiceReference1.wsa1Soap.listarTipoExamen1(BLL.ServiceReference1.listarTipoExamen1Request request) {
+            return base.Channel.listarTipoExamen1(request);
+        }
+        
+        public BLL.ServiceReference1.ArrayOfExamen_tipo listarTipoExamen1() {
+            BLL.ServiceReference1.listarTipoExamen1Request inValue = new BLL.ServiceReference1.listarTipoExamen1Request();
+            inValue.Body = new BLL.ServiceReference1.listarTipoExamen1RequestBody();
+            BLL.ServiceReference1.listarTipoExamen1Response retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).listarTipoExamen1(inValue);
+            return retVal.Body.listarTipoExamen1Result;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.listarTipoExamen1Response> BLL.ServiceReference1.wsa1Soap.listarTipoExamen1Async(BLL.ServiceReference1.listarTipoExamen1Request request) {
+            return base.Channel.listarTipoExamen1Async(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.listarTipoExamen1Response> listarTipoExamen1Async() {
+            BLL.ServiceReference1.listarTipoExamen1Request inValue = new BLL.ServiceReference1.listarTipoExamen1Request();
+            inValue.Body = new BLL.ServiceReference1.listarTipoExamen1RequestBody();
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).listarTipoExamen1Async(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.listarVisitasResponse BLL.ServiceReference1.wsa1Soap.listarVisitas(BLL.ServiceReference1.listarVisitasRequest request) {
+            return base.Channel.listarVisitas(request);
+        }
+        
+        public BLL.ServiceReference1.ArrayOfVisitasMedicas listarVisitas() {
+            BLL.ServiceReference1.listarVisitasRequest inValue = new BLL.ServiceReference1.listarVisitasRequest();
+            inValue.Body = new BLL.ServiceReference1.listarVisitasRequestBody();
+            BLL.ServiceReference1.listarVisitasResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).listarVisitas(inValue);
+            return retVal.Body.listarVisitasResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.listarVisitasResponse> BLL.ServiceReference1.wsa1Soap.listarVisitasAsync(BLL.ServiceReference1.listarVisitasRequest request) {
+            return base.Channel.listarVisitasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.listarVisitasResponse> listarVisitasAsync() {
+            BLL.ServiceReference1.listarVisitasRequest inValue = new BLL.ServiceReference1.listarVisitasRequest();
+            inValue.Body = new BLL.ServiceReference1.listarVisitasRequestBody();
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).listarVisitasAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.listarVisitasxempresaResponse BLL.ServiceReference1.wsa1Soap.listarVisitasxempresa(BLL.ServiceReference1.listarVisitasxempresaRequest request) {
+            return base.Channel.listarVisitasxempresa(request);
+        }
+        
+        public BLL.ServiceReference1.ArrayOfVisitasMedicas listarVisitasxempresa(string empresa) {
+            BLL.ServiceReference1.listarVisitasxempresaRequest inValue = new BLL.ServiceReference1.listarVisitasxempresaRequest();
+            inValue.Body = new BLL.ServiceReference1.listarVisitasxempresaRequestBody();
+            inValue.Body.empresa = empresa;
+            BLL.ServiceReference1.listarVisitasxempresaResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).listarVisitasxempresa(inValue);
+            return retVal.Body.listarVisitasxempresaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.listarVisitasxempresaResponse> BLL.ServiceReference1.wsa1Soap.listarVisitasxempresaAsync(BLL.ServiceReference1.listarVisitasxempresaRequest request) {
+            return base.Channel.listarVisitasxempresaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.listarVisitasxempresaResponse> listarVisitasxempresaAsync(string empresa) {
+            BLL.ServiceReference1.listarVisitasxempresaRequest inValue = new BLL.ServiceReference1.listarVisitasxempresaRequest();
+            inValue.Body = new BLL.ServiceReference1.listarVisitasxempresaRequestBody();
+            inValue.Body.empresa = empresa;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).listarVisitasxempresaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.MostrarVisitaResponse BLL.ServiceReference1.wsa1Soap.MostrarVisita(BLL.ServiceReference1.MostrarVisitaRequest request) {
+            return base.Channel.MostrarVisita(request);
+        }
+        
+        public BLL.ServiceReference1.visitasMedicas MostrarVisita(int id) {
+            BLL.ServiceReference1.MostrarVisitaRequest inValue = new BLL.ServiceReference1.MostrarVisitaRequest();
+            inValue.Body = new BLL.ServiceReference1.MostrarVisitaRequestBody();
+            inValue.Body.id = id;
+            BLL.ServiceReference1.MostrarVisitaResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).MostrarVisita(inValue);
+            return retVal.Body.MostrarVisitaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.MostrarVisitaResponse> BLL.ServiceReference1.wsa1Soap.MostrarVisitaAsync(BLL.ServiceReference1.MostrarVisitaRequest request) {
+            return base.Channel.MostrarVisitaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.MostrarVisitaResponse> MostrarVisitaAsync(int id) {
+            BLL.ServiceReference1.MostrarVisitaRequest inValue = new BLL.ServiceReference1.MostrarVisitaRequest();
+            inValue.Body = new BLL.ServiceReference1.MostrarVisitaRequestBody();
+            inValue.Body.id = id;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).MostrarVisitaAsync(inValue);
         }
     }
 }
