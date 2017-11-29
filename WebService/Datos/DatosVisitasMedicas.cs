@@ -12,6 +12,89 @@ namespace Datos
 
     public class DatosVisitasMedicas
     {
+        public static bool GuardarVisita(string lugar, DateTime fecha, DateTime hora,string empresa, int tipoexamen)
+        {
+            DatosConexion c = new DatosConexion();
+            using (OracleConnection conn = c.Connect())
+
+
+                try
+                {
+                    conn.Open();
+                    OracleCommand cmd = new OracleCommand("visita_medica.INSERTAR_VISITA", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    DateTime meme = DateTime.Today;
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                 
+
+                    cmd.Parameters.Add("ESTAD", "varchar2").Value = "Activo";
+                    // cmd.Parameters.Add("FECHA", System.Data.SqlDbType.DateTime) = fecha;
+                    cmd.Parameters.Add("LUGA", "varchar2").Value = lugar;
+                    cmd.Parameters.Add("FECH", "date").Value = fecha.ToShortDateString();
+                    cmd.Parameters.Add("HOR", "date").Value = fecha.ToShortDateString();
+                    cmd.Parameters.Add("EMPRES", "varchar2").Value = empresa;
+
+                    cmd.Parameters.Add("TIPO_EX", "number").Value = tipoexamen;
+                    
+
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    return true;
+                }
+                catch (Exception)
+                {
+
+                    return false;
+                }
+        }//
+
+
+        public static List<examen_tipo> listarTipoExamen()
+        {
+            DatosConexion c = new DatosConexion();
+            using (OracleConnection conn = c.Connect())
+            {
+                List<examen_tipo> listado = new List<examen_tipo>();
+           
+                OracleCommand oracmd = new OracleCommand();
+                oracmd.Parameters.Add("listarexa", OracleDbType.RefCursor, ParameterDirection.Output);
+                oracmd.CommandText = "PROCEDIMIENTOS_EXAMEN.listarExamen";
+                oracmd.CommandType = CommandType.StoredProcedure;
+                oracmd.Connection = conn;
+                OracleDataAdapter da = new OracleDataAdapter(oracmd);
+                DataSet ds = new DataSet();
+
+                  try
+                {
+                    conn.Open();
+                    da.Fill(ds);
+                    OracleDataReader dr = oracmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        if (dr["ESTADO"].ToString() == "Activo")
+                        {
+
+
+                            examen_tipo nueva = new examen_tipo();
+                            nueva.Id = int.Parse(dr["ID_TIPO_EX"].ToString());
+                            nueva.Nombre = dr["NOMBRE_EX"].ToString();
+                            listado.Add(nueva);
+                        }
+                    }
+                    conn.Close();
+                    return listado;
+                }
+                  catch (Exception)
+                  {
+
+                      throw;
+                  }
+
+               
+           
+            }
+        }
         public static List<visitasMedicas> listadoVisitas(){
         
             DatosConexion c = new DatosConexion();
@@ -24,8 +107,10 @@ namespace Datos
                 oracmd.CommandText = "visita_medica.LISTAR_VIS";
                 oracmd.CommandType = CommandType.StoredProcedure;
                 oracmd.Connection = conn;
+
                 OracleDataAdapter da = new OracleDataAdapter(oracmd);
                 DataSet ds = new DataSet();
+
 
                 try
                 {
@@ -58,6 +143,12 @@ namespace Datos
             }
         
         }//
+
+
+
+
+
+
 
         public static List<visitasMedicas> listadoVisitasxEmpresa( string empresa)
         {
@@ -159,7 +250,9 @@ namespace Datos
                 }
             }
 
-        }
+        }//
+
+
 
 
     }

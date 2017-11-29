@@ -470,29 +470,7 @@ namespace WebService
          [WebMethod]
           public List<cap_tipo> GetListarTipoCap()
           {
-              string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
-              OracleConnection oraconn = new OracleConnection(strConnectionString);
-              oraconn.Open();
-              OracleCommand oracmd = new OracleCommand();
-              oracmd.Parameters.Add("listarCAP", OracleDbType.RefCursor, ParameterDirection.Output);
-              oracmd.CommandText = "PROCEDIMIENTO_TCAP.LISTAR_TIPO_CAP";
-              oracmd.CommandType = CommandType.StoredProcedure;
-              oracmd.Connection = oraconn;
-              OracleDataAdapter da = new OracleDataAdapter(oracmd);
-              DataSet ds = new DataSet();
-              List<cap_tipo> milista = new List<cap_tipo>();
-              da.Fill(ds);
-              foreach (DataRow row in ds.Tables[0].Rows)
-              {
-                  cap_tipo nueva = new cap_tipo();
-                  nueva.Id = Int32.Parse(row[0].ToString());
-                  nueva.Nombre = row[1].ToString();
-                  milista.Add(nueva);
-                  //milista.Add(string.Format("{0}" + " " + "{1}", row["RUT_EMPRESA"], row["NOMBRE"]));
-              }
-              oraconn.Close();
-              return milista;
-             
+              return Datos.DatosCapacitaciones.GetListarTipoCap();  
           }
 
          [WebMethod]
@@ -530,45 +508,11 @@ namespace WebService
 //FIN LISTAR
 
 //METODOS DE CAPACITACION
-        [WebMethod]
-        public  bool GuardarCapacitacion(string area,DateTime fecha, string tema,string expo,int asisten,string empresa,int tipocap )
-        {
-            string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
-            OracleConnection oraconn = new OracleConnection(strConnectionString);
-            try
-            {
-                oraconn.Open();
-                OracleCommand cmd = new OracleCommand("PROCEDIMIENTO_CAPACITACIONES.AGREGAR_CAPACITACION", oraconn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                string val = "asd";
-                DateTime fecha1 = DateTime.Now.Date;
-
-                cmd.Parameters.Add("ARECAP", "varchar2").Value = area;
-                // cmd.Parameters.Add("FECHA", System.Data.SqlDbType.DateTime) = fecha;
-                cmd.Parameters.Add("FECHA", "date").Value = fecha.ToShortDateString();
-                cmd.Parameters.Add("TEMA", "varchar2").Value = tema;
-                cmd.Parameters.Add("EXPOSITOR", "varchar2").Value = expo;
-                cmd.Parameters.Add("ASISTENCIA", "number").Value = asisten;
-                
-                cmd.Parameters.Add("EMPRESA", "varchar2").Value = empresa;
-                cmd.Parameters.Add("TIPO", "number").Value = tipocap;
-                cmd.Parameters.Add("ESTADO", "varchar2").Value = val;
-
-                //falta estado?
-
-                cmd.ExecuteNonQuery();
-                oraconn.Close();
-                return true;
-            }
-            catch (Exception)
-            {
-                
-                return false;
-            }
-        }
+         [WebMethod]
+         public bool GuardarCapacitacion(string area, DateTime fecha, string tema, string expo, int asisten, string empresa, int tipocap)
+         {
+             return Datos.DatosCapacitaciones.GuardarCapacitacion(area,fecha,tema,expo,asisten,empresa,tipocap);
+         }
 
         [WebMethod]
         public List<capacitacion> ListarCapacitaciones()
@@ -749,6 +693,21 @@ namespace WebService
 
         //-----------VISITAS MEDICAS--------------
 
+       
+        [WebMethod]
+        public bool GuardarVisita(string lugar, DateTime fecha, DateTime hora,string empresa, int tipoexamen)
+        {
+            return Datos.DatosVisitasMedicas.GuardarVisita(lugar,fecha,hora,empresa,tipoexamen);
+
+        }
+        //LISTAR TIPO EXAMEN
+     
+        [WebMethod]
+        public List<examen_tipo> listarTipoExamen1()
+        {
+            return Datos.DatosVisitasMedicas.listarTipoExamen();
+
+        }
         //LISTAR VISITAS MEDICAS
         [WebMethod]
         public List<visitasMedicas> listarVisitas() {

@@ -46,6 +46,7 @@
     <Compile Include="Detalle_evaluacion.cs" />
     <Compile Include="empresa.cs" />
     <Compile Include="Evaluacion.cs" />
+    <Compile Include="examen_tipo.cs" />
     <Compile Include="medico.cs" />
     <Compile Include="Pregunta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

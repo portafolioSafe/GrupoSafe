@@ -278,7 +278,7 @@
       <s:element name="AsistirCapcitacionResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="AsistirCapcitacionResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AsistirCapcitacionResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -592,6 +592,100 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GuardarVisita">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lugar" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fecha" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="hora" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tipoexamen" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarVisitaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GuardarVisitaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarTipoExamen1">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarTipoExamen1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarTipoExamen1Result" type="tns:ArrayOfExamen_tipo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfExamen_tipo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="examen_tipo" nillable="true" type="tns:examen_tipo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="examen_tipo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listarVisitas">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarVisitasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarVisitasResult" type="tns:ArrayOfVisitasMedicas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVisitasMedicas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="visitasMedicas" nillable="true" type="tns:visitasMedicas" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="visitasMedicas">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Lugar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fecha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Hora" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rut_empresa" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tipo_examen" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listarVisitasxempresa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarVisitasxempresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarVisitasxempresaResult" type="tns:ArrayOfVisitasMedicas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MostrarVisita">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MostrarVisitaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MostrarVisitaResult" type="tns:visitasMedicas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="ValidarUsuarioSoapIn">
@@ -792,6 +886,36 @@
   <wsdl:message name="ModificarPreguntaSoapOut">
     <wsdl:part name="parameters" element="tns:ModificarPreguntaResponse" />
   </wsdl:message>
+  <wsdl:message name="GuardarVisitaSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarVisita" />
+  </wsdl:message>
+  <wsdl:message name="GuardarVisitaSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarVisitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarTipoExamen1SoapIn">
+    <wsdl:part name="parameters" element="tns:listarTipoExamen1" />
+  </wsdl:message>
+  <wsdl:message name="listarTipoExamen1SoapOut">
+    <wsdl:part name="parameters" element="tns:listarTipoExamen1Response" />
+  </wsdl:message>
+  <wsdl:message name="listarVisitasSoapIn">
+    <wsdl:part name="parameters" element="tns:listarVisitas" />
+  </wsdl:message>
+  <wsdl:message name="listarVisitasSoapOut">
+    <wsdl:part name="parameters" element="tns:listarVisitasResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarVisitasxempresaSoapIn">
+    <wsdl:part name="parameters" element="tns:listarVisitasxempresa" />
+  </wsdl:message>
+  <wsdl:message name="listarVisitasxempresaSoapOut">
+    <wsdl:part name="parameters" element="tns:listarVisitasxempresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="MostrarVisitaSoapIn">
+    <wsdl:part name="parameters" element="tns:MostrarVisita" />
+  </wsdl:message>
+  <wsdl:message name="MostrarVisitaSoapOut">
+    <wsdl:part name="parameters" element="tns:MostrarVisitaResponse" />
+  </wsdl:message>
   <wsdl:portType name="wsa1Soap">
     <wsdl:operation name="ValidarUsuario">
       <wsdl:input message="tns:ValidarUsuarioSoapIn" />
@@ -924,6 +1048,26 @@
     <wsdl:operation name="ModificarPregunta">
       <wsdl:input message="tns:ModificarPreguntaSoapIn" />
       <wsdl:output message="tns:ModificarPreguntaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarVisita">
+      <wsdl:input message="tns:GuardarVisitaSoapIn" />
+      <wsdl:output message="tns:GuardarVisitaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarTipoExamen1">
+      <wsdl:input message="tns:listarTipoExamen1SoapIn" />
+      <wsdl:output message="tns:listarTipoExamen1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarVisitas">
+      <wsdl:input message="tns:listarVisitasSoapIn" />
+      <wsdl:output message="tns:listarVisitasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarVisitasxempresa">
+      <wsdl:input message="tns:listarVisitasxempresaSoapIn" />
+      <wsdl:output message="tns:listarVisitasxempresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarVisita">
+      <wsdl:input message="tns:MostrarVisitaSoapIn" />
+      <wsdl:output message="tns:MostrarVisitaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="wsa1Soap" type="tns:wsa1Soap">
@@ -1225,6 +1369,51 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GuardarVisita">
+      <soap:operation soapAction="http://tempuri.org/GuardarVisita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTipoExamen1">
+      <soap:operation soapAction="http://tempuri.org/listarTipoExamen1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarVisitas">
+      <soap:operation soapAction="http://tempuri.org/listarVisitas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarVisitasxempresa">
+      <soap:operation soapAction="http://tempuri.org/listarVisitasxempresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarVisita">
+      <soap:operation soapAction="http://tempuri.org/MostrarVisita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="wsa1Soap12" type="tns:wsa1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1518,6 +1707,51 @@
     </wsdl:operation>
     <wsdl:operation name="ModificarPregunta">
       <soap12:operation soapAction="http://tempuri.org/ModificarPregunta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarVisita">
+      <soap12:operation soapAction="http://tempuri.org/GuardarVisita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTipoExamen1">
+      <soap12:operation soapAction="http://tempuri.org/listarTipoExamen1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarVisitas">
+      <soap12:operation soapAction="http://tempuri.org/listarVisitas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarVisitasxempresa">
+      <soap12:operation soapAction="http://tempuri.org/listarVisitasxempresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarVisita">
+      <soap12:operation soapAction="http://tempuri.org/MostrarVisita" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
