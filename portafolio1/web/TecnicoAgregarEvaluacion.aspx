@@ -114,7 +114,7 @@
                 <div class="form-group">
                     <label for="tx_especialidad">Observaciones</label>
                     <asp:TextBox ID="TextBox1" class="form-control" runat="server" placeholder="Ingrese Observaciones" TextMode="MultiLine"></asp:TextBox>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="El rango es de 5 a 300 caracteres" Font-Bold="False" ForeColor="Red" ValidationExpression="^[\s\S]{5,20}$"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="El rango es de 5 a 300 caracteres" Font-Bold="False" ForeColor="Red" ValidationExpression="^[\s\S]{5,300}$"></asp:RegularExpressionValidator>
 
                 </div>
                 <div>

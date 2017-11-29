@@ -15,6 +15,7 @@ namespace web
         static List<BLL.DetallePreguntaDTO> listado2 = new List<BLL.DetallePreguntaDTO>();
   
         static string rut = "";
+        int validador = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["tipo"].ToString() != "Tecnico")
@@ -306,9 +307,11 @@ namespace web
             else
             {
                 MensajeNa.Visible = true;
+               
             }
 
-            listado.Clear();
+            //listado.Clear();
+
 
 
 
