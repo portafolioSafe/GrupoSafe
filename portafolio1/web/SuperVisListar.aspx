@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="panel panel-default" style="margin-right: 10%; margin-left: 10%;">
-  <div class="panel-heading"><asp:Label ID="Label3" runat="server" Text="Listar capacitaciones" Font-Bold="True" Font-Size="Larger"></asp:Label>
+  <div class="panel-heading"><asp:Label ID="Label3" runat="server" Text="Listar visitas médicas" Font-Bold="True" Font-Size="Larger"></asp:Label>
         </div>
   <div class="panel-body">
 
@@ -39,14 +39,14 @@
 
                     <ItemStyle HorizontalAlign="Center"></ItemStyle>
               </asp:BoundField>
-              <asp:BoundField DataField="Empresa" HeaderText="Empresa" SortExpression="Empresa" FooterStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-CssClass=" text-center" ItemStyle-HorizontalAlign="Center" >
+              <asp:BoundField DataField="Rut_empresa" HeaderText="Empresa" SortExpression="Empresa" FooterStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-CssClass=" text-center" ItemStyle-HorizontalAlign="Center" >
                     <FooterStyle HorizontalAlign="Center"></FooterStyle>
 
                     <HeaderStyle HorizontalAlign="Center" BackColor="#337ab7"  CssClass=" text-center" ForeColor="White"></HeaderStyle>
 
                     <ItemStyle HorizontalAlign="Center"></ItemStyle>
               </asp:BoundField>
-              <asp:BoundField DataField="Tipo exámen" HeaderText="Tipo exámen" SortExpression="Tipo exámen" FooterStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-CssClass=" text-center" ItemStyle-HorizontalAlign="Center" >
+              <asp:BoundField DataField="Tipo_examen" HeaderText="Tipo exámen" SortExpression="Tipo exámen" FooterStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-CssClass=" text-center" ItemStyle-HorizontalAlign="Center" >
                     <FooterStyle HorizontalAlign="Center"></FooterStyle>
 
                     <HeaderStyle HorizontalAlign="Center" BackColor="#337ab7"  CssClass=" text-center" ForeColor="White"></HeaderStyle>

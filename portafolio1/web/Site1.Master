@@ -233,7 +233,7 @@
 	          <ul class="dropdown-menu">
                   <li><a href="SuperMedAdd.aspx">Agregar médico</a></li>
 	            <li><a href="SuperVisAdd.aspx">Crear visita médica</a></li>
-                  <li><a href="#">Listar visitas médicas</a></li>
+                  <li><a href="SuperVisListar.aspx">Listar visitas médicas</a></li>
 	            
 	          </ul>
 	        </li>
