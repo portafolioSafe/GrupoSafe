@@ -152,6 +152,7 @@ namespace web
                 TableCell contact2 = selectedRow.Cells[1];
                 string contact = contactName.Text;
                 TextBox1.Text = contact2.Text;
+                //TextBox1.Text = HttpUtility.HtmlDecode(selectedRow.Cells[1].Text);
                 // Captura el id de la capacitacion mostrada en la tabla en una variable de sesion
                 Session["idCategoria"] = contact;
                 //Pasa a la pagina de modificacion

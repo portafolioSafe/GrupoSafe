@@ -1,4 +1,5 @@
 ﻿using ClassLibrary1;
+using Datos;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
@@ -27,37 +28,50 @@ namespace WebService
         {
             string us = "";
 
-            string meme = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
-            OracleConnection conn = new OracleConnection(meme);
-
-            try {
-
-                conn.Open();
-
-                OracleParameter param = new OracleParameter();
-                param.OracleDbType = OracleDbType.Decimal;
-
-                OracleCommand cmd = new OracleCommand();
-                cmd.Connection = conn;
-                cmd.Parameters.Add(param);
-                // estado para empresa y usuario
-                cmd.CommandText = "SELECT  RUT_USUARIO , NOMBRE, ESTADO FROM USUARIO WHERE RUT_USUARIO = '" + rut + "' AND CONTRASEÑA ='" + pass + "'";
-                cmd.CommandType = CommandType.Text;
-
+            //string meme = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+            //OracleConnection conn = new OracleConnection(meme);
+            Datos.DatosConexion c = new Datos.DatosConexion();
+            OracleConnection conn = new OracleConnection();
+            using (conn = c.Connect())
+            {
                 try
                 {
-                    cmd.ExecuteNonQuery();
-                    OracleDataReader dr = cmd.ExecuteReader();
-                    dr.Read();
 
-                    if (dr.GetString(2) == "inactivo")
+                    conn.Open();
+
+                    OracleParameter param = new OracleParameter();
+                    param.OracleDbType = OracleDbType.Decimal;
+
+                    OracleCommand cmd = new OracleCommand();
+                    cmd.Connection = conn;
+                    cmd.Parameters.Add(param);
+                    // estado para empresa y usuario
+                    cmd.CommandText = "SELECT  RUT_USUARIO , NOMBRE, ESTADO FROM USUARIO WHERE RUT_USUARIO = '" + rut + "' AND CONTRASEÑA ='" + pass + "'";
+                    cmd.CommandType = CommandType.Text;
+
+                    try
                     {
-                        us = "malo";
+                        cmd.ExecuteNonQuery();
+                        OracleDataReader dr = cmd.ExecuteReader();
+                        dr.Read();
+
+                        if (dr.GetString(2) == "inactivo")
+                        {
+                            us = "malo";
+
+                        }
+                        else
+                        {
+                            us = dr.GetString(1);
+
+                        }
+
 
                     }
-                    else
+                    catch (Exception)
                     {
-                        us = dr.GetString(1);
+
+                        us = "nulo";
 
                     }
 
@@ -65,17 +79,18 @@ namespace WebService
                 }
                 catch (Exception)
                 {
-
-                    us = "nulo";
+                    us = "server";
 
                 }
 
+                conn.Dispose();
+                conn.Close();
+                return us;
 
-            }catch(Exception ){
-                us = "server";
+
             }
-            conn.Close();
-            return us;
+
+
         }
 
         [WebMethod]
@@ -328,112 +343,99 @@ namespace WebService
         [WebMethod]
         public string DevuelveTipo(string rut, string tipo)
         {
-            string str = "DATA SOURCE=190.161.202.171:1521/DBORACLE;USER ID=GRUPOSAFE; Password=portafolio";
-
-            OracleConnection conn = new OracleConnection(str);
-            string us = "";
-            if (tipo =="Medico")
+            DatosConexion c = new DatosConexion();
+            OracleConnection conn = new OracleConnection();
+            using (conn = c.Connect())
             {
-                us = "Médico";
-            }
-
-
-            if (tipo == "Usuario")
-            {
-                //string meme = "DATA SOURCE = 190.163.62.242:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
-                // OracleConnection conn = new OracleConnection(meme);
-                // conn.Open();
-
-                // OracleParameter param = new OracleParameter();
-                // param.OracleDbType = OracleDbType.Decimal;
-
-                // OracleCommand cmd = new OracleCommand();
-                // cmd.Connection = conn;
-                // cmd.Parameters.Add(param);
-                // cmd.CommandText = "SELECT RUT_USUARIO, TIPO_USR_ID_TIPO FROM USUARIO WHERE RUT_USUARIO = '" + rut + "'";
-                // cmd.CommandType = CommandType.Text;
-                // cmd.ExecuteNonQuery();
-                // OracleDataReader dr = cmd.ExecuteReader();
-                // dr.Read();
-                 
-
-                // try
-                // {
-                //     us = dr.GetString(1);
-                // }
-
-          
-             
-            try
-            {
-                conn.Open();
-
-                //se escoge el pakete y despues el procedimiento 
-                OracleCommand oracmd = new OracleCommand();
-
-                oracmd.CommandText = "PROCEDIMIENTO_USUARIO.SELECT_TIPO";
-                oracmd.CommandType = CommandType.StoredProcedure;
-                oracmd.Connection = conn;
-
-                //Se colocan las variables del procedimiento el tipo y despues la variable con el dato
-                oracmd.Parameters.Add("RUT", "varchar2").Value = rut;
-                oracmd.Parameters.Add("listarsalida", OracleDbType.RefCursor, ParameterDirection.Output);
-                oracmd.ExecuteNonQuery();
-                OracleDataReader reader;
-                try
+                string us = "";
+                if (tipo == "Medico")
                 {
-                    reader = oracmd.ExecuteReader();
+                    us = "Médico";
+                }
+                if (tipo == "Usuario")
+                {
 
-                    while (reader.Read())
+
+
+
+                    try
                     {
-                        if (reader.GetString(0) == "Administrador")
+
+                        conn.Open();
+
+                        //se escoge el pakete y despues el procedimiento 
+                        OracleCommand oracmd = new OracleCommand();
+
+                        oracmd.CommandText = "PROCEDIMIENTO_USUARIO.SELECT_TIPO";
+                        oracmd.CommandType = CommandType.StoredProcedure;
+                        oracmd.Connection = conn;
+
+                        //Se colocan las variables del procedimiento el tipo y despues la variable con el dato
+                        oracmd.Parameters.Add("RUT", "varchar2").Value = rut;
+                        oracmd.Parameters.Add("listarsalida", OracleDbType.RefCursor, ParameterDirection.Output);
+                        oracmd.ExecuteNonQuery();
+                        OracleDataReader reader;
+                        try
                         {
-                            us = "nope";
-                            //conn.Close();
+                            reader = oracmd.ExecuteReader();
+
+                            while (reader.Read())
+                            {
+                                if (reader.GetString(0) == "Administrador")
+                                {
+                                    us = "nope";
+                                    //conn.Close();
+                                }
+                                else
+                                {
+                                    us = reader.GetString(0);
+                                    //conn.Close();
+                                }
+                            }
                         }
-                        else
+
+                        catch (Exception)
                         {
-                            us = reader.GetString(0);
-                            //conn.Close();
+                            us = "tipo_nulo";
+
                         }
+
+
+
                     }
-                }
+                    catch (Exception)
+                    {
 
-                catch (Exception)
+                        us = "server";
+
+                    }
+
+                }
+                else if (tipo == "Empresa")
                 {
-                    us = "tipo_nulo";
-                   
+                    us = "Cliente";
+
                 }
-                
+
+                conn.Close();
+
+                return us;
 
 
             }
-            catch (Exception)
-            {
-                
-                us = "server";
-              
-            }
 
-            }
-            else if(tipo =="Empresa")
-            {
-                us = "Cliente";
-                
-            }
-            conn.Close(); 
-            return us;
-            
+
+
 
         }
 
 
 
 
-//FIN AUTENTICACION
+        //FIN AUTENTICACION
 
-//METODOS LISTAR PARA COMBOBOX
-         [WebMethod]
+        //METODOS LISTAR PARA COMBOBOX
+        [WebMethod]
           public List<empresa> GetlistarEmpresaList()
           {
               return Datos.DatosEmpresa.ListadoEmpresas();

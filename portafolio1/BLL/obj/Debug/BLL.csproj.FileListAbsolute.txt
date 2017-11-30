@@ -34,3 +34,4 @@ C:\GrupoSafe\portafolio1\BLL\bin\Debug\BLL.pdb
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\BLL\bin\Debug\itextsharp.dll
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\BLL\bin\Debug\itextsharp.xml
 C:\Users\Sesaru\Documents\GitHub\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\GrupoSafe\portafolio1\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache

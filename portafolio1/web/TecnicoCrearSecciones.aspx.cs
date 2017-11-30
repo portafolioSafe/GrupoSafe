@@ -35,7 +35,7 @@ namespace web
                 int id = int.Parse(DropDownList1.SelectedItem.Value);
                 if (pregunta != "")
                 {
-                    BLL.PreguntasDTO.AgregarPregunta(id, pregunta);
+                    BLL.PreguntasDTO.AgregarPregunta(id, HttpUtility.HtmlEncode(pregunta));
                     GridView1.DataBind();
                     TextBox1.Text = " ";
                     mensajeSI.Visible = true;
@@ -74,7 +74,7 @@ namespace web
                 TableCell contactName = selectedRow.Cells[0];
                 TableCell contact2 = selectedRow.Cells[1];
                 string contact = contactName.Text;
-                TextBox1.Text = contact2.Text;
+                TextBox1.Text = HttpUtility.HtmlDecode(contact2.Text);
                 // Captura el id de la capacitacion mostrada en la tabla en una variable de sesion
                 Session["idCategoria"] = contact;
                 //Pasa a la pagina de modificacion
