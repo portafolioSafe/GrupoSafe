@@ -8,11 +8,18 @@
   <div class="panel-heading"><asp:Label ID="Label3" runat="server" Text="Proximas capacitaciones" Font-Bold="True" Font-Size="Larger"></asp:Label>
         </div>
   <div class="panel-body">
+       <div id="mensajeSI" runat="server" class="alert alert-success"  style="width:100%" visible="false">   
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ¡AGREGADO A LA LISTA DE ASISTENCIA EXITOSAMENTE!
 
+                        </div>
+           <div id="mensajeNO" runat="server" class="alert alert-warning"  style="width:100%" visible="false">   
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ¡YA ESTA AGREGADO EN LA LISTA!
+
+                        </div>
        
   
 
-      <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered bs-table" DataSourceID="ObjectDataSource1" EmptyDataText="No hay datos que mostrar.">
+      <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand" AutoGenerateColumns="False" CssClass="table table-bordered bs-table" DataSourceID="ObjectDataSource1" EmptyDataText="No hay datos que mostrar.">
           <Columns>
               <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" ItemStyle-HorizontalAlign="Center"  HeaderStyle-Width="10px" ItemStyle-Width="40px" HeaderStyle-CssClass=" text-center" ItemStyle-CssClass="text-center" HeaderStyle-HorizontalAlign="Center" FooterStyle-HorizontalAlign="Center">
                   <HeaderStyle HorizontalAlign="Center" ForeColor="White" BackColor="#337ab7"  CssClass=" text-center" Width="10px"></HeaderStyle>

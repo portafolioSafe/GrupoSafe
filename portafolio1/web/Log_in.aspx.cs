@@ -94,7 +94,7 @@ namespace web
                     }
                     else if (nombre.Equals("server") || tipo.Equals("server"))
                     {
-                        error.Visible = true;
+                        errorserver.Visible = true;
 
                         //MessageBox.Show("Usuario: " + pw + ", pass: " + pass.Value + ", tipo: " + radiob + "", "Error de autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
 

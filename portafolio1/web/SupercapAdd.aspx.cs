@@ -31,7 +31,7 @@ namespace web
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Area: " + Comboarea.Text + ", fecha: " + Calendar1.SelectedDate + ", tema: " + Txttema.Text + ", expositor: " + txtExpositor.Text + ", asistencia: " + TxtAsistencia.Text + ", empresa: " + Comboemp.Text + ",tipocap: " + Combotipocap.Text + "", "Error de autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //MessageBox.Show("Area: " + Comboarea.Text + ", fecha: " + Calendar1.SelectedDate + ", tema: " + Txttema.Text + ", expositor: " + txtExpositor.Text + ", asistencia: " + TxtAsistencia.Text + ", empresa: " + Comboemp.Text + ",tipocap: " + Combotipocap.Text + "", "Error de autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
             ServiceReference1.wsa1SoapClient wf = new ServiceReference1.wsa1SoapClient();
 
             if (wf.GuardarCapacitacion(Comboarea.Text, Calendar1.SelectedDate, Txttema.Text, txtExpositor.Text, Int32.Parse(TxtAsistencia.Text), Comboemp.Text, Int32.Parse(Combotipocap.Text)))

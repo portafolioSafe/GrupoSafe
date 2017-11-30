@@ -19,7 +19,18 @@ namespace web
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            BLL.visitasDTO meme = new BLL.visitasDTO();
 
+            if (meme.GuardarVisita(txtLugar.Text, Calendar1.SelectedDate, Calendar1.SelectedDate, Comboemp.Text, Int32.Parse(Combotipocap.Text)))
+            {
+
+                mensajeSI.Visible = true;
+
+            }
+            else
+            {
+                mensajeNO.Visible = true;
+            }
         }
     }
 }

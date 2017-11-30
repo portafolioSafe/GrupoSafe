@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace web
 {
-    public partial class Formulario_web16 : System.Web.UI.Page
+    public partial class Formulario_web121 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["tipo"].ToString() != "Trabajador")
+              if (Session["tipo"].ToString() != "Supervisor")
             {
                 Response.Redirect("Home.aspx");
             }
@@ -35,20 +35,10 @@ namespace web
                 string contact = contactName.Text;
 
                 // Captura el id de la capacitacion mostrada en la tabla en una variable de sesion
-                Session["id_capacitacion"] = contact;
+                Session["id_visita"] = contact;
                 //Pasa a la pagina de modificacion
-                string nombre_empresa = Session["Rut"].ToString();
-
-                BLL.capacitacionDTO meme = new BLL.capacitacionDTO();
-                string Respuesta = meme.asistirCap(Int32.Parse(contact), nombre_empresa);
-                if (Respuesta == "AGREGADO")
-                {
-                    mensajeSI.Visible = true;
-                }
-                else {
-                    mensajeNO.Visible=true;
-                }
+                Response.Redirect("SuperVisEdit.aspx");
             }
         }
+        }
     }
-}

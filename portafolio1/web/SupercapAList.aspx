@@ -12,12 +12,26 @@
       <asp:DropDownList ID="ComboEmpresa" runat="server" DataSourceID="ObjectDataSource1" CssClass="form-control" DataTextField="Nombre_empresa" DataValueField="Nombre_empresa" AutoPostBack="True"></asp:DropDownList>
   
 
-      <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="ListadoEmpresas" TypeName="BLL.EmpresaDTO"></asp:ObjectDataSource>
+
   
 
-      <asp:GridView ID="GridView1" runat="server" DataSourceID="ObjectDataSource2" AutoGenerateColumns="False" CssClass="table table-bordered bs-table"  EmptyDataText="No hay datos que mostrar">
-          <Columns>
+      <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="ListadoEmpresas" TypeName="BLL.EmpresaDTO"></asp:ObjectDataSource>
+   
+      </div>
+           <div class="panel-body">
+        <label for="tx_especialidad">Año</label>
+        
+               <asp:TextBox ID="txtyear"  CssClass="form-control" runat="server" TextMode="Number"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtyear" ErrorMessage="Rango de 1900 a 2099" Font-Bold="False" ForeColor="Red" ValidationExpression="^(19|20)\d{2}$"></asp:RegularExpressionValidator>
+  
+        <br />
+  
 
+    </div>
+
+      <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand" DataSourceID="ObjectDataSource2" AutoGenerateColumns="False" CssClass="table table-bordered bs-table"  EmptyDataText="No hay datos que mostrar">
+          <Columns>
+              <%--  --%>
 
              
               <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" ItemStyle-HorizontalAlign="Center"  HeaderStyle-Width="10px" ItemStyle-Width="40px" HeaderStyle-CssClass=" text-center" ItemStyle-CssClass="text-center" HeaderStyle-HorizontalAlign="Center" FooterStyle-HorizontalAlign="Center">
@@ -49,7 +63,7 @@
 
 <ItemStyle Width="120px"></ItemStyle>
               </asp:BoundField>
-              <asp:BoundField DataField="Asistencia" HeaderStyle-CssClass=" text-center" ItemStyle-CssClass="text-center" HeaderText="Asistencia" SortExpression="Asistencia" ItemStyle-Width="120px" >
+              <asp:BoundField DataField="Asistencia" HeaderStyle-CssClass=" text-center" ItemStyle-CssClass="text-center" HeaderText="Cupos" SortExpression="Asistencia" ItemStyle-Width="120px" >
 <HeaderStyle CssClass=" text-center" BackColor="#337ab7" ForeColor="White"></HeaderStyle>
 
 <ItemStyle Width="120px"></ItemStyle>
@@ -77,14 +91,15 @@
 
 
      
-        <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="ListarCapacitacionxEmpresa" TypeName="BLL.capacitacionDTO">
+        <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="ListarCapacitacionxaño" TypeName="BLL.capacitacionDTO">
             <SelectParameters>
                 <asp:ControlParameter ControlID="ComboEmpresa" Name="nombreEmpresa" PropertyName="SelectedValue" Type="String" />
+                <asp:ControlParameter ControlID="txtyear" Name="year" PropertyName="Text" Type="Int32" />
             </SelectParameters>
         </asp:ObjectDataSource>
 
 
      
-  </div>
-            </div>
+          </div>
+            
 </asp:Content>

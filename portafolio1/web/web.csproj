@@ -218,6 +218,7 @@
     <Content Include="ClenteListC.aspx" />
     <Content Include="ClenteListVi.aspx" />
     <Content Include="ClenteListEv.aspx" />
+    <Content Include="SuperVisListar.aspx" />
     <Content Include="IngenieroListEv2.aspx" />
     <Content Include="SuperVisList.aspx" />
     <Content Include="SuperMedAdd.aspx" />
@@ -331,6 +332,13 @@
     </Compile>
     <Compile Include="ClenteListEv.aspx.designer.cs">
       <DependentUpon>ClenteListEv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuperVisListar.aspx.cs">
+      <DependentUpon>SuperVisListar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperVisListar.aspx.designer.cs">
+      <DependentUpon>SuperVisListar.aspx</DependentUpon>
     </Compile>
     <Compile Include="IngenieroListEv2.aspx.cs">
       <DependentUpon>IngenieroListEv2.aspx</DependentUpon>

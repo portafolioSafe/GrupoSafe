@@ -134,11 +134,19 @@ namespace BLL
 
             return ws.ListarCapacitacionesxempresa(nombreEmpresa);
 
-        } 
+        }
+        public List<ServiceReference1.capacitacion> ListarCapacitacionxaño(string nombreEmpresa, int year)
+        {
+
+            return ws.ListadoCapacitacionXaño(nombreEmpresa,year);
+
+        }
 
 
-
-
+        public string asistirCap(int id_cap, string rut)
+        {
+            return ws.AsistirCapcitacion(id_cap, rut);
+        }
 
 
 
