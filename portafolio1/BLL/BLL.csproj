@@ -186,6 +186,9 @@
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.listarDetalleCapResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.listarDetalleCapxUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.listarEmpresaActivasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
