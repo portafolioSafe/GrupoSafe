@@ -334,6 +334,20 @@
           <s:element minOccurs="0" maxOccurs="1" name="Rut_usuario" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="listarDetalleCapxUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rut_usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarDetalleCapxUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarDetalleCapxUsuarioResult" type="tns:ArrayOfDetalle_cap" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="M_guardarMedico">
         <s:complexType>
           <s:sequence>
@@ -854,6 +868,12 @@
   <wsdl:message name="listarDetalleCapSoapOut">
     <wsdl:part name="parameters" element="tns:listarDetalleCapResponse" />
   </wsdl:message>
+  <wsdl:message name="listarDetalleCapxUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:listarDetalleCapxUsuario" />
+  </wsdl:message>
+  <wsdl:message name="listarDetalleCapxUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:listarDetalleCapxUsuarioResponse" />
+  </wsdl:message>
   <wsdl:message name="M_guardarMedicoSoapIn">
     <wsdl:part name="parameters" element="tns:M_guardarMedico" />
   </wsdl:message>
@@ -1062,6 +1082,10 @@
     <wsdl:operation name="listarDetalleCap">
       <wsdl:input message="tns:listarDetalleCapSoapIn" />
       <wsdl:output message="tns:listarDetalleCapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarDetalleCapxUsuario">
+      <wsdl:input message="tns:listarDetalleCapxUsuarioSoapIn" />
+      <wsdl:output message="tns:listarDetalleCapxUsuarioSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="M_guardarMedico">
       <wsdl:input message="tns:M_guardarMedicoSoapIn" />
@@ -1318,6 +1342,15 @@
     </wsdl:operation>
     <wsdl:operation name="listarDetalleCap">
       <soap:operation soapAction="http://tempuri.org/listarDetalleCap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarDetalleCapxUsuario">
+      <soap:operation soapAction="http://tempuri.org/listarDetalleCapxUsuario" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1690,6 +1723,15 @@
     </wsdl:operation>
     <wsdl:operation name="listarDetalleCap">
       <soap12:operation soapAction="http://tempuri.org/listarDetalleCap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarDetalleCapxUsuario">
+      <soap12:operation soapAction="http://tempuri.org/listarDetalleCapxUsuario" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

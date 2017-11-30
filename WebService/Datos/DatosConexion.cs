@@ -37,7 +37,7 @@ namespace Datos
             //oradb = string.Format(oradb, user, password);
            
             OracleConnection conn = new OracleConnection();
-            conn.Close();
+            //conn.Close();
             conn.ConnectionString = strConnectionString;
             return conn;
         }

@@ -1430,6 +1430,13 @@ namespace BLL.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listarDetalleCap", ReplyAction="*")]
         System.Threading.Tasks.Task<BLL.ServiceReference1.listarDetalleCapResponse> listarDetalleCapAsync(BLL.ServiceReference1.listarDetalleCapRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut_usuario del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listarDetalleCapxUsuario", ReplyAction="*")]
+        BLL.ServiceReference1.listarDetalleCapxUsuarioResponse listarDetalleCapxUsuario(BLL.ServiceReference1.listarDetalleCapxUsuarioRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listarDetalleCapxUsuario", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.listarDetalleCapxUsuarioResponse> listarDetalleCapxUsuarioAsync(BLL.ServiceReference1.listarDetalleCapxUsuarioRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/M_guardarMedico", ReplyAction="*")]
         BLL.ServiceReference1.M_guardarMedicoResponse M_guardarMedico(BLL.ServiceReference1.M_guardarMedicoRequest request);
@@ -2916,6 +2923,74 @@ namespace BLL.ServiceReference1 {
         
         public listarDetalleCapResponseBody(BLL.ServiceReference1.ArrayOfDetalle_cap listarDetalleCapResult) {
             this.listarDetalleCapResult = listarDetalleCapResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listarDetalleCapxUsuarioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listarDetalleCapxUsuario", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.listarDetalleCapxUsuarioRequestBody Body;
+        
+        public listarDetalleCapxUsuarioRequest() {
+        }
+        
+        public listarDetalleCapxUsuarioRequest(BLL.ServiceReference1.listarDetalleCapxUsuarioRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class listarDetalleCapxUsuarioRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string rut_usuario;
+        
+        public listarDetalleCapxUsuarioRequestBody() {
+        }
+        
+        public listarDetalleCapxUsuarioRequestBody(string rut_usuario) {
+            this.rut_usuario = rut_usuario;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listarDetalleCapxUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listarDetalleCapxUsuarioResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.listarDetalleCapxUsuarioResponseBody Body;
+        
+        public listarDetalleCapxUsuarioResponse() {
+        }
+        
+        public listarDetalleCapxUsuarioResponse(BLL.ServiceReference1.listarDetalleCapxUsuarioResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class listarDetalleCapxUsuarioResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BLL.ServiceReference1.ArrayOfDetalle_cap listarDetalleCapxUsuarioResult;
+        
+        public listarDetalleCapxUsuarioResponseBody() {
+        }
+        
+        public listarDetalleCapxUsuarioResponseBody(BLL.ServiceReference1.ArrayOfDetalle_cap listarDetalleCapxUsuarioResult) {
+            this.listarDetalleCapxUsuarioResult = listarDetalleCapxUsuarioResult;
         }
     }
     
@@ -5003,6 +5078,31 @@ namespace BLL.ServiceReference1 {
             BLL.ServiceReference1.listarDetalleCapRequest inValue = new BLL.ServiceReference1.listarDetalleCapRequest();
             inValue.Body = new BLL.ServiceReference1.listarDetalleCapRequestBody();
             return ((BLL.ServiceReference1.wsa1Soap)(this)).listarDetalleCapAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.listarDetalleCapxUsuarioResponse BLL.ServiceReference1.wsa1Soap.listarDetalleCapxUsuario(BLL.ServiceReference1.listarDetalleCapxUsuarioRequest request) {
+            return base.Channel.listarDetalleCapxUsuario(request);
+        }
+        
+        public BLL.ServiceReference1.ArrayOfDetalle_cap listarDetalleCapxUsuario(string rut_usuario) {
+            BLL.ServiceReference1.listarDetalleCapxUsuarioRequest inValue = new BLL.ServiceReference1.listarDetalleCapxUsuarioRequest();
+            inValue.Body = new BLL.ServiceReference1.listarDetalleCapxUsuarioRequestBody();
+            inValue.Body.rut_usuario = rut_usuario;
+            BLL.ServiceReference1.listarDetalleCapxUsuarioResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).listarDetalleCapxUsuario(inValue);
+            return retVal.Body.listarDetalleCapxUsuarioResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.listarDetalleCapxUsuarioResponse> BLL.ServiceReference1.wsa1Soap.listarDetalleCapxUsuarioAsync(BLL.ServiceReference1.listarDetalleCapxUsuarioRequest request) {
+            return base.Channel.listarDetalleCapxUsuarioAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.listarDetalleCapxUsuarioResponse> listarDetalleCapxUsuarioAsync(string rut_usuario) {
+            BLL.ServiceReference1.listarDetalleCapxUsuarioRequest inValue = new BLL.ServiceReference1.listarDetalleCapxUsuarioRequest();
+            inValue.Body = new BLL.ServiceReference1.listarDetalleCapxUsuarioRequestBody();
+            inValue.Body.rut_usuario = rut_usuario;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).listarDetalleCapxUsuarioAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
