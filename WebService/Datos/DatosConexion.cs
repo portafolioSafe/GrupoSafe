@@ -32,7 +32,7 @@ namespace Datos
                 throw new Exception("El usuario y el password son datos requeridos");
             }
             //ConnectionStrings["ConnectionStringUsers"].ConnectionString;
-            string strConnectionString = "DATA SOURCE = 190.161.202.171:1521/DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
+            string strConnectionString = "DATA SOURCE = 190.161.202.171:1521/DBORACLE; USER ID = GRUPOSAFE;Password = portafolio; Pooling=False";
 
             //oradb = string.Format(oradb, user, password);
            

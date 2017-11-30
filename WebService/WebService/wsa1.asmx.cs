@@ -83,7 +83,7 @@ namespace WebService
 
                 }
 
-                conn.Dispose();
+                
                 conn.Close();
                 return us;
 
@@ -456,31 +456,36 @@ namespace WebService
           public List<area> listarArea()
           {
 
+            Datos.DatosConexion c = new Datos.DatosConexion();
+            OracleConnection conn = new OracleConnection();
+            using (conn = c.Connect())
+            {
+                conn.Open();
+                OracleCommand oracmd = new OracleCommand();
+                oracmd.Parameters.Add("LISTA", OracleDbType.RefCursor, ParameterDirection.Output);
+                oracmd.CommandText = "CARGO_TIPO_US.LISTAR_AREA";
+                oracmd.CommandType = CommandType.StoredProcedure;
+                oracmd.Connection = conn;
+                OracleDataAdapter da = new OracleDataAdapter(oracmd);
+                DataSet ds = new DataSet();
+                List<area> milista = new List<area>();
+                da.Fill(ds);
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    area nueva = new area();
+                    nueva.Id = Int32.Parse(row[0].ToString());
+                    nueva.Nombre_area = row[1].ToString();
+                    milista.Add(nueva);
+                    //milista.Add(string.Format("{0}" + " " + "{1}", row["RUT_EMPRESA"], row["NOMBRE"]));
+                }
+                conn.Close();
+                return milista;
+
+            }
 
 
-
-              string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
-              OracleConnection oraconn = new OracleConnection(strConnectionString);
-              oraconn.Open();
-              OracleCommand oracmd = new OracleCommand();
-              oracmd.Parameters.Add("LISTA", OracleDbType.RefCursor, ParameterDirection.Output);
-              oracmd.CommandText = "CARGO_TIPO_US.LISTAR_AREA";
-              oracmd.CommandType = CommandType.StoredProcedure;
-              oracmd.Connection = oraconn;
-              OracleDataAdapter da = new OracleDataAdapter(oracmd);
-              DataSet ds = new DataSet();
-              List<area> milista = new List<area>();
-              da.Fill(ds);
-              foreach (DataRow row in ds.Tables[0].Rows)
-              {
-                  area nueva = new area();
-                  nueva.Id = Int32.Parse(row[0].ToString());
-                  nueva.Nombre_area = row[1].ToString();
-                  milista.Add(nueva);
-                  //milista.Add(string.Format("{0}" + " " + "{1}", row["RUT_EMPRESA"], row["NOMBRE"]));
-              }
-              oraconn.Close();
-              return milista;
+               
+              
 
           }
     
