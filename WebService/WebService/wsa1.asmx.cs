@@ -440,13 +440,13 @@ namespace WebService
           {
               return Datos.DatosEmpresa.ListadoEmpresas();
           }
-         [WebMethod]
-         public List<empresa> listarEmpresaActivas()
-         {
-             return Datos.DatosEmpresa.ListadoEmpresasACTIVOS();
-         }
+        [WebMethod]
+        public List<empresa> listarEmpresaActivas()
+        {
+            return Datos.DatosEmpresa.ListadoEmpresasACTIVOS();
+        }
 
-         [WebMethod]
+        [WebMethod]
           public List<cap_tipo> GetListarTipoCap()
           {
               return Datos.DatosCapacitaciones.GetListarTipoCap();  
@@ -537,18 +537,18 @@ namespace WebService
         public List<capacitacion> ListadoCapacitacionXaño(string empresa, int year)
         {
 
-            return Datos.DatosCapacitaciones.ListadoCapacitacionXaño(empresa,year);
+            return Datos.DatosCapacitaciones.ListadoCapacitacionXaño(empresa, year);
         }
 
 
         [WebMethod]
-        public string AsistirCapcitacion(int ID_CAPACITACION,string USUARIO_RUT)
+        public string AsistirCapcitacion(int ID_CAPACITACION, string USUARIO_RUT)
         {
             return Datos.DatosDetalleCap.AsistirCapcitacion(ID_CAPACITACION, USUARIO_RUT);
 
-            
+
         }
-          [WebMethod]
+        [WebMethod]
         public List<detalle_cap> listarDetalleCap()
         {
 
@@ -558,9 +558,9 @@ namespace WebService
 
 
 
-//FIN CAPACITACION
+        //FIN CAPACITACION
 
-//METODOS MEDICO
+        //METODOS MEDICO
         [WebMethod]
         public bool M_guardarMedico(string rut, string nombre, string apellido, string especialidad, string correo, string pass)
         {

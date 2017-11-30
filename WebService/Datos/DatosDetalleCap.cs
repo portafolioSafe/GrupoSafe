@@ -78,13 +78,13 @@ namespace Datos
                
            }
        }
-       public static List<detalle_cap> listarDetalleCap() {
+       public static List<ClassLibrary1.detalle_cap> listarDetalleCap() {
 
 
            DatosConexion c = new DatosConexion();
            using (OracleConnection conn = c.Connect())
            {
-               List<detalle_cap> listado = new List<detalle_cap>();
+               List<ClassLibrary1.detalle_cap> listado = new List<ClassLibrary1.detalle_cap>();
                OracleCommand oracmd = new OracleCommand();
                oracmd.Parameters.Add("listar", OracleDbType.RefCursor, ParameterDirection.Output);
                oracmd.CommandText = "PKG_DETALLE_CAP.LISTAR_DETALLE_CAP";
@@ -99,8 +99,8 @@ namespace Datos
                    OracleDataReader dr = oracmd.ExecuteReader();
                    while (dr.Read())
                    {
-                      
-                           detalle_cap cap = new detalle_cap();
+
+                        ClassLibrary1.detalle_cap cap = new ClassLibrary1.detalle_cap();
                            cap.Nota = int.Parse(dr["NOTA"].ToString());
                            cap.Asistencia = int.Parse(dr["ASISTENCIA"].ToString());
 

@@ -45,7 +45,6 @@ C:\GrupoSafe\WebService\WebService\bin\WebService.dll.config
 C:\GrupoSafe\WebService\WebService\bin\WebService.dll
 C:\GrupoSafe\WebService\WebService\bin\WebService.pdb
 C:\GrupoSafe\WebService\WebService\bin\ClassLibrary1.dll
-C:\GrupoSafe\WebService\WebService\bin\Datos.dll
 C:\GrupoSafe\WebService\WebService\bin\Oracle.ManagedDataAccess.dll
 C:\GrupoSafe\WebService\WebService\bin\ClassLibrary1.pdb
 C:\GrupoSafe\WebService\WebService\bin\Datos.pdb
@@ -54,3 +53,4 @@ C:\GrupoSafe\WebService\WebService\obj\Debug\WebService.csprojResolveAssemblyRef
 C:\GrupoSafe\WebService\WebService\obj\Debug\WebService.csproj.CoreCompileInputs.cache
 C:\GrupoSafe\WebService\WebService\obj\Debug\WebService.dll
 C:\GrupoSafe\WebService\WebService\obj\Debug\WebService.pdb
+C:\GrupoSafe\WebService\WebService\bin\Datos.dll

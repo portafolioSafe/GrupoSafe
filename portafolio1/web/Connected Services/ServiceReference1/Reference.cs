@@ -43,6 +43,13 @@ namespace web.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfDetalle_cap", Namespace="http://tempuri.org/", ItemName="detalle_cap")]
+    [System.SerializableAttribute()]
+    public class ArrayOfDetalle_cap : System.Collections.Generic.List<BLL.ServiceReference1.detalle_cap> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfCategoria", Namespace="http://tempuri.org/", ItemName="categoria")]
     [System.SerializableAttribute()]
     public class ArrayOfCategoria : System.Collections.Generic.List<BLL.ServiceReference1.categoria> {
@@ -115,6 +122,13 @@ namespace web.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetlistarEmpresaList", ReplyAction="*")]
         System.Threading.Tasks.Task<web.ServiceReference1.GetlistarEmpresaListResponse> GetlistarEmpresaListAsync(web.ServiceReference1.GetlistarEmpresaListRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento listarEmpresaActivasResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listarEmpresaActivas", ReplyAction="*")]
+        web.ServiceReference1.listarEmpresaActivasResponse listarEmpresaActivas(web.ServiceReference1.listarEmpresaActivasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listarEmpresaActivas", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.listarEmpresaActivasResponse> listarEmpresaActivasAsync(web.ServiceReference1.listarEmpresaActivasRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetListarTipoCapResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetListarTipoCap", ReplyAction="*")]
         web.ServiceReference1.GetListarTipoCapResponse GetListarTipoCap(web.ServiceReference1.GetListarTipoCapRequest request);
@@ -171,12 +185,26 @@ namespace web.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCapacitacionesxempresa", ReplyAction="*")]
         System.Threading.Tasks.Task<web.ServiceReference1.ListarCapacitacionesxempresaResponse> ListarCapacitacionesxempresaAsync(web.ServiceReference1.ListarCapacitacionesxempresaRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento empresa del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListadoCapacitacionXaño", ReplyAction="*")]
+        web.ServiceReference1.ListadoCapacitacionXañoResponse ListadoCapacitacionXaño(web.ServiceReference1.ListadoCapacitacionXañoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListadoCapacitacionXaño", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.ListadoCapacitacionXañoResponse> ListadoCapacitacionXañoAsync(web.ServiceReference1.ListadoCapacitacionXañoRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento USUARIO_RUT del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AsistirCapcitacion", ReplyAction="*")]
         web.ServiceReference1.AsistirCapcitacionResponse AsistirCapcitacion(web.ServiceReference1.AsistirCapcitacionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AsistirCapcitacion", ReplyAction="*")]
         System.Threading.Tasks.Task<web.ServiceReference1.AsistirCapcitacionResponse> AsistirCapcitacionAsync(web.ServiceReference1.AsistirCapcitacionRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento listarDetalleCapResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listarDetalleCap", ReplyAction="*")]
+        web.ServiceReference1.listarDetalleCapResponse listarDetalleCap(web.ServiceReference1.listarDetalleCapRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/listarDetalleCap", ReplyAction="*")]
+        System.Threading.Tasks.Task<web.ServiceReference1.listarDetalleCapResponse> listarDetalleCapAsync(web.ServiceReference1.listarDetalleCapRequest request);
         
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/M_guardarMedico", ReplyAction="*")]
@@ -830,6 +858,67 @@ namespace web.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listarEmpresaActivasRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listarEmpresaActivas", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.listarEmpresaActivasRequestBody Body;
+        
+        public listarEmpresaActivasRequest() {
+        }
+        
+        public listarEmpresaActivasRequest(web.ServiceReference1.listarEmpresaActivasRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class listarEmpresaActivasRequestBody {
+        
+        public listarEmpresaActivasRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listarEmpresaActivasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listarEmpresaActivasResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.listarEmpresaActivasResponseBody Body;
+        
+        public listarEmpresaActivasResponse() {
+        }
+        
+        public listarEmpresaActivasResponse(web.ServiceReference1.listarEmpresaActivasResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class listarEmpresaActivasResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public web.ServiceReference1.ArrayOfEmpresa listarEmpresaActivasResult;
+        
+        public listarEmpresaActivasResponseBody() {
+        }
+        
+        public listarEmpresaActivasResponseBody(web.ServiceReference1.ArrayOfEmpresa listarEmpresaActivasResult) {
+            this.listarEmpresaActivasResult = listarEmpresaActivasResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetListarTipoCapRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetListarTipoCap", Namespace="http://tempuri.org/", Order=0)]
@@ -1405,6 +1494,78 @@ namespace web.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ListadoCapacitacionXañoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListadoCapacitacionXaño", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ListadoCapacitacionXañoRequestBody Body;
+        
+        public ListadoCapacitacionXañoRequest() {
+        }
+        
+        public ListadoCapacitacionXañoRequest(web.ServiceReference1.ListadoCapacitacionXañoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ListadoCapacitacionXañoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string empresa;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int year;
+        
+        public ListadoCapacitacionXañoRequestBody() {
+        }
+        
+        public ListadoCapacitacionXañoRequestBody(string empresa, int year) {
+            this.empresa = empresa;
+            this.year = year;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ListadoCapacitacionXañoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListadoCapacitacionXañoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.ListadoCapacitacionXañoResponseBody Body;
+        
+        public ListadoCapacitacionXañoResponse() {
+        }
+        
+        public ListadoCapacitacionXañoResponse(web.ServiceReference1.ListadoCapacitacionXañoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ListadoCapacitacionXañoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public web.ServiceReference1.ArrayOfCapacitacion ListadoCapacitacionXañoResult;
+        
+        public ListadoCapacitacionXañoResponseBody() {
+        }
+        
+        public ListadoCapacitacionXañoResponseBody(web.ServiceReference1.ArrayOfCapacitacion ListadoCapacitacionXañoResult) {
+            this.ListadoCapacitacionXañoResult = ListadoCapacitacionXañoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class AsistirCapcitacionRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="AsistirCapcitacion", Namespace="http://tempuri.org/", Order=0)]
@@ -1462,14 +1623,75 @@ namespace web.ServiceReference1 {
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
     public partial class AsistirCapcitacionResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public bool AsistirCapcitacionResult;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string AsistirCapcitacionResult;
         
         public AsistirCapcitacionResponseBody() {
         }
         
-        public AsistirCapcitacionResponseBody(bool AsistirCapcitacionResult) {
+        public AsistirCapcitacionResponseBody(string AsistirCapcitacionResult) {
             this.AsistirCapcitacionResult = AsistirCapcitacionResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listarDetalleCapRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listarDetalleCap", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.listarDetalleCapRequestBody Body;
+        
+        public listarDetalleCapRequest() {
+        }
+        
+        public listarDetalleCapRequest(web.ServiceReference1.listarDetalleCapRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class listarDetalleCapRequestBody {
+        
+        public listarDetalleCapRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class listarDetalleCapResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="listarDetalleCapResponse", Namespace="http://tempuri.org/", Order=0)]
+        public web.ServiceReference1.listarDetalleCapResponseBody Body;
+        
+        public listarDetalleCapResponse() {
+        }
+        
+        public listarDetalleCapResponse(web.ServiceReference1.listarDetalleCapResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class listarDetalleCapResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public web.ServiceReference1.ArrayOfDetalle_cap listarDetalleCapResult;
+        
+        public listarDetalleCapResponseBody() {
+        }
+        
+        public listarDetalleCapResponseBody(web.ServiceReference1.ArrayOfDetalle_cap listarDetalleCapResult) {
+            this.listarDetalleCapResult = listarDetalleCapResult;
         }
     }
     
@@ -3240,6 +3462,29 @@ namespace web.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.listarEmpresaActivasResponse web.ServiceReference1.wsa1Soap.listarEmpresaActivas(web.ServiceReference1.listarEmpresaActivasRequest request) {
+            return base.Channel.listarEmpresaActivas(request);
+        }
+        
+        public web.ServiceReference1.ArrayOfEmpresa listarEmpresaActivas() {
+            web.ServiceReference1.listarEmpresaActivasRequest inValue = new web.ServiceReference1.listarEmpresaActivasRequest();
+            inValue.Body = new web.ServiceReference1.listarEmpresaActivasRequestBody();
+            web.ServiceReference1.listarEmpresaActivasResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).listarEmpresaActivas(inValue);
+            return retVal.Body.listarEmpresaActivasResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.listarEmpresaActivasResponse> web.ServiceReference1.wsa1Soap.listarEmpresaActivasAsync(web.ServiceReference1.listarEmpresaActivasRequest request) {
+            return base.Channel.listarEmpresaActivasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.listarEmpresaActivasResponse> listarEmpresaActivasAsync() {
+            web.ServiceReference1.listarEmpresaActivasRequest inValue = new web.ServiceReference1.listarEmpresaActivasRequest();
+            inValue.Body = new web.ServiceReference1.listarEmpresaActivasRequestBody();
+            return ((web.ServiceReference1.wsa1Soap)(this)).listarEmpresaActivasAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         web.ServiceReference1.GetListarTipoCapResponse web.ServiceReference1.wsa1Soap.GetListarTipoCap(web.ServiceReference1.GetListarTipoCapRequest request) {
             return base.Channel.GetListarTipoCap(request);
         }
@@ -3460,11 +3705,38 @@ namespace web.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.ListadoCapacitacionXañoResponse web.ServiceReference1.wsa1Soap.ListadoCapacitacionXaño(web.ServiceReference1.ListadoCapacitacionXañoRequest request) {
+            return base.Channel.ListadoCapacitacionXaño(request);
+        }
+        
+        public web.ServiceReference1.ArrayOfCapacitacion ListadoCapacitacionXaño(string empresa, int year) {
+            web.ServiceReference1.ListadoCapacitacionXañoRequest inValue = new web.ServiceReference1.ListadoCapacitacionXañoRequest();
+            inValue.Body = new web.ServiceReference1.ListadoCapacitacionXañoRequestBody();
+            inValue.Body.empresa = empresa;
+            inValue.Body.year = year;
+            web.ServiceReference1.ListadoCapacitacionXañoResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).ListadoCapacitacionXaño(inValue);
+            return retVal.Body.ListadoCapacitacionXañoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.ListadoCapacitacionXañoResponse> web.ServiceReference1.wsa1Soap.ListadoCapacitacionXañoAsync(web.ServiceReference1.ListadoCapacitacionXañoRequest request) {
+            return base.Channel.ListadoCapacitacionXañoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.ListadoCapacitacionXañoResponse> ListadoCapacitacionXañoAsync(string empresa, int year) {
+            web.ServiceReference1.ListadoCapacitacionXañoRequest inValue = new web.ServiceReference1.ListadoCapacitacionXañoRequest();
+            inValue.Body = new web.ServiceReference1.ListadoCapacitacionXañoRequestBody();
+            inValue.Body.empresa = empresa;
+            inValue.Body.year = year;
+            return ((web.ServiceReference1.wsa1Soap)(this)).ListadoCapacitacionXañoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         web.ServiceReference1.AsistirCapcitacionResponse web.ServiceReference1.wsa1Soap.AsistirCapcitacion(web.ServiceReference1.AsistirCapcitacionRequest request) {
             return base.Channel.AsistirCapcitacion(request);
         }
         
-        public bool AsistirCapcitacion(int ID_CAPACITACION, string USUARIO_RUT) {
+        public string AsistirCapcitacion(int ID_CAPACITACION, string USUARIO_RUT) {
             web.ServiceReference1.AsistirCapcitacionRequest inValue = new web.ServiceReference1.AsistirCapcitacionRequest();
             inValue.Body = new web.ServiceReference1.AsistirCapcitacionRequestBody();
             inValue.Body.ID_CAPACITACION = ID_CAPACITACION;
@@ -3484,6 +3756,29 @@ namespace web.ServiceReference1 {
             inValue.Body.ID_CAPACITACION = ID_CAPACITACION;
             inValue.Body.USUARIO_RUT = USUARIO_RUT;
             return ((web.ServiceReference1.wsa1Soap)(this)).AsistirCapcitacionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        web.ServiceReference1.listarDetalleCapResponse web.ServiceReference1.wsa1Soap.listarDetalleCap(web.ServiceReference1.listarDetalleCapRequest request) {
+            return base.Channel.listarDetalleCap(request);
+        }
+        
+        public web.ServiceReference1.ArrayOfDetalle_cap listarDetalleCap() {
+            web.ServiceReference1.listarDetalleCapRequest inValue = new web.ServiceReference1.listarDetalleCapRequest();
+            inValue.Body = new web.ServiceReference1.listarDetalleCapRequestBody();
+            web.ServiceReference1.listarDetalleCapResponse retVal = ((web.ServiceReference1.wsa1Soap)(this)).listarDetalleCap(inValue);
+            return retVal.Body.listarDetalleCapResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<web.ServiceReference1.listarDetalleCapResponse> web.ServiceReference1.wsa1Soap.listarDetalleCapAsync(web.ServiceReference1.listarDetalleCapRequest request) {
+            return base.Channel.listarDetalleCapAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<web.ServiceReference1.listarDetalleCapResponse> listarDetalleCapAsync() {
+            web.ServiceReference1.listarDetalleCapRequest inValue = new web.ServiceReference1.listarDetalleCapRequest();
+            inValue.Body = new web.ServiceReference1.listarDetalleCapRequestBody();
+            return ((web.ServiceReference1.wsa1Soap)(this)).listarDetalleCapAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
