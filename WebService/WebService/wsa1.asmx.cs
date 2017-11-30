@@ -554,7 +554,13 @@ namespace WebService
 
             return Datos.DatosDetalleCap.listarDetalleCap();
         }
+        [WebMethod]
+        public List<detalle_cap>  listarDetalleCapxUsuario(string rut_usuario)
+        {
 
+            return Datos.DatosDetalleCap.listarDetalleCapxUsuario(rut_usuario);
+        }
+   
 
 
 
