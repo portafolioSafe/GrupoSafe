@@ -28,7 +28,7 @@ namespace Datos
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
                  
 
-                    cmd.Parameters.Add("ESTAD", "varchar2").Value = "Activo";
+                    cmd.Parameters.Add("ESTAD", "varchar2").Value = "Pendiente";
                     // cmd.Parameters.Add("FECHA", System.Data.SqlDbType.DateTime) = fecha;
                     cmd.Parameters.Add("LUGA", "varchar2").Value = lugar;
                     cmd.Parameters.Add("FECH", "date").Value = fecha.ToShortDateString();
@@ -144,10 +144,50 @@ namespace Datos
         
         }//
 
+        public static bool editarVisita(int id_edit, string lugar, DateTime fecha, DateTime hora, string empresa, int tipoexamen)
+        {
+
+            DatosConexion c = new DatosConexion();
+            using (OracleConnection conn = c.Connect())
+            {
+
+                OracleCommand cmd = new OracleCommand("visita_medica.MODIFICAR_VISITA", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
 
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                try
+                {
+                    conn.Open();
+
+                    DateTime fecha1 = DateTime.Now.Date;
+         
+
+                    cmd.Parameters.Add("ID_", "number").Value = id_edit;
+                    cmd.Parameters.Add("ESTAD", "varchar2").Value = "Pendiente";
+                    // cmd.Parameters.Add("FECHA", System.Data.SqlDbType.DateTime) = fecha;
+                    cmd.Parameters.Add("LUGA", "varchar2").Value = lugar;
+                    cmd.Parameters.Add("FECH", "date").Value = fecha.ToShortDateString();
+                    cmd.Parameters.Add("HOR", "date").Value = fecha.ToShortDateString();
+                    cmd.Parameters.Add("EMPRES", "varchar2").Value = empresa;
+
+                    cmd.Parameters.Add("TIPO_EX", "number").Value = tipoexamen;
 
 
+                    //falta estado?
+
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    return true;
+                }
+                catch (Exception)
+                {
+
+                    return false;
+                }
+
+            }
+        }
 
 
         public static List<visitasMedicas> listadoVisitasxEmpresa( string empresa)

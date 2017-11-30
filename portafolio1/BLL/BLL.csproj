@@ -61,6 +61,7 @@
     </Compile>
     <Compile Include="TipoEvaluacionDTO.cs" />
     <Compile Include="tipo_examenDTO.cs" />
+    <Compile Include="visitasDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -78,6 +79,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ArrayOfCategoria.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ArrayOfDetalle_cap.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ArrayOfEmpresa.datasource">
@@ -158,6 +162,9 @@
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.GuardarVisitaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ListadoCapacitacionXañoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.listadodeevaluacionesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -174,6 +181,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ListarCapacitacionesxfechaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.listarDetalleCapResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.listarEmpresaActivasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.listarTipoExamen1Response.datasource">

@@ -10,7 +10,7 @@
 namespace web {
     
     
-    public partial class Formulario_web16 {
+    public partial class Formulario_web121 {
         
         /// <summary>
         /// Control Label3.
@@ -20,24 +20,6 @@ namespace web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-        
-        /// <summary>
-        /// Control mensajeSI.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mensajeSI;
-        
-        /// <summary>
-        /// Control mensajeNO.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mensajeNO;
         
         /// <summary>
         /// Control GridView1.

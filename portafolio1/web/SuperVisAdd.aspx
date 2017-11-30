@@ -17,18 +17,18 @@
   <div class="panel-body">
 
      <div class="form-group">
-         <div id="mensajeSI" runat="server" class="alert alert-success"  style="width:90%" visible="false">   
-                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ¡CAPACITACIÓN AGREGADA EXITOSAMENTE!
+         <div id="mensajeSI" runat="server" class="alert alert-success"  style="width:100%" visible="false">   
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ¡VISITA AGREGADA EXITOSAMENTE!
 
                         </div>
-           <div id="mensajeNO" runat="server" class="alert alert-danger"  style="width:90%" visible="false">   
+           <div id="mensajeNO" runat="server" class="alert alert-danger"  style="width:100%" visible="false">   
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ¡ERROR DE CONEXIÓN, INTENTE OTRA VEZ!
 
                         </div>
 
     <label for="em">Empresa</label>
       <asp:DropDownList ID="Comboemp" class="form-control" runat="server" DataSourceID="ObjectDataSource1" DataTextField="Nombre_empresa" DataValueField="Rut_empresa" ></asp:DropDownList>
-  </div>
+
  
 
       <div class="form-group">
@@ -79,7 +79,8 @@
 
         </div>
 </div>
-
+        </div>
+     </div>
 
 
 </asp:Content>

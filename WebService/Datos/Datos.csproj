@@ -61,6 +61,7 @@
     <Compile Include="DatosCapacitaciones.cs" />
     <Compile Include="DatosCategoria.cs" />
     <Compile Include="DatosConexion.cs" />
+    <Compile Include="DatosDetalleCap.cs" />
     <Compile Include="DatosDetalle_evaluacion.cs" />
     <Compile Include="DatosEmpresa.cs" />
     <Compile Include="DatosEvaluaciones.cs" />

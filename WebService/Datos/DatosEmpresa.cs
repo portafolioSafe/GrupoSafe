@@ -51,6 +51,54 @@ namespace Datos
             }
         }
 
+
+        public static List<empresa> ListadoEmpresasACTIVOS()
+        {
+
+            DatosConexion c = new DatosConexion();
+            using (OracleConnection conn = c.Connect())
+            {
+                List<empresa> listado = new List<empresa>();
+                OracleCommand oracmd = new OracleCommand();
+                oracmd.Parameters.Add("listarEmpre", OracleDbType.RefCursor, ParameterDirection.Output);
+                oracmd.CommandText = "pkg_empresas.listarEmpresa";
+                oracmd.CommandType = CommandType.StoredProcedure;
+                oracmd.Connection = conn;
+                OracleDataAdapter da = new OracleDataAdapter(oracmd);
+                DataSet ds = new DataSet();
+                try
+                {
+                    conn.Open();
+                    da.Fill(ds);
+                    OracleDataReader dr = oracmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+
+                        if (dr["ESTADO"].ToString() == "Activo" ) 
+                        {
+                            if (dr["RUT_EMPRESA"].ToString() != "76047737")
+                            {
+                                empresa ev = new empresa();
+                                ev.Rut_empresa = dr["RUT_EMPRESA"].ToString();
+                                ev.Nombre_empresa = dr["NOMBRE"].ToString();
+
+                                listado.Add(ev);
+                            }
+                            
+                        }
+                    }
+                    conn.Close();
+                    return listado;
+
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
+        }
+
         
 
 

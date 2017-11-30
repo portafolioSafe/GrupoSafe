@@ -113,6 +113,16 @@
           <s:element minOccurs="0" maxOccurs="1" name="Nombre_empresa" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="listarEmpresaActivas">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarEmpresaActivasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarEmpresaActivasResult" type="tns:ArrayOfEmpresa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetListarTipoCap">
         <s:complexType />
       </s:element>
@@ -267,6 +277,21 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ListadoCapacitacionXaño">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListadoCapacitacionXañoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListadoCapacitacionXañoResult" type="tns:ArrayOfCapacitacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="AsistirCapcitacion">
         <s:complexType>
           <s:sequence>
@@ -278,10 +303,37 @@
       <s:element name="AsistirCapcitacionResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="AsistirCapcitacionResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="AsistirCapcitacionResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="listarDetalleCap">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarDetalleCapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarDetalleCapResult" type="tns:ArrayOfDetalle_cap" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDetalle_cap">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="detalle_cap" nillable="true" type="tns:detalle_cap" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="detalle_cap">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Nota" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Asistencia" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id_cap" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Area_cap" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Expositor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tema" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rut_usuario" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="M_guardarMedico">
         <s:complexType>
           <s:sequence>
@@ -730,6 +782,12 @@
   <wsdl:message name="GetlistarEmpresaListSoapOut">
     <wsdl:part name="parameters" element="tns:GetlistarEmpresaListResponse" />
   </wsdl:message>
+  <wsdl:message name="listarEmpresaActivasSoapIn">
+    <wsdl:part name="parameters" element="tns:listarEmpresaActivas" />
+  </wsdl:message>
+  <wsdl:message name="listarEmpresaActivasSoapOut">
+    <wsdl:part name="parameters" element="tns:listarEmpresaActivasResponse" />
+  </wsdl:message>
   <wsdl:message name="GetListarTipoCapSoapIn">
     <wsdl:part name="parameters" element="tns:GetListarTipoCap" />
   </wsdl:message>
@@ -778,11 +836,23 @@
   <wsdl:message name="ListarCapacitacionesxempresaSoapOut">
     <wsdl:part name="parameters" element="tns:ListarCapacitacionesxempresaResponse" />
   </wsdl:message>
+  <wsdl:message name="ListadoCapacitacionXañoSoapIn">
+    <wsdl:part name="parameters" element="tns:ListadoCapacitacionXaño" />
+  </wsdl:message>
+  <wsdl:message name="ListadoCapacitacionXañoSoapOut">
+    <wsdl:part name="parameters" element="tns:ListadoCapacitacionXañoResponse" />
+  </wsdl:message>
   <wsdl:message name="AsistirCapcitacionSoapIn">
     <wsdl:part name="parameters" element="tns:AsistirCapcitacion" />
   </wsdl:message>
   <wsdl:message name="AsistirCapcitacionSoapOut">
     <wsdl:part name="parameters" element="tns:AsistirCapcitacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarDetalleCapSoapIn">
+    <wsdl:part name="parameters" element="tns:listarDetalleCap" />
+  </wsdl:message>
+  <wsdl:message name="listarDetalleCapSoapOut">
+    <wsdl:part name="parameters" element="tns:listarDetalleCapResponse" />
   </wsdl:message>
   <wsdl:message name="M_guardarMedicoSoapIn">
     <wsdl:part name="parameters" element="tns:M_guardarMedico" />
@@ -945,6 +1015,10 @@
       <wsdl:input message="tns:GetlistarEmpresaListSoapIn" />
       <wsdl:output message="tns:GetlistarEmpresaListSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="listarEmpresaActivas">
+      <wsdl:input message="tns:listarEmpresaActivasSoapIn" />
+      <wsdl:output message="tns:listarEmpresaActivasSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetListarTipoCap">
       <wsdl:input message="tns:GetListarTipoCapSoapIn" />
       <wsdl:output message="tns:GetListarTipoCapSoapOut" />
@@ -977,9 +1051,17 @@
       <wsdl:input message="tns:ListarCapacitacionesxempresaSoapIn" />
       <wsdl:output message="tns:ListarCapacitacionesxempresaSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="ListadoCapacitacionXaño">
+      <wsdl:input message="tns:ListadoCapacitacionXañoSoapIn" />
+      <wsdl:output message="tns:ListadoCapacitacionXañoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="AsistirCapcitacion">
       <wsdl:input message="tns:AsistirCapcitacionSoapIn" />
       <wsdl:output message="tns:AsistirCapcitacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarDetalleCap">
+      <wsdl:input message="tns:listarDetalleCapSoapIn" />
+      <wsdl:output message="tns:listarDetalleCapSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="M_guardarMedico">
       <wsdl:input message="tns:M_guardarMedicoSoapIn" />
@@ -1135,6 +1217,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="listarEmpresaActivas">
+      <soap:operation soapAction="http://tempuri.org/listarEmpresaActivas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetListarTipoCap">
       <soap:operation soapAction="http://tempuri.org/GetListarTipoCap" style="document" />
       <wsdl:input>
@@ -1207,8 +1298,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ListadoCapacitacionXaño">
+      <soap:operation soapAction="http://tempuri.org/ListadoCapacitacionXaño" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AsistirCapcitacion">
       <soap:operation soapAction="http://tempuri.org/AsistirCapcitacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarDetalleCap">
+      <soap:operation soapAction="http://tempuri.org/listarDetalleCap" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1480,6 +1589,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="listarEmpresaActivas">
+      <soap12:operation soapAction="http://tempuri.org/listarEmpresaActivas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetListarTipoCap">
       <soap12:operation soapAction="http://tempuri.org/GetListarTipoCap" style="document" />
       <wsdl:input>
@@ -1552,8 +1670,26 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ListadoCapacitacionXaño">
+      <soap12:operation soapAction="http://tempuri.org/ListadoCapacitacionXaño" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AsistirCapcitacion">
       <soap12:operation soapAction="http://tempuri.org/AsistirCapcitacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarDetalleCap">
+      <soap12:operation soapAction="http://tempuri.org/listarDetalleCap" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

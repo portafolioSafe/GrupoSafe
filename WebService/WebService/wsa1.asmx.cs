@@ -438,34 +438,13 @@ namespace WebService
         [WebMethod]
           public List<empresa> GetlistarEmpresaList()
           {
-
-
               return Datos.DatosEmpresa.ListadoEmpresas();
-
-              //string strConnectionString = "DATA SOURCE = 190.161.202.171:1521 / DBORACLE; USER ID = GRUPOSAFE;Password = portafolio;";
-              //OracleConnection oraconn = new OracleConnection(strConnectionString);
-              //oraconn.Open();
-              //OracleCommand oracmd = new OracleCommand();
-              //oracmd.Parameters.Add("listarEmpr", OracleDbType.RefCursor, ParameterDirection.Output);
-              //oracmd.CommandText = "pkg_empresas.listarEmpresa";
-              //oracmd.CommandType = CommandType.StoredProcedure;
-              //oracmd.Connection = oraconn;
-              //OracleDataAdapter da = new OracleDataAdapter(oracmd);
-              //DataSet ds = new DataSet();
-              //List<empresa> milista = new List<empresa>();
-              //da.Fill(ds);
-              //foreach (DataRow row in ds.Tables[0].Rows)
-              //{
-              //    empresa nueva = new empresa();
-              //    nueva.Rut_empresa = row[0].ToString();
-              //    nueva.Nombre_empresa = row[1].ToString();
-              //    milista.Add(nueva);
-              //    //milista.Add(string.Format("{0}" + " " + "{1}", row["RUT_EMPRESA"], row["NOMBRE"]));
-              //}
-              //oraconn.Close();
-              //return milista;
-              
           }
+         [WebMethod]
+         public List<empresa> listarEmpresaActivas()
+         {
+             return Datos.DatosEmpresa.ListadoEmpresasACTIVOS();
+         }
 
          [WebMethod]
           public List<cap_tipo> GetListarTipoCap()
@@ -554,15 +533,27 @@ namespace WebService
 
             return Datos.DatosCapacitaciones.ListadoCapacitacionXempresa(empresaNombre);
         }
+        [WebMethod]
+        public List<capacitacion> ListadoCapacitacionXaño(string empresa, int year)
+        {
+
+            return Datos.DatosCapacitaciones.ListadoCapacitacionXaño(empresa,year);
+        }
+
 
         [WebMethod]
-        public bool AsistirCapcitacion(int ID_CAPACITACION,string USUARIO_RUT)
+        public string AsistirCapcitacion(int ID_CAPACITACION,string USUARIO_RUT)
         {
-            return Datos.DatosCapacitaciones.AsistirCapcitacion( ID_CAPACITACION, USUARIO_RUT);
+            return Datos.DatosDetalleCap.AsistirCapcitacion(ID_CAPACITACION, USUARIO_RUT);
 
             
         }
+          [WebMethod]
+        public List<detalle_cap> listarDetalleCap()
+        {
 
+            return Datos.DatosDetalleCap.listarDetalleCap();
+        }
 
 
 

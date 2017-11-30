@@ -230,6 +230,58 @@ namespace Datos
 
         }
 
+        public static List<capacitacion> ListadoCapacitacionXaño(string empresa, int year)
+        {
+
+            DatosConexion c = new DatosConexion();
+            using (OracleConnection conn = c.Connect())
+            {
+                List<capacitacion> listado = new List<capacitacion>();
+                List<capacitacion> listadoxEmpresa = ListadoCapacitacionXempresa(empresa);
+
+                try
+                {
+                    foreach (capacitacion item in listadoxEmpresa)
+                    {
+                        DateTime hoy = DateTime.Today;
+                        string fechaSET = item.Fecha;
+                        DateTime fechaIN = Convert.ToDateTime(fechaSET);
+                        if (fechaIN.Year == year)
+                        {
+
+                            capacitacion cap = new capacitacion();
+                            cap.Id = item.Id;
+                            cap.Area = item.Area;
+
+
+                            cap.Fecha = item.Fecha;
+                            cap.Tema = item.Tema;
+                            cap.Expositor = item.Expositor;
+                            cap.Asistencia = item.Asistencia;
+                            cap.Rut_empresa = item.Rut_empresa;
+                            cap.Tipo_cap = item.Tipo_cap;
+
+                            listado.Add(cap);
+
+
+                        }
+
+                    }
+                    conn.Close();
+                    return listado;
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            }
+
+        }
+
+
         public static bool GuardarCapacitacion(string area, DateTime fecha, string tema, string expo, int asisten, string empresa, int tipocap)
         {
             DatosConexion c = new DatosConexion();
@@ -244,7 +296,7 @@ namespace Datos
 
 
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    string val = "asd";
+                    string val = "Disponible";
                     DateTime fecha1 = DateTime.Now.Date;
 
                     cmd.Parameters.Add("ARECAP", "varchar2").Value = area;
@@ -321,45 +373,7 @@ namespace Datos
             }
         }
         //fin Metodo
-        public static bool AsistirCapcitacion(int ID_CAPACITACION, string USUARIO_RUT)
-        {
-
-
-
-
-            DatosConexion c = new DatosConexion();
-            using (OracleConnection conn = c.Connect())
-            {
-
-                OracleCommand cmd = new OracleCommand("PKG_DETALLE_CAP.INSERTAR_DETALLE_CAP", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.Add("NOTITA", "number").Value = 3;
-                cmd.Parameters.Add("ASISTE", "number").Value = 3;
-                cmd.Parameters.Add("ID_CAPACITACION", "number").Value = ID_CAPACITACION;
-                cmd.Parameters.Add("USUARIO_RUT", OracleDbType.Varchar2).Value = USUARIO_RUT;
-
-
-
-                try
-                {
-                    conn.Open();
-
-
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-
-
-                    return true;
-                }
-                catch (Exception ex)
-                {
-
-                    throw ex;
-                }
-
-            }
-        }
+       
         //fin Metodo
 
 
