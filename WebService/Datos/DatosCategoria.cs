@@ -72,7 +72,7 @@ namespace Datos
                         categoria ev = new categoria();
                         ev.Id = int.Parse(dr["ID_CAT"].ToString());
                         ev.Nombre = dr["NOMBRE"].ToString();
-                        ev.Estado = "Activo";
+                        ev.Estado = dr["ESTADO"].ToString();
 
                         listado.Add(ev);
                     }
@@ -113,7 +113,7 @@ namespace Datos
                         categoria ev = new categoria();
                         ev.Id = int.Parse(dr["ID_CAT"].ToString());
                         ev.Nombre = dr["NOMBRE"].ToString();
-                        ev.Estado = "Activo";
+                        ev.Estado = dr["ESTADO"].ToString();
 
                         listado.Add(ev);
                     }

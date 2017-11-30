@@ -45,11 +45,11 @@
 
             <div class="form-group">
                 <label for="em">Seleccione categoria</label>
-                <asp:DropDownList ID="DropDownList1" class="form-control" runat="server" DataSourceID="ObjectDataSource2" DataTextField="Nombre" AutoPostBack="true" DataValueField="Id">
+                <asp:DropDownList ID="DropDownList1" class="form-control" runat="server" AutoPostBack="True">
+                    <asp:ListItem Value="0">Seleccione categoría</asp:ListItem>
                 </asp:DropDownList>
 
             </div>
-            <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="listarCategoria" TypeName="BLL.CategoriaDTO"></asp:ObjectDataSource>
             <br />
             &nbsp;
          <div class="form-group">
@@ -58,6 +58,14 @@
              <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="El rango es de 1 a 150 caracteres" Font-Bold="False" ForeColor="Red" ValidationExpression="^[\s\S]{1,150}$"></asp:RegularExpressionValidator>
 
          </div>
+            <div class="form-group">
+                <label for="em">Estado de la evaluación</label>
+                <asp:DropDownList ID="DropDownList3" class="form-control" runat="server" AutoPostBack="false">
+                    <asp:ListItem Value="Activo">Activo</asp:ListItem>
+                    <asp:ListItem Value="Desactivado">Desactivado</asp:ListItem>
+                </asp:DropDownList>
+
+            </div>
             <asp:Button ID="Button1" runat="server" CssClass="btn alert-success center-block" Text="Agregar" Width="86px" OnClick="Button1_Click" />
 
             <asp:Button ID="Button2" runat="server" CssClass="btn alert-success center-block" Text="Modificar" Width="86px" OnClick="Button2_Click" />

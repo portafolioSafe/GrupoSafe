@@ -28,7 +28,9 @@ namespace web
             mensajeEX.Visible = false;
             Button2.Visible = false;
             Button3.Visible = false;
-
+            DropDownList3.Visible = false;
+            Button1.Visible = true;
+            
             GridView1.DataBind();
 
 
@@ -45,8 +47,8 @@ namespace web
                     DropDownList2.Items.Add(item2);
                 }
 
-                
 
+                
                 GridView1.DataBind();
             }
 
@@ -89,7 +91,7 @@ namespace web
                     {
                         try
                         {
-                            cat.AgregarCategoria(id, categoria);
+                            cat.AgregarCategoria(id, HttpUtility.HtmlEncode(categoria));
                             GridView1.DataBind();
                             
 
@@ -141,6 +143,8 @@ namespace web
                 Button1.Visible = false;
                 Button2.Visible = true;
                 Button3.Visible = true;
+                DropDownList3.Visible = true;
+                DropDownList3.Visible = true;
                 // Convert the row index stored in the CommandArgument
                 // property to an Integer.
                 int index = Convert.ToInt32(e.CommandArgument);
@@ -151,7 +155,7 @@ namespace web
                 TableCell contactName = selectedRow.Cells[0];
                 TableCell contact2 = selectedRow.Cells[1];
                 string contact = contactName.Text;
-                TextBox1.Text = contact2.Text;
+                TextBox1.Text =  HttpUtility.HtmlDecode(contact2.Text);
                 //TextBox1.Text = HttpUtility.HtmlDecode(selectedRow.Cells[1].Text);
                 // Captura el id de la capacitacion mostrada en la tabla en una variable de sesion
                 Session["idCategoria"] = contact;
@@ -167,7 +171,8 @@ namespace web
         {
             int idcat = int.Parse(Session["idCategoria"].ToString());
             string nuevapregunta = TextBox1.Text;
-            string estado = "Activo";
+            
+            string estado = DropDownList3.SelectedItem.Text;
 
 
             if (TextBox1.Text != "")
@@ -178,12 +183,14 @@ namespace web
                     mensajeSiM.Visible = true;
                     Button1.Visible = true;
                     Button2.Visible = false;
+                    GridView1.DataBind();
                 }
             }
             else
             {
                 Button2.Visible = true;
                 Button3.Visible = true;
+                
                 mensajeNa.Visible = true;
             }
             

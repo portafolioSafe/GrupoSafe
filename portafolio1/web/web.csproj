@@ -205,6 +205,27 @@
     <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.ValidarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.ArrayOfExamen_tipo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.ArrayOfVisitasMedicas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.GuardarVisitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.listarTipoExamen1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.listarVisitasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.listarVisitasxempresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\web.ServiceReference1.MostrarVisitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServiceReference1\wsa1.disco" />
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
@@ -229,6 +250,7 @@
     <Content Include="Properties\DataSources\BLL.ServiceReference1.Pregunta.datasource" />
     <Content Include="Properties\DataSources\BLL.ServiceReference1.TipoEvaluaciones.datasource" />
     <Fakes Include="Fakes\System.Net.Http.Formatting.fakes" />
+    <Content Include="Properties\DataSources\BLL.ServiceReference1.visitasMedicas.datasource" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />

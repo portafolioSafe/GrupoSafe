@@ -52,7 +52,7 @@
 
             <div class="form-group">
                 <label for="em">Seleccione tipo de evaluacion</label>
-                <asp:DropDownList ID="DropDownList2" class="form-control" runat="server">
+                <asp:DropDownList ID="DropDownList2" class="form-control" runat="server" AutoPostBack="True">
                     <asp:ListItem Value="0">SELECCIONE TIPO DE EVALUACION</asp:ListItem>
                 </asp:DropDownList>
 
@@ -67,6 +67,16 @@
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="El rango es de 1 a 300 caracteres" Font-Bold="False" ForeColor="Red" ValidationExpression="^[\s\S]{1,100}$"></asp:RegularExpressionValidator>
 
             </div>
+
+            <div class="form-group">
+                <label for="em">Estado de la evaluación</label>
+                <asp:DropDownList ID="DropDownList3" class="form-control" runat="server" AutoPostBack="false">
+                    <asp:ListItem Value="Activo">Activo</asp:ListItem>
+                    <asp:ListItem Value="Desactivado">Desactivado</asp:ListItem>
+                </asp:DropDownList>
+
+            </div>
+            
          
 
 
@@ -94,7 +104,7 @@
 
                 <Columns>
                     <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
-                    <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
+                    <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" ControlStyle-Width="50px" />
                     <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
 
                     <asp:ButtonField ButtonType="Button" ControlStyle-CssClass="btn btn-warning" Text="Modificar" CommandName="Select" HeaderText="Acción">
@@ -105,7 +115,11 @@
                 </Columns>
             </asp:GridView>
 
-            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="listarCategoria" TypeName="BLL.CategoriaDTO"></asp:ObjectDataSource>
+            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="ListarXtipo" TypeName="BLL.CategoriaDTO">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="DropDownList2" DefaultValue="1" Name="idT" PropertyName="SelectedValue" Type="Int32" />
+                </SelectParameters>
+            </asp:ObjectDataSource>
 
 
 

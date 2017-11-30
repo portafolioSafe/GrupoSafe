@@ -23,9 +23,7 @@
 
                         </div>
            <div id="mensajeNO" runat="server" class="alert alert-danger"  role="alert"  style="width:100%" visible="false">   
-                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ¡ERROR DE CONEXIÓN, SI EL ERROR PERSISTE LLAME A FONO AYUDA SAFE!
-
-                        </div>
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ¡ERROR DE CONEXIÓN, INTENTE OTRA VEZ! (CODIGO MED00)</div>
          <div id="MensajeFound" runat="server" class="alert alert-success" role="alert"   style="width:100%" visible="false">   
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ¡RUT VERIFICADO EN LA ESCUELA DE MÉDICOS!
 

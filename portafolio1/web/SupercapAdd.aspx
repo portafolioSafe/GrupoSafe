@@ -24,7 +24,7 @@
            <div id="mensajeNO" runat="server" class="alert alert-danger"  style="width:90%" visible="false">   
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ¡ERROR DE CONEXIÓN, INTENTE OTRA VEZ!
 
-                        </div>
+                            (CODIGO CAP00)</div>
 
     <label for="em">Empresa</label>
       <asp:DropDownList ID="Comboemp" class="form-control" runat="server" DataSourceID="ObjectDataSource1" DataTextField="Nombre_empresa" DataValueField="Rut_empresa" ></asp:DropDownList>

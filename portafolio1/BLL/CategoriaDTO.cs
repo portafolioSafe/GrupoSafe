@@ -61,6 +61,12 @@ namespace BLL
 
 
 
+        public List<ServiceReference1.categoria> listarCategoriaD()
+        {
+            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
+            return ws.E_listadoCategoria();
+        }
+
         public static List<ServiceReference1.categoria> listarCategoria()
         {
             ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();

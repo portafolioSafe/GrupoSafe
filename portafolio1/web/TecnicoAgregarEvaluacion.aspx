@@ -18,7 +18,7 @@
 
 
                
-                <asp:Label ID="Label3" runat="server" Text="Agregar evaluacion" Font-Bold="True" Font-Size="Larger"></asp:Label>
+                <asp:Label ID="Label3" runat="server" Text="Agregar evaluación" Font-Bold="True" Font-Size="Larger"></asp:Label>
             </div>
 
             <div class="panel-body">

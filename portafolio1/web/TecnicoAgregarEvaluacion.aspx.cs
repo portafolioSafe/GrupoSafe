@@ -239,7 +239,11 @@ namespace web
             {
                 foreach (var item2 in BLL.PreguntasDTO.ListarXcategoria(item.Id))
                 {
-                    dt.Rows.Add(item2.Id,item2.Pregunta1);
+                    if (item2.Estado == "Activo")
+                    {
+                        dt.Rows.Add(item2.Id, item2.Pregunta1);
+                    }
+                  
                     
 
                 }

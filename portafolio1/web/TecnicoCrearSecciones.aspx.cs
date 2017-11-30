@@ -22,7 +22,28 @@ namespace web
             mensajeSiM.Visible = false;
             Button2.Visible = false;
             Button3.Visible = false;
+            DropDownList3.Visible = false;
+            Button1.Visible = true;
             GridView1.DataBind();
+
+            if (!IsPostBack)
+            {
+
+                BLL.CategoriaDTO t = new BLL.CategoriaDTO();
+
+
+                foreach (var item in t.listarCategoriaD())
+                {
+                    ListItem item2 = new ListItem(item.Nombre, item.Id.ToString());
+                    //DropDownList2.Items.Add(item2);
+                    DropDownList1.Items.Add(item2);
+                }
+
+
+
+                GridView1.DataBind();
+            }
+
         }
 
 
@@ -64,6 +85,7 @@ namespace web
                 Button1.Visible = false;
                 Button2.Visible = true;
                 Button3.Visible = true;
+                DropDownList3.Visible = true;
                 // Convert the row index stored in the CommandArgument
                 // property to an Integer.
                 int index = Convert.ToInt32(e.CommandArgument);
@@ -88,7 +110,7 @@ namespace web
         {
             int idcat = int.Parse(Session["idCategoria"].ToString());
             string nuevapregunta = TextBox1.Text;
-            string estado = "Activo";
+            string estado = DropDownList3.SelectedItem.Text;
             if (TextBox1.Text != "")
             {
                 if (BLL.PreguntasDTO.ModificarPregunta(idcat, nuevapregunta, estado))
@@ -99,6 +121,7 @@ namespace web
                     Button1.Visible = true;
                     Button2.Visible = false;
                     Button3.Visible = false;
+                    DropDownList3.Visible = false;
                     GridView1.DataBind();
                 }
             }

@@ -21,7 +21,7 @@ namespace Datos
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add("p_pregunta", "varchar2").Value = ask;
-                cmd.Parameters.Add("p_estado", "varchar2").Value = "activo";
+                cmd.Parameters.Add("p_estado", "varchar2").Value = "Activo";
                 cmd.Parameters.Add("p_cat", "number").Value = idCat;
 
                 try
