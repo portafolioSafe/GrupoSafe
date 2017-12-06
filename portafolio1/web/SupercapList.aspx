@@ -42,7 +42,7 @@
 
 <ItemStyle Width="120px"></ItemStyle>
               </asp:BoundField>
-              <asp:BoundField DataField="Asistencia" HeaderStyle-CssClass=" text-center" ItemStyle-CssClass="text-center" HeaderText="Asistencia" SortExpression="Asistencia" ItemStyle-Width="120px" >
+              <asp:BoundField DataField="Asistencia" HeaderStyle-CssClass=" text-center" ItemStyle-CssClass="text-center" HeaderText="Cupos" SortExpression="Asistencia" ItemStyle-Width="120px" >
 <HeaderStyle CssClass=" text-center" BackColor="#337ab7" ForeColor="White"></HeaderStyle>
 
 <ItemStyle Width="120px"></ItemStyle>
@@ -64,6 +64,11 @@
                   <HeaderStyle CssClass=" text-center" ForeColor="White" BackColor="#337ab7" ></HeaderStyle>
 <ControlStyle CssClass="btn btn-warning"  ></ControlStyle>
               </asp:ButtonField>
+                            <asp:ButtonField ButtonType="Button"  ControlStyle-CssClass="btn btn-warning" Text="Actualizar" CommandName="asistencia"  HeaderText="Asistencia" >
+                  <HeaderStyle CssClass=" text-center" ForeColor="White" BackColor="#337ab7" ></HeaderStyle>
+<ControlStyle CssClass="btn btn-warning"  ></ControlStyle>
+              </asp:ButtonField>
+             
           </Columns>
           <RowStyle HorizontalAlign="Center" />
       </asp:GridView>

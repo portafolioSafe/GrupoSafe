@@ -367,6 +367,21 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="AsignarMedico">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_visita" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rut_medico" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AsignarMedicoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AsignarMedicoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="E_guardarCategoria">
         <s:complexType>
           <s:sequence>
@@ -880,6 +895,12 @@
   <wsdl:message name="M_guardarMedicoSoapOut">
     <wsdl:part name="parameters" element="tns:M_guardarMedicoResponse" />
   </wsdl:message>
+  <wsdl:message name="AsignarMedicoSoapIn">
+    <wsdl:part name="parameters" element="tns:AsignarMedico" />
+  </wsdl:message>
+  <wsdl:message name="AsignarMedicoSoapOut">
+    <wsdl:part name="parameters" element="tns:AsignarMedicoResponse" />
+  </wsdl:message>
   <wsdl:message name="E_guardarCategoriaSoapIn">
     <wsdl:part name="parameters" element="tns:E_guardarCategoria" />
   </wsdl:message>
@@ -1090,6 +1111,10 @@
     <wsdl:operation name="M_guardarMedico">
       <wsdl:input message="tns:M_guardarMedicoSoapIn" />
       <wsdl:output message="tns:M_guardarMedicoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AsignarMedico">
+      <wsdl:input message="tns:AsignarMedicoSoapIn" />
+      <wsdl:output message="tns:AsignarMedicoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="E_guardarCategoria">
       <wsdl:input message="tns:E_guardarCategoriaSoapIn" />
@@ -1360,6 +1385,15 @@
     </wsdl:operation>
     <wsdl:operation name="M_guardarMedico">
       <soap:operation soapAction="http://tempuri.org/M_guardarMedico" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsignarMedico">
+      <soap:operation soapAction="http://tempuri.org/AsignarMedico" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1741,6 +1775,15 @@
     </wsdl:operation>
     <wsdl:operation name="M_guardarMedico">
       <soap12:operation soapAction="http://tempuri.org/M_guardarMedico" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsignarMedico">
+      <soap12:operation soapAction="http://tempuri.org/AsignarMedico" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

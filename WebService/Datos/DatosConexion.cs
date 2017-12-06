@@ -15,10 +15,11 @@ namespace Datos
 
         public DatosConexion()
         { }
-        ///
-/// Permite crear una cadena de conexión tipo Oracle
- /// </summary>
-        ///
+       
+
+
+      
+
         public OracleConnection Connect()
         {
             ////////////////////////////////////////////////////////////////////////////////////

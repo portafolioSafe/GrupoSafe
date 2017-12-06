@@ -79,9 +79,9 @@
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Historial <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
-<%--	            <li><a href="TrabajadorHistA.aspx">Atenciones</a></li>
-                  <li><a href="TrabajadorHistV.aspx">Visitas médicas</a></li>
-                  <li><a href="TrabajadorHistC.aspx">Capacitaciones</a></li>--%>
+	           <%-- <li><a href="TrabajadorHistA.aspx">Atenciones</a></li>
+                  <li><a href="TrabajadorHistV.aspx">Visitas médicas</a></li>--%>
+                  <li><a href="TrabajadorHistC.aspx">Capacitaciones</a></li>
 	            
 	          </ul>
 	        </li>
@@ -94,7 +94,7 @@
 	          </ul>
 	        </li>
               <li class="dropdown" >
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Certificaciones <span class="caret"></span></a>
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Capacitaciones <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
 	            <li><a href="TrabajadorCapacP.aspx">Proximas capacitaciones</a></li>
 
@@ -115,19 +115,19 @@
 	            
 	          </ul>
 	        </li>
-              <li class="dropdown">
+          <%--    <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Visitas médicas <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
 	            <li><a href="ClenteListVi.aspx">Listar visitas</a></li>
 
 	            
 	          </ul>
-	        </li>
+	        </li>--%>
               <li class="dropdown" >
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Capacitaciones <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
 	            <li><a href="ClenteListC.aspx">Listar capacitaciones</a></li>
-                   <li><a href="ClenteCert.aspx">Certificados</a></li>
+                  <%-- <li><a href="ClenteCert.aspx">Certificados</a></li>--%>
 
 	            
 	          </ul>
@@ -158,7 +158,7 @@
 <%--     Menu Medico       --%>
             <ul class="nav navbar-nav" id="menuMedico" runat="server">
 
-	        <li class="dropdown">
+	     <%--   <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Atención <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
 	            <li><a href="MedicoAtenAdd.aspx">Registrar atención</a></li>
@@ -166,9 +166,9 @@
 
 	            
 	          </ul>
-	        </li>
+	        </li>--%>
 
-                <li class="dropdown">
+      <%--          <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examen <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
 	            <li><a href="MedicoExamAdd.aspx">Registrar examen</a></li>
@@ -176,7 +176,7 @@
 
 	            
 	          </ul>
-	        </li>
+	        </li>--%>
 
                 <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Visitas médicas <span class="caret"></span></a>

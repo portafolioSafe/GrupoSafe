@@ -48,6 +48,24 @@ namespace web
                 //Pasa a la pagina de modificacion
                 Response.Redirect("SupercapEdit.aspx");
             }
+            if (e.CommandName == "asistencia")
+            {
+
+                // Convert the row index stored in the CommandArgument
+                // property to an Integer.
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                // Get the last name of the selected author from the appropriate
+                // cell in the GridView control.
+                GridViewRow selectedRow = GridView1.Rows[index];
+                TableCell contactName = selectedRow.Cells[0];
+                string contact = contactName.Text;
+
+                // Captura el id de la capacitacion mostrada en la tabla en una variable de sesion
+                Session["id_capacitacion"] = contact;
+                //Pasa a la pagina de modificacion
+                Response.Redirect("asistenciaCapacitaciones.aspx");
+            }
         }
 
         protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)

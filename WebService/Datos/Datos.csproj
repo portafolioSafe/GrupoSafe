@@ -63,6 +63,7 @@
     <Compile Include="DatosConexion.cs" />
     <Compile Include="DatosDetalleCap.cs" />
     <Compile Include="DatosDetalle_evaluacion.cs" />
+    <Compile Include="DatosDetalle_visita.cs" />
     <Compile Include="DatosEmpresa.cs" />
     <Compile Include="DatosEvaluaciones.cs" />
     <Compile Include="DatosMedico.cs" />

@@ -147,8 +147,24 @@ namespace BLL
         {
             return ws.AsistirCapcitacion(id_cap, rut);
         }
+        
+        public List<ServiceReference1.detalle_cap> listarDetalleCapxUsuario(string nombre)
+        {
 
+            return ws.listarDetalleCapxUsuario(nombre);
+
+        }
+
+
+        public static List<ServiceReference1.detalle_cap> listarDetalleCapxUsuario2()
+        {
+            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
+            return ws.listarDetalleCap();
+
+        }
 
 
     }
+
+
 }

@@ -1444,6 +1444,13 @@ namespace BLL.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/M_guardarMedico", ReplyAction="*")]
         System.Threading.Tasks.Task<BLL.ServiceReference1.M_guardarMedicoResponse> M_guardarMedicoAsync(BLL.ServiceReference1.M_guardarMedicoRequest request);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento rut_medico del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AsignarMedico", ReplyAction="*")]
+        BLL.ServiceReference1.AsignarMedicoResponse AsignarMedico(BLL.ServiceReference1.AsignarMedicoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AsignarMedico", ReplyAction="*")]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.AsignarMedicoResponse> AsignarMedicoAsync(BLL.ServiceReference1.AsignarMedicoRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento cat del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/E_guardarCategoria", ReplyAction="*")]
         BLL.ServiceReference1.E_guardarCategoriaResponse E_guardarCategoria(BLL.ServiceReference1.E_guardarCategoriaRequest request);
@@ -3079,6 +3086,78 @@ namespace BLL.ServiceReference1 {
         
         public M_guardarMedicoResponseBody(bool M_guardarMedicoResult) {
             this.M_guardarMedicoResult = M_guardarMedicoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AsignarMedicoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AsignarMedico", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.AsignarMedicoRequestBody Body;
+        
+        public AsignarMedicoRequest() {
+        }
+        
+        public AsignarMedicoRequest(BLL.ServiceReference1.AsignarMedicoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AsignarMedicoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id_visita;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string rut_medico;
+        
+        public AsignarMedicoRequestBody() {
+        }
+        
+        public AsignarMedicoRequestBody(int id_visita, string rut_medico) {
+            this.id_visita = id_visita;
+            this.rut_medico = rut_medico;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AsignarMedicoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AsignarMedicoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BLL.ServiceReference1.AsignarMedicoResponseBody Body;
+        
+        public AsignarMedicoResponse() {
+        }
+        
+        public AsignarMedicoResponse(BLL.ServiceReference1.AsignarMedicoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AsignarMedicoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string AsignarMedicoResult;
+        
+        public AsignarMedicoResponseBody() {
+        }
+        
+        public AsignarMedicoResponseBody(string AsignarMedicoResult) {
+            this.AsignarMedicoResult = AsignarMedicoResult;
         }
     }
     
@@ -5138,6 +5217,33 @@ namespace BLL.ServiceReference1 {
             inValue.Body.correo = correo;
             inValue.Body.pass = pass;
             return ((BLL.ServiceReference1.wsa1Soap)(this)).M_guardarMedicoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BLL.ServiceReference1.AsignarMedicoResponse BLL.ServiceReference1.wsa1Soap.AsignarMedico(BLL.ServiceReference1.AsignarMedicoRequest request) {
+            return base.Channel.AsignarMedico(request);
+        }
+        
+        public string AsignarMedico(int id_visita, string rut_medico) {
+            BLL.ServiceReference1.AsignarMedicoRequest inValue = new BLL.ServiceReference1.AsignarMedicoRequest();
+            inValue.Body = new BLL.ServiceReference1.AsignarMedicoRequestBody();
+            inValue.Body.id_visita = id_visita;
+            inValue.Body.rut_medico = rut_medico;
+            BLL.ServiceReference1.AsignarMedicoResponse retVal = ((BLL.ServiceReference1.wsa1Soap)(this)).AsignarMedico(inValue);
+            return retVal.Body.AsignarMedicoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BLL.ServiceReference1.AsignarMedicoResponse> BLL.ServiceReference1.wsa1Soap.AsignarMedicoAsync(BLL.ServiceReference1.AsignarMedicoRequest request) {
+            return base.Channel.AsignarMedicoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BLL.ServiceReference1.AsignarMedicoResponse> AsignarMedicoAsync(int id_visita, string rut_medico) {
+            BLL.ServiceReference1.AsignarMedicoRequest inValue = new BLL.ServiceReference1.AsignarMedicoRequest();
+            inValue.Body = new BLL.ServiceReference1.AsignarMedicoRequestBody();
+            inValue.Body.id_visita = id_visita;
+            inValue.Body.rut_medico = rut_medico;
+            return ((BLL.ServiceReference1.wsa1Soap)(this)).AsignarMedicoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

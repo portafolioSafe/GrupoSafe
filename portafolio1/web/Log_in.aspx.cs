@@ -37,7 +37,19 @@ namespace web
             error1.Visible = false;
             error2.Visible = false;
             errorserver.Visible = false;
+           
+                if (Session["server"] != null)
+                {
+                    errorserver.Visible = true;
+                }
+                else
+                {
+                    errorserver.Visible = false;
+
+                }
             
+           
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -132,7 +144,8 @@ namespace web
             }
             catch (Exception) 
             {
-                error.Visible = true;
+                //error.Visible = true;
+                errorserver.Visible = true;
                 //MessageBox.Show("Usuario: "+ pw +", pass: "+pass.Value+", tipo: "+radiob+"", "Error de autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }

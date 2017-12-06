@@ -32,13 +32,7 @@
 
                     <ItemStyle HorizontalAlign="Center"></ItemStyle>
               </asp:BoundField>
-              <asp:BoundField DataField="Hora" HeaderText="Hora" SortExpression="Hora" FooterStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-CssClass=" text-center" ItemStyle-HorizontalAlign="Center" >
-                    <FooterStyle HorizontalAlign="Center"></FooterStyle>
-
-                    <HeaderStyle HorizontalAlign="Center" BackColor="#337ab7"  CssClass=" text-center" ForeColor="White"></HeaderStyle>
-
-                    <ItemStyle HorizontalAlign="Center"></ItemStyle>
-              </asp:BoundField>
+           
               <asp:BoundField DataField="Rut_empresa" HeaderText="Empresa" SortExpression="Empresa" FooterStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-CssClass=" text-center" ItemStyle-HorizontalAlign="Center" >
                     <FooterStyle HorizontalAlign="Center"></FooterStyle>
 
@@ -46,13 +40,7 @@
 
                     <ItemStyle HorizontalAlign="Center"></ItemStyle>
               </asp:BoundField>
-              <asp:BoundField DataField="Tipo_examen" HeaderText="Tipo exámen" SortExpression="Tipo exámen" FooterStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-CssClass=" text-center" ItemStyle-HorizontalAlign="Center" >
-                    <FooterStyle HorizontalAlign="Center"></FooterStyle>
-
-                    <HeaderStyle HorizontalAlign="Center" BackColor="#337ab7"  CssClass=" text-center" ForeColor="White"></HeaderStyle>
-
-                    <ItemStyle HorizontalAlign="Center"></ItemStyle>
-              </asp:BoundField>
+             
 
               <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" FooterStyle-HorizontalAlign="Center" HeaderStyle-HorizontalAlign="Center" HeaderStyle-CssClass=" text-center" ItemStyle-HorizontalAlign="Center" >
                     <FooterStyle HorizontalAlign="Center"></FooterStyle>

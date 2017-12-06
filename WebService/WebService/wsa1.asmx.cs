@@ -584,6 +584,11 @@ namespace WebService
             }
            
         }
+        [WebMethod]
+        public string AsignarMedico(int id_visita, string rut_medico) {
+
+            return Datos.DatosDetalle_visita.AsignarMedico(id_visita,rut_medico);
+        }
 
  //FIN MEDICO
 

@@ -21,7 +21,7 @@
     </div>
   
 
-      <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand" AutoGenerateColumns="False" CssClass="table table-bordered bs-table" DataSourceID="ObjectDataSource1" Width="90%" HorizontalAlign="Center" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1">
+      <asp:GridView ID="GridView1" runat="server"  AutoGenerateColumns="False" CssClass="table table-bordered bs-table" DataSourceID="ObjectDataSource1" Width="90%" HorizontalAlign="Center">
           <Columns>
               <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" ItemStyle-HorizontalAlign="Center"  HeaderStyle-Width="10px" ItemStyle-Width="40px" HeaderStyle-CssClass=" text-center" ItemStyle-CssClass="text-center" HeaderStyle-HorizontalAlign="Center" FooterStyle-HorizontalAlign="Center">
 <FooterStyle HorizontalAlign="Center"></FooterStyle>
@@ -72,7 +72,7 @@
           <RowStyle HorizontalAlign="Center" /> </asp:GridView>
 
      
-   <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="ListarCapacitacionxaño" TypeName="BLL.capacitacionDTO">
+   <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="ListarCapacitacionxaño" TypeName="BLL.capacitacionDTO">
             <SelectParameters>
                 <asp:SessionParameter Name="nombreEmpresa" SessionField="login" Type="String" />
                 <asp:ControlParameter ControlID="txtyear" Name="year" PropertyName="Text" Type="Int32" />

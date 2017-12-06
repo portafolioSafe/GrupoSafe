@@ -48,6 +48,7 @@
     <Compile Include="capacitacionDTO.cs" />
     <Compile Include="CategoriaDTO.cs" />
     <Compile Include="DetallePreguntaDTO.cs" />
+    <Compile Include="detalleVisitaDTO.cs" />
     <Compile Include="EmpresaDTO.cs" />
     <Compile Include="EvaluacionDTO.cs" />
     <Compile Include="loginController.cs" />
@@ -91,6 +92,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.ArrayOfVisitasMedicas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\BLL.ServiceReference1.AsignarMedicoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\BLL.ServiceReference1.AsistirCapcitacionResponse.datasource">

@@ -79,6 +79,11 @@ namespace BLL
 
         }
 
+        public string asistirCap(int id_vis, string rut)
+        {
+            ServiceReference1.wsa1SoapClient ws = new ServiceReference1.wsa1SoapClient();
+            return ws.AsignarMedico(id_vis,rut);
+        }
 
     }
 }
